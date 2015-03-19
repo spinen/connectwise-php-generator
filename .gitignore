@@ -1,3 +1,4 @@
 /vendor
 .env
-/build
+/build/logs
+/build/coverage
