@@ -1,0 +1,33 @@
+{
+    "name": "spinen/connectwise-php-library",
+    "description": "PHP library for ConnectWise's API",
+    "keywords": [
+        "api",
+        "connectwise",
+        "library",
+        "spinen"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jimmy Puckett",
+            "email": "jimmy.puckett@spinen.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "psy/psysh": "0.4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spinen\\ConnectWise\\Library": ""
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
