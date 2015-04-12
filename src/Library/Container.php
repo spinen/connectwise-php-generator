@@ -3,13 +3,14 @@
 namespace Spinen\ConnectWise\Library;
 
 use League\Container\Container as LeagueContainer;
+use Spinen\ConnectWise\Library\Contracts\Container as ContainerInterface;
 
 /**
  * Class Container
  *
  * @package Spinen\ConnectWise\Library
  */
-class Container extends LeagueContainer
+class Container extends LeagueContainer implements ContainerInterface
 {
 
     /**

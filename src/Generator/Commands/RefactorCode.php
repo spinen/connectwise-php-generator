@@ -62,8 +62,6 @@ class RefactorCode extends Base implements CommandInterface
         $response = $this->request->setCommand($command)
                                   ->run();
 
-        // TODO: Add "* @param string $host The FQDN to the ConnectWise server" to the doc block
-
         $this->outputResponse($response);
     }
 

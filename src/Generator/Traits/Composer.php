@@ -18,7 +18,6 @@ trait Composer
 
         $this->outputResponse($response);
 
-        // TODO: Look into getting the api directory to load at runtime
 //        $this->generator->get('loader')
 //                        ->setPsr4($this->generator->apiNamespace() . '\\', $this->generator->apiDirectory());
 
