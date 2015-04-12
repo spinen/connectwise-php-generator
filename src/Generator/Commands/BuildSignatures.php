@@ -103,8 +103,6 @@ class BuildSignatures extends Base implements CommandInterface
      */
     private function makeSignatureBlock($method, array $properties)
     {
-        // TODO: Consider using a template language instead of hard coding this PHP
-
         $contents = "    /**" . PHP_EOL;
         $contents .= "     * " . $properties['doc']['short'] . PHP_EOL;
 
