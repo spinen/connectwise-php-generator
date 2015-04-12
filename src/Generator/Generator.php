@@ -7,6 +7,7 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Filesystem\Filesystem;
 use RuntimeException;
 use Spinen\ConnectWise\Library\Container;
+use Spinen\ConnectWise\Library\Contracts\Container as ContainerInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -15,7 +16,7 @@ use Symfony\Component\Console\Output\OutputInterface;
  *
  * @package Spinen\ConnectWise\Generator
  */
-class Generator extends Container
+class Generator extends Container implements ContainerInterface
 {
 
     /**
