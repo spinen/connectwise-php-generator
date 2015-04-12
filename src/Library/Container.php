@@ -55,7 +55,7 @@ class Container extends LeagueContainer implements ContainerInterface
 
         $this->validate($options);
 
-        $this->addConfig($options);
+        $this->registerConfig($options);
     }
 
     /**
@@ -68,19 +68,6 @@ class Container extends LeagueContainer implements ContainerInterface
     public function __get($name)
     {
         return $this->get($name);
-    }
-
-    /**
-     * Add the config to the config key
-     *
-     * @param $config
-     */
-    private function addConfig($config)
-    {
-        $config = ($config instanceof Spinen\ConnectWise\Library\Config)
-            ?: $this->get('Spinen\\ConnectWise\\Library\\Config', [$config]);
-
-        $this->add('config', $config);
     }
 
     /**
@@ -106,6 +93,16 @@ class Container extends LeagueContainer implements ContainerInterface
     public static function getInstance()
     {
         return static::$instance;
+    }
+
+    /**
+     * Add the config to the config key
+     *
+     * @param $config
+     */
+    private function registerConfig($config)
+    {
+        $this->add('config', $this->get('Spinen\\ConnectWise\\Library\\Config', [$config]), true);
     }
 
     /**
