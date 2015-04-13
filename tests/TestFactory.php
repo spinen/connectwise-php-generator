@@ -79,6 +79,14 @@ class TestFactory
     /**
      * @return Mockery\Mock
      */
+    public static function mockClient()
+    {
+        return Mockery::mock('Spinen\\ConnectWise\\Client\\Client');
+    }
+
+    /**
+     * @return Mockery\Mock
+     */
     public static function mockDecipherDocBlock()
     {
         return Mockery::mock('Spinen\\ConnectWise\\Generator\\Processors\\DecipherDocBlock');
@@ -138,6 +146,15 @@ class TestFactory
     public static function mockInsertTypeHints()
     {
         return Mockery::mock('Spinen\\ConnectWise\\Generator\\Commands\\InsertTypeHints');
+    }
+
+    /**
+     * @return Mockery\Mock
+     */
+    public static function mockLaravelApp()
+    {
+        //return Mockery::mock('Illuminate\\Container\\Container');
+        return Mockery::mock('Illuminate\\Contracts\\Foundation\\Application');
     }
 
     /**
