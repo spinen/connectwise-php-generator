@@ -69,11 +69,18 @@ class ServiceProviderTest extends BaseTest
      */
     public function it_registers_the_client()
     {
-        $this->markTestIncomplete();
+        //        $this->markTestIncomplete();
 
-        $this->app_mock->shouldReceive('offsetGet')
+        $this->app_mock->shouldReceive('make')
                        ->with('config')
                        ->andReturn(['services' => ['connectwise' => []]])
+                       ->once();
+
+        $this->app_mock->shouldReceive('singleton')
+                       ->withArgs([
+                           'connectwise',
+                           Mockery::any(),
+                       ])
                        ->once();
 
         $this->service_provider->register();
