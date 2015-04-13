@@ -79,5 +79,4 @@ class ServiceProviderTest extends BaseTest
         $this->service_provider->register();
     }
 
-
 }
