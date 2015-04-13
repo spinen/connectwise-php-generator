@@ -73,7 +73,7 @@ class TestFactory
      */
     public static function mockClassReflector()
     {
-        return Mockery::mock('Spinen\\ConnectWise\\Generator\\Processors\\ClassReflector');
+        return Mockery::mock('Spinen\\ConnectWise\\Library\\Support\\ClassReflector');
     }
 
     /**

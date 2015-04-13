@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\ConnectWise\Generator\Processors;
+namespace Spinen\ConnectWise\Library\Support;
 
 use InvalidArgumentException;
 use ReflectionClass;
@@ -8,9 +8,9 @@ use ReflectionClass;
 /**
  * Class ClassReflector
  *
- * @package Spinen\ConnectWise\Generator\Processors
+ * @package Spinen\ConnectWise\Library\Support
  */
-class ClassReflector implements ProcessorInterface
+class ClassReflector
 {
 
     /**
@@ -21,13 +21,13 @@ class ClassReflector implements ProcessorInterface
      * @return ReflectionClass
      * @throws InvalidArgumentException
      */
-    public function process($class)
+    public function reflect($class)
     {
         if (!is_string($class)) {
             throw new InvalidArgumentException("process expects a string to work with.");
         }
 
-        return (new ReflectionClass($class));
+        return new ReflectionClass($class);
     }
 
 }

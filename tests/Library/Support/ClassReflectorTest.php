@@ -1,24 +1,31 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Processors;
+namespace Tests\Spinen\ConnectWise\Library\Support;
 
-use Spinen\ConnectWise\Generator\Processors\ClassReflector;
+use Spinen\ConnectWise\Library\Support\ClassReflector;
+use Tests\Spinen\ConnectWise\BaseTest;
 
 /**
  * Class ClassReflectorTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Processors
- * @group   generator
- * @group   processors
+ * @package Tests\Spinen\ConnectWise\Library\Support
+ * @group   library
+ * @group   support
+ * @group   reflectors
  */
 class ClassReflectorTest extends BaseTest
 {
+
+    /**
+     * @var ClassReflector
+     */
+    protected $reflector;
 
     protected function setUp()
     {
         parent::setUp();
 
-        $this->processor = new ClassReflector();
+        $this->reflector = new ClassReflector();
     }
 
     /**
@@ -26,7 +33,7 @@ class ClassReflectorTest extends BaseTest
      */
     public function it_can_be_constructed()
     {
-        $this->assertInstanceOf('Spinen\\ConnectWise\\Generator\\Processors\\ClassReflector', $this->processor);
+        $this->assertInstanceOf('Spinen\\ConnectWise\\Library\\Support\\ClassReflector', $this->reflector);
     }
 
     /**
@@ -35,7 +42,7 @@ class ClassReflectorTest extends BaseTest
      */
     public function it_raises_exception_when_constructed_without_a_string()
     {
-        $this->processor->process(null);
+        $this->reflector->reflect(null);
     }
 
     /**
@@ -44,7 +51,7 @@ class ClassReflectorTest extends BaseTest
      */
     public function it_raises_exception_when_constructed_with_something_other_than_a_string()
     {
-        $this->processor->process([]);
+        $this->reflector->reflect([]);
     }
 
     /**
@@ -52,7 +59,7 @@ class ClassReflectorTest extends BaseTest
      */
     public function it_returns_the_expected_results()
     {
-        $this->assertInstanceOf('ReflectionClass', $this->processor->process('stdClass'));
+        $this->assertInstanceOf('ReflectionClass', $this->reflector->reflect('stdClass'));
     }
 
 }

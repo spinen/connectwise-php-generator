@@ -6,6 +6,7 @@ use Illuminate\Filesystem\Filesystem;
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionMethod;
+use Spinen\ConnectWise\Library\Support\ClassReflector;
 
 /**
  * Class AddTypeHints
@@ -346,7 +347,7 @@ class AddTypeHints implements ProcessorInterface
      */
     private function reflectClass(array $contents)
     {
-        return $this->reflector->process($this->class_name_getter->process($contents));
+        return $this->reflector->reflect($this->class_name_getter->process($contents));
     }
 
 }
