@@ -17,10 +17,10 @@ const VENDOR = 'vendor';
 return [
     // Properties needed to connect to ConnectWise server
     'connectwise'         => [
-        'host'     => env_value('CONNECTWISE_URL'),
-        'company'  => env_value('COMPANY', 'company'),
-        'username' => env_value('USERNAME', 'username'),
-        'password' => env_value('PASSWORD', 'password'),
+        'host'     => env_value('CW_HOST'),
+        'company'  => env_value('CW_COMPANY'),
+        'username' => env_value('CW_USERNAME'),
+        'password' => env_value('CW_PASSWORD'),
     ],
     // Any binds that you want to do with the container
     'di'                  => [

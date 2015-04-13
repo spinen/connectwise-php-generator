@@ -19,10 +19,10 @@ class ClientTest extends BaseTest
     {
         return array_replace_recursive([
             'connectwise' => [
-                'company'  => env_value('COMPANY', 'Company'),
-                'host'     => env_value('CONNECTWISE_HOST', 'http://some.host'),
-                'password' => env_value('PASSWORD', 'Password'),
-                'username' => env_value('USERNAME', 'Username'),
+                'company'  => env_value('CW_COMPANY', 'Company'),
+                'host'     => env_value('CW_HOST', 'http://some.host'),
+                'password' => env_value('CW_PASSWORD', 'Password'),
+                'username' => env_value('CW_USERNAME', 'Username'),
             ],
         ], $options);
     }
