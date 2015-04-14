@@ -3,6 +3,7 @@
 namespace Tests\Spinen\ConnectWise\Library\Support;
 
 use Spinen\ConnectWise\Library\Support\ClassReflector;
+use stdClass;
 use Tests\Spinen\ConnectWise\BaseTest;
 
 /**
@@ -60,6 +61,10 @@ class ClassReflectorTest extends BaseTest
     public function it_returns_the_expected_results()
     {
         $this->assertInstanceOf('ReflectionClass', $this->reflector->reflect('stdClass'));
+
+        $class = new stdClass();
+
+        $this->assertInstanceOf('ReflectionClass', $this->reflector->reflect($class));
     }
 
 }

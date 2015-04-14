@@ -16,15 +16,15 @@ class ClassReflector
     /**
      * Build a Reflection of the class
      *
-     * @param string $class
+     * @param mixed $class
      *
      * @return ReflectionClass
      * @throws InvalidArgumentException
      */
     public function reflect($class)
     {
-        if (!is_string($class)) {
-            throw new InvalidArgumentException("process expects a string to work with.");
+        if (!(is_string($class)) && !(is_object($class))) {
+            throw new InvalidArgumentException("ClassReflector expects a string or object to work with.");
         }
 
         return new ReflectionClass($class);
