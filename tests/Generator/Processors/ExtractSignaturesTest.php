@@ -82,7 +82,7 @@ class ExtractSignaturesTest extends BaseTest
                               ->andReturn('SomeClass');
 
         $this->reflector_mock = TestFactory::mockClassReflector();
-        $this->reflector_mock->shouldReceive('process')
+        $this->reflector_mock->shouldReceive('reflect')
                              ->withAnyArgs()
                              ->andReturn($this->reflection_mock);
 

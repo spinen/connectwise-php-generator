@@ -3,13 +3,14 @@
 namespace Spinen\ConnectWise\Generator\Processors;
 
 use InvalidArgumentException;
+use Spinen\ConnectWise\Library\Contracts\Processor;
 
 /**
  * Class DecipherDocBlock
  *
  * @package Spinen\ConnectWise\Generator\Processors
  */
-class DecipherDocBlock implements ProcessorInterface
+class DecipherDocBlock implements Processor
 {
 
     /**

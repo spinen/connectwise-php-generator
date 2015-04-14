@@ -6,13 +6,15 @@ use Illuminate\Filesystem\Filesystem;
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionMethod;
+use Spinen\ConnectWise\Library\Support\ClassReflector;
+use Spinen\ConnectWise\Library\Contracts\Processor;
 
 /**
  * Class AddTypeHints
  *
  * @package Spinen\ConnectWise\Generator\Processors
  */
-class AddTypeHints implements ProcessorInterface
+class AddTypeHints implements Processor
 {
 
     /**
@@ -346,7 +348,7 @@ class AddTypeHints implements ProcessorInterface
      */
     private function reflectClass(array $contents)
     {
-        return $this->reflector->process($this->class_name_getter->process($contents));
+        return $this->reflector->reflect($this->class_name_getter->process($contents));
     }
 
 }

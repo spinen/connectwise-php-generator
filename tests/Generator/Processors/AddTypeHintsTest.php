@@ -143,7 +143,7 @@ EOD;
                                      ->andReturn('\\Mocked\\Namespace\\SomeClass')
                                      ->once();
 
-        $this->reflector_mock->shouldReceive('process')
+        $this->reflector_mock->shouldReceive('reflect')
                              ->with('\\Mocked\\Namespace\\SomeClass')
                              ->andReturn($this->reflection_class_mock)
                              ->once();
