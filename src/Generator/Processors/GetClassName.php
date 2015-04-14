@@ -4,13 +4,14 @@ namespace Spinen\ConnectWise\Generator\Processors;
 
 use InvalidArgumentException;
 use RuntimeException;
+use Spinen\ConnectWise\Library\Contracts\Processor;
 
 /**
  * Class GetClassName
  *
  * @package Spinen\ConnectWise\Generator\Processors
  */
-class GetClassName implements ProcessorInterface
+class GetClassName implements Processor
 {
 
     // NOTE: Order is important as we are going to concatenate them as a string in the order they are in

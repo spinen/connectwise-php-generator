@@ -4,13 +4,15 @@ namespace Spinen\ConnectWise\Generator\Processors;
 
 use InvalidArgumentException;
 use ReflectionMethod;
+use Spinen\ConnectWise\Library\Support\ClassReflector;
+use Spinen\ConnectWise\Library\Contracts\Processor;
 
 /**
  * Class ExtractSignatures
  *
  * @package Spinen\ConnectWise\Generator\Processors
  */
-class ExtractSignatures implements ProcessorInterface
+class ExtractSignatures implements Processor
 {
 
     /**
@@ -55,7 +57,7 @@ class ExtractSignatures implements ProcessorInterface
      */
     private function extractPublicMethods($fqcn)
     {
-        $class = $this->reflector->process($fqcn);
+        $class = $this->reflector->reflect($fqcn);
 
         $methods = $class->getMethods(ReflectionMethod::IS_PUBLIC);
 

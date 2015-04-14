@@ -19,6 +19,7 @@
     "require": {
         "illuminate/support": "~5.0",
         "league/container": "1.*@dev",
+        "nesbot/carbon": "1.*",
         "php": ">=5.4.0"
     },
     "require-dev": {
