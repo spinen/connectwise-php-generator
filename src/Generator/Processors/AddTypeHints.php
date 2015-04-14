@@ -7,13 +7,14 @@ use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionMethod;
 use Spinen\ConnectWise\Library\Support\ClassReflector;
+use Spinen\ConnectWise\Library\Contracts\Processor;
 
 /**
  * Class AddTypeHints
  *
  * @package Spinen\ConnectWise\Generator\Processors
  */
-class AddTypeHints implements ProcessorInterface
+class AddTypeHints implements Processor
 {
 
     /**

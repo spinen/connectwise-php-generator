@@ -5,13 +5,14 @@ namespace Spinen\ConnectWise\Generator\Processors;
 use InvalidArgumentException;
 use ReflectionMethod;
 use Spinen\ConnectWise\Library\Support\ClassReflector;
+use Spinen\ConnectWise\Library\Contracts\Processor;
 
 /**
  * Class ExtractSignatures
  *
  * @package Spinen\ConnectWise\Generator\Processors
  */
-class ExtractSignatures implements ProcessorInterface
+class ExtractSignatures implements Processor
 {
 
     /**
