@@ -5,6 +5,7 @@ namespace Tests\Spinen\ConnectWise\Client;
 use InvalidArgumentException;
 use Spinen\ConnectWise\Client\Client;
 use Tests\Spinen\ConnectWise\BaseTest;
+use Tests\Spinen\ConnectWise\TestFactory;
 
 /**
  * Class ClientTest
@@ -33,6 +34,18 @@ class ClientTest extends BaseTest
     public function it_can_be_constructed_with_good_values()
     {
         $client = new Client($this->buildConfig());
+
+        $this->assertInstanceOf('Spinen\\ConnectWise\\Client\\Client', $client);
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_be_constructed_with_a_converter_for_second_parameter()
+    {
+        $converter_mock = TestFactory::mockConverter();
+
+        $client = new Client($this->buildConfig(), $converter_mock);
 
         $this->assertInstanceOf('Spinen\\ConnectWise\\Client\\Client', $client);
     }
@@ -101,12 +114,29 @@ class ClientTest extends BaseTest
     /**
      * @test
      */
-    public function it_returns_the_expected_results()
+    public function it_returns_the_expected_results_with_multiple_result()
     {
         $client = (new Client($this->buildConfig()))->setApiNamespace('Tests\\Spinen\\ConnectWise\\Client\\Stubs');
 
-        $this->assertInstanceOf('Tests\\Spinen\\ConnectWise\\Client\\Stubs\\FunctionCallResponse',
+        $this->assertInstanceOf('Spinen\\ConnectWise\\Library\\Support\\Collection',
             $client->execute('SomeApi', 'FunctionCall', ['key' => 'value']));
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_the_expected_results_with_single_result()
+    {
+        $converter_mock = TestFactory::mockConverter();
+        $converter_mock->shouldReceive('process')
+                       ->withAnyArgs()
+                       ->andReturn(1)
+                       ->once();
+
+        $client = (new Client($this->buildConfig(),
+            $converter_mock))->setApiNamespace('Tests\\Spinen\\ConnectWise\\Client\\Stubs');
+
+        $this->assertEquals(1, $client->execute('SomeApi', 'FunctionCall', ['key' => 'value']));
     }
 
     /**
