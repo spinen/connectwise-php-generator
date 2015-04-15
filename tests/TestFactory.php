@@ -18,7 +18,7 @@ class TestFactory
      *
      * @return Mockery\Mock
      */
-    public static function makeClass(array $properties, array $methods = [])
+    public static function makeClass(array $properties = [], array $methods = [])
     {
         $class = Mockery::mock('stdClass');
 
@@ -26,11 +26,10 @@ class TestFactory
             $class->{$property} = $value;
         }
 
-        if (!empty($methods)) {
-            foreach ($methods as $method => $return) {
-                $class->shouldReceive($method)
-                      ->andReturn($return);
-            }
+        foreach ($methods as $method => $return) {
+            $class->shouldReceive($method)
+                  ->withAnyArgs()
+                  ->andReturn($return);
         }
 
         return $class;
@@ -87,6 +86,14 @@ class TestFactory
     /**
      * @return Mockery\Mock
      */
+    public static function mockConverter()
+    {
+        return Mockery::mock('Spinen\\ConnectWise\\Client\\Processors\\ConvertResponse');
+    }
+
+    /**
+     * @return Mockery\Mock
+     */
     public static function mockDecipherDocBlock()
     {
         return Mockery::mock('Spinen\\ConnectWise\\Generator\\Processors\\DecipherDocBlock');
@@ -130,6 +137,14 @@ class TestFactory
     public static function mockGetClassName()
     {
         return Mockery::mock('Spinen\\ConnectWise\\Generator\\Processors\\GetClassName');
+    }
+
+    /**
+     * @return Mockery\Mock
+     */
+    public static function mockGetGetters()
+    {
+        return Mockery::mock('Spinen\\ConnectWise\\Client\\Processors\\GetGetters');
     }
 
     /**
