@@ -135,15 +135,14 @@ class BuildSignatures extends Base implements CommandInterface
 
         $contents .= "     */" . PHP_EOL;
 
-        $contents .= "    public function " . $method . "(array \$arguments = []) {" . PHP_EOL;
-        $contents .=
-            "        return \$this->execute('" .
-            $properties['class'] .
-            "', '" .
-            $properties['method'] .
-            "', \$arguments);" .
-            PHP_EOL;
-        $contents .= "    }" . PHP_EOL . PHP_EOL;
+        $contents .= <<< EOD
+    public function {$method}(array \$arguments = []) {
+        return \$this->setApi('{$properties['class']}')
+                     ->setMethod('{$properties['method']}')
+                     ->makeFilterBuilder(\$arguments);
+    }
+
+EOD;
 
         return $contents;
     }
