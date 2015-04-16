@@ -116,10 +116,12 @@ class ClientTest extends BaseTest
      */
     public function it_returns_the_expected_results_with_multiple_result()
     {
-        $client = (new Client($this->buildConfig()))->setApiNamespace('Tests\\Spinen\\ConnectWise\\Client\\Stubs');
+        $client = (new Client($this->buildConfig()))->setApiNamespace('Tests\\Spinen\\ConnectWise\\Client\\Stubs')
+                                                    ->setApi('SomeApi')
+                                                    ->setMethod('FunctionCall');
 
         $this->assertInstanceOf('Spinen\\ConnectWise\\Library\\Support\\Collection',
-            $client->execute('SomeApi', 'FunctionCall', ['key' => 'value']));
+            $client->execute(['key' => 'value']));
     }
 
     /**
@@ -134,9 +136,11 @@ class ClientTest extends BaseTest
                        ->once();
 
         $client = (new Client($this->buildConfig(),
-            $converter_mock))->setApiNamespace('Tests\\Spinen\\ConnectWise\\Client\\Stubs');
+            $converter_mock))->setApiNamespace('Tests\\Spinen\\ConnectWise\\Client\\Stubs')
+                             ->setApi('SomeApi')
+                             ->setMethod('FunctionCall');
 
-        $this->assertEquals(1, $client->execute('SomeApi', 'FunctionCall', ['key' => 'value']));
+        $this->assertEquals(1, $client->execute(['key' => 'value']));
     }
 
     /**
@@ -168,6 +172,39 @@ class ClientTest extends BaseTest
 
         $this->assertInstanceOf('Spinen\\ConnectWise\\Client\\Client', Client::getClient());
         $this->assertEquals($client, Client::getClient());
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_a_filter_builder()
+    {
+        $client = (new Client($this->buildConfig()))->setApi('SomeApi')
+                                                    ->setMethod('SomeMethod');
+
+        $this->assertInstanceOf('Spinen\\ConnectWise\\Client\\FilterBuilder', $client->makeFilterBuilder([]));
+    }
+
+    /**
+     * @test
+     * @expectedException InvalidArgumentException
+     */
+    public function it_raises_exception_when_no_api_is_set_for_making_a_filter_builder()
+    {
+        $client = (new Client($this->buildConfig())) ->setMethod('SomeMethod');
+
+        $client->makeFilterBuilder([]);
+    }
+
+    /**
+     * @test
+     * @expectedException InvalidArgumentException
+     */
+    public function it_raises_exception_when_no_method_is_set_for_making_a_filter_builder()
+    {
+        $client = (new Client($this->buildConfig()))->setApi('SomeApi');
+
+        $client->makeFilterBuilder([]);
     }
 
     /**
