@@ -115,6 +115,8 @@ class FilterTest extends BaseTest
         array_map(function ($operator) {
             $this->assertArrayHasKey($operator, $this->filter->getOperators());
         }, $operators);
+
+        $this->assertEquals(count($operators), count($this->filter->getOperators()));
     }
 
     /**
@@ -127,6 +129,20 @@ class FilterTest extends BaseTest
         $this->filter->set('test', 'value');
 
         $this->assertTrue($this->filter->hasFilter('test'));
+    }
+
+    /**
+     * @test
+     */
+    public function it_knows_the_core_methods()
+    {
+        $core_methods = ['set', 'orderBy', 'where', 'whereRaw'];
+
+        array_map(function ($method) {
+            $this->assertTrue($this->filter->isCoreMethod($method));
+        }, $core_methods);
+
+        $this->assertFalse($this->filter->isCoreMethod('noneCore'));
     }
 
     /**
