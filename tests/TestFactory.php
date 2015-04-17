@@ -118,6 +118,14 @@ class TestFactory
     /**
      * @return Mockery\Mock
      */
+    public static function mockFilter()
+    {
+        return Mockery::mock('Spinen\\ConnectWise\\Client\\Filter');
+    }
+
+    /**
+     * @return Mockery\Mock
+     */
     public static function mockFormatCode()
     {
         return Mockery::mock('Spinen\\ConnectWise\\Generator\\Commands\\FormatCode');
