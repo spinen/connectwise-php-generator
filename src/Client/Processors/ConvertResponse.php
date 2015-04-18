@@ -4,6 +4,7 @@ namespace Spinen\ConnectWise\Client\Processors;
 
 use Carbon\Carbon;
 use Spinen\ConnectWise\Library\Contracts\Processor;
+use Spinen\ConnectWise\Library\Support\Collection;
 
 /**
  * Class ConvertResponse
@@ -12,6 +13,11 @@ use Spinen\ConnectWise\Library\Contracts\Processor;
  */
 class ConvertResponse implements Processor
 {
+
+    /**
+     * @var array
+     */
+    protected $columns = [];
 
     /**
      * @var GetGetters
@@ -78,7 +84,9 @@ class ConvertResponse implements Processor
     {
         // Multiple items to process?
         if (is_array($response)) {
-            return array_map([$this, "process"], $response);
+            $response = array_map([$this, "process"], $response);
+
+            return new Collection($response);
         }
 
         // Single value, so nothing more to do
@@ -95,12 +103,33 @@ class ConvertResponse implements Processor
 
         $unwrapped = [];
 
+        // If there are specific columns that we want, then only have those getters
+        if (!empty($this->columns)) {
+            $getters = array_intersect($this->columns, $getters);
+        }
+
         // Build values associative array to return
         foreach ($getters as $getter) {
             $unwrapped[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
         }
 
-        return $unwrapped;
+        return new Collection($unwrapped);
+    }
+
+    /**
+     * Set the columns that we need to return
+     *
+     * @param array $columns
+     *
+     * @return $this
+     */
+    public function setColumns(array $columns)
+    {
+        foreach ($columns as $column) {
+            $this->columns[] = 'get' . studly_case($column);
+        }
+
+        return $this;
     }
 
 }

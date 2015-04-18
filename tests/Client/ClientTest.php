@@ -130,6 +130,12 @@ class ClientTest extends BaseTest
     public function it_returns_the_expected_results_with_single_result()
     {
         $converter_mock = TestFactory::mockConverter();
+
+        $converter_mock->shouldReceive('setColumns')
+                       ->withAnyArgs()
+                       ->andReturnSelf()
+                       ->once();
+
         $converter_mock->shouldReceive('process')
                        ->withAnyArgs()
                        ->andReturn(1)

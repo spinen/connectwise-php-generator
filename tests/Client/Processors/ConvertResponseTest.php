@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use DateTime;
 use Mockery;
 use Spinen\ConnectWise\Client\Processors\ConvertResponse;
+use Spinen\ConnectWise\Library\Support\Collection;
 use Tests\Spinen\ConnectWise\BaseTest;
 use Tests\Spinen\ConnectWise\TestFactory;
 
@@ -77,6 +78,10 @@ class ConvertResponseTest extends BaseTest
             ],
         ];
 
+        $expected = array_map(function ($item) { return new Collection($item); }, $expected);
+
+        $expected = new Collection($expected);
+
         $response_array_one = TestFactory::makeClass([
             //'property' => 'value'
         ], [
@@ -122,6 +127,69 @@ class ConvertResponseTest extends BaseTest
     /**
      * @test
      */
+    public function it_returns_the_expected_results_when_setting_columns()
+    {
+        $date_time = new DateTime();
+
+        $expected = [
+            [
+                'Name' => 'One',
+            ],
+            [
+                'Name' => 'Two',
+            ],
+        ];
+
+        $expected = array_map(function ($item) { return new Collection($item); }, $expected);
+
+        $expected = new Collection($expected);
+
+        $response_array_one = TestFactory::makeClass([
+            //'property' => 'value'
+        ], [
+            'getDate'     => $date_time,
+            'getName'     => 'One',
+            'getProperty' => 'value',
+        ]);
+
+        $response_array_two = TestFactory::makeClass([
+            //'property' => 'value'
+        ], [
+            'getDate'     => $date_time,
+            'getName'     => 'Two',
+            'getProperty' => 'value',
+        ]);
+
+        $this->getter_mock->shouldReceive('process')
+                          ->with($response_array_one)
+                          ->andReturn([
+                              'getDate',
+                              'getName',
+                              'getProperty',
+                          ])
+                          ->once();
+
+        $this->getter_mock->shouldReceive('process')
+                          ->with($response_array_two)
+                          ->andReturn([
+                              'getDate',
+                              'getName',
+                              'getProperty',
+                          ])
+                          ->once();
+
+        $converted = $this->converter->setColumns(['name'])
+                                     ->process([
+                                         $response_array_one,
+                                         $response_array_two,
+                                     ]);
+
+        $this->assertEquals($expected, $converted);
+    }
+
+    /**
+     * @test
+     */
     public function it_returns_a_single_value_when_that_is_all_that_is_passed_in()
     {
         $this->getter_mock->shouldReceive('process')
@@ -149,6 +217,14 @@ class ConvertResponseTest extends BaseTest
                           ->once();
 
         $this->assertEquals('value', $this->converter->process($response));
+    }
+
+    /**
+     * @test
+     */
+    public function it_sets_columns_to_only_return()
+    {
+        $this->assertEquals($this->converter, $this->converter->setColumns(['column']));
     }
 
 }
