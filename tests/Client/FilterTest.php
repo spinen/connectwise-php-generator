@@ -102,19 +102,19 @@ class FilterTest extends BaseTest
     public function it_returns_the_array_of_operators()
     {
         $operators = [
-            '!=',
-            '<=',
-            '>=',
-            '=',
-            '<',
-            '>',
-            'contains',
-            'like',
+            '!='       => 'NotEquals',
+            '<='       => 'LessThanEquals',
+            '>='       => 'GreaterThanEquals',
+            '='        => 'Equals',
+            '<'        => 'LessThan',
+            '>'        => 'GreaterThan',
+            'contains' => 'Contains',
+            'like'     => 'Like',
         ];
 
-        array_map(function ($operator) {
-            $this->assertArrayHasKey($operator, $this->filter->getOperators());
-        }, $operators);
+        foreach ($operators as $operator => $description) {
+            $this->assertArraySubset([$operator => $description], $this->filter->getOperators());
+        }
 
         $this->assertEquals(count($operators), count($this->filter->getOperators()));
     }
@@ -376,7 +376,8 @@ class FilterTest extends BaseTest
 
         $this->assertEquals($this->filter, $this->filter->whereRaw("condition = 'value2'", 'and'));
 
-        $this->assertEquals(['Conditions' => "condition = 'value1' AND condition = 'value2'"], $this->filter->getFilter());
+        $this->assertEquals(['Conditions' => "condition = 'value1' AND condition = 'value2'"],
+            $this->filter->getFilter());
     }
 
     /**
