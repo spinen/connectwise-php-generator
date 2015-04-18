@@ -248,11 +248,21 @@ class FilterTest extends BaseTest
     /**
      * @test
      */
-    public function it_properly_escapes_a_bool_when_setting_it_and_returns_itself()
+    public function it_properly_escapes_a_true_bool_when_setting_it_and_returns_itself()
     {
         $this->assertEquals($this->filter, $this->filter->set('bool', true));
 
-        $this->assertEquals(['Bool' => true], $this->filter->getFilter());
+        $this->assertEquals(['Bool' => 'true'], $this->filter->getFilter());
+    }
+
+    /**
+     * @test
+     */
+    public function it_properly_escapes_a_false_bool_when_setting_it_and_returns_itself()
+    {
+        $this->assertEquals($this->filter, $this->filter->set('bool', false));
+
+        $this->assertEquals(['Bool' => 'false'], $this->filter->getFilter());
     }
 
     /**
