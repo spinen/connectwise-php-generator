@@ -62,11 +62,11 @@ class FilterTest extends BaseTest
     {
         $this->filter->set('test', 'value');
 
-        $this->assertArrayHasKey('test', $this->filter->getFilter());
+        $this->assertArrayHasKey('Test', $this->filter->getFilter());
 
         $this->filter->delete('test');
 
-        $this->assertArrayNotHasKey('test', $this->filter->getFilter());
+        $this->assertArrayNotHasKey('Test', $this->filter->getFilter());
     }
 
     /**
@@ -171,7 +171,7 @@ class FilterTest extends BaseTest
     {
         $this->assertEquals($this->filter, $this->filter->orderBy('column'));
 
-        $this->assertEquals(['OrderBy' => 'column asc'], $this->filter->getFilter());
+        $this->assertEquals(['OrderBy' => 'Column asc'], $this->filter->getFilter());
     }
 
     /**
@@ -181,7 +181,7 @@ class FilterTest extends BaseTest
     {
         $this->assertEquals($this->filter, $this->filter->orderBy('column', 'DESC'));
 
-        $this->assertEquals(['OrderBy' => 'column desc'], $this->filter->getFilter());
+        $this->assertEquals(['OrderBy' => 'Column desc'], $this->filter->getFilter());
     }
 
     /**
@@ -193,7 +193,7 @@ class FilterTest extends BaseTest
 
         $this->assertEquals($this->filter, $this->filter->orderBy('column2', 'desc', 'and'));
 
-        $this->assertEquals(['OrderBy' => 'column1 asc, column2 desc'], $this->filter->getFilter());
+        $this->assertEquals(['OrderBy' => 'Column1 asc, Column2 desc'], $this->filter->getFilter());
     }
 
     /**
@@ -205,7 +205,7 @@ class FilterTest extends BaseTest
 
         $this->assertEquals($this->filter, $this->filter->orderBy('column2', 'desc'));
 
-        $this->assertEquals(['OrderBy' => 'column2 desc'], $this->filter->getFilter());
+        $this->assertEquals(['OrderBy' => 'Column2 desc'], $this->filter->getFilter());
     }
 
     /**
@@ -242,7 +242,7 @@ class FilterTest extends BaseTest
     {
         $this->assertEquals($this->filter, $this->filter->set('bool', true));
 
-        $this->assertEquals(['bool' => true], $this->filter->getFilter());
+        $this->assertEquals(['Bool' => true], $this->filter->getFilter());
     }
 
     /**
@@ -254,7 +254,7 @@ class FilterTest extends BaseTest
 
         $this->assertEquals($this->filter, $this->filter->set('date', $now));
 
-        $this->assertEquals(['date' => "[" . $now->toIso8601String() . "]"], $this->filter->getFilter());
+        $this->assertEquals(['Date' => "[" . $now->toIso8601String() . "]"], $this->filter->getFilter());
     }
 
     /**
@@ -264,7 +264,7 @@ class FilterTest extends BaseTest
     {
         $this->assertEquals($this->filter, $this->filter->set('integer', 1));
 
-        $this->assertEquals(['integer' => 1], $this->filter->getFilter());
+        $this->assertEquals(['Integer' => 1], $this->filter->getFilter());
     }
 
     /**
@@ -274,7 +274,7 @@ class FilterTest extends BaseTest
     {
         $this->assertEquals($this->filter, $this->filter->set('null', null));
 
-        $this->assertEquals(['null' => "null"], $this->filter->getFilter());
+        $this->assertEquals(['Null' => "null"], $this->filter->getFilter());
     }
 
     /**
@@ -284,7 +284,7 @@ class FilterTest extends BaseTest
     {
         $this->assertEquals($this->filter, $this->filter->set('string', "value's"));
 
-        $this->assertEquals(['string' => "'value\\'s'"], $this->filter->getFilter());
+        $this->assertEquals(['String' => "'value\\'s'"], $this->filter->getFilter());
     }
 
     /**
@@ -303,7 +303,7 @@ class FilterTest extends BaseTest
     {
         $this->assertEquals($this->filter, $this->filter->where('column', 'value'));
 
-        $this->assertEquals(['Conditions' => "column = 'value'"], $this->filter->getFilter());
+        $this->assertEquals(['Conditions' => "Column = 'value'"], $this->filter->getFilter());
     }
 
     /**
@@ -315,7 +315,7 @@ class FilterTest extends BaseTest
 
         $this->assertEquals($this->filter, $this->filter->where('column2', 'value2', '>=', 'and'));
 
-        $this->assertEquals(['Conditions' => "column1 = 'value1' AND column2 >= 'value2'"], $this->filter->getFilter());
+        $this->assertEquals(['Conditions' => "Column1 = 'value1' AND Column2 >= 'value2'"], $this->filter->getFilter());
     }
 
     /**
@@ -327,7 +327,7 @@ class FilterTest extends BaseTest
 
         $this->assertEquals($this->filter, $this->filter->where('column2', 'value2', '>='));
 
-        $this->assertEquals(['Conditions' => "column2 >= 'value2'"], $this->filter->getFilter());
+        $this->assertEquals(['Conditions' => "Column2 >= 'value2'"], $this->filter->getFilter());
     }
 
     /**
