@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "79f2fecd77aa1327cf412c50069d5e68",
+    "hash": "5cf1c0e572839f96a898a73b201ed885",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -64,16 +64,16 @@
         },
         {
             "name": "dericofilho/fmt",
-            "version": "7.22.0",
+            "version": "7.22.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dericofilho/php.tools.git",
-                "reference": "2e8694ecde01644bf6b6084c096d450c854a40be"
+                "reference": "88f710c1b31fca13099ee6163a19ee4ad71136aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dericofilho/php.tools/zipball/2e8694ecde01644bf6b6084c096d450c854a40be",
-                "reference": "2e8694ecde01644bf6b6084c096d450c854a40be",
+                "url": "https://api.github.com/repos/dericofilho/php.tools/zipball/88f710c1b31fca13099ee6163a19ee4ad71136aa",
+                "reference": "88f710c1b31fca13099ee6163a19ee4ad71136aa",
                 "shasum": ""
             },
             "require": {
@@ -113,7 +113,7 @@
                 "psr2",
                 "style"
             ],
-            "time": "2015-04-11 20:08:27"
+            "time": "2015-04-16 07:59:19"
         },
         {
             "name": "doctrine/inflector",
@@ -327,7 +327,7 @@
         },
         {
             "name": "league/container",
-            "version": "1.x-dev",
+            "version": "1.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/container.git",
@@ -2189,9 +2189,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "league/container": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
