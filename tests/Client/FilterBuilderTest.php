@@ -116,7 +116,7 @@ class FilterBuilderTest extends BaseTest
                           ->once();
 
         $this->client_mock->shouldReceive('execute')
-                          ->with([])
+                          ->with([], [])
                           ->andReturn("Results")
                           ->once();
 
@@ -138,7 +138,7 @@ class FilterBuilderTest extends BaseTest
                           ->once();
 
         $this->client_mock->shouldReceive('execute')
-                          ->with(['ReturnFields' => ['Column1, Column2']])
+                          ->withArgs([['ReturnFields' => ['Column1, Column2']], ['Column1, Column2']])
                           ->andReturn("Results")
                           ->once();
 
