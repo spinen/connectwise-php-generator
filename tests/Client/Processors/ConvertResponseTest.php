@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use DateTime;
 use Mockery;
 use Spinen\ConnectWise\Client\Processors\ConvertResponse;
+use Spinen\ConnectWise\Library\Support\Collection;
 use Tests\Spinen\ConnectWise\BaseTest;
 use Tests\Spinen\ConnectWise\TestFactory;
 
@@ -115,6 +116,10 @@ class ConvertResponseTest extends BaseTest
             $response_array_one,
             $response_array_two,
         ]);
+
+        $expected = array_map(function ($item) { return new Collection($item); }, $expected);
+
+        $expected = new Collection($expected);
 
         $this->assertEquals($expected, $converted);
     }
