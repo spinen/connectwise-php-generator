@@ -238,6 +238,16 @@ class FilterTest extends BaseTest
     /**
      * @test
      */
+    public function it_properly_escapes_an_array_when_setting_it_and_returns_itself()
+    {
+        $this->assertEquals($this->filter, $this->filter->set('array', ['One', 'Two']));
+
+        $this->assertEquals(['Array' => ['One', 'Two']], $this->filter->getFilter());
+    }
+
+    /**
+     * @test
+     */
     public function it_properly_escapes_a_bool_when_setting_it_and_returns_itself()
     {
         $this->assertEquals($this->filter, $this->filter->set('bool', true));
