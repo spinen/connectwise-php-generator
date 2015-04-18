@@ -18,9 +18,10 @@ trait Signature
      */
     public function activityApiGetActivity(array $arguments = [])
     {
-        return $this->execute('ActivityApi', 'GetActivity', $arguments);
+        return $this->setApi('ActivityApi')
+                    ->setMethod('GetActivity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an activity by database record id. If no activity exists with the given id, an error is returned.
      *
@@ -29,9 +30,10 @@ trait Signature
      */
     public function activityApiLoadActivity(array $arguments = [])
     {
-        return $this->execute('ActivityApi', 'LoadActivity', $arguments);
+        return $this->setApi('ActivityApi')
+                    ->setMethod('LoadActivity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new activity.
      *
@@ -40,9 +42,10 @@ trait Signature
      */
     public function activityApiAddActivity(array $arguments = [])
     {
-        return $this->execute('ActivityApi', 'AddActivity', $arguments);
+        return $this->setApi('ActivityApi')
+                    ->setMethod('AddActivity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing activity.
      *
@@ -51,9 +54,10 @@ trait Signature
      */
     public function activityApiUpdateActivity(array $arguments = [])
     {
-        return $this->execute('ActivityApi', 'UpdateActivity', $arguments);
+        return $this->setApi('ActivityApi')
+                    ->setMethod('UpdateActivity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an activity. If the activity Id is 0, the activity is added. If non-zero, the existing activity with that Id is updated.
      *
@@ -62,9 +66,10 @@ trait Signature
      */
     public function activityApiAddOrUpdateActivity(array $arguments = [])
     {
-        return $this->execute('ActivityApi', 'AddOrUpdateActivity', $arguments);
+        return $this->setApi('ActivityApi')
+                    ->setMethod('AddOrUpdateActivity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an activity by database record id.
      *
@@ -73,9 +78,10 @@ trait Signature
      */
     public function activityApiDeleteActivity(array $arguments = [])
     {
-        return $this->execute('ActivityApi', 'DeleteActivity', $arguments);
+        return $this->setApi('ActivityApi')
+                    ->setMethod('DeleteActivity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds activity information by a set of conditions.
      *
@@ -84,9 +90,10 @@ trait Signature
      */
     public function activityApiFindActivities(array $arguments = [])
     {
-        return $this->execute('ActivityApi', 'FindActivities', $arguments);
+        return $this->setApi('ActivityApi')
+                    ->setMethod('FindActivities')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an agreement site by database record id. If no agreement site exists with the given id, null is returned.
      *
@@ -95,9 +102,10 @@ trait Signature
      */
     public function agreementApiGetAgreementSite(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreementSite', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreementSite')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an agreement site
      *
@@ -106,9 +114,10 @@ trait Signature
      */
     public function agreementApiAddOrUpdateAgreementSite(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrUpdateAgreementSite', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrUpdateAgreementSite')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a list of Agreement Sites
      *
@@ -117,9 +126,10 @@ trait Signature
      */
     public function agreementApiFindAgreementSites(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'FindAgreementSites', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('FindAgreementSites')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an agreement site from agreement
      *
@@ -128,9 +138,10 @@ trait Signature
      */
     public function agreementApiDeleteAgreementSite(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'DeleteAgreementSite', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('DeleteAgreementSite')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an agreement work type by database record id. If no agreement work type exists with the given id, null is returned.
      *
@@ -139,9 +150,10 @@ trait Signature
      */
     public function agreementApiGetAgreementWorkType(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreementWorkType', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreementWorkType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an agreement worktype
      *
@@ -150,9 +162,10 @@ trait Signature
      */
     public function agreementApiAddOrUpdateAgreementWorkType(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrUpdateAgreementWorkType', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrUpdateAgreementWorkType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a list of Agreement WorkTypes
      *
@@ -161,9 +174,10 @@ trait Signature
      */
     public function agreementApiFindAgreementWorkTypes(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'FindAgreementWorkTypes', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('FindAgreementWorkTypes')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an agreement worktype from agreement
      *
@@ -172,9 +186,10 @@ trait Signature
      */
     public function agreementApiDeleteAgreementWorkType(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'DeleteAgreementWorkType', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('DeleteAgreementWorkType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an agreement work role by database record id. If no agreement work role exists with the given id, null is returned.
      *
@@ -183,9 +198,10 @@ trait Signature
      */
     public function agreementApiGetAgreementWorkRole(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreementWorkRole', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreementWorkRole')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an agreement workrole
      *
@@ -194,9 +210,10 @@ trait Signature
      */
     public function agreementApiAddOrUpdateAgreementWorkRole(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrUpdateAgreementWorkRole', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrUpdateAgreementWorkRole')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a list of Agreement WorkRoles
      *
@@ -205,9 +222,10 @@ trait Signature
      */
     public function agreementApiFindAgreementWorkRoles(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'FindAgreementWorkRoles', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('FindAgreementWorkRoles')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an agreement workrole from agreement
      *
@@ -216,9 +234,10 @@ trait Signature
      */
     public function agreementApiDeleteAgreementWorkRole(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'DeleteAgreementWorkRole', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('DeleteAgreementWorkRole')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an agreement adjustment by database record id. If no agreement adjustment exists with the given id, null is returned.
      *
@@ -227,9 +246,10 @@ trait Signature
      */
     public function agreementApiGetAgreementAdjustment(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreementAdjustment', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreementAdjustment')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an agreement adjustment
      *
@@ -238,9 +258,10 @@ trait Signature
      */
     public function agreementApiAddOrUpdateAgreementAdjustment(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrUpdateAgreementAdjustment', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrUpdateAgreementAdjustment')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a list of Agreement Adjustment
      *
@@ -249,9 +270,10 @@ trait Signature
      */
     public function agreementApiFindAgreementAdjustments(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'FindAgreementAdjustments', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('FindAgreementAdjustments')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an agreement adjustment
      *
@@ -260,9 +282,10 @@ trait Signature
      */
     public function agreementApiDeleteAgreementAdjustment(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'DeleteAgreementAdjustment', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('DeleteAgreementAdjustment')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an agreement by database record id. If no agreement exists with the given id, null is returned.
      *
@@ -271,9 +294,10 @@ trait Signature
      */
     public function agreementApiGetAgreement(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreement', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreement')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an agreement
      *
@@ -282,9 +306,10 @@ trait Signature
      */
     public function agreementApiDeleteAgreement(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'DeleteAgreement', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('DeleteAgreement')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a list of Agreements
      *
@@ -293,9 +318,10 @@ trait Signature
      */
     public function agreementApiFindAgreements(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'FindAgreements', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('FindAgreements')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an agreement
      *
@@ -304,9 +330,10 @@ trait Signature
      */
     public function agreementApiAddOrUpdateAgreement(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrUpdateAgreement', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrUpdateAgreement')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an agreement addition by database record id. If no agreement addition exists with the given id, null is returned.
      *
@@ -315,9 +342,10 @@ trait Signature
      */
     public function agreementApiGetAgreementAddition(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreementAddition', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreementAddition')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an agreement
      *
@@ -326,9 +354,10 @@ trait Signature
      */
     public function agreementApiAddOrUpdateAgreementAddition(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrUpdateAgreementAddition', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrUpdateAgreementAddition')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a list of Agreement Additions
      *
@@ -337,9 +366,10 @@ trait Signature
      */
     public function agreementApiFindAgreementAdditions(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'FindAgreementAdditions', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('FindAgreementAdditions')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an agreement addition
      *
@@ -348,9 +378,10 @@ trait Signature
      */
     public function agreementApiDeleteAgreementAddition(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'DeleteAgreementAddition', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('DeleteAgreementAddition')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an Agreement WorkType Exclusion by database record id. If no Agreement WorkRole Exclusion exists with the given id, null is returned
      *
@@ -359,9 +390,10 @@ trait Signature
      */
     public function agreementApiGetAgreementWorkRoleExclusion(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreementWorkRoleExclusion', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreementWorkRoleExclusion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an Agreement WorkRole Exclusion by database record id. If no Agreement WorkType Exclusion exists with the given id, null is returned
      *
@@ -370,9 +402,10 @@ trait Signature
      */
     public function agreementApiGetAgreementWorkTypeExclusion(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreementWorkTypeExclusion', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreementWorkTypeExclusion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a list of Agreement Exclusions
      *
@@ -381,9 +414,10 @@ trait Signature
      */
     public function agreementApiFindAgreementExclusions(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'FindAgreementExclusions', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('FindAgreementExclusions')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or removes an agreement work type exclusion
      *
@@ -392,9 +426,10 @@ trait Signature
      */
     public function agreementApiAddOrRemoveAgreementWorkTypeExclusion(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrRemoveAgreementWorkTypeExclusion', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrRemoveAgreementWorkTypeExclusion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or removes an agreement work role exclusion
      *
@@ -403,9 +438,10 @@ trait Signature
      */
     public function agreementApiAddOrRemoveAgreementWorkRoleExclusion(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrRemoveAgreementWorkRoleExclusion', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrRemoveAgreementWorkRoleExclusion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an agreement board default by database record id. If no agreement board default exists with the given id, null is returned
      *
@@ -414,9 +450,10 @@ trait Signature
      */
     public function agreementApiGetAgreementBoardDefault(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'GetAgreementBoardDefault', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('GetAgreementBoardDefault')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a list of Agreement board defaults
      *
@@ -425,9 +462,10 @@ trait Signature
      */
     public function agreementApiFindAgreementBoardDefaults(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'FindAgreementBoardDefaults', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('FindAgreementBoardDefaults')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an agreement board default
      *
@@ -436,9 +474,10 @@ trait Signature
      */
     public function agreementApiAddOrUpdateAgreementBoardDefault(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'AddOrUpdateAgreementBoardDefault', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('AddOrUpdateAgreementBoardDefault')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an agreement board default
      *
@@ -447,9 +486,10 @@ trait Signature
      */
     public function agreementApiDeleteAgreementBoardDefault(array $arguments = [])
     {
-        return $this->execute('AgreementApi', 'DeleteAgreementBoardDefault', $arguments);
+        return $this->setApi('AgreementApi')
+                    ->setMethod('DeleteAgreementBoardDefault')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a company by database record id. If no company exists with the given id, null is returned.
      *
@@ -458,9 +498,10 @@ trait Signature
      */
     public function companyApiGetCompany(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'GetCompany', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('GetCompany')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a company by database record id. If no company exists with the given id, an error is returned.
      *
@@ -469,9 +510,10 @@ trait Signature
      */
     public function companyApiLoadCompany(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'LoadCompany', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('LoadCompany')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new company.
      *
@@ -480,9 +522,10 @@ trait Signature
      */
     public function companyApiAddCompany(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'AddCompany', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('AddCompany')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing company.
      *
@@ -491,9 +534,10 @@ trait Signature
      */
     public function companyApiUpdateCompany(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'UpdateCompany', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('UpdateCompany')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a company. If the company Id is 0, the company is added. If non-zero, the existing company with that Id is updated.
      *
@@ -502,9 +546,10 @@ trait Signature
      */
     public function companyApiAddOrUpdateCompany(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'AddOrUpdateCompany', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('AddOrUpdateCompany')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a company by database record id.
      *
@@ -513,9 +558,10 @@ trait Signature
      */
     public function companyApiDeleteCompany(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'DeleteCompany', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('DeleteCompany')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds company information by a set of conditions.
      *
@@ -524,9 +570,10 @@ trait Signature
      */
     public function companyApiFindCompanies(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'FindCompanies', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('FindCompanies')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Sets an existing contact as the default contact for a company.
      *
@@ -535,9 +582,10 @@ trait Signature
      */
     public function companyApiSetCompanyDefaultContact(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'SetCompanyDefaultContact', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('SetCompanyDefaultContact')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the company profile for a given company.
      *
@@ -546,9 +594,10 @@ trait Signature
      */
     public function companyApiGetCompanyProfile(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'GetCompanyProfile', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('GetCompanyProfile')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates the company profile for a given company.
      *
@@ -557,9 +606,10 @@ trait Signature
      */
     public function companyApiUpdateCompanyProfile(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'UpdateCompanyProfile', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('UpdateCompanyProfile')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Obtains all Notes written against a given company.
      *
@@ -568,9 +618,10 @@ trait Signature
      */
     public function companyApiGetAllCompanyNotes(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'GetAllCompanyNotes', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('GetAllCompanyNotes')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Obtains a specific Note written against a given company.
      *
@@ -579,9 +630,10 @@ trait Signature
      */
     public function companyApiGetCompanyNote(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'GetCompanyNote', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('GetCompanyNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates a specific Note written against a given company. If the Note Id is 0, the note is added. If non-zero, the existing note with that Id is updated.
      *
@@ -590,9 +642,10 @@ trait Signature
      */
     public function companyApiAddOrUpdateCompanyNote(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'AddOrUpdateCompanyNote', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('AddOrUpdateCompanyNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a specific Note written against a given company.
      *
@@ -601,9 +654,10 @@ trait Signature
      */
     public function companyApiDeleteCompanyNote(array $arguments = [])
     {
-        return $this->execute('CompanyApi', 'DeleteCompanyNote', $arguments);
+        return $this->setApi('CompanyApi')
+                    ->setMethod('DeleteCompanyNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a configuration by database record id. If no configuration exists with the given id, null is returned.
      *
@@ -612,9 +666,10 @@ trait Signature
      */
     public function configurationApiGetConfiguration(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'GetConfiguration', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('GetConfiguration')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a configuration by database record id. If no configuration exists with the given id, an error is returned.
      *
@@ -623,9 +678,10 @@ trait Signature
      */
     public function configurationApiLoadConfiguration(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'LoadConfiguration', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('LoadConfiguration')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a configuration by database record id. If no configuration exists with the given id, null is returned.
      *
@@ -634,9 +690,10 @@ trait Signature
      */
     public function configurationApiFindConfigurations(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'FindConfigurations', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('FindConfigurations')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a count of available configurations.  Optionally filters by the supplied conditions.
      *
@@ -645,9 +702,10 @@ trait Signature
      */
     public function configurationApiFindConfigurationCount(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'FindConfigurationCount', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('FindConfigurationCount')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Add a new Configuration.
      *
@@ -656,9 +714,10 @@ trait Signature
      */
     public function configurationApiAddConfiguration(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'AddConfiguration', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('AddConfiguration')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Update an existing configuration.
      *
@@ -667,9 +726,10 @@ trait Signature
      */
     public function configurationApiUpdateConfiguration(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'UpdateConfiguration', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('UpdateConfiguration')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a configuration.
      *
@@ -678,9 +738,10 @@ trait Signature
      */
     public function configurationApiAddOrUpdateConfiguration(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'AddOrUpdateConfiguration', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('AddOrUpdateConfiguration')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Delete an existing configuration
      *
@@ -689,9 +750,10 @@ trait Signature
      */
     public function configurationApiDeleteConfiguration(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'DeleteConfiguration', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('DeleteConfiguration')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds Configuration Types
      *
@@ -700,9 +762,10 @@ trait Signature
      */
     public function configurationApiFindConfigurationTypes(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'FindConfigurationTypes', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('FindConfigurationTypes')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a configuration type by database record id. If no configuration exists with the given id, null is returned.
      *
@@ -711,9 +774,10 @@ trait Signature
      */
     public function configurationApiGetConfigurationType(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'GetConfigurationType', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('GetConfigurationType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a configuration type by database record id. If no configuration exists with the given id, an error is returned.
      *
@@ -722,9 +786,10 @@ trait Signature
      */
     public function configurationApiLoadConfigurationType(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'LoadConfigurationType', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('LoadConfigurationType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing configuration type.
      *
@@ -733,9 +798,10 @@ trait Signature
      */
     public function configurationApiUpdateConfigurationType(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'UpdateConfigurationType', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('UpdateConfigurationType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new configuration type.
      *
@@ -744,9 +810,10 @@ trait Signature
      */
     public function configurationApiAddConfigurationType(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'AddConfigurationType', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('AddConfigurationType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a configuration type.
      *
@@ -755,9 +822,10 @@ trait Signature
      */
     public function configurationApiAddOrUpdateConfigurationType(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'AddOrUpdateConfigurationType', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('AddOrUpdateConfigurationType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an existing configuration type.
      *
@@ -766,9 +834,10 @@ trait Signature
      */
     public function configurationApiDeleteConfigurationType(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'DeleteConfigurationType', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('DeleteConfigurationType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a question from an existing configuration type.
      *
@@ -777,9 +846,10 @@ trait Signature
      */
     public function configurationApiDeleteConfigurationTypeQuestion(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'DeleteConfigurationTypeQuestion', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('DeleteConfigurationTypeQuestion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a possible response from an existing configuration type question.
      *
@@ -788,9 +858,10 @@ trait Signature
      */
     public function configurationApiDeletePossibleResponse(array $arguments = [])
     {
-        return $this->execute('ConfigurationApi', 'DeletePossibleResponse', $arguments);
+        return $this->setApi('ConfigurationApi')
+                    ->setMethod('DeletePossibleResponse')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets all notes for contact by database record id. If no contact exists with the given id, null is returned.
      *
@@ -799,9 +870,10 @@ trait Signature
      */
     public function contactApiGetAllContactNotes(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetAllContactNotes', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetAllContactNotes')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a note for contact by database record id. If no contact exists with the given id, null is returned.
      *
@@ -810,9 +882,10 @@ trait Signature
      */
     public function contactApiGetContactNote(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetContactNote', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetContactNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a contact note. If the note Id is 0, and the contactId is set; the note is added. If non-zero, the existing note with that Id is updated.
      *
@@ -821,9 +894,10 @@ trait Signature
      */
     public function contactApiAddOrUpdateContactNote(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'AddOrUpdateContactNote', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('AddOrUpdateContactNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a note by database record id.
      *
@@ -832,9 +906,10 @@ trait Signature
      */
     public function contactApiDeleteNote(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'DeleteNote', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('DeleteNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets all communication items for contact by database record id. If no contact exists with the given id, null is returned.
      *
@@ -843,9 +918,10 @@ trait Signature
      */
     public function contactApiGetAllContactCommunicationItems(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetAllContactCommunicationItems', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetAllContactCommunicationItems')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets all communication types and descriptions.
      *
@@ -854,9 +930,10 @@ trait Signature
      */
     public function contactApiGetAllCommunicationTypesAndDescription(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetAllCommunicationTypesAndDescription', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetAllCommunicationTypesAndDescription')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a communication item for contact by database record contactId. If no contact exists with the given id, null is returned.
      *
@@ -865,9 +942,10 @@ trait Signature
      */
     public function contactApiGetContactCommunicationItem(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetContactCommunicationItem', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetContactCommunicationItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a communication item. If the communicationItem Id is 0, the communicationItem is added. If non-zero, the existing communicationItem with that Id is updated.
      *
@@ -876,9 +954,10 @@ trait Signature
      */
     public function contactApiAddOrUpdateContactCommunicationItem(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'AddOrUpdateContactCommunicationItem', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('AddOrUpdateContactCommunicationItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a communication by database record for contactId, communcationType, and communicationDescription.
      *
@@ -887,9 +966,10 @@ trait Signature
      */
     public function contactApiDeleteContactCommunicationItem(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'DeleteContactCommunicationItem', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('DeleteContactCommunicationItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Sets the default communicationType for contactId, communcationType, and communicationDescription.
      *
@@ -898,9 +978,10 @@ trait Signature
      */
     public function contactApiSetDefaultContactCommunicationItem(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'SetDefaultContactCommunicationItem', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('SetDefaultContactCommunicationItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a contact by database record id. If no contact exists with the given id, null is returned.
      *
@@ -909,9 +990,10 @@ trait Signature
      */
     public function contactApiGetContact(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetContact', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetContact')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a contact by database record id. If no contact exists with the given id, an error is returned.
      *
@@ -920,9 +1002,10 @@ trait Signature
      */
     public function contactApiLoadContact(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'LoadContact', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('LoadContact')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a contact. If the contact Id is 0, the contact is added. If non-zero, the existing contact with that Id is updated.
      *
@@ -931,9 +1014,10 @@ trait Signature
      */
     public function contactApiAddOrUpdateContact(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'AddOrUpdateContact', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('AddOrUpdateContact')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a contact by database record id.
      *
@@ -942,9 +1026,10 @@ trait Signature
      */
     public function contactApiDeleteContact(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'DeleteContact', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('DeleteContact')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds contact information by a set of conditions.
      *
@@ -953,9 +1038,10 @@ trait Signature
      */
     public function contactApiFindContacts(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'FindContacts', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('FindContacts')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds a count of available contacts by a set of conditions.
      *
@@ -964,9 +1050,10 @@ trait Signature
      */
     public function contactApiFindContactCount(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'FindContactCount', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('FindContactCount')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a contact to a specified group.
      *
@@ -975,9 +1062,10 @@ trait Signature
      */
     public function contactApiAddContactToGroup(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'AddContactToGroup', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('AddContactToGroup')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Removes a contact from the specified group.
      *
@@ -986,9 +1074,10 @@ trait Signature
      */
     public function contactApiRemoveContactFromGroup(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'RemoveContactFromGroup', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('RemoveContactFromGroup')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Authenticate a contact logging into the portal.
      *
@@ -997,9 +1086,10 @@ trait Signature
      */
     public function contactApiAuthenticate(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'Authenticate', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('Authenticate')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Return the configuration settings for the specified portal.
      *
@@ -1008,9 +1098,10 @@ trait Signature
      */
     public function contactApiGetPortalConfigSettings(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetPortalConfigSettings', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetPortalConfigSettings')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Return the security settings for the contact logged into the portal.
      *
@@ -1019,9 +1110,10 @@ trait Signature
      */
     public function contactApiGetPortalSecurity(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetPortalSecurity', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetPortalSecurity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Get the login page customizations for the specified portal.
      *
@@ -1030,9 +1122,10 @@ trait Signature
      */
     public function contactApiGetPortalLoginCustomizations(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetPortalLoginCustomizations', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetPortalLoginCustomizations')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Runs the "Forgot Password" process on the server.
      *
@@ -1041,9 +1134,10 @@ trait Signature
      */
     public function contactApiRequestPassword(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'RequestPassword', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('RequestPassword')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an avatar image from the server.
      *
@@ -1052,9 +1146,10 @@ trait Signature
      */
     public function contactApiGetAvatarImage(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetAvatarImage', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetAvatarImage')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns the contact presence status
      *
@@ -1063,9 +1158,10 @@ trait Signature
      */
     public function contactApiGetPresenceStatus(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'GetPresenceStatus', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('GetPresenceStatus')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates the contact presence status
      *
@@ -1074,9 +1170,10 @@ trait Signature
      */
     public function contactApiUpdatePresenceStatus(array $arguments = [])
     {
-        return $this->execute('ContactApi', 'UpdatePresenceStatus', $arguments);
+        return $this->setApi('ContactApi')
+                    ->setMethod('UpdatePresenceStatus')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a document to the application
      *
@@ -1085,9 +1182,10 @@ trait Signature
      */
     public function documentApiAddDocuments(array $arguments = [])
     {
-        return $this->execute('DocumentApi', 'AddDocuments', $arguments);
+        return $this->setApi('DocumentApi')
+                    ->setMethod('AddDocuments')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the document for the specified documentId
      *
@@ -1096,9 +1194,10 @@ trait Signature
      */
     public function documentApiGetDocument(array $arguments = [])
     {
-        return $this->execute('DocumentApi', 'GetDocument', $arguments);
+        return $this->setApi('DocumentApi')
+                    ->setMethod('GetDocument')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a document associated with the objectId and table reference
      *
@@ -1107,9 +1206,10 @@ trait Signature
      */
     public function documentApiDeleteDocument(array $arguments = [])
     {
-        return $this->execute('DocumentApi', 'DeleteDocument', $arguments);
+        return $this->setApi('DocumentApi')
+                    ->setMethod('DeleteDocument')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a List of Documents
      *
@@ -1118,9 +1218,10 @@ trait Signature
      */
     public function documentApiFindDocuments(array $arguments = [])
     {
-        return $this->execute('DocumentApi', 'FindDocuments', $arguments);
+        return $this->setApi('DocumentApi')
+                    ->setMethod('FindDocuments')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an invoice by database record id. If no invoice exists with the given id, null is returned.
      *
@@ -1129,9 +1230,10 @@ trait Signature
      */
     public function invoiceApiGetInvoice(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'GetInvoice', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('GetInvoice')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an invoice by database record id. If no invoice exists with the given id, an error is returned.
      *
@@ -1140,9 +1242,10 @@ trait Signature
      */
     public function invoiceApiLoadInvoice(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'LoadInvoice', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('LoadInvoice')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an invoice by database record invoice number. If no invoice exists with the given number, null is returned.
      *
@@ -1151,9 +1254,10 @@ trait Signature
      */
     public function invoiceApiGetInvoiceByInvoiceNumber(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'GetInvoiceByInvoiceNumber', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('GetInvoiceByInvoiceNumber')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds invoice information by a set of conditions, filtering by status.
      *
@@ -1162,9 +1266,10 @@ trait Signature
      */
     public function invoiceApiFindInvoices(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'FindInvoices', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('FindInvoices')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds a count of available invoices by a set of conditions.
      *
@@ -1173,9 +1278,10 @@ trait Signature
      */
     public function invoiceApiFindInvoiceCount(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'FindInvoiceCount', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('FindInvoiceCount')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the PDF for the specified Invoice record.  If no pdf is found, null is returned
      *
@@ -1184,9 +1290,10 @@ trait Signature
      */
     public function invoiceApiGetInvoicePdf(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'GetInvoicePdf', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('GetInvoicePdf')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets SpecialInvoice for the specified id
      *
@@ -1195,9 +1302,10 @@ trait Signature
      */
     public function invoiceApiGetSpecialInvoice(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'GetSpecialInvoice', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('GetSpecialInvoice')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets SpecialInvoice for the specified invoiceNumber
      *
@@ -1206,9 +1314,10 @@ trait Signature
      */
     public function invoiceApiGetSpecialInvoiceByInvoiceNumber(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'GetSpecialInvoiceByInvoiceNumber', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('GetSpecialInvoiceByInvoiceNumber')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a SpecialInvoice. If Id is zero, SpecialInvoice is added. If non-zero, SpecialInvoice is updated
      *
@@ -1217,9 +1326,10 @@ trait Signature
      */
     public function invoiceApiAddOrUpdateSpecialInvoice(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'AddOrUpdateSpecialInvoice', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('AddOrUpdateSpecialInvoice')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes SpecialInvoice for the specified id
      *
@@ -1228,9 +1338,10 @@ trait Signature
      */
     public function invoiceApiDeleteSpecialInvoice(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'DeleteSpecialInvoice', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('DeleteSpecialInvoice')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes SpecialInvoice for the specified invoiceNumber
      *
@@ -1239,9 +1350,10 @@ trait Signature
      */
     public function invoiceApiDeleteSpecialInvoiceByInvoiceNumber(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'DeleteSpecialInvoiceByInvoiceNumber', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('DeleteSpecialInvoiceByInvoiceNumber')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a list of all of the available ApplyTo for a company
      *
@@ -1250,9 +1362,10 @@ trait Signature
      */
     public function invoiceApiGetApplyToForCompanyByType(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'GetApplyToForCompanyByType', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('GetApplyToForCompanyByType')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds special invoice information by a set of conditions
      *
@@ -1261,9 +1374,10 @@ trait Signature
      */
     public function invoiceApiFindSpecialInvoices(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'FindSpecialInvoices', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('FindSpecialInvoices')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a SpecialInvoiceProduct
      *
@@ -1272,9 +1386,10 @@ trait Signature
      */
     public function invoiceApiAddOrUpdateSpecialInvoiceProduct(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'AddOrUpdateSpecialInvoiceProduct', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('AddOrUpdateSpecialInvoiceProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a SpecialInvoiceProduct
      *
@@ -1283,9 +1398,10 @@ trait Signature
      */
     public function invoiceApiDeleteSpecialInvoiceProduct(array $arguments = [])
     {
-        return $this->execute('InvoiceApi', 'DeleteSpecialInvoiceProduct', $arguments);
+        return $this->setApi('InvoiceApi')
+                    ->setMethod('DeleteSpecialInvoiceProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates billing parameters for Managed Devices (agreements). Creates and updates Managed Devices (Configurations). Returns the error message
      *
@@ -1294,9 +1410,10 @@ trait Signature
      */
     public function managedDeviceApiUpdateManagedDevices(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'UpdateManagedDevices', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('UpdateManagedDevices')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Creates or Updates the Management Solution entry for a company. Returns the Id of the saved entry.
      *
@@ -1305,9 +1422,10 @@ trait Signature
      */
     public function managedDeviceApiUpdateManagementSolution(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'UpdateManagementSolution', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('UpdateManagementSolution')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets ManagementITSetup Name. Returns the name of the solution that you've defined in the Management IT setup table.
      *
@@ -1316,9 +1434,10 @@ trait Signature
      */
     public function managedDeviceApiGetManagementItSetupsName(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'GetManagementItSetupsName', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('GetManagementItSetupsName')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the Managed Group. Returns the groupId and DeviceType of the Managed Group
      *
@@ -1327,9 +1446,10 @@ trait Signature
      */
     public function managedDeviceApiGetManagedGroup(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'GetManagedGroup', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('GetManagedGroup')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the Managed Server. Returns a list of the managed servers associated with the groupId
      *
@@ -1338,9 +1458,10 @@ trait Signature
      */
     public function managedDeviceApiGetManagedServers(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'GetManagedServers', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('GetManagedServers')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the Managed Workstation. Returns a list of the managed workstations associated with the groupId
      *
@@ -1349,9 +1470,10 @@ trait Signature
      */
     public function managedDeviceApiGetManagedWorkstations(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'GetManagedWorkstations', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('GetManagedWorkstations')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Creates or Updates Managed Servers
      *
@@ -1360,9 +1482,10 @@ trait Signature
      */
     public function managedDeviceApiUpdateManagedServers(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'UpdateManagedServers', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('UpdateManagedServers')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Creates or Updates Managed Workstations
      *
@@ -1371,9 +1494,10 @@ trait Signature
      */
     public function managedDeviceApiUpdateManagedWorkstations(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'UpdateManagedWorkstations', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('UpdateManagedWorkstations')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      *
      *
@@ -1382,9 +1506,10 @@ trait Signature
      */
     public function managedDeviceApiUpdateSpamStatsDomains(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'UpdateSpamStatsDomains', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('UpdateSpamStatsDomains')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Creates or Updates the Management Summary Respor for a company.
      *
@@ -1393,9 +1518,10 @@ trait Signature
      */
     public function managedDeviceApiUpdateManagementSummaryReports(array $arguments = [])
     {
-        return $this->execute('ManagedDeviceApi', 'UpdateManagementSummaryReports', $arguments);
+        return $this->setApi('ManagedDeviceApi')
+                    ->setMethod('UpdateManagementSummaryReports')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Records a campaign impression
      *
@@ -1404,9 +1530,10 @@ trait Signature
      */
     public function marketingApiRecordCampaignImpression(array $arguments = [])
     {
-        return $this->execute('MarketingApi', 'RecordCampaignImpression', $arguments);
+        return $this->setApi('MarketingApi')
+                    ->setMethod('RecordCampaignImpression')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Records email opened
      *
@@ -1415,9 +1542,10 @@ trait Signature
      */
     public function marketingApiRecordEmailOpened(array $arguments = [])
     {
-        return $this->execute('MarketingApi', 'RecordEmailOpened', $arguments);
+        return $this->setApi('MarketingApi')
+                    ->setMethod('RecordEmailOpened')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Records link clicked
      *
@@ -1426,9 +1554,10 @@ trait Signature
      */
     public function marketingApiRecordLinkClicked(array $arguments = [])
     {
-        return $this->execute('MarketingApi', 'RecordLinkClicked', $arguments);
+        return $this->setApi('MarketingApi')
+                    ->setMethod('RecordLinkClicked')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Records form submission
      *
@@ -1437,9 +1566,10 @@ trait Signature
      */
     public function marketingApiRecordFormSubmission(array $arguments = [])
     {
-        return $this->execute('MarketingApi', 'RecordFormSubmission', $arguments);
+        return $this->setApi('MarketingApi')
+                    ->setMethod('RecordFormSubmission')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Determines if a given ConnectWise member id and password are valid.
      *
@@ -1448,9 +1578,10 @@ trait Signature
      */
     public function memberApiIsValidMemberIdAndPassword(array $arguments = [])
     {
-        return $this->execute('MemberApi', 'IsValidMemberIdAndPassword', $arguments);
+        return $this->setApi('MemberApi')
+                    ->setMethod('IsValidMemberIdAndPassword')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Determines if a given ConnectWise member id and session are active.
      *
@@ -1459,9 +1590,10 @@ trait Signature
      */
     public function memberApiAuthenticateSession(array $arguments = [])
     {
-        return $this->execute('MemberApi', 'AuthenticateSession', $arguments);
+        return $this->setApi('MemberApi')
+                    ->setMethod('AuthenticateSession')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Creates anauthenticated member hash for a given ConnectWise member.
      *
@@ -1470,9 +1602,10 @@ trait Signature
      */
     public function memberApiCreateAuthenticatedMemberHashToken(array $arguments = [])
     {
-        return $this->execute('MemberApi', 'CreateAuthenticatedMemberHashToken', $arguments);
+        return $this->setApi('MemberApi')
+                    ->setMethod('CreateAuthenticatedMemberHashToken')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Looks up a ConnectWise member id based on a set of remote support package credentials assigned to the member in ConnectWise.
      *
@@ -1481,9 +1614,10 @@ trait Signature
      */
     public function memberApiGetMemberIdByRemoteSupportPackageAuthenticationCredentials(array $arguments = [])
     {
-        return $this->execute('MemberApi', 'GetMemberIdByRemoteSupportPackageAuthenticationCredentials', $arguments);
+        return $this->setApi('MemberApi')
+                    ->setMethod('GetMemberIdByRemoteSupportPackageAuthenticationCredentials')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds ConnectWise members based on a set of conditions.
      *
@@ -1492,9 +1626,10 @@ trait Signature
      */
     public function memberApiFindMembers(array $arguments = [])
     {
-        return $this->execute('MemberApi', 'FindMembers', $arguments);
+        return $this->setApi('MemberApi')
+                    ->setMethod('FindMembers')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Checks ConnectWise authentication credentials
      *
@@ -1503,9 +1638,10 @@ trait Signature
      */
     public function memberApiCheckConnectWiseAuthenticationCredentials(array $arguments = [])
     {
-        return $this->execute('MemberApi', 'CheckConnectWiseAuthenticationCredentials', $arguments);
+        return $this->setApi('MemberApi')
+                    ->setMethod('CheckConnectWiseAuthenticationCredentials')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an opportunity by database record id. If no opportunity exists with the given id, null is returned.
      *
@@ -1514,9 +1650,10 @@ trait Signature
      */
     public function opportunityApiGetOpportunity(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'GetOpportunity', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('GetOpportunity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an opportunity by database record id. If no opportunity exists with the given id, an error is returned.
      *
@@ -1525,9 +1662,10 @@ trait Signature
      */
     public function opportunityApiLoadOpportunity(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'LoadOpportunity', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('LoadOpportunity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new opportunity.
      *
@@ -1536,9 +1674,10 @@ trait Signature
      */
     public function opportunityApiAddOpportunity(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'AddOpportunity', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('AddOpportunity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing opportunity.
      *
@@ -1547,9 +1686,10 @@ trait Signature
      */
     public function opportunityApiUpdateOpportunity(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'UpdateOpportunity', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('UpdateOpportunity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an opportunity. If the opportunity Id is 0, the opportunity is added. If non-zero, the existing opportunity with that Id is updated.
      *
@@ -1558,9 +1698,10 @@ trait Signature
      */
     public function opportunityApiAddOrUpdateOpportunity(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'AddOrUpdateOpportunity', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('AddOrUpdateOpportunity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an opportunity by database record id.
      *
@@ -1569,9 +1710,10 @@ trait Signature
      */
     public function opportunityApiDeleteOpportunity(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'DeleteOpportunity', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('DeleteOpportunity')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds opportunity information by a set of conditions, filtering by status.
      *
@@ -1580,9 +1722,10 @@ trait Signature
      */
     public function opportunityApiFindOpportunities(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'FindOpportunities', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('FindOpportunities')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Find the count of available opportunities given the specified set of conditions.
      *
@@ -1591,9 +1734,10 @@ trait Signature
      */
     public function opportunityApiFindOpportunityCount(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'FindOpportunityCount', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('FindOpportunityCount')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a forecast and recurring revenue entry.
      *
@@ -1602,9 +1746,10 @@ trait Signature
      */
     public function opportunityApiAddForecastAndRecurringRevenue(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'AddForecastAndRecurringRevenue', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('AddForecastAndRecurringRevenue')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates a forecast and recurring revenue entry.
      *
@@ -1613,9 +1758,10 @@ trait Signature
      */
     public function opportunityApiUpdateForecastAndRecurringRevenue(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'UpdateForecastAndRecurringRevenue', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('UpdateForecastAndRecurringRevenue')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a forecast and recurring revenue entry.
      *
@@ -1624,9 +1770,10 @@ trait Signature
      */
     public function opportunityApiAddOrUpdateForecastAndRecurringRevenue(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'AddOrUpdateForecastAndRecurringRevenue', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('AddOrUpdateForecastAndRecurringRevenue')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a forecast entry.
      *
@@ -1635,9 +1782,10 @@ trait Signature
      */
     public function opportunityApiDeleteForecast(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'DeleteForecast', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('DeleteForecast')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a recurring revenue entry.
      *
@@ -1646,9 +1794,10 @@ trait Signature
      */
     public function opportunityApiDeleteRecurringRevenue(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'DeleteRecurringRevenue', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('DeleteRecurringRevenue')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds an item to an opportunity.
      *
@@ -1657,9 +1806,10 @@ trait Signature
      */
     public function opportunityApiAddOpportunityItem(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'AddOpportunityItem', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('AddOpportunityItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an opportunity item to an opportunity.
      *
@@ -1668,9 +1818,10 @@ trait Signature
      */
     public function opportunityApiUpdateOpportunityItem(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'UpdateOpportunityItem', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('UpdateOpportunityItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an item to an opportunity.
      *
@@ -1679,9 +1830,10 @@ trait Signature
      */
     public function opportunityApiAddOrUpdateOpportunityItem(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'AddOrUpdateOpportunityItem', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('AddOrUpdateOpportunityItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an opportunity item.
      *
@@ -1690,9 +1842,10 @@ trait Signature
      */
     public function opportunityApiDeleteOpportunityItem(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'DeleteOpportunityItem', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('DeleteOpportunityItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the list of documents attached to an opportunity.
      *
@@ -1701,9 +1854,10 @@ trait Signature
      */
     public function opportunityApiGetOpportunityDocuments(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'GetOpportunityDocuments', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('GetOpportunityDocuments')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Removes the document from the opportunity.
      *
@@ -1712,9 +1866,10 @@ trait Signature
      */
     public function opportunityApiDeleteOpportunityDocument(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'DeleteOpportunityDocument', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('DeleteOpportunityDocument')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Removes the note from the opportunity.
      *
@@ -1723,9 +1878,10 @@ trait Signature
      */
     public function opportunityApiDeleteOpportunityNote(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'DeleteOpportunityNote', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('DeleteOpportunityNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Uploads a document to an opportunity
      *
@@ -1734,9 +1890,10 @@ trait Signature
      */
     public function opportunityApiAddOpportunityDocuments(array $arguments = [])
     {
-        return $this->execute('OpportunityApi', 'AddOpportunityDocuments', $arguments);
+        return $this->setApi('OpportunityApi')
+                    ->setMethod('AddOpportunityDocuments')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Converts Opportunity into Project
      *
@@ -1745,9 +1902,10 @@ trait Signature
      */
     public function opportunityConversionApiOpportunityToProjectConversion(array $arguments = [])
     {
-        return $this->execute('OpportunityConversionApi', 'OpportunityToProjectConversion', $arguments);
+        return $this->setApi('OpportunityConversionApi')
+                    ->setMethod('OpportunityToProjectConversion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Converts Opportunity into new Service Ticket
      *
@@ -1756,9 +1914,10 @@ trait Signature
      */
     public function opportunityConversionApiOpportunityToTicketConversion(array $arguments = [])
     {
-        return $this->execute('OpportunityConversionApi', 'OpportunityToTicketConversion', $arguments);
+        return $this->setApi('OpportunityConversionApi')
+                    ->setMethod('OpportunityToTicketConversion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Converts Opportunity into New Sales Order
      *
@@ -1767,9 +1926,10 @@ trait Signature
      */
     public function opportunityConversionApiOpportunityToSalesOrderConversion(array $arguments = [])
     {
-        return $this->execute('OpportunityConversionApi', 'OpportunityToSalesOrderConversion', $arguments);
+        return $this->setApi('OpportunityConversionApi')
+                    ->setMethod('OpportunityToSalesOrderConversion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a product by database record id. If no product exists with the given id, null is returned.
      *
@@ -1778,9 +1938,10 @@ trait Signature
      */
     public function productApiGetProduct(array $arguments = [])
     {
-        return $this->execute('ProductApi', 'GetProduct', $arguments);
+        return $this->setApi('ProductApi')
+                    ->setMethod('GetProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a product by database record id. If no product exists with the given id, an error is returned.
      *
@@ -1789,9 +1950,10 @@ trait Signature
      */
     public function productApiLoadProduct(array $arguments = [])
     {
-        return $this->execute('ProductApi', 'LoadProduct', $arguments);
+        return $this->setApi('ProductApi')
+                    ->setMethod('LoadProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new product.
      *
@@ -1800,9 +1962,10 @@ trait Signature
      */
     public function productApiAddProduct(array $arguments = [])
     {
-        return $this->execute('ProductApi', 'AddProduct', $arguments);
+        return $this->setApi('ProductApi')
+                    ->setMethod('AddProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing product.
      *
@@ -1811,9 +1974,10 @@ trait Signature
      */
     public function productApiUpdateProduct(array $arguments = [])
     {
-        return $this->execute('ProductApi', 'UpdateProduct', $arguments);
+        return $this->setApi('ProductApi')
+                    ->setMethod('UpdateProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a product. If the product Id is 0, the product is added. If non-zero, the existing product with that Id is updated.
      *
@@ -1822,9 +1986,10 @@ trait Signature
      */
     public function productApiAddOrUpdateProduct(array $arguments = [])
     {
-        return $this->execute('ProductApi', 'AddOrUpdateProduct', $arguments);
+        return $this->setApi('ProductApi')
+                    ->setMethod('AddOrUpdateProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a product by database record id.
      *
@@ -1833,9 +1998,10 @@ trait Signature
      */
     public function productApiDeleteProduct(array $arguments = [])
     {
-        return $this->execute('ProductApi', 'DeleteProduct', $arguments);
+        return $this->setApi('ProductApi')
+                    ->setMethod('DeleteProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds product information by a set of conditions.
      *
@@ -1844,9 +2010,10 @@ trait Signature
      */
     public function productApiFindProducts(array $arguments = [])
     {
-        return $this->execute('ProductApi', 'FindProducts', $arguments);
+        return $this->setApi('ProductApi')
+                    ->setMethod('FindProducts')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets quantity on hand for product
      *
@@ -1855,9 +2022,10 @@ trait Signature
      */
     public function productApiGetQuantityOnHand(array $arguments = [])
     {
-        return $this->execute('ProductApi', 'GetQuantityOnHand', $arguments);
+        return $this->setApi('ProductApi')
+                    ->setMethod('GetQuantityOnHand')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a List of Projects, filtering by the project status.
      *
@@ -1866,9 +2034,10 @@ trait Signature
      */
     public function projectApiFindProjects(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'FindProjects', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('FindProjects')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a count of projects that meet the specified conditions.
      *
@@ -1877,9 +2046,10 @@ trait Signature
      */
     public function projectApiFindProjectCount(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'FindProjectCount', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('FindProjectCount')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a project work plan by database project record id. If no project exists with the given id, null is returned.
      *
@@ -1888,9 +2058,10 @@ trait Signature
      */
     public function projectApiGetProjectWorkPlan(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'GetProjectWorkPlan', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('GetProjectWorkPlan')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a project work plan by database project record id. If no project exists with the given id, an error is returned.
      *
@@ -1899,9 +2070,10 @@ trait Signature
      */
     public function projectApiLoadProjectWorkPlan(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'LoadProjectWorkPlan', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('LoadProjectWorkPlan')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a project by record id. If no project exists with the given id, an error is returned.
      *
@@ -1910,9 +2082,10 @@ trait Signature
      */
     public function projectApiGetProject(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'GetProject', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('GetProject')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a project
      *
@@ -1921,9 +2094,10 @@ trait Signature
      */
     public function projectApiDeleteProject(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'DeleteProject', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('DeleteProject')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes ticket from project
      *
@@ -1932,9 +2106,10 @@ trait Signature
      */
     public function projectApiDeleteProjectTicket(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'DeleteProjectTicket', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('DeleteProjectTicket')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a project phase
      *
@@ -1943,9 +2118,10 @@ trait Signature
      */
     public function projectApiDeleteProjectPhase(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'DeleteProjectPhase', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('DeleteProjectPhase')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a project team member from project
      *
@@ -1954,9 +2130,10 @@ trait Signature
      */
     public function projectApiDeleteProjectTeamMember(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'DeleteProjectTeamMember', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('DeleteProjectTeamMember')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Delete a contact from a project
      *
@@ -1965,9 +2142,10 @@ trait Signature
      */
     public function projectApiDeleteProjectContact(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'DeleteProjectContact', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('DeleteProjectContact')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a note from a project
      *
@@ -1976,9 +2154,10 @@ trait Signature
      */
     public function projectApiDeleteProjectNote(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'DeleteProjectNote', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('DeleteProjectNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Converts a service ticket into a project ticket
      *
@@ -1987,9 +2166,10 @@ trait Signature
      */
     public function projectApiConvertServiceTicketToProjectTicket(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'ConvertServiceTicketToProjectTicket', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('ConvertServiceTicketToProjectTicket')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a project note
      *
@@ -1998,9 +2178,10 @@ trait Signature
      */
     public function projectApiAddOrUpdateProjectNote(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'AddOrUpdateProjectNote', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('AddOrUpdateProjectNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a project contact
      *
@@ -2009,9 +2190,10 @@ trait Signature
      */
     public function projectApiAddOrUpdateProjectContact(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'AddOrUpdateProjectContact', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('AddOrUpdateProjectContact')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a project team member
      *
@@ -2020,9 +2202,10 @@ trait Signature
      */
     public function projectApiAddOrUpdateProjectTeamMember(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'AddOrUpdateProjectTeamMember', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('AddOrUpdateProjectTeamMember')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a project
      *
@@ -2031,9 +2214,10 @@ trait Signature
      */
     public function projectApiAddOrUpdateProject(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'AddOrUpdateProject', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('AddOrUpdateProject')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Add or Updates a project phase. No project tickets can be added
      *
@@ -2042,9 +2226,10 @@ trait Signature
      */
     public function projectApiAddOrUpdateProjectPhase(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'AddOrUpdateProjectPhase', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('AddOrUpdateProjectPhase')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a project phase by record id. If no project phase exists with the given id, an error is returned.
      *
@@ -2053,9 +2238,10 @@ trait Signature
      */
     public function projectApiGetProjectPhase(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'GetProjectPhase', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('GetProjectPhase')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a project ticket/project issue ticket
      *
@@ -2064,9 +2250,10 @@ trait Signature
      */
     public function projectApiAddOrUpdateProjectTicket(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'AddOrUpdateProjectTicket', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('AddOrUpdateProjectTicket')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a project workplan
      *
@@ -2075,9 +2262,10 @@ trait Signature
      */
     public function projectApiAddOrUpdateProjectWorkPlan(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'AddOrUpdateProjectWorkPlan', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('AddOrUpdateProjectWorkPlan')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a List of Projects phases
      *
@@ -2086,9 +2274,10 @@ trait Signature
      */
     public function projectApiFindPhases(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'FindPhases', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('FindPhases')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a project note by id. If no id exists with the given id, an error is returned.
      *
@@ -2097,9 +2286,10 @@ trait Signature
      */
     public function projectApiGetProjectNote(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'GetProjectNote', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('GetProjectNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a List of Project Notes
      *
@@ -2108,9 +2298,10 @@ trait Signature
      */
     public function projectApiFindProjectNotes(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'FindProjectNotes', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('FindProjectNotes')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a project contact by id. If no id exists with the given id, an error is returned.
      *
@@ -2119,9 +2310,10 @@ trait Signature
      */
     public function projectApiGetProjectContact(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'GetProjectContact', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('GetProjectContact')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a List of Project Contacts
      *
@@ -2130,9 +2322,10 @@ trait Signature
      */
     public function projectApiFindProjectContacts(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'FindProjectContacts', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('FindProjectContacts')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a project team member by id. If no id exists with the given id, an error is returned.
      *
@@ -2141,9 +2334,10 @@ trait Signature
      */
     public function projectApiGetProjectTeamMember(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'GetProjectTeamMember', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('GetProjectTeamMember')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a List of Project team members
      *
@@ -2152,9 +2346,10 @@ trait Signature
      */
     public function projectApiFindProjectTeamMembers(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'FindProjectTeamMembers', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('FindProjectTeamMembers')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a project ticket/project issue ticket by id. If no id exists with the given id, an error is returned.
      *
@@ -2163,9 +2358,10 @@ trait Signature
      */
     public function projectApiGetProjectTicket(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'GetProjectTicket', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('GetProjectTicket')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Returns a List of Project tickets/Project Issue tickets
      *
@@ -2174,9 +2370,10 @@ trait Signature
      */
     public function projectApiFindProjectTickets(array $arguments = [])
     {
-        return $this->execute('ProjectApi', 'FindProjectTickets', $arguments);
+        return $this->setApi('ProjectApi')
+                    ->setMethod('FindProjectTickets')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a purchase order by database record id. If no purchase order exists with the given id, null is returned.
      *
@@ -2185,9 +2382,10 @@ trait Signature
      */
     public function purchasingApiGetPurchaseOrder(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'GetPurchaseOrder', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('GetPurchaseOrder')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a purchase order by database record id. If no purchase order exists with the given id, an error is returned.
      *
@@ -2196,9 +2394,10 @@ trait Signature
      */
     public function purchasingApiLoadPurchaseOrder(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'LoadPurchaseOrder', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('LoadPurchaseOrder')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new purchase order.
      *
@@ -2207,9 +2406,10 @@ trait Signature
      */
     public function purchasingApiAddPurchaseOrder(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'AddPurchaseOrder', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('AddPurchaseOrder')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing purchase order.
      *
@@ -2218,9 +2418,10 @@ trait Signature
      */
     public function purchasingApiUpdatePurchaseOrder(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'UpdatePurchaseOrder', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('UpdatePurchaseOrder')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a purchase order. If the given Id is 0, a purchase order is added. If non-zero, the existing purchase order with that Id is updated.
      *
@@ -2229,9 +2430,10 @@ trait Signature
      */
     public function purchasingApiAddOrUpdatePurchaseOrder(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'AddOrUpdatePurchaseOrder', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('AddOrUpdatePurchaseOrder')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a purchase order by database record id.
      *
@@ -2240,9 +2442,10 @@ trait Signature
      */
     public function purchasingApiDeletePurchaseOrder(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'DeletePurchaseOrder', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('DeletePurchaseOrder')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new purchase order line item (one of the entries under the "Products" tab of the purchase order screen in ConnectWise).
      *
@@ -2251,9 +2454,10 @@ trait Signature
      */
     public function purchasingApiAddPurchaseOrderLineItem(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'AddPurchaseOrderLineItem', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('AddPurchaseOrderLineItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing purchase order line item (one of the entries under the "Products" tab of the purchase order screen in ConnectWise).
      *
@@ -2262,9 +2466,10 @@ trait Signature
      */
     public function purchasingApiUpdatePurchaseOrderLineItem(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'UpdatePurchaseOrderLineItem', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('UpdatePurchaseOrderLineItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a purchase order line item (one of the entries under the "Products" tab of the purchase order screen in ConnectWise). If the given Id is 0, a purchase order line item is added. If non-zero, the existing purchase order line item with that Id is updated.
      *
@@ -2273,9 +2478,10 @@ trait Signature
      */
     public function purchasingApiAddOrUpdatePurchaseOrderLineItem(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'AddOrUpdatePurchaseOrderLineItem', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('AddOrUpdatePurchaseOrderLineItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a purchase order line item by database record id.
      *
@@ -2284,9 +2490,10 @@ trait Signature
      */
     public function purchasingApiDeletePurchaseOrderLineItem(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'DeletePurchaseOrderLineItem', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('DeletePurchaseOrderLineItem')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets all open product demands throughout the system with the option to include demands which are already fully satisfied by the stock on hand at the warehouse they are scheduled to be shipped to.
      *
@@ -2295,9 +2502,10 @@ trait Signature
      */
     public function purchasingApiGetAllOpenProductDemands(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'GetAllOpenProductDemands', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('GetAllOpenProductDemands')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Creates a new puchase order from a list of specific open product demands in the system.
      *
@@ -2306,9 +2514,10 @@ trait Signature
      */
     public function purchasingApiCreatePurchaseOrderFromProductDemandsAction(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'CreatePurchaseOrderFromProductDemandsAction', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('CreatePurchaseOrderFromProductDemandsAction')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds purchase orders information by a set of conditions.
      *
@@ -2317,9 +2526,10 @@ trait Signature
      */
     public function purchasingApiFindPurchaseOrders(array $arguments = [])
     {
-        return $this->execute('PurchasingApi', 'FindPurchaseOrders', $arguments);
+        return $this->setApi('PurchasingApi')
+                    ->setMethod('FindPurchaseOrders')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the list of available reports.
      *
@@ -2328,9 +2538,10 @@ trait Signature
      */
     public function reportingApiGetReports(array $arguments = [])
     {
-        return $this->execute('ReportingApi', 'GetReports', $arguments);
+        return $this->setApi('ReportingApi')
+                    ->setMethod('GetReports')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the list of fields for a particular report.
      *
@@ -2339,9 +2550,10 @@ trait Signature
      */
     public function reportingApiGetReportFields(array $arguments = [])
     {
-        return $this->execute('ReportingApi', 'GetReportFields', $arguments);
+        return $this->setApi('ReportingApi')
+                    ->setMethod('GetReportFields')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the list of reports accessible via the customer portal.
      *
@@ -2350,9 +2562,10 @@ trait Signature
      */
     public function reportingApiGetPortalReports(array $arguments = [])
     {
-        return $this->execute('ReportingApi', 'GetPortalReports', $arguments);
+        return $this->setApi('ReportingApi')
+                    ->setMethod('GetPortalReports')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Run a protal report with the given set of condiitons.
      *
@@ -2361,9 +2574,10 @@ trait Signature
      */
     public function reportingApiRunPortalReport(array $arguments = [])
     {
-        return $this->execute('ReportingApi', 'RunPortalReport', $arguments);
+        return $this->setApi('ReportingApi')
+                    ->setMethod('RunPortalReport')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Runs a particular report with a given set of conditions.
      *
@@ -2372,9 +2586,10 @@ trait Signature
      */
     public function reportingApiRunReportQuery(array $arguments = [])
     {
-        return $this->execute('ReportingApi', 'RunReportQuery', $arguments);
+        return $this->setApi('ReportingApi')
+                    ->setMethod('RunReportQuery')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Runs a particular report with a given set of conditions and a set of field filters.
      *
@@ -2383,9 +2598,10 @@ trait Signature
      */
     public function reportingApiRunReportQueryWithFilters(array $arguments = [])
     {
-        return $this->execute('ReportingApi', 'RunReportQueryWithFilters', $arguments);
+        return $this->setApi('ReportingApi')
+                    ->setMethod('RunReportQueryWithFilters')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Runs a particular report with a given set of conditions and pre-defined timeout
      *
@@ -2394,9 +2610,10 @@ trait Signature
      */
     public function reportingApiRunReportQueryWithTimeout(array $arguments = [])
     {
-        return $this->execute('ReportingApi', 'RunReportQueryWithTimeout', $arguments);
+        return $this->setApi('ReportingApi')
+                    ->setMethod('RunReportQueryWithTimeout')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Runs a particular report with a given set of conditions.  Returnss the # of records that would be returned.
      *
@@ -2405,9 +2622,10 @@ trait Signature
      */
     public function reportingApiRunReportCount(array $arguments = [])
     {
-        return $this->execute('ReportingApi', 'RunReportCount', $arguments);
+        return $this->setApi('ReportingApi')
+                    ->setMethod('RunReportCount')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a ticket schedule record by database record id. If no schedule exists with the given id, null is returned.
      *
@@ -2416,9 +2634,10 @@ trait Signature
      */
     public function schedulingApiGetTicketScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'GetTicketScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('GetTicketScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an activity schedule record by database record id. If no schedule exists with the given id, null is returned.
      *
@@ -2427,9 +2646,10 @@ trait Signature
      */
     public function schedulingApiGetActivityScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'GetActivityScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('GetActivityScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a misc schedule record by database record id. If no schedule exists with the given id, null is returned.
      *
@@ -2438,9 +2658,10 @@ trait Signature
      */
     public function schedulingApiGetMiscScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'GetMiscScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('GetMiscScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds schedule information by a set of conditions.
      *
@@ -2449,9 +2670,10 @@ trait Signature
      */
     public function schedulingApiFindScheduleEntries(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'FindScheduleEntries', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('FindScheduleEntries')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or Updates a ticket schedule record
      *
@@ -2460,9 +2682,10 @@ trait Signature
      */
     public function schedulingApiAddOrUpdateTicketScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'AddOrUpdateTicketScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('AddOrUpdateTicketScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a ticket schedule record
      *
@@ -2471,9 +2694,10 @@ trait Signature
      */
     public function schedulingApiDeleteTicketScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'DeleteTicketScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('DeleteTicketScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Add or Updates an activity schedule
      *
@@ -2482,9 +2706,10 @@ trait Signature
      */
     public function schedulingApiAddOrUpdateActivityScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'AddOrUpdateActivityScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('AddOrUpdateActivityScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an activity schedule
      *
@@ -2493,9 +2718,10 @@ trait Signature
      */
     public function schedulingApiDeleteActivityScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'DeleteActivityScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('DeleteActivityScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Add or Update a miscellaneous schedule entry
      *
@@ -2504,9 +2730,10 @@ trait Signature
      */
     public function schedulingApiAddOrUpdateMiscScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'AddOrUpdateMiscScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('AddOrUpdateMiscScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a misc schedule entry
      *
@@ -2515,9 +2742,10 @@ trait Signature
      */
     public function schedulingApiDeleteMiscScheduleEntry(array $arguments = [])
     {
-        return $this->execute('SchedulingApi', 'DeleteMiscScheduleEntry', $arguments);
+        return $this->setApi('SchedulingApi')
+                    ->setMethod('DeleteMiscScheduleEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a service ticket by the ticket Id. If no service ticket exists with the given ticket Id, null is returned.
      *
@@ -2526,9 +2754,10 @@ trait Signature
      */
     public function serviceTicketApiGetServiceTicket(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'GetServiceTicket', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('GetServiceTicket')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets a service ticket by the ticket Id. If no service ticket exists with the given ticket Id, an error is returned.
      *
@@ -2537,9 +2766,10 @@ trait Signature
      */
     public function serviceTicketApiLoadServiceTicket(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'LoadServiceTicket', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('LoadServiceTicket')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new service ticket for a company identified by managed id.
      *
@@ -2548,9 +2778,10 @@ trait Signature
      */
     public function serviceTicketApiAddServiceTicketViaManagedIdentifier(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddServiceTicketViaManagedIdentifier', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddServiceTicketViaManagedIdentifier')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing service ticket for a company identified by managed id.
      *
@@ -2559,9 +2790,10 @@ trait Signature
      */
     public function serviceTicketApiUpdateServiceTicketViaManagedIdentifier(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'UpdateServiceTicketViaManagedIdentifier', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('UpdateServiceTicketViaManagedIdentifier')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a service ticket for a company identified by managed id. If the service ticket Id is 0, the service ticket is added. If non-zero, the existing service ticket with that ticket Id is updated.
      *
@@ -2570,9 +2802,10 @@ trait Signature
      */
     public function serviceTicketApiAddOrUpdateServiceTicketViaManagedIdentifier(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddOrUpdateServiceTicketViaManagedIdentifier', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddOrUpdateServiceTicketViaManagedIdentifier')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new service ticket for a company identified by the text-based company id.
      *
@@ -2581,9 +2814,10 @@ trait Signature
      */
     public function serviceTicketApiAddServiceTicketViaCompanyIdentifier(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddServiceTicketViaCompanyIdentifier', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddServiceTicketViaCompanyIdentifier')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing service ticket for a company identified by the text-based company id.
      *
@@ -2592,9 +2826,10 @@ trait Signature
      */
     public function serviceTicketApiUpdateServiceTicketViaCompanyIdentifier(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'UpdateServiceTicketViaCompanyIdentifier', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('UpdateServiceTicketViaCompanyIdentifier')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates a service ticket for a company identified by the text-based company id. If the service ticket Id is 0, the service ticket is added. If non-zero, the existing service ticket with that ticket Id is updated.
      *
@@ -2603,9 +2838,10 @@ trait Signature
      */
     public function serviceTicketApiAddOrUpdateServiceTicketViaCompanyIdentifier(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddOrUpdateServiceTicketViaCompanyIdentifier', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddOrUpdateServiceTicketViaCompanyIdentifier')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes a service ticket by the ticket Id.
      *
@@ -2614,9 +2850,10 @@ trait Signature
      */
     public function serviceTicketApiDeleteServiceTicket(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'DeleteServiceTicket', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('DeleteServiceTicket')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds service ticket information by a set of conditions.  If isOpen is set, it will pre-filter by the ticket status.
      *
@@ -2625,9 +2862,10 @@ trait Signature
      */
     public function serviceTicketApiFindServiceTickets(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'FindServiceTickets', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('FindServiceTickets')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the count of service tickets that meet the specified conditions
      *
@@ -2636,9 +2874,10 @@ trait Signature
      */
     public function serviceTicketApiFindServiceTicketCount(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'FindServiceTicketCount', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('FindServiceTicketCount')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the list of statuses available to the specified ticket.
      *
@@ -2647,9 +2886,10 @@ trait Signature
      */
     public function serviceTicketApiGetServiceStatuses(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'GetServiceStatuses', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('GetServiceStatuses')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Performs a Knowledgebase search using the specified parameters
      *
@@ -2658,9 +2898,10 @@ trait Signature
      */
     public function serviceTicketApiSearchKnowledgebase(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'SearchKnowledgebase', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('SearchKnowledgebase')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Counts the Knowledgebase records that will be returned by performing the associated search.
      *
@@ -2669,9 +2910,10 @@ trait Signature
      */
     public function serviceTicketApiSearchKnowledgebaseCount(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'SearchKnowledgebaseCount', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('SearchKnowledgebaseCount')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Removes the document from the ticket
      *
@@ -2680,9 +2922,10 @@ trait Signature
      */
     public function serviceTicketApiDeleteTicketDocument(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'DeleteTicketDocument', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('DeleteTicketDocument')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Get a list of products for the specified ticket
      *
@@ -2691,9 +2934,10 @@ trait Signature
      */
     public function serviceTicketApiGetTicketProductList(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'GetTicketProductList', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('GetTicketProductList')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Add a product on a ticket
      *
@@ -2702,9 +2946,10 @@ trait Signature
      */
     public function serviceTicketApiAddTicketProduct(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddTicketProduct', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddTicketProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Update a product on a ticket
      *
@@ -2713,9 +2958,10 @@ trait Signature
      */
     public function serviceTicketApiUpdateTicketProduct(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'UpdateTicketProduct', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('UpdateTicketProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Add or Update a product on a ticket
      *
@@ -2724,9 +2970,10 @@ trait Signature
      */
     public function serviceTicketApiAddOrUpdateTicketProduct(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddOrUpdateTicketProduct', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddOrUpdateTicketProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Delete Product from a ticket
      *
@@ -2735,9 +2982,10 @@ trait Signature
      */
     public function serviceTicketApiDeleteTicketProduct(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'DeleteTicketProduct', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('DeleteTicketProduct')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the documents attached to the specified ticket
      *
@@ -2746,9 +2994,10 @@ trait Signature
      */
     public function serviceTicketApiGetTicketDocuments(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'GetTicketDocuments', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('GetTicketDocuments')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the document for the specified documentId
      *
@@ -2757,9 +3006,10 @@ trait Signature
      */
     public function serviceTicketApiGetDocument(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'GetDocument', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('GetDocument')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Add a new ticket note or update an existing ticket note by service ticket id.
      *
@@ -2768,9 +3018,10 @@ trait Signature
      */
     public function serviceTicketApiAddOrUpdateTicketNote(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddOrUpdateTicketNote', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddOrUpdateTicketNote')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Add a document to a ticket
      *
@@ -2779,9 +3030,10 @@ trait Signature
      */
     public function serviceTicketApiAddTicketDocuments(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddTicketDocuments', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddTicketDocuments')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds the ticket to Knowledgebase
      *
@@ -2790,9 +3042,10 @@ trait Signature
      */
     public function serviceTicketApiAddServiceTicketToKnowledgebase(array $arguments = [])
     {
-        return $this->execute('ServiceTicketApi', 'AddServiceTicketToKnowledgebase', $arguments);
+        return $this->setApi('ServiceTicketApi')
+                    ->setMethod('AddServiceTicketToKnowledgebase')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the current version of ConnectWise.
      *
@@ -2801,9 +3054,10 @@ trait Signature
      */
     public function systemApiGetConnectWiseVersion(array $arguments = [])
     {
-        return $this->execute('SystemApi', 'GetConnectWiseVersion', $arguments);
+        return $this->setApi('SystemApi')
+                    ->setMethod('GetConnectWiseVersion')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets the cloud state of the ConnectWise instance
      *
@@ -2812,9 +3066,10 @@ trait Signature
      */
     public function systemApiIsCloud(array $arguments = [])
     {
-        return $this->execute('SystemApi', 'IsCloud', $arguments);
+        return $this->setApi('SystemApi')
+                    ->setMethod('IsCloud')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets all ConnectWise system information
      *
@@ -2823,9 +3078,10 @@ trait Signature
      */
     public function systemApiGetConnectWiseVersionInfo(array $arguments = [])
     {
-        return $this->execute('SystemApi', 'GetConnectWiseVersionInfo', $arguments);
+        return $this->setApi('SystemApi')
+                    ->setMethod('GetConnectWiseVersionInfo')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an time entry by database record id. If no time entry exists with the given id, null is returned.
      *
@@ -2834,9 +3090,10 @@ trait Signature
      */
     public function timeEntryApiGetTimeEntry(array $arguments = [])
     {
-        return $this->execute('TimeEntryApi', 'GetTimeEntry', $arguments);
+        return $this->setApi('TimeEntryApi')
+                    ->setMethod('GetTimeEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Gets an time entry by database record id. If no time entry exists with the given id, an error is returned.
      *
@@ -2845,9 +3102,10 @@ trait Signature
      */
     public function timeEntryApiLoadTimeEntry(array $arguments = [])
     {
-        return $this->execute('TimeEntryApi', 'LoadTimeEntry', $arguments);
+        return $this->setApi('TimeEntryApi')
+                    ->setMethod('LoadTimeEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds a new time entry.
      *
@@ -2856,9 +3114,10 @@ trait Signature
      */
     public function timeEntryApiAddTimeEntry(array $arguments = [])
     {
-        return $this->execute('TimeEntryApi', 'AddTimeEntry', $arguments);
+        return $this->setApi('TimeEntryApi')
+                    ->setMethod('AddTimeEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Updates an existing time entry.
      *
@@ -2867,9 +3126,10 @@ trait Signature
      */
     public function timeEntryApiUpdateTimeEntry(array $arguments = [])
     {
-        return $this->execute('TimeEntryApi', 'UpdateTimeEntry', $arguments);
+        return $this->setApi('TimeEntryApi')
+                    ->setMethod('UpdateTimeEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Adds or updates an time entry. If the time entry Id is 0, the time entry is added. If non-zero, the existing time entry with that Id is updated.
      *
@@ -2878,9 +3138,10 @@ trait Signature
      */
     public function timeEntryApiAddOrUpdateTimeEntry(array $arguments = [])
     {
-        return $this->execute('TimeEntryApi', 'AddOrUpdateTimeEntry', $arguments);
+        return $this->setApi('TimeEntryApi')
+                    ->setMethod('AddOrUpdateTimeEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Deletes an time entry by database record id.
      *
@@ -2889,9 +3150,10 @@ trait Signature
      */
     public function timeEntryApiDeleteTimeEntry(array $arguments = [])
     {
-        return $this->execute('TimeEntryApi', 'DeleteTimeEntry', $arguments);
+        return $this->setApi('TimeEntryApi')
+                    ->setMethod('DeleteTimeEntry')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Finds time entry information by a set of conditions.
      *
@@ -2900,9 +3162,10 @@ trait Signature
      */
     public function timeEntryApiFindTimeEntries(array $arguments = [])
     {
-        return $this->execute('TimeEntryApi', 'FindTimeEntries', $arguments);
+        return $this->setApi('TimeEntryApi')
+                    ->setMethod('FindTimeEntries')
+                    ->makeFilterBuilder($arguments);
     }
-
     /**
      * Register the class' arguments with the container
      */

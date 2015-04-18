@@ -97,9 +97,10 @@ EOD;
      * @return MethodOneResponse
      */
     public function someClassMethodOne(array $arguments = []) {
-        return $this->execute('SomeClass', 'MethodOne', $arguments);
+        return $this->setApi('SomeClass')
+                     ->setMethod('MethodOne')
+                     ->makeFilterBuilder($arguments);
     }
-
 
 EOD;
     }
