@@ -71,19 +71,26 @@ class ProjectPhaseFindResults
     protected $DateDeadline = null;
 
     /**
+     * @var string $TimeZoneName
+     */
+    protected $TimeZoneName = null;
+
+    /**
      * @param int $Id
      * @param string $Description
      * @param string $Notes
      * @param string $UpdatedBy
      * @param string $BillingMethod
+     * @param string $TimeZoneName
      */
-    public function __construct($Id = null, $Description = null, $Notes = null, $UpdatedBy = null, $BillingMethod = null)
+    public function __construct($Id = null, $Description = null, $Notes = null, $UpdatedBy = null, $BillingMethod = null, $TimeZoneName = null)
     {
         $this->Id            = $Id;
         $this->Description   = $Description;
         $this->Notes         = $Notes;
         $this->UpdatedBy     = $UpdatedBy;
         $this->BillingMethod = $BillingMethod;
+        $this->TimeZoneName  = $TimeZoneName;
     }
 
     /**
@@ -341,6 +348,24 @@ class ProjectPhaseFindResults
     public function setDateDeadline(\DateTime $DateDeadline)
     {
         $this->DateDeadline = $DateDeadline->format(\DateTime::ATOM);
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTimeZoneName()
+    {
+        return $this->TimeZoneName;
+    }
+
+    /**
+     * @param string $TimeZoneName
+     * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectPhaseFindResults
+     */
+    public function setTimeZoneName($TimeZoneName)
+    {
+        $this->TimeZoneName = $TimeZoneName;
         return $this;
     }
 

@@ -585,6 +585,8 @@ class ProjectApi extends \Spinen\ConnectWise\Library\SoapClient
         'FindProjectTicketsResponse'                                         => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\FindProjectTicketsResponse',
         'ArrayOfProjectTicketFindResult'                                     => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\ArrayOfProjectTicketFindResult',
         'ProjectTicketFindResult'                                            => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\ProjectTicketFindResult',
+        'DeleteProjectProduct'                                               => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\DeleteProjectProduct',
+        'DeleteProjectProductResponse'                                       => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\DeleteProjectProductResponse',
     );
 
     private function setClassmap($classmap)
@@ -931,6 +933,17 @@ class ProjectApi extends \Spinen\ConnectWise\Library\SoapClient
     public function FindProjectTickets(FindProjectTickets $parameters)
     {
         return $this->__soapCall('FindProjectTickets', array($parameters));
+    }
+
+    /**
+     * Deletes a product from a project
+     *
+     * @param DeleteProjectProduct $parameters
+     * @return DeleteProjectProductResponse
+     */
+    public function DeleteProjectProduct(DeleteProjectProduct $parameters)
+    {
+        return $this->__soapCall('DeleteProjectProduct', array($parameters));
     }
 
 }
