@@ -86,6 +86,11 @@ class ProjectFindResult
     protected $LastUpdated = null;
 
     /**
+     * @var string $TimeZoneName
+     */
+    protected $TimeZoneName = null;
+
+    /**
      * @param int $Id
      * @param string $ProjectName
      * @param string $BillingMethod
@@ -96,8 +101,9 @@ class ProjectFindResult
      * @param string $Contact
      * @param string $CompanyIdentifier
      * @param string $UpdatedBy
+     * @param string $TimeZoneName
      */
-    public function __construct($Id = null, $ProjectName = null, $BillingMethod = null, $ProjectType = null, $Description = null, $Status = null, $ProjectManager = null, $Contact = null, $CompanyIdentifier = null, $UpdatedBy = null)
+    public function __construct($Id = null, $ProjectName = null, $BillingMethod = null, $ProjectType = null, $Description = null, $Status = null, $ProjectManager = null, $Contact = null, $CompanyIdentifier = null, $UpdatedBy = null, $TimeZoneName = null)
     {
         $this->Id                = $Id;
         $this->ProjectName       = $ProjectName;
@@ -109,6 +115,7 @@ class ProjectFindResult
         $this->Contact           = $Contact;
         $this->CompanyIdentifier = $CompanyIdentifier;
         $this->UpdatedBy         = $UpdatedBy;
+        $this->TimeZoneName      = $TimeZoneName;
     }
 
     /**
@@ -428,6 +435,24 @@ class ProjectFindResult
     public function setLastUpdated(\DateTime $LastUpdated)
     {
         $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTimeZoneName()
+    {
+        return $this->TimeZoneName;
+    }
+
+    /**
+     * @param string $TimeZoneName
+     * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectFindResult
+     */
+    public function setTimeZoneName($TimeZoneName)
+    {
+        $this->TimeZoneName = $TimeZoneName;
         return $this;
     }
 

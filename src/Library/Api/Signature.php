@@ -2375,6 +2375,18 @@ trait Signature
                     ->makeFilterBuilder($arguments);
     }
     /**
+     * Deletes a product from a project
+     *
+     * @param array|null $arguments
+     * @return DeleteProjectProductResponse
+     */
+    public function projectApiDeleteProjectProduct(array $arguments = [])
+    {
+        return $this->setApi('ProjectApi')
+                    ->setMethod('DeleteProjectProduct')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
      * Gets a purchase order by database record id. If no purchase order exists with the given id, null is returned.
      *
      * @param array|null $arguments

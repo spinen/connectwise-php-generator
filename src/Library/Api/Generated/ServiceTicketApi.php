@@ -585,6 +585,8 @@ class ServiceTicketApi extends \Spinen\ConnectWise\Library\SoapClient
         'FindProjectTicketsResponse'                                         => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\FindProjectTicketsResponse',
         'ArrayOfProjectTicketFindResult'                                     => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\ArrayOfProjectTicketFindResult',
         'ProjectTicketFindResult'                                            => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\ProjectTicketFindResult',
+        'DeleteProjectProduct'                                               => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\DeleteProjectProduct',
+        'DeleteProjectProductResponse'                                       => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\DeleteProjectProductResponse',
         'GetPurchaseOrder'                                                   => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\GetPurchaseOrder',
         'GetPurchaseOrderResponse'                                           => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\GetPurchaseOrderResponse',
         'PurchaseOrder'                                                      => 'Spinen\\ConnectWise\\Library\\Api\\Generated\\PurchaseOrder',
