@@ -64,16 +64,16 @@
         },
         {
             "name": "dericofilho/fmt",
-            "version": "7.22.5",
+            "version": "7.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dericofilho/php.tools.git",
-                "reference": "88f710c1b31fca13099ee6163a19ee4ad71136aa"
+                "reference": "0127644cba91b7454a0937dd31be4b08307f9dfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dericofilho/php.tools/zipball/88f710c1b31fca13099ee6163a19ee4ad71136aa",
-                "reference": "88f710c1b31fca13099ee6163a19ee4ad71136aa",
+                "url": "https://api.github.com/repos/dericofilho/php.tools/zipball/0127644cba91b7454a0937dd31be4b08307f9dfa",
+                "reference": "0127644cba91b7454a0937dd31be4b08307f9dfa",
                 "shasum": ""
             },
             "require": {
@@ -113,7 +113,7 @@
                 "psr2",
                 "style"
             ],
-            "time": "2015-04-16 07:59:19"
+            "time": "2015-04-23 18:47:43"
         },
         {
             "name": "doctrine/inflector",
@@ -225,7 +225,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.0.26",
+            "version": "v5.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -275,16 +275,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.0.26",
+            "version": "v5.0.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "29e8618a45d090572e092abf193a257bf28c48d9"
+                "reference": "b6d68e1f2a7053bf4c755c5e6b15fcfb700e14e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/29e8618a45d090572e092abf193a257bf28c48d9",
-                "reference": "29e8618a45d090572e092abf193a257bf28c48d9",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/b6d68e1f2a7053bf4c755c5e6b15fcfb700e14e7",
+                "reference": "b6d68e1f2a7053bf4c755c5e6b15fcfb700e14e7",
                 "shasum": ""
             },
             "require": {
@@ -323,7 +323,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2015-03-27 14:49:11"
+            "time": "2015-04-15 19:26:55"
         },
         {
             "name": "league/container",
