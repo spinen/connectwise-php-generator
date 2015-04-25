@@ -21,7 +21,6 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     // Pull in the methods from the generator
     use Signature;
 
-
     /**
      * This api that is going to be called
      *
@@ -40,6 +39,21 @@ class Client extends Container implements ContainerInterface, SignatureInterface
      * @var ConvertResponse
      */
     protected $converter;
+
+    /**
+     * Core items to register with the container
+     *
+     * @var array
+     */
+    protected $core_services = [
+        'urls' => [
+            'class' => 'Spinen\\ConnectWise\\Library\\UrlEntry',
+            'arguments' => [
+                'Spinen\\ConnectWise\\Client\\Client',
+                'Spinen\\ConnectWise\\Library\\Validator',
+            ]
+        ]
+    ];
 
     /**
      * The method on the api that is getting called
@@ -150,26 +164,6 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     }
 
     /**
-     * Make a filter builder
-     *
-     * @param array $filters
-     *
-     * @return FilterBuilder
-     * @throws InvalidArgumentException
-     */
-    public function makeFilterBuilder(array $filters = [])
-    {
-        if ((is_null($this->api)) || (is_null($this->method))) {
-            throw new InvalidArgumentException("api and method must be set before making a FilterBuilder");
-        }
-
-        // Because we are building up the FilterBuilder then we need to make this
-        $filter = $this->get('Spinen\\ConnectWise\\Client\\Filter');
-
-        return $this->get('Spinen\\ConnectWise\\Client\\FilterBuilder', [$this, $filter, $filters]);
-    }
-
-    /**
      * Get the FQDN to the cw host with optional uri
      *
      * @param string|null $path
@@ -192,6 +186,26 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     public function getSoapOptions()
     {
         return (array)((isset($this->get('config')->soap_options)) ? $this->get('config')->soap_options : null);
+    }
+
+    /**
+     * Make a filter builder
+     *
+     * @param array $filters
+     *
+     * @return FilterBuilder
+     * @throws InvalidArgumentException
+     */
+    public function makeFilterBuilder(array $filters = [])
+    {
+        if ((is_null($this->api)) || (is_null($this->method))) {
+            throw new InvalidArgumentException("api and method must be set before making a FilterBuilder");
+        }
+
+        // Because we are building up the FilterBuilder then we need to make this
+        $filter = $this->get('Spinen\\ConnectWise\\Client\\Filter');
+
+        return $this->get('Spinen\\ConnectWise\\Client\\FilterBuilder', [$this, $filter, $filters]);
     }
 
     /**
