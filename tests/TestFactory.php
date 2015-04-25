@@ -246,6 +246,14 @@ class TestFactory
     /**
      * @return Mockery\Mock
      */
+    public static function mockValidator()
+    {
+        return Mockery::mock('Spinen\\ConnectWise\\Library\\Validator');
+    }
+
+    /**
+     * @return Mockery\Mock
+     */
     public static function mockWsdlGenerator()
     {
         return Mockery::mock('Wsdl2PhpGenerator\\Generator');
