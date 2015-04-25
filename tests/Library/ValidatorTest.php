@@ -102,6 +102,31 @@ class ValidatorTest extends BaseTest
     /**
      * @test
      */
+    public function it_validates_an_integer()
+    {
+        $this->assertTrue($this->validator->validateIntegerProperty("array", 1));
+    }
+
+    /**
+     * @test
+     */
+    public function it_validates_a_string_that_is_an_integer()
+    {
+        $this->assertTrue($this->validator->validateIntegerProperty("array", "1"));
+    }
+
+    /**
+     * @test
+     * @expectedException InvalidArgumentException
+     */
+    public function it_squawlks_when_validating_an_integer_with_something_other_than_an_integer()
+    {
+        $this->validator->validateIntegerProperty("none_array", "string");
+    }
+
+    /**
+     * @test
+     */
     public function it_iterates_over_all_rules_for_a_property()
     {
         $this->assertTrue($this->validator->validateProperty("array", ["value"], ['required', 'array']));
