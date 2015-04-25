@@ -66,6 +66,24 @@ class Validator
     }
 
     /**
+     * Validator for an integer property
+     *
+     * @param string $property
+     * @param mixed $value
+     *
+     * @return bool
+     * @throws InvalidArgumentException
+     */
+    public function validateIntegerProperty($property, $value)
+    {
+        if (!is_numeric($value)) {
+            throw new InvalidArgumentException(sprintf("Property [%s] must be of type integer", $property));
+        }
+
+        return true;
+    }
+
+    /**
      * Run the validation rules over the property
      *
      * @param string     $property

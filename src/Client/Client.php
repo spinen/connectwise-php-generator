@@ -21,7 +21,6 @@ class Client extends Container implements ContainerInterface, SignatureInterface
     // Pull in the methods from the generator
     use Signature;
 
-
     /**
      * This api that is going to be called
      *
@@ -40,6 +39,21 @@ class Client extends Container implements ContainerInterface, SignatureInterface
      * @var ConvertResponse
      */
     protected $converter;
+
+    /**
+     * Core items to register with the container
+     *
+     * @var array
+     */
+    protected $core_services = [
+        'urls' => [
+            'class' => 'Spinen\\ConnectWise\\Library\\UrlEntry',
+            'arguments' => [
+                'Spinen\\ConnectWise\\Client\\Client',
+                'Spinen\\ConnectWise\\Library\\Validator',
+            ]
+        ]
+    ];
 
     /**
      * The method on the api that is getting called
