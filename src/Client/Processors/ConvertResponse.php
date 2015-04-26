@@ -3,8 +3,8 @@
 namespace Spinen\ConnectWise\Client\Processors;
 
 use Carbon\Carbon;
+use ReflectionClass;
 use Spinen\ConnectWise\Library\Contracts\Processor;
-use Spinen\ConnectWise\Library\Support\Collection;
 
 /**
  * Class ConvertResponse
@@ -15,6 +15,15 @@ class ConvertResponse implements Processor
 {
 
     /**
+     * The name of the api that is being called
+     *
+     * @var string|null
+     */
+    protected $api = null;
+
+    /**
+     * Columns to return
+     *
      * @var array
      */
     protected $columns = [];
@@ -76,32 +85,101 @@ class ConvertResponse implements Processor
     }
 
     /**
-     * @param $response
+     * @param string $type
+     * @param array  $data
      *
-     * @return array
+     * @return object
+     */
+    private function makeClassIfExists($type, array $data)
+    {
+        $path = 'Spinen\\ConnectWise\\Library\\Results\\';
+
+        $class = $path . $this->api . $type;
+
+        // Collection specifically for the api data?
+        if (!class_exists($class)) {
+            $class = $path . $this->api;
+        }
+
+        // Object specifically for the api data?
+        if (!class_exists($class)) {
+            $class = $path . $type;
+        }
+
+        $class = new ReflectionClass($class);
+
+        return $class->newInstanceArgs($data);
+    }
+
+    /**
+     * @param array $response
+     *
+     * @return object
+     */
+    public function makeCollection(array $response)
+    {
+        return $this->makeClassIfExists('Collection', [$response]);
+    }
+
+    /**
+     * @param array $value_object
+     *
+     * @return object
+     */
+    public function makeValueObject(array $value_object)
+    {
+        return $this->makeClassIfExists('ValueObject', [$value_object]);
+    }
+
+    /**
+     * @param mixed $response
+     *
+     * @return object
      */
     public function process($response)
     {
-        // Multiple items to process?
         if (is_array($response)) {
-            $response = array_map([$this, "process"], $response);
-
-            return new Collection($response);
+            return $this->processArray($response);
         }
 
-        // Single value, so nothing more to do
         if (!is_object($response)) {
-            return $response;
+            return $this->processSingleValue($response);
         }
 
-        // Look up property getters
         $getters = (array)$this->getters->process($response);
 
         if ($this->isSingleResult($getters)) {
-            return $this->process($response->{$getters[0]}());
+            return $this->processSingleObject($response, $getters);
         }
 
-        $unwrapped = [];
+        return $this->processObject($response, $getters);
+    }
+
+    /**
+     * Loop through the values in the array, and process each of them
+     *
+     * @param array $response
+     *
+     * @return object
+     */
+    private function processArray(array $response)
+    {
+        $response = array_map([$this, "process"], $response);
+
+        return $this->makeCollection($response);
+    }
+
+    /**
+     * Pull out all of the properties from the object into an collection
+     *
+     * @param object $response
+     * @param array  $getters
+     *
+     * @return object
+     */
+    private function processObject($response, array $getters)
+    {
+        $value_object = [];
 
         // If there are specific columns that we want, then only have those getters
         if (!empty($this->columns)) {
@@ -110,10 +188,49 @@ class ConvertResponse implements Processor
 
         // Build values associative array to return
         foreach ($getters as $getter) {
-            $unwrapped[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
+            $value_object[$this->buildPropertyName($getter)] = $this->getPropertyValue($response, $getter);
         }
 
-        return new Collection($unwrapped);
+        return $this->makeValueObject($value_object);
+    }
+
+    /**
+     * Peel off the top level object
+     *
+     * @param object $response
+     * @param array  $getters
+     *
+     * @return object
+     */
+    private function processSingleObject($response, array $getters)
+    {
+        return $this->process($response->{$getters[0]}());
+    }
+
+    /**
+     * have a single value, so return it
+     *
+     * @param mixed $response
+     *
+     * @return mixed
+     */
+    private function processSingleValue($response)
+    {
+        return $response;
+    }
+
+    /**
+     * Trim the Api from the end and set the property
+     *
+     * @param string $api
+     *
+     * @return $this
+     */
+    public function setApi($api)
+    {
+        $this->api = substr($api, 0, - 3);
+
+        return $this;
     }
 
     /**

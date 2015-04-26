@@ -131,6 +131,11 @@ class ClientTest extends BaseTest
     {
         $converter_mock = TestFactory::mockConverter();
 
+        $converter_mock->shouldReceive('setApi')
+                       ->withAnyArgs()
+                       ->andReturnSelf()
+                       ->once();
+
         $converter_mock->shouldReceive('setColumns')
                        ->withAnyArgs()
                        ->andReturnSelf()
