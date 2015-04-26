@@ -6,8 +6,8 @@ use Carbon\Carbon;
 use DateTime;
 use Mockery;
 use Spinen\ConnectWise\Client\Processors\ConvertResponse;
-use Spinen\ConnectWise\Library\Support\ValueCollections\Collection;
-use Spinen\ConnectWise\Library\Support\ValueObjects\Object;
+use Spinen\ConnectWise\Library\Results\Collection;
+use Spinen\ConnectWise\Library\Results\ValueObject;
 use Tests\Spinen\ConnectWise\BaseTest;
 use Tests\Spinen\ConnectWise\TestFactory;
 
@@ -79,7 +79,7 @@ class ConvertResponseTest extends BaseTest
             ],
         ];
 
-        $expected = array_map(function ($item) { return new Object($item); }, $expected);
+        $expected = array_map(function ($item) { return new ValueObject($item); }, $expected);
 
         $expected = new Collection($expected);
 
@@ -141,7 +141,7 @@ class ConvertResponseTest extends BaseTest
             ],
         ];
 
-        $expected = array_map(function ($item) { return new Object($item); }, $expected);
+        $expected = array_map(function ($item) { return new ValueObject($item); }, $expected);
 
         $expected = new Collection($expected);
 

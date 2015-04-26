@@ -1,6 +1,6 @@
 <?php
 
-namespace Spinen\ConnectWise\Library\Support\ValueCollections;
+namespace Spinen\ConnectWise\Library\Results;
 
 use Spinen\ConnectWise\Library\Support\Collection as BaseCollection;
 

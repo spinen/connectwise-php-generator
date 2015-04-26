@@ -1,8 +1,8 @@
 <?php
 
-namespace Spinen\ConnectWise\Library\Support\ValueCollections;
+namespace Spinen\ConnectWise\Library\Results;
 
-class ServiceTickets extends Collection
+class ServiceTicketCollection extends Collection
 {
 
     public function mttr()
