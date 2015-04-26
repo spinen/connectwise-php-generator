@@ -7,6 +7,15 @@ use Illuminate\Support\Collection as IlluminateCollection;
 class Collection extends IlluminateCollection
 {
 
-    // Place holder class in case we need to mix in our own methods
+    public function average($value)
+    {
+        $count = $this->count();
+
+        if ($count) {
+            return $this->sum($this->valueRetriever($value)) / $count;
+        }
+
+        return;
+    }
 
 }

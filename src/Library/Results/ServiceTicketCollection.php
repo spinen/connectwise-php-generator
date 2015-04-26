@@ -12,7 +12,7 @@ class ServiceTicketCollection extends Collection
         $mttr['total_minutes'] = $this->sum('ResolveMins');
         $mttr['total_tickets'] = $this->count();
 
-        if (0 < $mttr['total_tickets']) {
+        if ($mttr['total_tickets']) {
             $mttr['minutes'] = $mttr['total_minutes'] / $mttr['total_tickets'];
             $mttr['hours'] = $mttr['minutes'] / 60;
         }
