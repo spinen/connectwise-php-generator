@@ -75,4 +75,14 @@ class ConfigTest extends BaseTest
         $this->assertFalse(isset($this->config->key));
     }
 
+    /**
+     * @test
+     */
+    public function it_test_to_see_if_there_is_a_config_key()
+    {
+        $this->assertTrue($this->config->has('key'));
+
+        $this->assertFalse($this->config->has('invalid_key'));
+    }
+
 }
