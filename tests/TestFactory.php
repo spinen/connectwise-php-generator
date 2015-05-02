@@ -86,6 +86,14 @@ class TestFactory
     /**
      * @return Mockery\Mock
      */
+    public static function mockConfig()
+    {
+        return Mockery::mock('Spinen\\ConnectWise\\Library\\Config');
+    }
+
+    /**
+     * @return Mockery\Mock
+     */
     public static function mockConverter()
     {
         return Mockery::mock('Spinen\\ConnectWise\\Client\\Processors\\ConvertResponse');

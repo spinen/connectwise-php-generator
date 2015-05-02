@@ -22,6 +22,16 @@ class ConvertResponseTest extends BaseTest
 {
 
     /**
+     * @var Mockery\Mock
+     */
+    protected $client_mock;
+
+    /**
+     * @var Mockery\Mock
+     */
+    protected $config_mock;
+
+    /**
      * @var ConvertResponse
      */
     protected $converter;
@@ -40,7 +50,7 @@ class ConvertResponseTest extends BaseTest
 
         $this->setUpMocks();
 
-        $this->converter = new ConvertResponse($this->getter_mock);
+        $this->converter = new ConvertResponse($this->client_mock, $this->getter_mock);
     }
 
     /**
@@ -48,6 +58,18 @@ class ConvertResponseTest extends BaseTest
      */
     private function setUpMocks()
     {
+        // TODO: Right here needing to get the should receive on the client_mock
+        $this->config_mock = TestFactory::mockConfig();
+        $this->config_mock->shouldReceive('has')
+                          ->andReturn(true);
+        $this->config_mock->shouldReceive('offsetGet')
+                          ->andReturn('UTC');
+
+        $this->client_mock = TestFactory::mockClient();
+        $this->client_mock->shouldReceive('get')
+                          ->with('config')
+                          ->andReturn($this->config_mock);
+
         $this->getter_mock = TestFactory::mockGetGetters();
     }
 
