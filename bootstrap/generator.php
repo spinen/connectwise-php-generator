@@ -1,5 +1,7 @@
 <?php
 
+date_default_timezone_set('UTC');
+
 // If there is an env file, then load it, so that the configs can use them
 if (build_path([
     __DIR__,
