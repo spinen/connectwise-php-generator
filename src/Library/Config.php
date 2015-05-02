@@ -76,6 +76,18 @@ class Config implements ArrayAccess
     }
 
     /**
+     * Check to see if config has key set
+     *
+     * @param string $name
+     *
+     * @return bool
+     */
+    public function has($name)
+    {
+        return isset($this->configs[$name]);
+    }
+
+    /**
      * ArrayAccess method to verify config property is set.
      *
      * @param mixed $offset
