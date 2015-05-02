@@ -4,6 +4,7 @@ namespace Tests\Spinen\ConnectWise\Library\Results;
 
 use Spinen\ConnectWise\Library\Results\ValueObject;
 use Tests\Spinen\ConnectWise\BaseTest;
+use Tests\Spinen\ConnectWise\Library\Stubs\ValueObjectStub;
 
 /**
  * Class ValueObjectTest
@@ -25,7 +26,9 @@ class ValueObjectTest extends BaseTest
     {
         parent::setUp();
 
-        $this->value_object = new ValueObject();
+        $this->value_object = new ValueObject([
+            'key' => 'value',
+        ]);
     }
 
     /**
@@ -34,6 +37,32 @@ class ValueObjectTest extends BaseTest
     public function it_can_be_constructed()
     {
         $this->assertInstanceOf('Spinen\\ConnectWise\\Library\\Results\\ValueObject', $this->value_object);
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_the_expected_results()
+    {
+        $this->assertEquals('value', $this->value_object->key);
+
+        $this->assertEquals('value', $this->value_object['key']);
+    }
+
+    /**
+     * @test
+     */
+    public function it_returns_the_results_of_a_get_attribute_method_if_it_exist()
+    {
+
+        $value_object = new ValueObjectStub([
+            'key' => 'value',
+        ]);
+
+        $this->assertEquals('getter value', $value_object->key);
+
+        $this->assertEquals('getter value', $value_object['key']);
+
     }
 
 }
