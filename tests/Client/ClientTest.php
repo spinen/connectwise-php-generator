@@ -52,6 +52,28 @@ class ClientTest extends BaseTest
 
     /**
      * @test
+     */
+    public function it_sets_time_zone_on_converter_if_timezone_is_not_utc()
+    {
+        $time_zone = 'America/Kentucky/Louisville';
+
+        $converter_mock = TestFactory::mockConverter();
+        $converter_mock->shouldReceive('setTimeZone')
+                       ->with($time_zone)
+                       ->once()
+                       ->andReturnSelf();
+
+        $config = $this->buildConfig();
+
+        $config['timezone'] = $time_zone;
+
+        $client = new Client($config, $converter_mock);
+
+        $this->assertInstanceOf('Spinen\\ConnectWise\\Client\\Client', $client);
+    }
+
+    /**
+     * @test
      * @expectedException InvalidArgumentException
      */
     public function it_raises_exception_when_constructed_without_a_company()
@@ -202,7 +224,7 @@ class ClientTest extends BaseTest
      */
     public function it_raises_exception_when_no_api_is_set_for_making_a_filter_builder()
     {
-        $client = (new Client($this->buildConfig())) ->setMethod('SomeMethod');
+        $client = (new Client($this->buildConfig()))->setMethod('SomeMethod');
 
         $client->makeFilterBuilder([]);
     }
