@@ -284,6 +284,14 @@ class ConvertResponseTest extends BaseTest
     /**
      * @test
      */
+    public function it_sets_the_api()
+    {
+        $this->assertEquals($this->converter, $this->converter->setApi('someApi'));
+    }
+
+    /**
+     * @test
+     */
     public function it_sets_columns_to_only_return()
     {
         $this->assertEquals($this->converter, $this->converter->setColumns(['column']));
