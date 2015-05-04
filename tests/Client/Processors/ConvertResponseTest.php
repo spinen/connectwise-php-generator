@@ -4,6 +4,7 @@ namespace Tests\Spinen\ConnectWise\Client\Processors;
 
 use Carbon\Carbon;
 use DateTime;
+use DateTimeZone;
 use Mockery;
 use Spinen\ConnectWise\Client\Processors\ConvertResponse;
 use Spinen\ConnectWise\Library\Results\Collection;
@@ -50,7 +51,7 @@ class ConvertResponseTest extends BaseTest
 
         $this->setUpMocks();
 
-        $this->converter = new ConvertResponse($this->client_mock, $this->getter_mock);
+        $this->converter = new ConvertResponse($this->getter_mock);
     }
 
     /**
@@ -58,19 +59,21 @@ class ConvertResponseTest extends BaseTest
      */
     private function setUpMocks()
     {
-        // TODO: Right here needing to get the should receive on the client_mock
-        $this->config_mock = TestFactory::mockConfig();
-        $this->config_mock->shouldReceive('has')
-                          ->andReturn(true);
-        $this->config_mock->shouldReceive('offsetGet')
-                          ->andReturn('UTC');
-
-        $this->client_mock = TestFactory::mockClient();
-        $this->client_mock->shouldReceive('get')
-                          ->with('config')
-                          ->andReturn($this->config_mock);
-
         $this->getter_mock = TestFactory::mockGetGetters();
+    }
+
+    /**
+     * @param array $expected
+     *
+     * @return Collection
+     */
+    private function encaseExpectedInCollections(array $expected)
+    {
+        $expected = array_map(function ($item) { return new ValueObject($item); }, $expected);
+
+        $expected = new Collection($expected);
+
+        return $expected;
     }
 
     /**
@@ -101,9 +104,7 @@ class ConvertResponseTest extends BaseTest
             ],
         ];
 
-        $expected = array_map(function ($item) { return new ValueObject($item); }, $expected);
-
-        $expected = new Collection($expected);
+        $expected = $this->encaseExpectedInCollections($expected);
 
         $response_array_one = TestFactory::makeClass([
             //'property' => 'value'
@@ -163,9 +164,7 @@ class ConvertResponseTest extends BaseTest
             ],
         ];
 
-        $expected = array_map(function ($item) { return new ValueObject($item); }, $expected);
-
-        $expected = new Collection($expected);
+        $expected = $this->encaseExpectedInCollections($expected);
 
         $response_array_one = TestFactory::makeClass([
             //'property' => 'value'
@@ -213,6 +212,46 @@ class ConvertResponseTest extends BaseTest
     /**
      * @test
      */
+    public function it_converts_dates_from_utc_when_time_zone_is_set()
+    {
+        $time_zone = 'America/Kentucky/Louisville';
+
+        $this->converter->setTimeZone($time_zone);
+
+        $date_time = new DateTime(null, new DateTimeZone('UTC'));
+
+        $expected = [
+            [
+                'Date' => Carbon::instance($date_time)
+                                ->setTimezone($time_zone),
+            ],
+        ];
+
+        $expected = $this->encaseExpectedInCollections($expected);
+
+        $response_array = TestFactory::makeClass([
+            //'property' => 'value'
+        ], [
+            'getDateUTC' => $date_time,
+        ]);
+
+        $this->getter_mock->shouldReceive('process')
+                          ->with($response_array)
+                          ->andReturn([
+                              'getDateUTC',
+                          ])
+                          ->once();
+
+        $converted = $this->converter->process([
+            $response_array,
+        ]);
+
+        $this->assertEquals($expected, $converted);
+    }
+
+    /**
+     * @test
+     */
     public function it_returns_a_single_value_when_that_is_all_that_is_passed_in()
     {
         $this->getter_mock->shouldReceive('process')
@@ -248,6 +287,14 @@ class ConvertResponseTest extends BaseTest
     public function it_sets_columns_to_only_return()
     {
         $this->assertEquals($this->converter, $this->converter->setColumns(['column']));
+    }
+
+    /**
+     * @test
+     */
+    public function it_set_the_time_zone_to_convert_dates()
+    {
+        $this->assertEquals($this->converter, $this->converter->setTimeZone('America/Kentucky/Louisville'));
     }
 
 }
