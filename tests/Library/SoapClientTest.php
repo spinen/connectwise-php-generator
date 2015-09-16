@@ -32,11 +32,11 @@ class SoapClientTest extends BaseTest
     }
 
     /**
-     * When the class gets constructed, we are doing so with a fake WSDL, so goig to get an error
+     * When the class gets constructed, we are doing so with a fake WSDL, so going to get an error
      *
      * @test
      * @expectedException SoapFault
-     * @expectedExceptionMessage SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://some.tld/wsdl' : failed to load external entity "http://some.tld/wsdl"
+     * @expectedExceptionMessage SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://some.tld/wsdl' : EntityRef: expecting ';'
      */
     public function it_can_be_constructed_with_no_options()
     {
