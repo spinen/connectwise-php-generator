@@ -17,7 +17,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class FormatCode extends Base implements CommandInterface
 {
-
     use ResponseParser;
 
     /**
@@ -171,5 +170,4 @@ class FormatCode extends Base implements CommandInterface
             //'--yoda',
         ]);
     }
-
 }

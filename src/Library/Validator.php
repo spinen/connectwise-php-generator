@@ -11,7 +11,6 @@ use InvalidArgumentException;
  */
 class Validator
 {
-
     /**
      * Checks to see if a property needs to ne validated
      *
@@ -69,7 +68,7 @@ class Validator
      * Validator for an integer property
      *
      * @param string $property
-     * @param mixed $value
+     * @param mixed  $value
      *
      * @return bool
      * @throws InvalidArgumentException
@@ -139,5 +138,4 @@ class Validator
 
         return true;
     }
-
 }

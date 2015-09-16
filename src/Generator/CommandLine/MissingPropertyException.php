@@ -6,5 +6,4 @@ use InvalidArgumentException;
 
 class MissingPropertyException extends InvalidArgumentException
 {
-
 }

@@ -11,7 +11,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class InsertTypeHints extends Base implements CommandInterface
 {
-
     /**
      * @var Filesystem
      */
@@ -65,5 +64,4 @@ class InsertTypeHints extends Base implements CommandInterface
             $this->type_hinter->process($file);
         }
     }
-
 }

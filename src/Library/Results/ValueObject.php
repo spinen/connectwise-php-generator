@@ -6,7 +6,6 @@ use Spinen\ConnectWise\Library\Support\Collection as BaseCollection;
 
 class ValueObject extends BaseCollection
 {
-
     /**
      * Get value from getter or from the collection by key.
      *
@@ -37,5 +36,4 @@ class ValueObject extends BaseCollection
     {
         return $this->get($key);
     }
-
 }

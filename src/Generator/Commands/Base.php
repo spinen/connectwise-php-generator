@@ -14,7 +14,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Base extends Command
 {
-
     /**
      * @var Generator
      */
@@ -54,5 +53,4 @@ class Base extends Command
         $this->input = $input;
         $this->output = $output;
     }
-
 }

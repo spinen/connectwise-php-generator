@@ -16,7 +16,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class BuildSignatures extends Base implements CommandInterface
 {
-
     /**
      * @var FormatCode
      */
@@ -222,11 +221,10 @@ EOD;
         $contents .= "    {" . PHP_EOL;
 
         foreach ($classes as $class) {
-            $contents .=
-                "        \$this->add('" .
-                $this->generator->generatedNamespace($class) .
-                "')->withArgument(\$this->getHost())->withArgument(\$this->getSoapOptions());" .
-                PHP_EOL;
+            $contents .= "        \$this->add('" .
+                         $this->generator->generatedNamespace($class) .
+                         "')->withArgument(\$this->getHost())->withArgument(\$this->getSoapOptions());" .
+                         PHP_EOL;
         }
 
         $contents .= "    }" . PHP_EOL . PHP_EOL;
@@ -280,5 +278,4 @@ EOD;
 
         $this->endTraitFile($file);
     }
-
 }

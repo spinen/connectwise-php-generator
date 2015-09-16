@@ -4,7 +4,6 @@ namespace Spinen\ConnectWise\Generator\Traits;
 
 trait Composer
 {
-
     /**
      * As code is getting generated/modified, the autoload needs updated
      *
@@ -18,11 +17,10 @@ trait Composer
 
         $this->outputResponse($response);
 
-//        $this->generator->get('loader')
-//                        ->setPsr4($this->generator->apiNamespace() . '\\', $this->generator->apiDirectory());
+        //        $this->generator->get('loader')
+        //                        ->setPsr4($this->generator->apiNamespace() . '\\', $this->generator->apiDirectory());
 
-//        $this->generator->get('loader')
-//                        ->addPsr4($this->generator->apiNamespace() . '\\', $this->generator->apiDirectory(), true);
+        //        $this->generator->get('loader')
+        //                        ->addPsr4($this->generator->apiNamespace() . '\\', $this->generator->apiDirectory(), true);
     }
-
 }

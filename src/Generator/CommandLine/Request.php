@@ -12,7 +12,6 @@ use Symfony\Component\Process\Process;
  */
 class Request
 {
-
     /**
      * @var Generator
      */
@@ -83,5 +82,4 @@ class Request
         // Allow chaining
         return $this;
     }
-
 }

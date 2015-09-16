@@ -9,7 +9,6 @@ namespace Spinen\ConnectWise\Library\Contracts;
  */
 interface Container
 {
-
     /**
      * Adds an alias to the container
      *
@@ -40,5 +39,4 @@ interface Container
      * @return mixed
      */
     public function get($alias, array $args = []);
-
 }

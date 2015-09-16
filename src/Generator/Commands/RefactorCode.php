@@ -17,7 +17,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class RefactorCode extends Base implements CommandInterface
 {
-
     use ResponseParser;
 
     /**
@@ -55,9 +54,8 @@ class RefactorCode extends Base implements CommandInterface
     {
         $this->output->writeln("<info>Adding host parameter to constructor...</info>");
 
-        $command =
-            'sed -i "" "s|__construct(array \$options|__construct(\$host, array \$options|g" ' .
-            $this->generator->generatedDirectory('*Api.php', false);
+        $command = 'sed -i "" "s|__construct(array \$options|__construct(\$host, array \$options|g" ' .
+                   $this->generator->generatedDirectory('*Api.php', false);
 
         $response = $this->request->setCommand($command)
                                   ->run();
@@ -72,9 +70,8 @@ class RefactorCode extends Base implements CommandInterface
     {
         $this->output->writeln("<info>Adding host parameter to parent constructor...</info>");
 
-        $command =
-            'sed -i "" "s|__construct(\$wsdl, \$options)|__construct(\$host \. \$wsdl, \$options)|g" ' .
-            $this->generator->generatedDirectory('*Api.php', false);
+        $command = 'sed -i "" "s|__construct(\$wsdl, \$options)|__construct(\$host \. \$wsdl, \$options)|g" ' .
+                   $this->generator->generatedDirectory('*Api.php', false);
 
         $response = $this->request->setCommand($command)
                                   ->run();
@@ -123,16 +120,14 @@ class RefactorCode extends Base implements CommandInterface
     {
         $this->output->writeln("<info>Removing hardcoded hostname...</info>");
 
-        $command =
-            'sed -i "" "s|' .
-            preg_quote($this->generator->hostPath()) .
-            '||g" ' .
-            $this->generator->generatedDirectory('*.php', false);
+        $command = 'sed -i "" "s|' .
+                   preg_quote($this->generator->hostPath()) .
+                   '||g" ' .
+                   $this->generator->generatedDirectory('*.php', false);
 
         $response = $this->request->setCommand($command)
                                   ->run();
 
         $this->outputResponse($response);
     }
-
 }

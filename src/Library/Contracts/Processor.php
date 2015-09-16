@@ -2,8 +2,7 @@
 
 namespace Spinen\ConnectWise\Library\Contracts;
 
-interface Processor {
-
+interface Processor
+{
     public function process($item);
-
 }
