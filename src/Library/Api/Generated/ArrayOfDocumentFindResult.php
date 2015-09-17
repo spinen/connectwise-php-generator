@@ -27,7 +27,7 @@ class ArrayOfDocumentFindResult
      * @param DocumentFindResult[] $DocumentFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfDocumentFindResult
      */
-    public function setDocumentFindResult(array $DocumentFindResult)
+    public function setDocumentFindResult(array $DocumentFindResult = null)
     {
         $this->DocumentFindResult = $DocumentFindResult;
         return $this;

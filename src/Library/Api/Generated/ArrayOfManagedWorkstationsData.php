@@ -27,7 +27,7 @@ class ArrayOfManagedWorkstationsData
      * @param ManagedWorkstationsData[] $ManagedWorkstationsData
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfManagedWorkstationsData
      */
-    public function setManagedWorkstationsData(array $ManagedWorkstationsData)
+    public function setManagedWorkstationsData(array $ManagedWorkstationsData = null)
     {
         $this->ManagedWorkstationsData = $ManagedWorkstationsData;
         return $this;

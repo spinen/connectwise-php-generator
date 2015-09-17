@@ -31,23 +31,26 @@ class CompanyAddress extends Address
     protected $InactiveFlag = null;
 
     /**
-     * @param ArrayOfString $StreetLines
-     * @param string $City
-     * @param string $State
-     * @param string $Zip
-     * @param string $Country
+     * @var boolean $DefaultBillFlag
+     */
+    protected $DefaultBillFlag = null;
+
+    /**
+     * @var boolean $DefaultShipFlag
+     */
+    protected $DefaultShipFlag = null;
+
+    /**
      * @param int $Id
      * @param boolean $DefaultFlag
      * @param int $CompanyId
-     * @param string $SiteName
      */
-    public function __construct($StreetLines = null, $City = null, $State = null, $Zip = null, $Country = null, $Id = null, $DefaultFlag = null, $CompanyId = null, $SiteName = null)
+    public function __construct($Id = null, $DefaultFlag = null, $CompanyId = null)
     {
-        parent::__construct($StreetLines, $City, $State, $Zip, $Country);
+        parent::__construct();
         $this->Id          = $Id;
         $this->DefaultFlag = $DefaultFlag;
         $this->CompanyId   = $CompanyId;
-        $this->SiteName    = $SiteName;
     }
 
     /**
@@ -137,6 +140,42 @@ class CompanyAddress extends Address
     public function setInactiveFlag($InactiveFlag)
     {
         $this->InactiveFlag = $InactiveFlag;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getDefaultBillFlag()
+    {
+        return $this->DefaultBillFlag;
+    }
+
+    /**
+     * @param boolean $DefaultBillFlag
+     * @return \Spinen\ConnectWise\Library\Api\Generated\CompanyAddress
+     */
+    public function setDefaultBillFlag($DefaultBillFlag)
+    {
+        $this->DefaultBillFlag = $DefaultBillFlag;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getDefaultShipFlag()
+    {
+        return $this->DefaultShipFlag;
+    }
+
+    /**
+     * @param boolean $DefaultShipFlag
+     * @return \Spinen\ConnectWise\Library\Api\Generated\CompanyAddress
+     */
+    public function setDefaultShipFlag($DefaultShipFlag)
+    {
+        $this->DefaultShipFlag = $DefaultShipFlag;
         return $this;
     }
 

@@ -6,350 +6,183 @@ class ProductDetail
 {
 
     /**
-     * @var ArrayOfString $SerialNumbers
+     * @var int $Id
      */
-    protected $SerialNumbers = null;
+    protected $Id = null;
 
     /**
-     * @var boolean $Billable
+     * @var int $ProductId
      */
-    protected $Billable = null;
+    protected $ProductId = null;
 
     /**
-     * @var boolean $IsSerialized
+     * @var int $LineNumber
      */
-    protected $IsSerialized = null;
+    protected $LineNumber = null;
 
     /**
-     * @var boolean $Taxable
+     * @var int $PickedQuantity
      */
-    protected $Taxable = null;
+    protected $PickedQuantity = null;
 
     /**
-     * @var \DateTime $Date
+     * @var int $ShippedQuantity
      */
-    protected $Date = null;
+    protected $ShippedQuantity = null;
 
     /**
-     * @var float $AgreementAmount
-     */
-    protected $AgreementAmount = null;
-
-    /**
-     * @var float $InvoicedAmount
-     */
-    protected $InvoicedAmount = null;
-
-    /**
-     * @var float $Quantity
+     * @var int $Quantity
      */
     protected $Quantity = null;
 
     /**
-     * @var float $UnitPrice
+     * @var int $WarehouseId
      */
-    protected $UnitPrice = null;
+    protected $WarehouseId = null;
 
     /**
-     * @var float $UnitCost
+     * @var int $WarehouseBinId
      */
-    protected $UnitCost = null;
+    protected $WarehouseBinId = null;
 
     /**
-     * @var string $Bin
+     * @var int $ShipmentMethodId
      */
-    protected $Bin = null;
+    protected $ShipmentMethodId = null;
 
     /**
-     * @var string $BusinessUnit
+     * @var ArrayOfInt $SerialNumberIds
      */
-    protected $BusinessUnit = null;
+    protected $SerialNumberIds = null;
 
     /**
-     * @var string $Category
+     * @var string $TrackingNumber
      */
-    protected $Category = null;
+    protected $TrackingNumber = null;
 
     /**
-     * @var string $ChargeTo
+     * @var string $SerialNumber
      */
-    protected $ChargeTo = null;
+    protected $SerialNumber = null;
 
     /**
-     * @var string $Description
+     * @var string $UpdatedBy
      */
-    protected $Description = null;
+    protected $UpdatedBy = null;
 
     /**
-     * @var string $ItemClass
+     * @var \DateTime $LastUpdate
      */
-    protected $ItemClass = null;
+    protected $LastUpdate = null;
 
     /**
-     * @var string $ItemIdentifier
+     * @param int $Id
+     * @param int $PickedQuantity
+     * @param int $ShippedQuantity
+     * @param int $Quantity
+     * @param \DateTime $LastUpdate
      */
-    protected $ItemIdentifier = null;
-
-    /**
-     * @var string $ItemType
-     */
-    protected $ItemType = null;
-
-    /**
-     * @var string $Location
-     */
-    protected $Location = null;
-
-    /**
-     * @var string $ManufacturerName
-     */
-    protected $ManufacturerName = null;
-
-    /**
-     * @var string $ManufacturerIdentifier
-     */
-    protected $ManufacturerIdentifier = null;
-
-    /**
-     * @var string $SubCategory
-     */
-    protected $SubCategory = null;
-
-    /**
-     * @var string $ProjectName
-     */
-    protected $ProjectName = null;
-
-    /**
-     * @var int $ProjectNumber
-     */
-    protected $ProjectNumber = null;
-
-    /**
-     * @var string $PhaseName
-     */
-    protected $PhaseName = null;
-
-    /**
-     * @var int $TicketNumber
-     */
-    protected $TicketNumber = null;
-
-    /**
-     * @var string $TicketSummary
-     */
-    protected $TicketSummary = null;
-
-    /**
-     * @var string $VendorName
-     */
-    protected $VendorName = null;
-
-    /**
-     * @var string $VendorIdentifier
-     */
-    protected $VendorIdentifier = null;
-
-    /**
-     * @var string $VendorNumber
-     */
-    protected $VendorNumber = null;
-
-    /**
-     * @var string $Warehouse
-     */
-    protected $Warehouse = null;
-
-    /**
-     * @param ArrayOfString $SerialNumbers
-     * @param boolean $Billable
-     * @param boolean $IsSerialized
-     * @param boolean $Taxable
-     * @param \DateTime $Date
-     * @param string $Bin
-     * @param string $BusinessUnit
-     * @param string $Category
-     * @param string $ChargeTo
-     * @param string $Description
-     * @param string $ItemClass
-     * @param string $ItemIdentifier
-     * @param string $ItemType
-     * @param string $Location
-     * @param string $ManufacturerName
-     * @param string $ManufacturerIdentifier
-     * @param string $SubCategory
-     * @param string $ProjectName
-     * @param string $PhaseName
-     * @param string $TicketSummary
-     * @param string $VendorName
-     * @param string $VendorIdentifier
-     * @param string $VendorNumber
-     * @param string $Warehouse
-     */
-    public function __construct($SerialNumbers = null, $Billable = null, $IsSerialized = null, $Taxable = null, \DateTime $Date = null, $Bin = null, $BusinessUnit = null, $Category = null, $ChargeTo = null, $Description = null, $ItemClass = null, $ItemIdentifier = null, $ItemType = null, $Location = null, $ManufacturerName = null, $ManufacturerIdentifier = null, $SubCategory = null, $ProjectName = null, $PhaseName = null, $TicketSummary = null, $VendorName = null, $VendorIdentifier = null, $VendorNumber = null, $Warehouse = null)
+    public function __construct($Id = null, $PickedQuantity = null, $ShippedQuantity = null, $Quantity = null, \DateTime $LastUpdate = null)
     {
-        $this->SerialNumbers          = $SerialNumbers;
-        $this->Billable               = $Billable;
-        $this->IsSerialized           = $IsSerialized;
-        $this->Taxable                = $Taxable;
-        $this->Date                   = $Date ? $Date->format(\DateTime::ATOM) : null;
-        $this->Bin                    = $Bin;
-        $this->BusinessUnit           = $BusinessUnit;
-        $this->Category               = $Category;
-        $this->ChargeTo               = $ChargeTo;
-        $this->Description            = $Description;
-        $this->ItemClass              = $ItemClass;
-        $this->ItemIdentifier         = $ItemIdentifier;
-        $this->ItemType               = $ItemType;
-        $this->Location               = $Location;
-        $this->ManufacturerName       = $ManufacturerName;
-        $this->ManufacturerIdentifier = $ManufacturerIdentifier;
-        $this->SubCategory            = $SubCategory;
-        $this->ProjectName            = $ProjectName;
-        $this->PhaseName              = $PhaseName;
-        $this->TicketSummary          = $TicketSummary;
-        $this->VendorName             = $VendorName;
-        $this->VendorIdentifier       = $VendorIdentifier;
-        $this->VendorNumber           = $VendorNumber;
-        $this->Warehouse              = $Warehouse;
+        $this->Id              = $Id;
+        $this->PickedQuantity  = $PickedQuantity;
+        $this->ShippedQuantity = $ShippedQuantity;
+        $this->Quantity        = $Quantity;
+        $this->LastUpdate      = $LastUpdate ? $LastUpdate->format(\DateTime::ATOM) : null;
     }
 
     /**
-     * @return ArrayOfString
+     * @return int
      */
-    public function getSerialNumbers()
+    public function getId()
     {
-        return $this->SerialNumbers;
+        return $this->Id;
     }
 
     /**
-     * @param ArrayOfString $SerialNumbers
+     * @param int $Id
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setSerialNumbers($SerialNumbers)
+    public function setId($Id)
     {
-        $this->SerialNumbers = $SerialNumbers;
+        $this->Id = $Id;
         return $this;
     }
 
     /**
-     * @return boolean
+     * @return int
      */
-    public function getBillable()
+    public function getProductId()
     {
-        return $this->Billable;
+        return $this->ProductId;
     }
 
     /**
-     * @param boolean $Billable
+     * @param int $ProductId
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setBillable($Billable)
+    public function setProductId($ProductId)
     {
-        $this->Billable = $Billable;
+        $this->ProductId = $ProductId;
         return $this;
     }
 
     /**
-     * @return boolean
+     * @return int
      */
-    public function getIsSerialized()
+    public function getLineNumber()
     {
-        return $this->IsSerialized;
+        return $this->LineNumber;
     }
 
     /**
-     * @param boolean $IsSerialized
+     * @param int $LineNumber
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setIsSerialized($IsSerialized)
+    public function setLineNumber($LineNumber)
     {
-        $this->IsSerialized = $IsSerialized;
+        $this->LineNumber = $LineNumber;
         return $this;
     }
 
     /**
-     * @return boolean
+     * @return int
      */
-    public function getTaxable()
+    public function getPickedQuantity()
     {
-        return $this->Taxable;
+        return $this->PickedQuantity;
     }
 
     /**
-     * @param boolean $Taxable
+     * @param int $PickedQuantity
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setTaxable($Taxable)
+    public function setPickedQuantity($PickedQuantity)
     {
-        $this->Taxable = $Taxable;
+        $this->PickedQuantity = $PickedQuantity;
         return $this;
     }
 
     /**
-     * @return \DateTime
+     * @return int
      */
-    public function getDate()
+    public function getShippedQuantity()
     {
-        if ($this->Date == null) {
-            return null;
-        } else {
-            try {
-                return new \DateTime($this->Date);
-            } catch (\Exception $e) {
-                return false;
-            }
-        }
+        return $this->ShippedQuantity;
     }
 
     /**
-     * @param \DateTime $Date
+     * @param int $ShippedQuantity
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setDate(\DateTime $Date)
+    public function setShippedQuantity($ShippedQuantity)
     {
-        $this->Date = $Date->format(\DateTime::ATOM);
+        $this->ShippedQuantity = $ShippedQuantity;
         return $this;
     }
 
     /**
-     * @return float
-     */
-    public function getAgreementAmount()
-    {
-        return $this->AgreementAmount;
-    }
-
-    /**
-     * @param float $AgreementAmount
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setAgreementAmount($AgreementAmount)
-    {
-        $this->AgreementAmount = $AgreementAmount;
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getInvoicedAmount()
-    {
-        return $this->InvoicedAmount;
-    }
-
-    /**
-     * @param float $InvoicedAmount
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setInvoicedAmount($InvoicedAmount)
-    {
-        $this->InvoicedAmount = $InvoicedAmount;
-        return $this;
-    }
-
-    /**
-     * @return float
+     * @return int
      */
     public function getQuantity()
     {
@@ -357,7 +190,7 @@ class ProductDetail
     }
 
     /**
-     * @param float $Quantity
+     * @param int $Quantity
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
     public function setQuantity($Quantity)
@@ -367,416 +200,154 @@ class ProductDetail
     }
 
     /**
-     * @return float
+     * @return int
      */
-    public function getUnitPrice()
+    public function getWarehouseId()
     {
-        return $this->UnitPrice;
+        return $this->WarehouseId;
     }
 
     /**
-     * @param float $UnitPrice
+     * @param int $WarehouseId
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setUnitPrice($UnitPrice)
+    public function setWarehouseId($WarehouseId)
     {
-        $this->UnitPrice = $UnitPrice;
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getUnitCost()
-    {
-        return $this->UnitCost;
-    }
-
-    /**
-     * @param float $UnitCost
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setUnitCost($UnitCost)
-    {
-        $this->UnitCost = $UnitCost;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBin()
-    {
-        return $this->Bin;
-    }
-
-    /**
-     * @param string $Bin
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setBin($Bin)
-    {
-        $this->Bin = $Bin;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getBusinessUnit()
-    {
-        return $this->BusinessUnit;
-    }
-
-    /**
-     * @param string $BusinessUnit
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setBusinessUnit($BusinessUnit)
-    {
-        $this->BusinessUnit = $BusinessUnit;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getCategory()
-    {
-        return $this->Category;
-    }
-
-    /**
-     * @param string $Category
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setCategory($Category)
-    {
-        $this->Category = $Category;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getChargeTo()
-    {
-        return $this->ChargeTo;
-    }
-
-    /**
-     * @param string $ChargeTo
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setChargeTo($ChargeTo)
-    {
-        $this->ChargeTo = $ChargeTo;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->Description;
-    }
-
-    /**
-     * @param string $Description
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setDescription($Description)
-    {
-        $this->Description = $Description;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getItemClass()
-    {
-        return $this->ItemClass;
-    }
-
-    /**
-     * @param string $ItemClass
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setItemClass($ItemClass)
-    {
-        $this->ItemClass = $ItemClass;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getItemIdentifier()
-    {
-        return $this->ItemIdentifier;
-    }
-
-    /**
-     * @param string $ItemIdentifier
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setItemIdentifier($ItemIdentifier)
-    {
-        $this->ItemIdentifier = $ItemIdentifier;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getItemType()
-    {
-        return $this->ItemType;
-    }
-
-    /**
-     * @param string $ItemType
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setItemType($ItemType)
-    {
-        $this->ItemType = $ItemType;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLocation()
-    {
-        return $this->Location;
-    }
-
-    /**
-     * @param string $Location
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setLocation($Location)
-    {
-        $this->Location = $Location;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getManufacturerName()
-    {
-        return $this->ManufacturerName;
-    }
-
-    /**
-     * @param string $ManufacturerName
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setManufacturerName($ManufacturerName)
-    {
-        $this->ManufacturerName = $ManufacturerName;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getManufacturerIdentifier()
-    {
-        return $this->ManufacturerIdentifier;
-    }
-
-    /**
-     * @param string $ManufacturerIdentifier
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setManufacturerIdentifier($ManufacturerIdentifier)
-    {
-        $this->ManufacturerIdentifier = $ManufacturerIdentifier;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSubCategory()
-    {
-        return $this->SubCategory;
-    }
-
-    /**
-     * @param string $SubCategory
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setSubCategory($SubCategory)
-    {
-        $this->SubCategory = $SubCategory;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getProjectName()
-    {
-        return $this->ProjectName;
-    }
-
-    /**
-     * @param string $ProjectName
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setProjectName($ProjectName)
-    {
-        $this->ProjectName = $ProjectName;
+        $this->WarehouseId = $WarehouseId;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getProjectNumber()
+    public function getWarehouseBinId()
     {
-        return $this->ProjectNumber;
+        return $this->WarehouseBinId;
     }
 
     /**
-     * @param int $ProjectNumber
+     * @param int $WarehouseBinId
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setProjectNumber($ProjectNumber)
+    public function setWarehouseBinId($WarehouseBinId)
     {
-        $this->ProjectNumber = $ProjectNumber;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPhaseName()
-    {
-        return $this->PhaseName;
-    }
-
-    /**
-     * @param string $PhaseName
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setPhaseName($PhaseName)
-    {
-        $this->PhaseName = $PhaseName;
+        $this->WarehouseBinId = $WarehouseBinId;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getTicketNumber()
+    public function getShipmentMethodId()
     {
-        return $this->TicketNumber;
+        return $this->ShipmentMethodId;
     }
 
     /**
-     * @param int $TicketNumber
+     * @param int $ShipmentMethodId
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setTicketNumber($TicketNumber)
+    public function setShipmentMethodId($ShipmentMethodId)
     {
-        $this->TicketNumber = $TicketNumber;
+        $this->ShipmentMethodId = $ShipmentMethodId;
+        return $this;
+    }
+
+    /**
+     * @return ArrayOfInt
+     */
+    public function getSerialNumberIds()
+    {
+        return $this->SerialNumberIds;
+    }
+
+    /**
+     * @param ArrayOfInt $SerialNumberIds
+     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
+     */
+    public function setSerialNumberIds($SerialNumberIds)
+    {
+        $this->SerialNumberIds = $SerialNumberIds;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getTicketSummary()
+    public function getTrackingNumber()
     {
-        return $this->TicketSummary;
+        return $this->TrackingNumber;
     }
 
     /**
-     * @param string $TicketSummary
+     * @param string $TrackingNumber
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setTicketSummary($TicketSummary)
+    public function setTrackingNumber($TrackingNumber)
     {
-        $this->TicketSummary = $TicketSummary;
+        $this->TrackingNumber = $TrackingNumber;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getVendorName()
+    public function getSerialNumber()
     {
-        return $this->VendorName;
+        return $this->SerialNumber;
     }
 
     /**
-     * @param string $VendorName
+     * @param string $SerialNumber
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setVendorName($VendorName)
+    public function setSerialNumber($SerialNumber)
     {
-        $this->VendorName = $VendorName;
+        $this->SerialNumber = $SerialNumber;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getVendorIdentifier()
+    public function getUpdatedBy()
     {
-        return $this->VendorIdentifier;
+        return $this->UpdatedBy;
     }
 
     /**
-     * @param string $VendorIdentifier
+     * @param string $UpdatedBy
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setVendorIdentifier($VendorIdentifier)
+    public function setUpdatedBy($UpdatedBy)
     {
-        $this->VendorIdentifier = $VendorIdentifier;
+        $this->UpdatedBy = $UpdatedBy;
         return $this;
     }
 
     /**
-     * @return string
+     * @return \DateTime
      */
-    public function getVendorNumber()
+    public function getLastUpdate()
     {
-        return $this->VendorNumber;
+        if ($this->LastUpdate == null) {
+            return null;
+        } else {
+            try {
+                return new \DateTime($this->LastUpdate);
+            } catch (\Exception $e) {
+                return false;
+            }
+        }
     }
 
     /**
-     * @param string $VendorNumber
+     * @param \DateTime $LastUpdate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
      */
-    public function setVendorNumber($VendorNumber)
+    public function setLastUpdate(\DateTime $LastUpdate)
     {
-        $this->VendorNumber = $VendorNumber;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getWarehouse()
-    {
-        return $this->Warehouse;
-    }
-
-    /**
-     * @param string $Warehouse
-     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDetail
-     */
-    public function setWarehouse($Warehouse)
-    {
-        $this->Warehouse = $Warehouse;
+        $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
         return $this;
     }
 

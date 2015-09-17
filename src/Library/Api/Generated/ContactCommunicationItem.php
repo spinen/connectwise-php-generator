@@ -44,18 +44,12 @@ class ContactCommunicationItem
      * @param int $Id
      * @param CommunicationType $Type
      * @param int $CommunicationTypeId
-     * @param string $Description
-     * @param string $Value
-     * @param string $ValueExtension
      */
-    public function __construct($Id = null, CommunicationType $Type = null, $CommunicationTypeId = null, $Description = null, $Value = null, $ValueExtension = null)
+    public function __construct($Id = null, CommunicationType $Type = null, $CommunicationTypeId = null)
     {
         $this->Id                  = $Id;
         $this->Type                = $Type;
         $this->CommunicationTypeId = $CommunicationTypeId;
-        $this->Description         = $Description;
-        $this->Value               = $Value;
-        $this->ValueExtension      = $ValueExtension;
     }
 
     /**

@@ -202,26 +202,10 @@ class Project
 
     /**
      * @param int $Id
-     * @param string $ProjectName
-     * @param string $Status
-     * @param string $Description
-     * @param string $UpdatedBy
-     * @param string $BillingRateOption
-     * @param string $BillingAttention
-     * @param string $CustomerPO
-     * @param ProjectSummaryInfo $ProjectSummaryInfo
      */
-    public function __construct($Id = null, $ProjectName = null, $Status = null, $Description = null, $UpdatedBy = null, $BillingRateOption = null, $BillingAttention = null, $CustomerPO = null, ProjectSummaryInfo $ProjectSummaryInfo = null)
+    public function __construct($Id = null)
     {
-        $this->Id                 = $Id;
-        $this->ProjectName        = $ProjectName;
-        $this->Status             = $Status;
-        $this->Description        = $Description;
-        $this->UpdatedBy          = $UpdatedBy;
-        $this->BillingRateOption  = $BillingRateOption;
-        $this->BillingAttention   = $BillingAttention;
-        $this->CustomerPO         = $CustomerPO;
-        $this->ProjectSummaryInfo = $ProjectSummaryInfo;
+        $this->Id = $Id;
     }
 
     /**
@@ -424,9 +408,13 @@ class Project
      * @param \DateTime $EstimatedStart
      * @return \Spinen\ConnectWise\Library\Api\Generated\Project
      */
-    public function setEstimatedStart(\DateTime $EstimatedStart)
+    public function setEstimatedStart(\DateTime $EstimatedStart = null)
     {
-        $this->EstimatedStart = $EstimatedStart->format(\DateTime::ATOM);
+        if ($EstimatedStart == null) {
+            $this->EstimatedStart = null;
+        } else {
+            $this->EstimatedStart = $EstimatedStart->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -450,9 +438,13 @@ class Project
      * @param \DateTime $EstimatedEnd
      * @return \Spinen\ConnectWise\Library\Api\Generated\Project
      */
-    public function setEstimatedEnd(\DateTime $EstimatedEnd)
+    public function setEstimatedEnd(\DateTime $EstimatedEnd = null)
     {
-        $this->EstimatedEnd = $EstimatedEnd->format(\DateTime::ATOM);
+        if ($EstimatedEnd == null) {
+            $this->EstimatedEnd = null;
+        } else {
+            $this->EstimatedEnd = $EstimatedEnd->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -548,9 +540,13 @@ class Project
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\Project
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

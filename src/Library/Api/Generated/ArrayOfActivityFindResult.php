@@ -27,7 +27,7 @@ class ArrayOfActivityFindResult
      * @param ActivityFindResult[] $ActivityFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfActivityFindResult
      */
-    public function setActivityFindResult(array $ActivityFindResult)
+    public function setActivityFindResult(array $ActivityFindResult = null)
     {
         $this->ActivityFindResult = $ActivityFindResult;
         return $this;

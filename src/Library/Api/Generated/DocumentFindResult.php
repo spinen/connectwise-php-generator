@@ -122,28 +122,18 @@ class DocumentFindResult
 
     /**
      * @param int $Id
-     * @param string $Title
-     * @param string $FileName
-     * @param string $ServerFileName
-     * @param string $Path
      * @param boolean $IsPublic
      * @param boolean $IsLink
      * @param boolean $IsTemplate
      * @param \DateTime $LastUpdated
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $Title = null, $FileName = null, $ServerFileName = null, $Path = null, $IsPublic = null, $IsLink = null, $IsTemplate = null, \DateTime $LastUpdated = null, $UpdatedBy = null)
+    public function __construct($Id = null, $IsPublic = null, $IsLink = null, $IsTemplate = null, \DateTime $LastUpdated = null)
     {
-        $this->Id             = $Id;
-        $this->Title          = $Title;
-        $this->FileName       = $FileName;
-        $this->ServerFileName = $ServerFileName;
-        $this->Path           = $Path;
-        $this->IsPublic       = $IsPublic;
-        $this->IsLink         = $IsLink;
-        $this->IsTemplate     = $IsTemplate;
-        $this->LastUpdated    = $LastUpdated ? $LastUpdated->format(\DateTime::ATOM) : null;
-        $this->UpdatedBy      = $UpdatedBy;
+        $this->Id          = $Id;
+        $this->IsPublic    = $IsPublic;
+        $this->IsLink      = $IsLink;
+        $this->IsTemplate  = $IsTemplate;
+        $this->LastUpdated = $LastUpdated ? $LastUpdated->format(\DateTime::ATOM) : null;
     }
 
     /**

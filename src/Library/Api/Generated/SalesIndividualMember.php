@@ -21,15 +21,13 @@ class SalesIndividualMember
     protected $ReferralFlag = null;
 
     /**
-     * @param string $MemberIdentifier
      * @param int $SplitPercentage
      * @param boolean $ReferralFlag
      */
-    public function __construct($MemberIdentifier = null, $SplitPercentage = null, $ReferralFlag = null)
+    public function __construct($SplitPercentage = null, $ReferralFlag = null)
     {
-        $this->MemberIdentifier = $MemberIdentifier;
-        $this->SplitPercentage  = $SplitPercentage;
-        $this->ReferralFlag     = $ReferralFlag;
+        $this->SplitPercentage = $SplitPercentage;
+        $this->ReferralFlag    = $ReferralFlag;
     }
 
     /**

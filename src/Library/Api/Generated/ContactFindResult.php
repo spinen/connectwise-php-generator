@@ -127,42 +127,10 @@ class ContactFindResult
 
     /**
      * @param int $Id
-     * @param string $FirstName
-     * @param string $LastName
-     * @param string $CompanyName
-     * @param string $Phone
-     * @param string $Email
-     * @param string $Type
-     * @param string $Relationship
-     * @param string $AddressLine1
-     * @param string $AddressLine2
-     * @param string $City
-     * @param string $State
-     * @param string $Zip
-     * @param string $Country
-     * @param string $PortalSecurityCaption
-     * @param string $SID
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $FirstName = null, $LastName = null, $CompanyName = null, $Phone = null, $Email = null, $Type = null, $Relationship = null, $AddressLine1 = null, $AddressLine2 = null, $City = null, $State = null, $Zip = null, $Country = null, $PortalSecurityCaption = null, $SID = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id                    = $Id;
-        $this->FirstName             = $FirstName;
-        $this->LastName              = $LastName;
-        $this->CompanyName           = $CompanyName;
-        $this->Phone                 = $Phone;
-        $this->Email                 = $Email;
-        $this->Type                  = $Type;
-        $this->Relationship          = $Relationship;
-        $this->AddressLine1          = $AddressLine1;
-        $this->AddressLine2          = $AddressLine2;
-        $this->City                  = $City;
-        $this->State                 = $State;
-        $this->Zip                   = $Zip;
-        $this->Country               = $Country;
-        $this->PortalSecurityCaption = $PortalSecurityCaption;
-        $this->SID                   = $SID;
-        $this->UpdatedBy             = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -599,9 +567,13 @@ class ContactFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\ContactFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

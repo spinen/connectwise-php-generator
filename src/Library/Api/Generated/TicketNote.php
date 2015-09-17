@@ -83,7 +83,6 @@ class TicketNote
     /**
      * @param int $Id
      * @param boolean $CustomerUpdatedFlag
-     * @param string $NoteText
      * @param boolean $IsInternalNote
      * @param boolean $IsExternalNote
      * @param boolean $ProcessNotifications
@@ -92,14 +91,11 @@ class TicketNote
      * @param boolean $IsPartOfResolution
      * @param int $MemberId
      * @param int $ContactId
-     * @param string $CreatedBy
-     * @param string $MemberFullName
      */
-    public function __construct($Id = null, $CustomerUpdatedFlag = null, $NoteText = null, $IsInternalNote = null, $IsExternalNote = null, $ProcessNotifications = null, $IsPartOfDetailDescription = null, $IsPartOfInternalAnalysis = null, $IsPartOfResolution = null, $MemberId = null, $ContactId = null, $CreatedBy = null, $MemberFullName = null)
+    public function __construct($Id = null, $CustomerUpdatedFlag = null, $IsInternalNote = null, $IsExternalNote = null, $ProcessNotifications = null, $IsPartOfDetailDescription = null, $IsPartOfInternalAnalysis = null, $IsPartOfResolution = null, $MemberId = null, $ContactId = null)
     {
         $this->Id                        = $Id;
         $this->CustomerUpdatedFlag       = $CustomerUpdatedFlag;
-        $this->NoteText                  = $NoteText;
         $this->IsInternalNote            = $IsInternalNote;
         $this->IsExternalNote            = $IsExternalNote;
         $this->ProcessNotifications      = $ProcessNotifications;
@@ -108,8 +104,6 @@ class TicketNote
         $this->IsPartOfResolution        = $IsPartOfResolution;
         $this->MemberId                  = $MemberId;
         $this->ContactId                 = $ContactId;
-        $this->CreatedBy                 = $CreatedBy;
-        $this->MemberFullName            = $MemberFullName;
     }
 
     /**
@@ -330,9 +324,13 @@ class TicketNote
      * @param \DateTime $DateCreated
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketNote
      */
-    public function setDateCreated(\DateTime $DateCreated)
+    public function setDateCreated(\DateTime $DateCreated = null)
     {
-        $this->DateCreated = $DateCreated->format(\DateTime::ATOM);
+        if ($DateCreated == null) {
+            $this->DateCreated = null;
+        } else {
+            $this->DateCreated = $DateCreated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -392,9 +390,13 @@ class TicketNote
      * @param \DateTime $DateCreatedUtc
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketNote
      */
-    public function setDateCreatedUtc(\DateTime $DateCreatedUtc)
+    public function setDateCreatedUtc(\DateTime $DateCreatedUtc = null)
     {
-        $this->DateCreatedUtc = $DateCreatedUtc->format(\DateTime::ATOM);
+        if ($DateCreatedUtc == null) {
+            $this->DateCreatedUtc = null;
+        } else {
+            $this->DateCreatedUtc = $DateCreatedUtc->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

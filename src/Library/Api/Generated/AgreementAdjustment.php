@@ -42,16 +42,12 @@ class AgreementAdjustment
 
     /**
      * @param int $Id
-     * @param string $Description
      * @param \DateTime $LastUpdate
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $Description = null, \DateTime $LastUpdate = null, $UpdatedBy = null)
+    public function __construct($Id = null, \DateTime $LastUpdate = null)
     {
-        $this->Id          = $Id;
-        $this->Description = $Description;
-        $this->LastUpdate  = $LastUpdate ? $LastUpdate->format(\DateTime::ATOM) : null;
-        $this->UpdatedBy   = $UpdatedBy;
+        $this->Id         = $Id;
+        $this->LastUpdate = $LastUpdate ? $LastUpdate->format(\DateTime::ATOM) : null;
     }
 
     /**
@@ -128,9 +124,13 @@ class AgreementAdjustment
      * @param \DateTime $EffectiveDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementAdjustment
      */
-    public function setEffectiveDate(\DateTime $EffectiveDate)
+    public function setEffectiveDate(\DateTime $EffectiveDate = null)
     {
-        $this->EffectiveDate = $EffectiveDate->format(\DateTime::ATOM);
+        if ($EffectiveDate == null) {
+            $this->EffectiveDate = null;
+        } else {
+            $this->EffectiveDate = $EffectiveDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

@@ -107,42 +107,10 @@ class CompanyFindResult
 
     /**
      * @param int $Id
-     * @param string $CompanyName
-     * @param string $CompanyIdentifier
-     * @param string $PhoneNumber
-     * @param string $FaxNumber
-     * @param string $AddressLine1
-     * @param string $AddressLine2
-     * @param string $City
-     * @param string $State
-     * @param string $Zip
-     * @param string $Country
-     * @param string $Type
-     * @param string $Status
-     * @param string $Territory
-     * @param string $Website
-     * @param string $Market
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $CompanyName = null, $CompanyIdentifier = null, $PhoneNumber = null, $FaxNumber = null, $AddressLine1 = null, $AddressLine2 = null, $City = null, $State = null, $Zip = null, $Country = null, $Type = null, $Status = null, $Territory = null, $Website = null, $Market = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id                = $Id;
-        $this->CompanyName       = $CompanyName;
-        $this->CompanyIdentifier = $CompanyIdentifier;
-        $this->PhoneNumber       = $PhoneNumber;
-        $this->FaxNumber         = $FaxNumber;
-        $this->AddressLine1      = $AddressLine1;
-        $this->AddressLine2      = $AddressLine2;
-        $this->City              = $City;
-        $this->State             = $State;
-        $this->Zip               = $Zip;
-        $this->Country           = $Country;
-        $this->Type              = $Type;
-        $this->Status            = $Status;
-        $this->Territory         = $Territory;
-        $this->Website           = $Website;
-        $this->Market            = $Market;
-        $this->UpdatedBy         = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -507,9 +475,13 @@ class CompanyFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\CompanyFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

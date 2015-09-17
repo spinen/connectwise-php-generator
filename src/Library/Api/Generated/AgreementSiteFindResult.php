@@ -38,13 +38,11 @@ class AgreementSiteFindResult
     /**
      * @param int $Id
      * @param \DateTime $LastUpdate
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, \DateTime $LastUpdate = null, $UpdatedBy = null)
+    public function __construct($Id = null, \DateTime $LastUpdate = null)
     {
         $this->Id         = $Id;
         $this->LastUpdate = $LastUpdate ? $LastUpdate->format(\DateTime::ATOM) : null;
-        $this->UpdatedBy  = $UpdatedBy;
     }
 
     /**

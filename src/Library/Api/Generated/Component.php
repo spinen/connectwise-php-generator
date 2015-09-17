@@ -102,18 +102,10 @@ class Component
 
     /**
      * @param int $Id
-     * @param string $Warehouse
-     * @param string $Bin
-     * @param string $ItemIdentifier
-     * @param string $Description
      */
-    public function __construct($Id = null, $Warehouse = null, $Bin = null, $ItemIdentifier = null, $Description = null)
+    public function __construct($Id = null)
     {
-        $this->Id             = $Id;
-        $this->Warehouse      = $Warehouse;
-        $this->Bin            = $Bin;
-        $this->ItemIdentifier = $ItemIdentifier;
-        $this->Description    = $Description;
+        $this->Id = $Id;
     }
 
     /**

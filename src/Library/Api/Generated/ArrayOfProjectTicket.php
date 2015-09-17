@@ -27,7 +27,7 @@ class ArrayOfProjectTicket
      * @param ProjectTicket[] $ProjectTicket
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProjectTicket
      */
-    public function setProjectTicket(array $ProjectTicket)
+    public function setProjectTicket(array $ProjectTicket = null)
     {
         $this->ProjectTicket = $ProjectTicket;
         return $this;

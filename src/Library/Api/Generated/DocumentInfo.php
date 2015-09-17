@@ -67,32 +67,18 @@ class DocumentInfo
 
     /**
      * @param int $Id
-     * @param string $Title
-     * @param string $FileName
-     * @param string $ServerFileName
-     * @param string $Path
      * @param \DateTime $LastUpdated
-     * @param string $Owner
      * @param boolean $IsLink
      * @param boolean $IsImage
      * @param boolean $IsPublic
-     * @param string $ChildDesc
-     * @param base64Binary $Content
      */
-    public function __construct($Id = null, $Title = null, $FileName = null, $ServerFileName = null, $Path = null, \DateTime $LastUpdated = null, $Owner = null, $IsLink = null, $IsImage = null, $IsPublic = null, $ChildDesc = null, base64Binary $Content = null)
+    public function __construct($Id = null, \DateTime $LastUpdated = null, $IsLink = null, $IsImage = null, $IsPublic = null)
     {
-        $this->Id             = $Id;
-        $this->Title          = $Title;
-        $this->FileName       = $FileName;
-        $this->ServerFileName = $ServerFileName;
-        $this->Path           = $Path;
-        $this->LastUpdated    = $LastUpdated ? $LastUpdated->format(\DateTime::ATOM) : null;
-        $this->Owner          = $Owner;
-        $this->IsLink         = $IsLink;
-        $this->IsImage        = $IsImage;
-        $this->IsPublic       = $IsPublic;
-        $this->ChildDesc      = $ChildDesc;
-        $this->Content        = $Content;
+        $this->Id          = $Id;
+        $this->LastUpdated = $LastUpdated ? $LastUpdated->format(\DateTime::ATOM) : null;
+        $this->IsLink      = $IsLink;
+        $this->IsImage     = $IsImage;
+        $this->IsPublic    = $IsPublic;
     }
 
     /**

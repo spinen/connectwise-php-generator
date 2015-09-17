@@ -61,31 +61,19 @@ class AuthenticationResponse
     protected $ConfigId = null;
 
     /**
-     * @param string $PortalCompanyName
-     * @param string $SessionID
      * @param int $CompanyId
      * @param int $ContactId
      * @param boolean $HasError
-     * @param string $ErrorType
-     * @param string $ErrorMessage
      * @param int $PortalConfigId
-     * @param string $MachineId
-     * @param string $DeviceId
      * @param int $ConfigId
      */
-    public function __construct($PortalCompanyName = null, $SessionID = null, $CompanyId = null, $ContactId = null, $HasError = null, $ErrorType = null, $ErrorMessage = null, $PortalConfigId = null, $MachineId = null, $DeviceId = null, $ConfigId = null)
+    public function __construct($CompanyId = null, $ContactId = null, $HasError = null, $PortalConfigId = null, $ConfigId = null)
     {
-        $this->PortalCompanyName = $PortalCompanyName;
-        $this->SessionID         = $SessionID;
-        $this->CompanyId         = $CompanyId;
-        $this->ContactId         = $ContactId;
-        $this->HasError          = $HasError;
-        $this->ErrorType         = $ErrorType;
-        $this->ErrorMessage      = $ErrorMessage;
-        $this->PortalConfigId    = $PortalConfigId;
-        $this->MachineId         = $MachineId;
-        $this->DeviceId          = $DeviceId;
-        $this->ConfigId          = $ConfigId;
+        $this->CompanyId      = $CompanyId;
+        $this->ContactId      = $ContactId;
+        $this->HasError       = $HasError;
+        $this->PortalConfigId = $PortalConfigId;
+        $this->ConfigId       = $ConfigId;
     }
 
     /**

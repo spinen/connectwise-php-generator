@@ -37,12 +37,10 @@ class AgreementExclusionFindResult
 
     /**
      * @param int $Id
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id        = $Id;
-        $this->UpdatedBy = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -155,9 +153,13 @@ class AgreementExclusionFindResult
      * @param \DateTime $LastUpdate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementExclusionFindResult
      */
-    public function setLastUpdate(\DateTime $LastUpdate)
+    public function setLastUpdate(\DateTime $LastUpdate = null)
     {
-        $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
+        if ($LastUpdate == null) {
+            $this->LastUpdate = null;
+        } else {
+            $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

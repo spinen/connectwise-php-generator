@@ -86,29 +86,18 @@ class Activity
     protected $TicketId = null;
 
     /**
-     * @param string $CompanyIdentifier
-     * @param int $Id
-     * @param string $Subject
-     * @param string $Status
-     * @param string $Type
-     * @param ActivityDuration $TimeRange
-     * @param string $Campaign
-     * @param string $Notes
-     * @param string $AssignTo
-     * @param ContactInformation $Contact
+     * @var boolean $Automated
      */
-    public function __construct($CompanyIdentifier = null, $Id = null, $Subject = null, $Status = null, $Type = null, ActivityDuration $TimeRange = null, $Campaign = null, $Notes = null, $AssignTo = null, ContactInformation $Contact = null)
+    protected $Automated = null;
+
+    /**
+     * @param int $Id
+     * @param boolean $Automated
+     */
+    public function __construct($Id = null, $Automated = null)
     {
-        $this->CompanyIdentifier = $CompanyIdentifier;
-        $this->Id                = $Id;
-        $this->Subject           = $Subject;
-        $this->Status            = $Status;
-        $this->Type              = $Type;
-        $this->TimeRange         = $TimeRange;
-        $this->Campaign          = $Campaign;
-        $this->Notes             = $Notes;
-        $this->AssignTo          = $AssignTo;
-        $this->Contact           = $Contact;
+        $this->Id        = $Id;
+        $this->Automated = $Automated;
     }
 
     /**
@@ -221,9 +210,13 @@ class Activity
      * @param \DateTime $DueDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\Activity
      */
-    public function setDueDate(\DateTime $DueDate)
+    public function setDueDate(\DateTime $DueDate = null)
     {
-        $this->DueDate = $DueDate->format(\DateTime::ATOM);
+        if ($DueDate == null) {
+            $this->DueDate = null;
+        } else {
+            $this->DueDate = $DueDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -391,9 +384,13 @@ class Activity
      * @param \DateTime $DateClosed
      * @return \Spinen\ConnectWise\Library\Api\Generated\Activity
      */
-    public function setDateClosed(\DateTime $DateClosed)
+    public function setDateClosed(\DateTime $DateClosed = null)
     {
-        $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
+        if ($DateClosed == null) {
+            $this->DateClosed = null;
+        } else {
+            $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -412,6 +409,24 @@ class Activity
     public function setTicketId($TicketId)
     {
         $this->TicketId = $TicketId;
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getAutomated()
+    {
+        return $this->Automated;
+    }
+
+    /**
+     * @param boolean $Automated
+     * @return \Spinen\ConnectWise\Library\Api\Generated\Activity
+     */
+    public function setAutomated($Automated)
+    {
+        $this->Automated = $Automated;
         return $this;
     }
 

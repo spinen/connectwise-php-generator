@@ -357,24 +357,10 @@ class Agreement
 
     /**
      * @param int $Id
-     * @param string $AgreementName
-     * @param string $CustomerPO
-     * @param string $ReasonCancelled
-     * @param string $WorkOrder
-     * @param string $InternalNotes
-     * @param string $InvoiceDescription
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $AgreementName = null, $CustomerPO = null, $ReasonCancelled = null, $WorkOrder = null, $InternalNotes = null, $InvoiceDescription = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id                 = $Id;
-        $this->AgreementName      = $AgreementName;
-        $this->CustomerPO         = $CustomerPO;
-        $this->ReasonCancelled    = $ReasonCancelled;
-        $this->WorkOrder          = $WorkOrder;
-        $this->InternalNotes      = $InternalNotes;
-        $this->InvoiceDescription = $InvoiceDescription;
-        $this->UpdatedBy          = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -595,9 +581,13 @@ class Agreement
      * @param \DateTime $StartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\Agreement
      */
-    public function setStartDate(\DateTime $StartDate)
+    public function setStartDate(\DateTime $StartDate = null)
     {
-        $this->StartDate = $StartDate->format(\DateTime::ATOM);
+        if ($StartDate == null) {
+            $this->StartDate = null;
+        } else {
+            $this->StartDate = $StartDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -621,9 +611,13 @@ class Agreement
      * @param \DateTime $EndDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\Agreement
      */
-    public function setEndDate(\DateTime $EndDate)
+    public function setEndDate(\DateTime $EndDate = null)
     {
-        $this->EndDate = $EndDate->format(\DateTime::ATOM);
+        if ($EndDate == null) {
+            $this->EndDate = null;
+        } else {
+            $this->EndDate = $EndDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -701,9 +695,13 @@ class Agreement
      * @param \DateTime $DateCancelled
      * @return \Spinen\ConnectWise\Library\Api\Generated\Agreement
      */
-    public function setDateCancelled(\DateTime $DateCancelled)
+    public function setDateCancelled(\DateTime $DateCancelled = null)
     {
-        $this->DateCancelled = $DateCancelled->format(\DateTime::ATOM);
+        if ($DateCancelled == null) {
+            $this->DateCancelled = null;
+        } else {
+            $this->DateCancelled = $DateCancelled->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -1357,9 +1355,13 @@ class Agreement
      * @param \DateTime $BillStartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\Agreement
      */
-    public function setBillStartDate(\DateTime $BillStartDate)
+    public function setBillStartDate(\DateTime $BillStartDate = null)
     {
-        $this->BillStartDate = $BillStartDate->format(\DateTime::ATOM);
+        if ($BillStartDate == null) {
+            $this->BillStartDate = null;
+        } else {
+            $this->BillStartDate = $BillStartDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -1671,9 +1673,13 @@ class Agreement
      * @param \DateTime $LastUpdate
      * @return \Spinen\ConnectWise\Library\Api\Generated\Agreement
      */
-    public function setLastUpdate(\DateTime $LastUpdate)
+    public function setLastUpdate(\DateTime $LastUpdate = null)
     {
-        $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
+        if ($LastUpdate == null) {
+            $this->LastUpdate = null;
+        } else {
+            $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

@@ -27,7 +27,7 @@ class ArrayOfSpecialInvoiceFindResult
      * @param SpecialInvoiceFindResult[] $SpecialInvoiceFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfSpecialInvoiceFindResult
      */
-    public function setSpecialInvoiceFindResult(array $SpecialInvoiceFindResult)
+    public function setSpecialInvoiceFindResult(array $SpecialInvoiceFindResult = null)
     {
         $this->SpecialInvoiceFindResult = $SpecialInvoiceFindResult;
         return $this;

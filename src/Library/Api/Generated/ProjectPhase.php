@@ -102,22 +102,10 @@ class ProjectPhase
 
     /**
      * @param int $Id
-     * @param string $Description
-     * @param string $WbsCode
-     * @param string $Notes
-     * @param ArrayOfProjectPhase $ParentPhase
-     * @param ArrayOfProjectTicket $Tickets
-     * @param ProjectPhaseSummaryInfo $ProjectPhaseSummaryInfo
      */
-    public function __construct($Id = null, $Description = null, $WbsCode = null, $Notes = null, $ParentPhase = null, $Tickets = null, ProjectPhaseSummaryInfo $ProjectPhaseSummaryInfo = null)
+    public function __construct($Id = null)
     {
-        $this->Id                      = $Id;
-        $this->Description             = $Description;
-        $this->WbsCode                 = $WbsCode;
-        $this->Notes                   = $Notes;
-        $this->ParentPhase             = $ParentPhase;
-        $this->Tickets                 = $Tickets;
-        $this->ProjectPhaseSummaryInfo = $ProjectPhaseSummaryInfo;
+        $this->Id = $Id;
     }
 
     /**
@@ -410,9 +398,13 @@ class ProjectPhase
      * @param \DateTime $DateDeadline
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectPhase
      */
-    public function setDateDeadline(\DateTime $DateDeadline)
+    public function setDateDeadline(\DateTime $DateDeadline = null)
     {
-        $this->DateDeadline = $DateDeadline->format(\DateTime::ATOM);
+        if ($DateDeadline == null) {
+            $this->DateDeadline = null;
+        } else {
+            $this->DateDeadline = $DateDeadline->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

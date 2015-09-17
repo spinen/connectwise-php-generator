@@ -92,30 +92,10 @@ class ConfigurationFindResult
 
     /**
      * @param int $Id
-     * @param string $ConfigurationName
-     * @param string $ConfigurationType
-     * @param string $CompanyIdentifier
-     * @param string $Status
-     * @param string $ContactName
-     * @param string $SerialNumber
-     * @param string $ModelNumber
-     * @param string $TagNumber
-     * @param string $InstalledBy
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $ConfigurationName = null, $ConfigurationType = null, $CompanyIdentifier = null, $Status = null, $ContactName = null, $SerialNumber = null, $ModelNumber = null, $TagNumber = null, $InstalledBy = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id                = $Id;
-        $this->ConfigurationName = $ConfigurationName;
-        $this->ConfigurationType = $ConfigurationType;
-        $this->CompanyIdentifier = $CompanyIdentifier;
-        $this->Status            = $Status;
-        $this->ContactName       = $ContactName;
-        $this->SerialNumber      = $SerialNumber;
-        $this->ModelNumber       = $ModelNumber;
-        $this->TagNumber         = $TagNumber;
-        $this->InstalledBy       = $InstalledBy;
-        $this->UpdatedBy         = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -354,9 +334,13 @@ class ConfigurationFindResult
      * @param \DateTime $WarrantyExpiration
      * @return \Spinen\ConnectWise\Library\Api\Generated\ConfigurationFindResult
      */
-    public function setWarrantyExpiration(\DateTime $WarrantyExpiration)
+    public function setWarrantyExpiration(\DateTime $WarrantyExpiration = null)
     {
-        $this->WarrantyExpiration = $WarrantyExpiration->format(\DateTime::ATOM);
+        if ($WarrantyExpiration == null) {
+            $this->WarrantyExpiration = null;
+        } else {
+            $this->WarrantyExpiration = $WarrantyExpiration->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -434,9 +418,13 @@ class ConfigurationFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\ConfigurationFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

@@ -156,8 +156,6 @@ class ManagementSummaryReport
     protected $MemoryUtilization = null;
 
     /**
-     * @param string $GroupIdentifier
-     * @param string $DeviceType
      * @param int $SNMPMachines
      * @param int $TotalWorkstations
      * @param int $TotalServers
@@ -180,17 +178,13 @@ class ManagementSummaryReport
      * @param int $MissingThreeFivePatchesMachines
      * @param int $MissingMoreFivePatchesMachines
      * @param int $MissingUnscannedPatchesMachines
-     * @param string $AlertsGenerated
      * @param float $InternetConnectivity
      * @param int $DiskSpaceCleanedMb
-     * @param string $MissingSecurityPatches
      * @param float $CPUUtilization
      * @param float $MemoryUtilization
      */
-    public function __construct($GroupIdentifier = null, $DeviceType = null, $SNMPMachines = null, $TotalWorkstations = null, $TotalServers = null, $TotalWindowsServers = null, $TotalWindowsWorkstations = null, $TotalManagedMachines = null, $ServersOffline = null, $ServersDiskSpaceLow = null, $FailedBackupJobs = null, $TotalNotifications = null, $SuccessfulBackupJobs = null, $ServerAvailability = null, $VirusesRemoved = null, $SpywareItemsRemoved = null, $WindowsPatchesInstalled = null, $DiskCleanups = null, $DiskDefragmentations = null, $FullyPatchedMachines = null, $MissingOneTwoPatchesMachines = null, $MissingThreeFivePatchesMachines = null, $MissingMoreFivePatchesMachines = null, $MissingUnscannedPatchesMachines = null, $AlertsGenerated = null, $InternetConnectivity = null, $DiskSpaceCleanedMb = null, $MissingSecurityPatches = null, $CPUUtilization = null, $MemoryUtilization = null)
+    public function __construct($SNMPMachines = null, $TotalWorkstations = null, $TotalServers = null, $TotalWindowsServers = null, $TotalWindowsWorkstations = null, $TotalManagedMachines = null, $ServersOffline = null, $ServersDiskSpaceLow = null, $FailedBackupJobs = null, $TotalNotifications = null, $SuccessfulBackupJobs = null, $ServerAvailability = null, $VirusesRemoved = null, $SpywareItemsRemoved = null, $WindowsPatchesInstalled = null, $DiskCleanups = null, $DiskDefragmentations = null, $FullyPatchedMachines = null, $MissingOneTwoPatchesMachines = null, $MissingThreeFivePatchesMachines = null, $MissingMoreFivePatchesMachines = null, $MissingUnscannedPatchesMachines = null, $InternetConnectivity = null, $DiskSpaceCleanedMb = null, $CPUUtilization = null, $MemoryUtilization = null)
     {
-        $this->GroupIdentifier                 = $GroupIdentifier;
-        $this->DeviceType                      = $DeviceType;
         $this->SNMPMachines                    = $SNMPMachines;
         $this->TotalWorkstations               = $TotalWorkstations;
         $this->TotalServers                    = $TotalServers;
@@ -213,10 +207,8 @@ class ManagementSummaryReport
         $this->MissingThreeFivePatchesMachines = $MissingThreeFivePatchesMachines;
         $this->MissingMoreFivePatchesMachines  = $MissingMoreFivePatchesMachines;
         $this->MissingUnscannedPatchesMachines = $MissingUnscannedPatchesMachines;
-        $this->AlertsGenerated                 = $AlertsGenerated;
         $this->InternetConnectivity            = $InternetConnectivity;
         $this->DiskSpaceCleanedMb              = $DiskSpaceCleanedMb;
-        $this->MissingSecurityPatches          = $MissingSecurityPatches;
         $this->CPUUtilization                  = $CPUUtilization;
         $this->MemoryUtilization               = $MemoryUtilization;
     }

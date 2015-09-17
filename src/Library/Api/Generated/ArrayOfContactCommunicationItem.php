@@ -27,7 +27,7 @@ class ArrayOfContactCommunicationItem
      * @param ContactCommunicationItem[] $ContactCommunicationItem
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfContactCommunicationItem
      */
-    public function setContactCommunicationItem(array $ContactCommunicationItem)
+    public function setContactCommunicationItem(array $ContactCommunicationItem = null)
     {
         $this->ContactCommunicationItem = $ContactCommunicationItem;
         return $this;

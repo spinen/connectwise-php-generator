@@ -27,7 +27,7 @@ class ArrayOfProductFindResult
      * @param ProductFindResult[] $ProductFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProductFindResult
      */
-    public function setProductFindResult(array $ProductFindResult)
+    public function setProductFindResult(array $ProductFindResult = null)
     {
         $this->ProductFindResult = $ProductFindResult;
         return $this;

@@ -102,14 +102,10 @@ class TicketScheduleEntry
 
     /**
      * @param int $Id
-     * @param string $MemberIdentifier
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $MemberIdentifier = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id               = $Id;
-        $this->MemberIdentifier = $MemberIdentifier;
-        $this->UpdatedBy        = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -222,9 +218,13 @@ class TicketScheduleEntry
      * @param \DateTime $DateStart
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketScheduleEntry
      */
-    public function setDateStart(\DateTime $DateStart)
+    public function setDateStart(\DateTime $DateStart = null)
     {
-        $this->DateStart = $DateStart->format(\DateTime::ATOM);
+        if ($DateStart == null) {
+            $this->DateStart = null;
+        } else {
+            $this->DateStart = $DateStart->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -248,9 +248,13 @@ class TicketScheduleEntry
      * @param \DateTime $DateEnd
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketScheduleEntry
      */
-    public function setDateEnd(\DateTime $DateEnd)
+    public function setDateEnd(\DateTime $DateEnd = null)
     {
-        $this->DateEnd = $DateEnd->format(\DateTime::ATOM);
+        if ($DateEnd == null) {
+            $this->DateEnd = null;
+        } else {
+            $this->DateEnd = $DateEnd->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -454,9 +458,13 @@ class TicketScheduleEntry
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketScheduleEntry
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -480,9 +488,13 @@ class TicketScheduleEntry
      * @param \DateTime $ClosedDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketScheduleEntry
      */
-    public function setClosedDate(\DateTime $ClosedDate)
+    public function setClosedDate(\DateTime $ClosedDate = null)
     {
-        $this->ClosedDate = $ClosedDate->format(\DateTime::ATOM);
+        if ($ClosedDate == null) {
+            $this->ClosedDate = null;
+        } else {
+            $this->ClosedDate = $ClosedDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

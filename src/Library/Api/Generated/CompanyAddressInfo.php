@@ -35,22 +35,9 @@ class CompanyAddressInfo
      */
     protected $Country = null;
 
-    /**
-     * @param string $AddressLine1
-     * @param string $AddressLine2
-     * @param string $City
-     * @param string $State
-     * @param string $Zip
-     * @param string $Country
-     */
-    public function __construct($AddressLine1 = null, $AddressLine2 = null, $City = null, $State = null, $Zip = null, $Country = null)
+    public function __construct()
     {
-        $this->AddressLine1 = $AddressLine1;
-        $this->AddressLine2 = $AddressLine2;
-        $this->City         = $City;
-        $this->State        = $State;
-        $this->Zip          = $Zip;
-        $this->Country      = $Country;
+
     }
 
     /**

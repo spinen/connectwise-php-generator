@@ -21,13 +21,11 @@ class HardDrive
     protected $TotalSpaceMb = null;
 
     /**
-     * @param string $DriveLetter
      * @param int $FreeSpaceMb
      * @param int $TotalSpaceMb
      */
-    public function __construct($DriveLetter = null, $FreeSpaceMb = null, $TotalSpaceMb = null)
+    public function __construct($FreeSpaceMb = null, $TotalSpaceMb = null)
     {
-        $this->DriveLetter  = $DriveLetter;
         $this->FreeSpaceMb  = $FreeSpaceMb;
         $this->TotalSpaceMb = $TotalSpaceMb;
     }

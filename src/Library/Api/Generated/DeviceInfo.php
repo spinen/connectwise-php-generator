@@ -220,58 +220,9 @@ class DeviceInfo
      */
     protected $ManufacturerCompany = null;
 
-    /**
-     * @param string $DeviceName
-     * @param string $DeviceIdentifier
-     * @param string $MacAddress
-     * @param string $InstalledBy
-     * @param string $SerialNumber
-     * @param string $ModelNumber
-     * @param string $LastLoginName
-     * @param string $BackupServerName
-     * @param string $BackupProtectedDeviceList
-     * @param string $VendorNotes
-     * @param string $IPAddress
-     * @param string $DefaultGateway
-     * @param string $OSType
-     * @param string $OSInfo
-     * @param string $CPUSpeed
-     * @param string $RAM
-     * @param string $LocalHardDrives
-     * @param string $ManagementLink
-     * @param string $RemoteLink
-     * @param string $TagNumber
-     * @param ArrayOfConfigurationAnswer $Answers
-     * @param string $SlaName
-     * @param VendorCompany $VendorCompany
-     * @param ManufacturerCompany $ManufacturerCompany
-     */
-    public function __construct($DeviceName = null, $DeviceIdentifier = null, $MacAddress = null, $InstalledBy = null, $SerialNumber = null, $ModelNumber = null, $LastLoginName = null, $BackupServerName = null, $BackupProtectedDeviceList = null, $VendorNotes = null, $IPAddress = null, $DefaultGateway = null, $OSType = null, $OSInfo = null, $CPUSpeed = null, $RAM = null, $LocalHardDrives = null, $ManagementLink = null, $RemoteLink = null, $TagNumber = null, $Answers = null, $SlaName = null, VendorCompany $VendorCompany = null, ManufacturerCompany $ManufacturerCompany = null)
+    public function __construct()
     {
-        $this->DeviceName                = $DeviceName;
-        $this->DeviceIdentifier          = $DeviceIdentifier;
-        $this->MacAddress                = $MacAddress;
-        $this->InstalledBy               = $InstalledBy;
-        $this->SerialNumber              = $SerialNumber;
-        $this->ModelNumber               = $ModelNumber;
-        $this->LastLoginName             = $LastLoginName;
-        $this->BackupServerName          = $BackupServerName;
-        $this->BackupProtectedDeviceList = $BackupProtectedDeviceList;
-        $this->VendorNotes               = $VendorNotes;
-        $this->IPAddress                 = $IPAddress;
-        $this->DefaultGateway            = $DefaultGateway;
-        $this->OSType                    = $OSType;
-        $this->OSInfo                    = $OSInfo;
-        $this->CPUSpeed                  = $CPUSpeed;
-        $this->RAM                       = $RAM;
-        $this->LocalHardDrives           = $LocalHardDrives;
-        $this->ManagementLink            = $ManagementLink;
-        $this->RemoteLink                = $RemoteLink;
-        $this->TagNumber                 = $TagNumber;
-        $this->Answers                   = $Answers;
-        $this->SlaName                   = $SlaName;
-        $this->VendorCompany             = $VendorCompany;
-        $this->ManufacturerCompany       = $ManufacturerCompany;
+
     }
 
     /**
@@ -366,9 +317,13 @@ class DeviceInfo
      * @param \DateTime $InstallDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\DeviceInfo
      */
-    public function setInstallDate(\DateTime $InstallDate)
+    public function setInstallDate(\DateTime $InstallDate = null)
     {
-        $this->InstallDate = $InstallDate->format(\DateTime::ATOM);
+        if ($InstallDate == null) {
+            $this->InstallDate = null;
+        } else {
+            $this->InstallDate = $InstallDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -554,9 +509,13 @@ class DeviceInfo
      * @param \DateTime $LastBackupDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\DeviceInfo
      */
-    public function setLastBackupDate(\DateTime $LastBackupDate)
+    public function setLastBackupDate(\DateTime $LastBackupDate = null)
     {
-        $this->LastBackupDate = $LastBackupDate->format(\DateTime::ATOM);
+        if ($LastBackupDate == null) {
+            $this->LastBackupDate = null;
+        } else {
+            $this->LastBackupDate = $LastBackupDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -868,9 +827,13 @@ class DeviceInfo
      * @param \DateTime $PurchaseDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\DeviceInfo
      */
-    public function setPurchaseDate(\DateTime $PurchaseDate)
+    public function setPurchaseDate(\DateTime $PurchaseDate = null)
     {
-        $this->PurchaseDate = $PurchaseDate->format(\DateTime::ATOM);
+        if ($PurchaseDate == null) {
+            $this->PurchaseDate = null;
+        } else {
+            $this->PurchaseDate = $PurchaseDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -894,9 +857,13 @@ class DeviceInfo
      * @param \DateTime $WarrantyExpiration
      * @return \Spinen\ConnectWise\Library\Api\Generated\DeviceInfo
      */
-    public function setWarrantyExpiration(\DateTime $WarrantyExpiration)
+    public function setWarrantyExpiration(\DateTime $WarrantyExpiration = null)
     {
-        $this->WarrantyExpiration = $WarrantyExpiration->format(\DateTime::ATOM);
+        if ($WarrantyExpiration == null) {
+            $this->WarrantyExpiration = null;
+        } else {
+            $this->WarrantyExpiration = $WarrantyExpiration->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

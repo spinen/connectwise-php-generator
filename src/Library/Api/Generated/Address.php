@@ -30,20 +30,9 @@ class Address
      */
     protected $Country = null;
 
-    /**
-     * @param ArrayOfString $StreetLines
-     * @param string $City
-     * @param string $State
-     * @param string $Zip
-     * @param string $Country
-     */
-    public function __construct($StreetLines = null, $City = null, $State = null, $Zip = null, $Country = null)
+    public function __construct()
     {
-        $this->StreetLines = $StreetLines;
-        $this->City        = $City;
-        $this->State       = $State;
-        $this->Zip         = $Zip;
-        $this->Country     = $Country;
+
     }
 
     /**

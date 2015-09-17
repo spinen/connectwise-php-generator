@@ -112,18 +112,10 @@ class AgreementAdditionFindResult
 
     /**
      * @param int $Id
-     * @param string $SerialNumber
-     * @param string $InvoiceDescription
-     * @param string $Description
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $SerialNumber = null, $InvoiceDescription = null, $Description = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id                 = $Id;
-        $this->SerialNumber       = $SerialNumber;
-        $this->InvoiceDescription = $InvoiceDescription;
-        $this->Description        = $Description;
-        $this->UpdatedBy          = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -272,9 +264,13 @@ class AgreementAdditionFindResult
      * @param \DateTime $EffectiveDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementAdditionFindResult
      */
-    public function setEffectiveDate(\DateTime $EffectiveDate)
+    public function setEffectiveDate(\DateTime $EffectiveDate = null)
     {
-        $this->EffectiveDate = $EffectiveDate->format(\DateTime::ATOM);
+        if ($EffectiveDate == null) {
+            $this->EffectiveDate = null;
+        } else {
+            $this->EffectiveDate = $EffectiveDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -298,9 +294,13 @@ class AgreementAdditionFindResult
      * @param \DateTime $CancelledDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementAdditionFindResult
      */
-    public function setCancelledDate(\DateTime $CancelledDate)
+    public function setCancelledDate(\DateTime $CancelledDate = null)
     {
-        $this->CancelledDate = $CancelledDate->format(\DateTime::ATOM);
+        if ($CancelledDate == null) {
+            $this->CancelledDate = null;
+        } else {
+            $this->CancelledDate = $CancelledDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -522,9 +522,13 @@ class AgreementAdditionFindResult
      * @param \DateTime $LastUpdate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementAdditionFindResult
      */
-    public function setLastUpdate(\DateTime $LastUpdate)
+    public function setLastUpdate(\DateTime $LastUpdate = null)
     {
-        $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
+        if ($LastUpdate == null) {
+            $this->LastUpdate = null;
+        } else {
+            $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

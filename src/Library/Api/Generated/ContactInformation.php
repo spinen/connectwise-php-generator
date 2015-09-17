@@ -22,14 +22,10 @@ class ContactInformation
 
     /**
      * @param int $ContactId
-     * @param string $FirstName
-     * @param string $LastName
      */
-    public function __construct($ContactId = null, $FirstName = null, $LastName = null)
+    public function __construct($ContactId = null)
     {
         $this->ContactId = $ContactId;
-        $this->FirstName = $FirstName;
-        $this->LastName  = $LastName;
     }
 
     /**

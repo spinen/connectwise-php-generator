@@ -51,27 +51,17 @@ class ForecastItem
     protected $Status = null;
 
     /**
-     * @param string $ForecastType
      * @param float $Cost
      * @param float $Revenue
      * @param boolean $Included
-     * @param string $Description
      * @param boolean $Linked
-     * @param string $QuoteNumber
-     * @param string $QuoteName
-     * @param string $Status
      */
-    public function __construct($ForecastType = null, $Cost = null, $Revenue = null, $Included = null, $Description = null, $Linked = null, $QuoteNumber = null, $QuoteName = null, $Status = null)
+    public function __construct($Cost = null, $Revenue = null, $Included = null, $Linked = null)
     {
-        $this->ForecastType = $ForecastType;
-        $this->Cost         = $Cost;
-        $this->Revenue      = $Revenue;
-        $this->Included     = $Included;
-        $this->Description  = $Description;
-        $this->Linked       = $Linked;
-        $this->QuoteNumber  = $QuoteNumber;
-        $this->QuoteName    = $QuoteName;
-        $this->Status       = $Status;
+        $this->Cost     = $Cost;
+        $this->Revenue  = $Revenue;
+        $this->Included = $Included;
+        $this->Linked   = $Linked;
     }
 
     /**

@@ -58,23 +58,15 @@ class TicketTask
     /**
      * @param int $Id
      * @param int $TicketId
-     * @param string $Notes
      * @param boolean $IsClosed
      * @param int $Priority
-     * @param string $Resolution
-     * @param string $ChildDesc
-     * @param string $CustUpdateFlag
      */
-    public function __construct($Id = null, $TicketId = null, $Notes = null, $IsClosed = null, $Priority = null, $Resolution = null, $ChildDesc = null, $CustUpdateFlag = null)
+    public function __construct($Id = null, $TicketId = null, $IsClosed = null, $Priority = null)
     {
-        $this->Id             = $Id;
-        $this->TicketId       = $TicketId;
-        $this->Notes          = $Notes;
-        $this->IsClosed       = $IsClosed;
-        $this->Priority       = $Priority;
-        $this->Resolution     = $Resolution;
-        $this->ChildDesc      = $ChildDesc;
-        $this->CustUpdateFlag = $CustUpdateFlag;
+        $this->Id       = $Id;
+        $this->TicketId = $TicketId;
+        $this->IsClosed = $IsClosed;
+        $this->Priority = $Priority;
     }
 
     /**
@@ -187,9 +179,13 @@ class TicketTask
      * @param \DateTime $StartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketTask
      */
-    public function setStartDate(\DateTime $StartDate)
+    public function setStartDate(\DateTime $StartDate = null)
     {
-        $this->StartDate = $StartDate->format(\DateTime::ATOM);
+        if ($StartDate == null) {
+            $this->StartDate = null;
+        } else {
+            $this->StartDate = $StartDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

@@ -15,12 +15,9 @@ class VendorCompany
      */
     protected $Name = null;
 
-    /**
-     * @param string $Name
-     */
-    public function __construct($Name = null)
+    public function __construct()
     {
-        $this->Name = $Name;
+
     }
 
     /**

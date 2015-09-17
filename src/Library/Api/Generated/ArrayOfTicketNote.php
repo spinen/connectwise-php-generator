@@ -27,7 +27,7 @@ class ArrayOfTicketNote
      * @param TicketNote[] $TicketNote
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfTicketNote
      */
-    public function setTicketNote(array $TicketNote)
+    public function setTicketNote(array $TicketNote = null)
     {
         $this->TicketNote = $TicketNote;
         return $this;

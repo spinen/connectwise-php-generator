@@ -27,7 +27,7 @@ class ArrayOfAgreementWorkTypeFindResult
      * @param AgreementWorkTypeFindResult[] $AgreementWorkTypeFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfAgreementWorkTypeFindResult
      */
-    public function setAgreementWorkTypeFindResult(array $AgreementWorkTypeFindResult)
+    public function setAgreementWorkTypeFindResult(array $AgreementWorkTypeFindResult = null)
     {
         $this->AgreementWorkTypeFindResult = $AgreementWorkTypeFindResult;
         return $this;

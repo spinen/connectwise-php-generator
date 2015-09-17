@@ -27,7 +27,7 @@ class ArrayOfHardDrive
      * @param HardDrive[] $HardDrive
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfHardDrive
      */
-    public function setHardDrive(array $HardDrive)
+    public function setHardDrive(array $HardDrive = null)
     {
         $this->HardDrive = $HardDrive;
         return $this;

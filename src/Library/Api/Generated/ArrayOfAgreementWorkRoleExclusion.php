@@ -27,7 +27,7 @@ class ArrayOfAgreementWorkRoleExclusion
      * @param AgreementWorkRoleExclusion[] $AgreementWorkRoleExclusion
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfAgreementWorkRoleExclusion
      */
-    public function setAgreementWorkRoleExclusion(array $AgreementWorkRoleExclusion)
+    public function setAgreementWorkRoleExclusion(array $AgreementWorkRoleExclusion = null)
     {
         $this->AgreementWorkRoleExclusion = $AgreementWorkRoleExclusion;
         return $this;

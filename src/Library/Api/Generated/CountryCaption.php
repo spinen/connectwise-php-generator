@@ -20,16 +20,9 @@ class CountryCaption
      */
     protected $Zip = null;
 
-    /**
-     * @param string $City
-     * @param string $State
-     * @param string $Zip
-     */
-    public function __construct($City = null, $State = null, $Zip = null)
+    public function __construct()
     {
-        $this->City  = $City;
-        $this->State = $State;
-        $this->Zip   = $Zip;
+
     }
 
     /**

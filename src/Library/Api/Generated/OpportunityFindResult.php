@@ -202,42 +202,10 @@ class OpportunityFindResult
 
     /**
      * @param int $Id
-     * @param string $CompanyName
-     * @param string $CompanyPhone
-     * @param string $ContactName
-     * @param string $OpportunityName
-     * @param string $Rating
-     * @param string $StageName
-     * @param string $Type
-     * @param string $Status
-     * @param string $PrimarySalesRep
-     * @param string $SecondarySalesRep
-     * @param string $MarketingCampaignName
-     * @param string $Location
-     * @param string $BusinessUnit
-     * @param string $CustomerPO
-     * @param string $UpdatedBy
-     * @param ArrayOfOpportunityCustomField $OpportunityCustomFields
      */
-    public function __construct($Id = null, $CompanyName = null, $CompanyPhone = null, $ContactName = null, $OpportunityName = null, $Rating = null, $StageName = null, $Type = null, $Status = null, $PrimarySalesRep = null, $SecondarySalesRep = null, $MarketingCampaignName = null, $Location = null, $BusinessUnit = null, $CustomerPO = null, $UpdatedBy = null, $OpportunityCustomFields = null)
+    public function __construct($Id = null)
     {
-        $this->Id                      = $Id;
-        $this->CompanyName             = $CompanyName;
-        $this->CompanyPhone            = $CompanyPhone;
-        $this->ContactName             = $ContactName;
-        $this->OpportunityName         = $OpportunityName;
-        $this->Rating                  = $Rating;
-        $this->StageName               = $StageName;
-        $this->Type                    = $Type;
-        $this->Status                  = $Status;
-        $this->PrimarySalesRep         = $PrimarySalesRep;
-        $this->SecondarySalesRep       = $SecondarySalesRep;
-        $this->MarketingCampaignName   = $MarketingCampaignName;
-        $this->Location                = $Location;
-        $this->BusinessUnit            = $BusinessUnit;
-        $this->CustomerPO              = $CustomerPO;
-        $this->UpdatedBy               = $UpdatedBy;
-        $this->OpportunityCustomFields = $OpportunityCustomFields;
+        $this->Id = $Id;
     }
 
     /**
@@ -494,9 +462,13 @@ class OpportunityFindResult
      * @param \DateTime $ExpectedCloseDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\OpportunityFindResult
      */
-    public function setExpectedCloseDate(\DateTime $ExpectedCloseDate)
+    public function setExpectedCloseDate(\DateTime $ExpectedCloseDate = null)
     {
-        $this->ExpectedCloseDate = $ExpectedCloseDate->format(\DateTime::ATOM);
+        if ($ExpectedCloseDate == null) {
+            $this->ExpectedCloseDate = null;
+        } else {
+            $this->ExpectedCloseDate = $ExpectedCloseDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -844,9 +816,13 @@ class OpportunityFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\OpportunityFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

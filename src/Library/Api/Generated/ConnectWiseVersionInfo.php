@@ -16,12 +16,10 @@ class ConnectWiseVersionInfo
     protected $IsCloud = null;
 
     /**
-     * @param string $Version
      * @param boolean $IsCloud
      */
-    public function __construct($Version = null, $IsCloud = null)
+    public function __construct($IsCloud = null)
     {
-        $this->Version = $Version;
         $this->IsCloud = $IsCloud;
     }
 

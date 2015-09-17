@@ -16,13 +16,11 @@ class SalesTeam
     protected $ReferralFlag = null;
 
     /**
-     * @param string $SalesTeamIdentifier
      * @param boolean $ReferralFlag
      */
-    public function __construct($SalesTeamIdentifier = null, $ReferralFlag = null)
+    public function __construct($ReferralFlag = null)
     {
-        $this->SalesTeamIdentifier = $SalesTeamIdentifier;
-        $this->ReferralFlag        = $ReferralFlag;
+        $this->ReferralFlag = $ReferralFlag;
     }
 
     /**

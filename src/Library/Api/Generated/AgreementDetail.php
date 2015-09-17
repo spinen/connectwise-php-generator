@@ -55,16 +55,9 @@ class AgreementDetail
      */
     protected $BillingAmount = null;
 
-    /**
-     * @param string $AgreementName
-     * @param string $AgreementType
-     * @param string $DetailType
-     */
-    public function __construct($AgreementName = null, $AgreementType = null, $DetailType = null)
+    public function __construct()
     {
-        $this->AgreementName = $AgreementName;
-        $this->AgreementType = $AgreementType;
-        $this->DetailType    = $DetailType;
+
     }
 
     /**

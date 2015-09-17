@@ -27,7 +27,7 @@ class ArrayOfProjectPhase
      * @param ProjectPhase[] $ProjectPhase
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProjectPhase
      */
-    public function setProjectPhase(array $ProjectPhase)
+    public function setProjectPhase(array $ProjectPhase = null)
     {
         $this->ProjectPhase = $ProjectPhase;
         return $this;

@@ -27,7 +27,7 @@ class ArrayOfTimeEntryFindResult
      * @param TimeEntryFindResult[] $TimeEntryFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfTimeEntryFindResult
      */
-    public function setTimeEntryFindResult(array $TimeEntryFindResult)
+    public function setTimeEntryFindResult(array $TimeEntryFindResult = null)
     {
         $this->TimeEntryFindResult = $TimeEntryFindResult;
         return $this;

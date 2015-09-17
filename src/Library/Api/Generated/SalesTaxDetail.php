@@ -81,22 +81,14 @@ class SalesTaxDetail
      * @param boolean $TaxServices
      * @param boolean $ApplySingleUnitLimit
      * @param int $TaxLevel
-     * @param string $Caption
-     * @param string $RateType
-     * @param string $TaxAgencyXref
-     * @param string $TaxCodeXref
      */
-    public function __construct($TaxExpenses = null, $TaxProducts = null, $TaxServices = null, $ApplySingleUnitLimit = null, $TaxLevel = null, $Caption = null, $RateType = null, $TaxAgencyXref = null, $TaxCodeXref = null)
+    public function __construct($TaxExpenses = null, $TaxProducts = null, $TaxServices = null, $ApplySingleUnitLimit = null, $TaxLevel = null)
     {
         $this->TaxExpenses          = $TaxExpenses;
         $this->TaxProducts          = $TaxProducts;
         $this->TaxServices          = $TaxServices;
         $this->ApplySingleUnitLimit = $ApplySingleUnitLimit;
         $this->TaxLevel             = $TaxLevel;
-        $this->Caption              = $Caption;
-        $this->RateType             = $RateType;
-        $this->TaxAgencyXref        = $TaxAgencyXref;
-        $this->TaxCodeXref          = $TaxCodeXref;
     }
 
     /**

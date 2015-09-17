@@ -27,7 +27,7 @@ class ArrayOfCompanyAddress
      * @param CompanyAddress[] $CompanyAddress
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfCompanyAddress
      */
-    public function setCompanyAddress(array $CompanyAddress)
+    public function setCompanyAddress(array $CompanyAddress = null)
     {
         $this->CompanyAddress = $CompanyAddress;
         return $this;
