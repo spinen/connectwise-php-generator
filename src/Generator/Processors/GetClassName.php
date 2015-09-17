@@ -13,7 +13,6 @@ use Spinen\ConnectWise\Library\Contracts\Processor;
  */
 class GetClassName implements Processor
 {
-
     // NOTE: Order is important as we are going to concatenate them as a string in the order they are in
     /**
      * Parts of the file that are need to be found
@@ -103,5 +102,4 @@ class GetClassName implements Processor
 
         return implode('\\', array_filter($found_parts));
     }
-
 }

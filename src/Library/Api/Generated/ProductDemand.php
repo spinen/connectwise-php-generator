@@ -242,72 +242,22 @@ class ProductDemand
 
     /**
      * @param int $Id
-     * @param string $ItemIdentifier
-     * @param CompanyReference $VendorCompany
-     * @param string $VendorSKU
-     * @param string $Manufacturer
-     * @param string $ManufacturerPartNumber
-     * @param string $Location
-     * @param string $BusinessUnit
-     * @param string $ShipToWarehouse
-     * @param string $ShipToWarehouseBin
-     * @param CompanyReference $ShipToCompany
-     * @param PurchasingCompanyAddress $ShipToCompanyAddress
-     * @param ContactReference $ShipToContact
      * @param int $QuantityCommitted
      * @param int $QuantityAlreadyOrdered
-     * @param int $QuantitySatisfiedByWarehouseStock
      * @param int $QuantityToOrder
-     * @param int $MinimumStockLevelForItem
-     * @param string $Description
-     * @param string $ItemDescription
      * @param boolean $IsBillable
      * @param boolean $IsInvoiced
      * @param boolean $IsTaxable
-     * @param string $SerialNumber
-     * @param string $ShipmentMethod
-     * @param string $TrackingNumber
-     * @param string $InternalNotes
-     * @param string $UpdatedBy
-     * @param string $Project
-     * @param string $Opportunity
-     * @param string $InvoiceNumber
-     * @param string $Agreement
      */
-    public function __construct($Id = null, $ItemIdentifier = null, CompanyReference $VendorCompany = null, $VendorSKU = null, $Manufacturer = null, $ManufacturerPartNumber = null, $Location = null, $BusinessUnit = null, $ShipToWarehouse = null, $ShipToWarehouseBin = null, CompanyReference $ShipToCompany = null, PurchasingCompanyAddress $ShipToCompanyAddress = null, ContactReference $ShipToContact = null, $QuantityCommitted = null, $QuantityAlreadyOrdered = null, $QuantitySatisfiedByWarehouseStock = null, $QuantityToOrder = null, $MinimumStockLevelForItem = null, $Description = null, $ItemDescription = null, $IsBillable = null, $IsInvoiced = null, $IsTaxable = null, $SerialNumber = null, $ShipmentMethod = null, $TrackingNumber = null, $InternalNotes = null, $UpdatedBy = null, $Project = null, $Opportunity = null, $InvoiceNumber = null, $Agreement = null)
+    public function __construct($Id = null, $QuantityCommitted = null, $QuantityAlreadyOrdered = null, $QuantityToOrder = null, $IsBillable = null, $IsInvoiced = null, $IsTaxable = null)
     {
-        $this->Id                                = $Id;
-        $this->ItemIdentifier                    = $ItemIdentifier;
-        $this->VendorCompany                     = $VendorCompany;
-        $this->VendorSKU                         = $VendorSKU;
-        $this->Manufacturer                      = $Manufacturer;
-        $this->ManufacturerPartNumber            = $ManufacturerPartNumber;
-        $this->Location                          = $Location;
-        $this->BusinessUnit                      = $BusinessUnit;
-        $this->ShipToWarehouse                   = $ShipToWarehouse;
-        $this->ShipToWarehouseBin                = $ShipToWarehouseBin;
-        $this->ShipToCompany                     = $ShipToCompany;
-        $this->ShipToCompanyAddress              = $ShipToCompanyAddress;
-        $this->ShipToContact                     = $ShipToContact;
-        $this->QuantityCommitted                 = $QuantityCommitted;
-        $this->QuantityAlreadyOrdered            = $QuantityAlreadyOrdered;
-        $this->QuantitySatisfiedByWarehouseStock = $QuantitySatisfiedByWarehouseStock;
-        $this->QuantityToOrder                   = $QuantityToOrder;
-        $this->MinimumStockLevelForItem          = $MinimumStockLevelForItem;
-        $this->Description                       = $Description;
-        $this->ItemDescription                   = $ItemDescription;
-        $this->IsBillable                        = $IsBillable;
-        $this->IsInvoiced                        = $IsInvoiced;
-        $this->IsTaxable                         = $IsTaxable;
-        $this->SerialNumber                      = $SerialNumber;
-        $this->ShipmentMethod                    = $ShipmentMethod;
-        $this->TrackingNumber                    = $TrackingNumber;
-        $this->InternalNotes                     = $InternalNotes;
-        $this->UpdatedBy                         = $UpdatedBy;
-        $this->Project                           = $Project;
-        $this->Opportunity                       = $Opportunity;
-        $this->InvoiceNumber                     = $InvoiceNumber;
-        $this->Agreement                         = $Agreement;
+        $this->Id                     = $Id;
+        $this->QuantityCommitted      = $QuantityCommitted;
+        $this->QuantityAlreadyOrdered = $QuantityAlreadyOrdered;
+        $this->QuantityToOrder        = $QuantityToOrder;
+        $this->IsBillable             = $IsBillable;
+        $this->IsInvoiced             = $IsInvoiced;
+        $this->IsTaxable              = $IsTaxable;
     }
 
     /**
@@ -942,9 +892,13 @@ class ProductDemand
      * @param \DateTime $CreatedOn
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDemand
      */
-    public function setCreatedOn(\DateTime $CreatedOn)
+    public function setCreatedOn(\DateTime $CreatedOn = null)
     {
-        $this->CreatedOn = $CreatedOn->format(\DateTime::ATOM);
+        if ($CreatedOn == null) {
+            $this->CreatedOn = null;
+        } else {
+            $this->CreatedOn = $CreatedOn->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -968,9 +922,13 @@ class ProductDemand
      * @param \DateTime $UpdatedOn
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductDemand
      */
-    public function setUpdatedOn(\DateTime $UpdatedOn)
+    public function setUpdatedOn(\DateTime $UpdatedOn = null)
     {
-        $this->UpdatedOn = $UpdatedOn->format(\DateTime::ATOM);
+        if ($UpdatedOn == null) {
+            $this->UpdatedOn = null;
+        } else {
+            $this->UpdatedOn = $UpdatedOn->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

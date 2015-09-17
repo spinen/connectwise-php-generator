@@ -25,18 +25,9 @@ class OpportunityTeam
      */
     protected $SalesTeams = null;
 
-    /**
-     * @param PrimarySalesRepMember $PrimarySalesRep
-     * @param SecondarySalesRepMember $SecondarySalesRep
-     * @param ArrayOfSalesIndividualMember $SalesIndividualMembers
-     * @param ArrayOfSalesTeam $SalesTeams
-     */
-    public function __construct(PrimarySalesRepMember $PrimarySalesRep = null, SecondarySalesRepMember $SecondarySalesRep = null, $SalesIndividualMembers = null, $SalesTeams = null)
+    public function __construct()
     {
-        $this->PrimarySalesRep        = $PrimarySalesRep;
-        $this->SecondarySalesRep      = $SecondarySalesRep;
-        $this->SalesIndividualMembers = $SalesIndividualMembers;
-        $this->SalesTeams             = $SalesTeams;
+
     }
 
     /**

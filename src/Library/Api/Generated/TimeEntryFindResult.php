@@ -112,28 +112,10 @@ class TimeEntryFindResult
 
     /**
      * @param int $Id
-     * @param string $MemberName
-     * @param string $MemberIdentifier
-     * @param string $Notes
-     * @param string $InternalNotes
-     * @param string $WorkRole
-     * @param string $WorkType
-     * @param string $BillableOption
-     * @param string $InvoiceNumber
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $MemberName = null, $MemberIdentifier = null, $Notes = null, $InternalNotes = null, $WorkRole = null, $WorkType = null, $BillableOption = null, $InvoiceNumber = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id               = $Id;
-        $this->MemberName       = $MemberName;
-        $this->MemberIdentifier = $MemberIdentifier;
-        $this->Notes            = $Notes;
-        $this->InternalNotes    = $InternalNotes;
-        $this->WorkRole         = $WorkRole;
-        $this->WorkType         = $WorkType;
-        $this->BillableOption   = $BillableOption;
-        $this->InvoiceNumber    = $InvoiceNumber;
-        $this->UpdatedBy        = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -210,9 +192,13 @@ class TimeEntryFindResult
      * @param \DateTime $StartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\TimeEntryFindResult
      */
-    public function setStartDate(\DateTime $StartDate)
+    public function setStartDate(\DateTime $StartDate = null)
     {
-        $this->StartDate = $StartDate->format(\DateTime::ATOM);
+        if ($StartDate == null) {
+            $this->StartDate = null;
+        } else {
+            $this->StartDate = $StartDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -236,9 +222,13 @@ class TimeEntryFindResult
      * @param \DateTime $StartTime
      * @return \Spinen\ConnectWise\Library\Api\Generated\TimeEntryFindResult
      */
-    public function setStartTime(\DateTime $StartTime)
+    public function setStartTime(\DateTime $StartTime = null)
     {
-        $this->StartTime = $StartTime->format(\DateTime::ATOM);
+        if ($StartTime == null) {
+            $this->StartTime = null;
+        } else {
+            $this->StartTime = $StartTime->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -262,9 +252,13 @@ class TimeEntryFindResult
      * @param \DateTime $EndTime
      * @return \Spinen\ConnectWise\Library\Api\Generated\TimeEntryFindResult
      */
-    public function setEndTime(\DateTime $EndTime)
+    public function setEndTime(\DateTime $EndTime = null)
     {
-        $this->EndTime = $EndTime->format(\DateTime::ATOM);
+        if ($EndTime == null) {
+            $this->EndTime = null;
+        } else {
+            $this->EndTime = $EndTime->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -540,9 +534,13 @@ class TimeEntryFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\TimeEntryFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

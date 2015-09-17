@@ -27,7 +27,7 @@ class ArrayOfSpecialInvoiceProduct
      * @param SpecialInvoiceProduct[] $SpecialInvoiceProduct
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfSpecialInvoiceProduct
      */
-    public function setSpecialInvoiceProduct(array $SpecialInvoiceProduct)
+    public function setSpecialInvoiceProduct(array $SpecialInvoiceProduct = null)
     {
         $this->SpecialInvoiceProduct = $SpecialInvoiceProduct;
         return $this;

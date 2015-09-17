@@ -9,6 +9,7 @@ class FindConditionsType
     const BOOLEAN   = 'Boolean';
     const NUMERIC   = 'Numeric';
     const DATETIME  = 'DateTime';
+    const ENUM      = 'Enum';
 
     public function __construct()
     {

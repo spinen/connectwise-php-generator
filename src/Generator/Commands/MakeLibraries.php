@@ -19,7 +19,6 @@ use Wsdl2PhpGenerator\Generator as WsdlGenerator;
  */
 class MakeLibraries extends Base implements CommandInterface
 {
-
     use Composer;
 
     use ResponseParser;
@@ -58,7 +57,6 @@ class MakeLibraries extends Base implements CommandInterface
      * @var WsdlGenerator
      */
     protected $wsdl_generator;
-
 
     /**
      * @param Generator       $generator
@@ -100,10 +98,9 @@ class MakeLibraries extends Base implements CommandInterface
     {
         $this->setName('makeLibraries')
              ->setDescription('Runs through the WSDL\'s to generate the libraries')
-             ->addOption('clean', null, InputOption::VALUE_OPTIONAL,
-                 "Remove an contents in the " .
-                 $this->generator->apiDirectory(null, false, true) .
-                 " directory before running", true)
+             ->addOption('clean', null, InputOption::VALUE_OPTIONAL, "Remove an contents in the " .
+                                                                     $this->generator->apiDirectory(null, false, true) .
+                                                                     " directory before running", true)
              ->addOption('composer', null, InputOption::VALUE_OPTIONAL, 'Path to composer', 'composer.phar')
              ->addOption('dryRun', null, InputOption::VALUE_OPTIONAL,
                  'Just display the clients that we are going to wrap?', false)
@@ -215,7 +212,7 @@ class MakeLibraries extends Base implements CommandInterface
             'code_refactor',
             'code_formatter',
             'type_hinter',
-            'signature_builder'
+            'signature_builder',
         ];
 
         foreach ($jobs as $job) {
@@ -225,5 +222,4 @@ class MakeLibraries extends Base implements CommandInterface
         // Update autoload with the Signature file
         $this->composerDumpauto();
     }
-
 }

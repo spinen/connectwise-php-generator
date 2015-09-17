@@ -2027,6 +2027,210 @@ trait Signature
                     ->makeFilterBuilder($arguments);
     }
     /**
+     * Gets picking and shipping information for a product
+     *
+     * @param array|null $arguments
+     * @return GetProductPickedandShippedResponse
+     */
+    public function productApiGetProductPickedandShipped(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('GetProductPickedandShipped')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Add or Updates picking and shipping information for a product
+     *
+     * @param array|null $arguments
+     * @return AddOrUpdateProductPickedandShippedResponse
+     */
+    public function productApiAddOrUpdateProductPickedandShipped(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('AddOrUpdateProductPickedandShipped')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Deletes picking and shipping information for a product.
+     *
+     * @param array|null $arguments
+     * @return DeleteProductPickedandShippedResponse
+     */
+    public function productApiDeleteProductPickedandShipped(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('DeleteProductPickedandShipped')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Add or update pricing schedule.
+     *
+     * @param array|null $arguments
+     * @return AddOrUpdatePricingScheduleResponse
+     */
+    public function productApiAddOrUpdatePricingSchedule(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('AddOrUpdatePricingSchedule')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Get pricing schedule.
+     *
+     * @param array|null $arguments
+     * @return GetPricingScheduleResponse
+     */
+    public function productApiGetPricingSchedule(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('GetPricingSchedule')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Delete pricing schedule.
+     *
+     * @param array|null $arguments
+     * @return DeletePricingScheduleResponse
+     */
+    public function productApiDeletePricingSchedule(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('DeletePricingSchedule')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Get list of pricing schedules.
+     *
+     * @param array|null $arguments
+     * @return FindPricingSchedulesResponse
+     */
+    public function productApiFindPricingSchedules(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('FindPricingSchedules')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Add or update pricing detail.
+     *
+     * @param array|null $arguments
+     * @return AddOrUpdatePricingDetailResponse
+     */
+    public function productApiAddOrUpdatePricingDetail(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('AddOrUpdatePricingDetail')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Get pricing detail.
+     *
+     * @param array|null $arguments
+     * @return GetPricingDetailResponse
+     */
+    public function productApiGetPricingDetail(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('GetPricingDetail')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Delete pricing detail.
+     *
+     * @param array|null $arguments
+     * @return DeletePricingDetailResponse
+     */
+    public function productApiDeletePricingDetail(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('DeletePricingDetail')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Get list of pricing details.
+     *
+     * @param array|null $arguments
+     * @return FindPricingDetailsResponse
+     */
+    public function productApiFindPricingDetails(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('FindPricingDetails')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Add or update price break.
+     *
+     * @param array|null $arguments
+     * @return AddOrUpdatePriceBreakResponse
+     */
+    public function productApiAddOrUpdatePriceBreak(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('AddOrUpdatePriceBreak')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Get price break.
+     *
+     * @param array|null $arguments
+     * @return GetPriceBreakResponse
+     */
+    public function productApiGetPriceBreak(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('GetPriceBreak')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Delete price break.
+     *
+     * @param array|null $arguments
+     * @return DeletePriceBreakResponse
+     */
+    public function productApiDeletePriceBreak(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('DeletePriceBreak')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Get list of price breaks.
+     *
+     * @param array|null $arguments
+     * @return FindPriceBreaksResponse
+     */
+    public function productApiFindPriceBreaks(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('FindPriceBreaks')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Set a pricing schedule to a list of companies
+     *
+     * @param array|null $arguments
+     * @return SetCompanyPricingScheduleResponse
+     */
+    public function productApiSetCompanyPricingSchedule(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('SetCompanyPricingSchedule')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Remove a pricing schedule from a list of companies
+     *
+     * @param array|null $arguments
+     * @return RemoveCompanyPricingScheduleResponse
+     */
+    public function productApiRemoveCompanyPricingSchedule(array $arguments = [])
+    {
+        return $this->setApi('ProductApi')
+                    ->setMethod('RemoveCompanyPricingSchedule')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
      * Returns a List of Projects, filtering by the project status.
      *
      * @param array|null $arguments

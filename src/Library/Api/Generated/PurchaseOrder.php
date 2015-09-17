@@ -137,56 +137,22 @@ class PurchaseOrder
 
     /**
      * @param int $Id
-     * @param CompanyReference $VendorCompany
-     * @param ContactReference $VendorContact
-     * @param PurchasingCompanyAddress $VendorCompanyAddress
      * @param boolean $IsDropShipped
-     * @param string $ShipToWarehouse
-     * @param CompanyReference $ShipToCompany
-     * @param PurchasingCompanyAddress $DropShipAddress
-     * @param string $PoNumber
      * @param \DateTime $PurchaseDate
-     * @param string $VendorOrderNumber
-     * @param string $VendorInvoiceNumber
-     * @param string $BillingTerms
      * @param float $SubTotal
      * @param float $FreightCost
      * @param float $Total
-     * @param string $Location
-     * @param string $BusinessUnit
-     * @param string $EnteredBy
-     * @param string $ShipmentMethod
-     * @param string $TrackingNumber
-     * @param string $ShippingInstructions
      * @param boolean $IsClosed
-     * @param ArrayOfPurchaseOrderLineItem $LineItems
      */
-    public function __construct($Id = null, CompanyReference $VendorCompany = null, ContactReference $VendorContact = null, PurchasingCompanyAddress $VendorCompanyAddress = null, $IsDropShipped = null, $ShipToWarehouse = null, CompanyReference $ShipToCompany = null, PurchasingCompanyAddress $DropShipAddress = null, $PoNumber = null, \DateTime $PurchaseDate = null, $VendorOrderNumber = null, $VendorInvoiceNumber = null, $BillingTerms = null, $SubTotal = null, $FreightCost = null, $Total = null, $Location = null, $BusinessUnit = null, $EnteredBy = null, $ShipmentMethod = null, $TrackingNumber = null, $ShippingInstructions = null, $IsClosed = null, $LineItems = null)
+    public function __construct($Id = null, $IsDropShipped = null, \DateTime $PurchaseDate = null, $SubTotal = null, $FreightCost = null, $Total = null, $IsClosed = null)
     {
-        $this->Id                   = $Id;
-        $this->VendorCompany        = $VendorCompany;
-        $this->VendorContact        = $VendorContact;
-        $this->VendorCompanyAddress = $VendorCompanyAddress;
-        $this->IsDropShipped        = $IsDropShipped;
-        $this->ShipToWarehouse      = $ShipToWarehouse;
-        $this->ShipToCompany        = $ShipToCompany;
-        $this->DropShipAddress      = $DropShipAddress;
-        $this->PoNumber             = $PoNumber;
-        $this->PurchaseDate         = $PurchaseDate ? $PurchaseDate->format(\DateTime::ATOM) : null;
-        $this->VendorOrderNumber    = $VendorOrderNumber;
-        $this->VendorInvoiceNumber  = $VendorInvoiceNumber;
-        $this->BillingTerms         = $BillingTerms;
-        $this->SubTotal             = $SubTotal;
-        $this->FreightCost          = $FreightCost;
-        $this->Total                = $Total;
-        $this->Location             = $Location;
-        $this->BusinessUnit         = $BusinessUnit;
-        $this->EnteredBy            = $EnteredBy;
-        $this->ShipmentMethod       = $ShipmentMethod;
-        $this->TrackingNumber       = $TrackingNumber;
-        $this->ShippingInstructions = $ShippingInstructions;
-        $this->IsClosed             = $IsClosed;
-        $this->LineItems            = $LineItems;
+        $this->Id            = $Id;
+        $this->IsDropShipped = $IsDropShipped;
+        $this->PurchaseDate  = $PurchaseDate ? $PurchaseDate->format(\DateTime::ATOM) : null;
+        $this->SubTotal      = $SubTotal;
+        $this->FreightCost   = $FreightCost;
+        $this->Total         = $Total;
+        $this->IsClosed      = $IsClosed;
     }
 
     /**
@@ -577,9 +543,13 @@ class PurchaseOrder
      * @param \DateTime $ShipDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrder
      */
-    public function setShipDate(\DateTime $ShipDate)
+    public function setShipDate(\DateTime $ShipDate = null)
     {
-        $this->ShipDate = $ShipDate->format(\DateTime::ATOM);
+        if ($ShipDate == null) {
+            $this->ShipDate = null;
+        } else {
+            $this->ShipDate = $ShipDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -657,9 +627,13 @@ class PurchaseOrder
      * @param \DateTime $DateClosed
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrder
      */
-    public function setDateClosed(\DateTime $DateClosed)
+    public function setDateClosed(\DateTime $DateClosed = null)
     {
-        $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
+        if ($DateClosed == null) {
+            $this->DateClosed = null;
+        } else {
+            $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

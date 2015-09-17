@@ -17,12 +17,10 @@ class TicketConfiguration
 
     /**
      * @param int $Id
-     * @param string $DeviceIdentifier
      */
-    public function __construct($Id = null, $DeviceIdentifier = null)
+    public function __construct($Id = null)
     {
-        $this->Id               = $Id;
-        $this->DeviceIdentifier = $DeviceIdentifier;
+        $this->Id = $Id;
     }
 
     /**

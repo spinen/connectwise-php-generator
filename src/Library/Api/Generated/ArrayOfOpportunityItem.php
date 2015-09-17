@@ -27,7 +27,7 @@ class ArrayOfOpportunityItem
      * @param OpportunityItem[] $OpportunityItem
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfOpportunityItem
      */
-    public function setOpportunityItem(array $OpportunityItem)
+    public function setOpportunityItem(array $OpportunityItem = null)
     {
         $this->OpportunityItem = $OpportunityItem;
         return $this;

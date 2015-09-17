@@ -27,7 +27,7 @@ class ArrayOfOppDocumentInfo
      * @param OppDocumentInfo[] $OppDocumentInfo
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfOppDocumentInfo
      */
-    public function setOppDocumentInfo(array $OppDocumentInfo)
+    public function setOppDocumentInfo(array $OppDocumentInfo = null)
     {
         $this->OppDocumentInfo = $OppDocumentInfo;
         return $this;

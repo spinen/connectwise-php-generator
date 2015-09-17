@@ -12,7 +12,6 @@ use InvalidArgumentException;
  */
 class Collection extends IlluminateCollection
 {
-
     /**
      * Getter to make the object fell more like an object
      *
@@ -46,5 +45,4 @@ class Collection extends IlluminateCollection
 
         return;
     }
-
 }

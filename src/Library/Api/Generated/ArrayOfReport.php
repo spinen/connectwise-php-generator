@@ -27,7 +27,7 @@ class ArrayOfReport
      * @param Report[] $Report
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfReport
      */
-    public function setReport(array $Report)
+    public function setReport(array $Report = null)
     {
         $this->Report = $Report;
         return $this;

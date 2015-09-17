@@ -27,7 +27,7 @@ class ArrayOfOpportunityCustomField
      * @param OpportunityCustomField[] $OpportunityCustomField
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfOpportunityCustomField
      */
-    public function setOpportunityCustomField(array $OpportunityCustomField)
+    public function setOpportunityCustomField(array $OpportunityCustomField = null)
     {
         $this->OpportunityCustomField = $OpportunityCustomField;
         return $this;

@@ -115,40 +115,9 @@ class CompanyProfile
      */
     protected $CalendarId = null;
 
-    /**
-     * @param string $SicCode
-     * @param string $SicDescription
-     * @param string $OwnershipType
-     * @param string $TimeZone
-     * @param string $LeadSource
-     * @param string $UserField1
-     * @param string $UserField2
-     * @param string $UserField3
-     * @param string $UserField4
-     * @param string $UserField5
-     * @param string $UserField6
-     * @param string $UserField7
-     * @param string $UserField8
-     * @param string $UserField9
-     * @param string $UserField10
-     */
-    public function __construct($SicCode = null, $SicDescription = null, $OwnershipType = null, $TimeZone = null, $LeadSource = null, $UserField1 = null, $UserField2 = null, $UserField3 = null, $UserField4 = null, $UserField5 = null, $UserField6 = null, $UserField7 = null, $UserField8 = null, $UserField9 = null, $UserField10 = null)
+    public function __construct()
     {
-        $this->SicCode        = $SicCode;
-        $this->SicDescription = $SicDescription;
-        $this->OwnershipType  = $OwnershipType;
-        $this->TimeZone       = $TimeZone;
-        $this->LeadSource     = $LeadSource;
-        $this->UserField1     = $UserField1;
-        $this->UserField2     = $UserField2;
-        $this->UserField3     = $UserField3;
-        $this->UserField4     = $UserField4;
-        $this->UserField5     = $UserField5;
-        $this->UserField6     = $UserField6;
-        $this->UserField7     = $UserField7;
-        $this->UserField8     = $UserField8;
-        $this->UserField9     = $UserField9;
-        $this->UserField10    = $UserField10;
+
     }
 
     /**

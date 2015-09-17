@@ -27,7 +27,7 @@ class ArrayOfManagedGroup
      * @param ManagedGroup[] $ManagedGroup
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfManagedGroup
      */
-    public function setManagedGroup(array $ManagedGroup)
+    public function setManagedGroup(array $ManagedGroup = null)
     {
         $this->ManagedGroup = $ManagedGroup;
         return $this;

@@ -45,5 +45,4 @@ if (!function_exists('env_value')) {
 
         return $default;
     }
-
 }

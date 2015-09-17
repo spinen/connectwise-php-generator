@@ -27,7 +27,7 @@ class ArrayOfManagementSummaryReport
      * @param ManagementSummaryReport[] $ManagementSummaryReport
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfManagementSummaryReport
      */
-    public function setManagementSummaryReport(array $ManagementSummaryReport)
+    public function setManagementSummaryReport(array $ManagementSummaryReport = null)
     {
         $this->ManagementSummaryReport = $ManagementSummaryReport;
         return $this;

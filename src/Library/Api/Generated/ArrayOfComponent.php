@@ -27,7 +27,7 @@ class ArrayOfComponent
      * @param Component[] $Component
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfComponent
      */
-    public function setComponent(array $Component)
+    public function setComponent(array $Component = null)
     {
         $this->Component = $Component;
         return $this;

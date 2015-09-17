@@ -27,12 +27,10 @@ class ConfigurationTypeFindResult
 
     /**
      * @param int $Id
-     * @param string $Name
      */
-    public function __construct($Id = null, $Name = null)
+    public function __construct($Id = null)
     {
-        $this->Id   = $Id;
-        $this->Name = $Name;
+        $this->Id = $Id;
     }
 
     /**

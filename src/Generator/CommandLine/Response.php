@@ -9,7 +9,6 @@ namespace Spinen\ConnectWise\Generator\CommandLine;
  */
 class Response
 {
-
     /**
      * The command that was ran
      *
@@ -110,5 +109,4 @@ class Response
             $this->{$property} = $response[$property];
         }
     }
-
 }

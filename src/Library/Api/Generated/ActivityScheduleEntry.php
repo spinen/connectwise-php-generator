@@ -57,14 +57,10 @@ class ActivityScheduleEntry
 
     /**
      * @param int $Id
-     * @param string $MemberIdentifier
-     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $MemberIdentifier = null, $UpdatedBy = null)
+    public function __construct($Id = null)
     {
-        $this->Id               = $Id;
-        $this->MemberIdentifier = $MemberIdentifier;
-        $this->UpdatedBy        = $UpdatedBy;
+        $this->Id = $Id;
     }
 
     /**
@@ -249,9 +245,13 @@ class ActivityScheduleEntry
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\ActivityScheduleEntry
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

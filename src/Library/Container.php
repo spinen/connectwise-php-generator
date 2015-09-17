@@ -12,7 +12,6 @@ use Spinen\ConnectWise\Library\Contracts\Container as ContainerInterface;
  */
 class Container extends LeagueContainer implements ContainerInterface
 {
-
     /**
      * Default items to register with the container
      *
@@ -42,7 +41,6 @@ class Container extends LeagueContainer implements ContainerInterface
      * @var array
      */
     protected $rules = [];
-
 
     /**
      * @param array $options
@@ -127,5 +125,4 @@ class Container extends LeagueContainer implements ContainerInterface
         $this->get('validator')
              ->validate($options, (array)$this->rules);
     }
-
 }

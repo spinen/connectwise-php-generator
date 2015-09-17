@@ -11,7 +11,6 @@ use Spinen\ConnectWise\Client\Client;
  */
 class UrlEntry
 {
-
     /**
      * @var Client
      */
@@ -126,5 +125,4 @@ class UrlEntry
         return $this->buildUrl("%s/v4_6_release/services/system_io/router/openrecord.rails?locale=en_US&recordType=ServiceFv&recid=%s&companyName=%s",
             $ticket_id);
     }
-
 }

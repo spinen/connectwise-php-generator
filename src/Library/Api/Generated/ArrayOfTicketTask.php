@@ -27,7 +27,7 @@ class ArrayOfTicketTask
      * @param TicketTask[] $TicketTask
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfTicketTask
      */
-    public function setTicketTask(array $TicketTask)
+    public function setTicketTask(array $TicketTask = null)
     {
         $this->TicketTask = $TicketTask;
         return $this;

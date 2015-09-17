@@ -90,9 +90,13 @@ class ProjectSummaryInfo
      * @param \DateTime $ScheduledStart
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectSummaryInfo
      */
-    public function setScheduledStart(\DateTime $ScheduledStart)
+    public function setScheduledStart(\DateTime $ScheduledStart = null)
     {
-        $this->ScheduledStart = $ScheduledStart->format(\DateTime::ATOM);
+        if ($ScheduledStart == null) {
+            $this->ScheduledStart = null;
+        } else {
+            $this->ScheduledStart = $ScheduledStart->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -116,9 +120,13 @@ class ProjectSummaryInfo
      * @param \DateTime $ScheduledEnd
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectSummaryInfo
      */
-    public function setScheduledEnd(\DateTime $ScheduledEnd)
+    public function setScheduledEnd(\DateTime $ScheduledEnd = null)
     {
-        $this->ScheduledEnd = $ScheduledEnd->format(\DateTime::ATOM);
+        if ($ScheduledEnd == null) {
+            $this->ScheduledEnd = null;
+        } else {
+            $this->ScheduledEnd = $ScheduledEnd->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -160,9 +168,13 @@ class ProjectSummaryInfo
      * @param \DateTime $ActualStart
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectSummaryInfo
      */
-    public function setActualStart(\DateTime $ActualStart)
+    public function setActualStart(\DateTime $ActualStart = null)
     {
-        $this->ActualStart = $ActualStart->format(\DateTime::ATOM);
+        if ($ActualStart == null) {
+            $this->ActualStart = null;
+        } else {
+            $this->ActualStart = $ActualStart->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -186,9 +198,13 @@ class ProjectSummaryInfo
      * @param \DateTime $ActualEnd
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectSummaryInfo
      */
-    public function setActualEnd(\DateTime $ActualEnd)
+    public function setActualEnd(\DateTime $ActualEnd = null)
     {
-        $this->ActualEnd = $ActualEnd->format(\DateTime::ATOM);
+        if ($ActualEnd == null) {
+            $this->ActualEnd = null;
+        } else {
+            $this->ActualEnd = $ActualEnd->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

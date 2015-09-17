@@ -27,7 +27,7 @@ class ArrayOfApplyTo
      * @param ApplyTo[] $ApplyTo
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfApplyTo
      */
-    public function setApplyTo(array $ApplyTo)
+    public function setApplyTo(array $ApplyTo = null)
     {
         $this->ApplyTo = $ApplyTo;
         return $this;

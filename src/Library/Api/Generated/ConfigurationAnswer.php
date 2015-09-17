@@ -17,12 +17,10 @@ class ConfigurationAnswer
 
     /**
      * @param int $QuestionId
-     * @param string $Value
      */
-    public function __construct($QuestionId = null, $Value = null)
+    public function __construct($QuestionId = null)
     {
         $this->QuestionId = $QuestionId;
-        $this->Value      = $Value;
     }
 
     /**

@@ -27,7 +27,7 @@ class ArrayOfProjectPhaseFindResults
      * @param ProjectPhaseFindResults[] $ProjectPhaseFindResults
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProjectPhaseFindResults
      */
-    public function setProjectPhaseFindResults(array $ProjectPhaseFindResults)
+    public function setProjectPhaseFindResults(array $ProjectPhaseFindResults = null)
     {
         $this->ProjectPhaseFindResults = $ProjectPhaseFindResults;
         return $this;

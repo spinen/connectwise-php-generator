@@ -127,38 +127,18 @@ class TimeEntry
 
     /**
      * @param int $Id
-     * @param string $Notes
      * @param \DateTime $DateStart
-     * @param string $MemberIdentifier
-     * @param string $WorkType
-     * @param string $WorkRole
-     * @param string $InternalNotes
-     * @param string $ResponseMessage
-     * @param string $LastUpdatedUTC
-     * @param string $LastUpdated
-     * @param string $UpdatedBy
      * @param float $HoursBilled
      * @param float $HoursDeduct
-     * @param string $ChargeCode
      * @param int $TicketId
      */
-    public function __construct($Id = null, $Notes = null, \DateTime $DateStart = null, $MemberIdentifier = null, $WorkType = null, $WorkRole = null, $InternalNotes = null, $ResponseMessage = null, $LastUpdatedUTC = null, $LastUpdated = null, $UpdatedBy = null, $HoursBilled = null, $HoursDeduct = null, $ChargeCode = null, $TicketId = null)
+    public function __construct($Id = null, \DateTime $DateStart = null, $HoursBilled = null, $HoursDeduct = null, $TicketId = null)
     {
-        $this->Id               = $Id;
-        $this->Notes            = $Notes;
-        $this->DateStart        = $DateStart ? $DateStart->format(\DateTime::ATOM) : null;
-        $this->MemberIdentifier = $MemberIdentifier;
-        $this->WorkType         = $WorkType;
-        $this->WorkRole         = $WorkRole;
-        $this->InternalNotes    = $InternalNotes;
-        $this->ResponseMessage  = $ResponseMessage;
-        $this->LastUpdatedUTC   = $LastUpdatedUTC;
-        $this->LastUpdated      = $LastUpdated;
-        $this->UpdatedBy        = $UpdatedBy;
-        $this->HoursBilled      = $HoursBilled;
-        $this->HoursDeduct      = $HoursDeduct;
-        $this->ChargeCode       = $ChargeCode;
-        $this->TicketId         = $TicketId;
+        $this->Id          = $Id;
+        $this->DateStart   = $DateStart ? $DateStart->format(\DateTime::ATOM) : null;
+        $this->HoursBilled = $HoursBilled;
+        $this->HoursDeduct = $HoursDeduct;
+        $this->TicketId    = $TicketId;
     }
 
     /**
@@ -243,9 +223,13 @@ class TimeEntry
      * @param \DateTime $TimeStart
      * @return \Spinen\ConnectWise\Library\Api\Generated\TimeEntry
      */
-    public function setTimeStart(\DateTime $TimeStart)
+    public function setTimeStart(\DateTime $TimeStart = null)
     {
-        $this->TimeStart = $TimeStart->format(\DateTime::ATOM);
+        if ($TimeStart == null) {
+            $this->TimeStart = null;
+        } else {
+            $this->TimeStart = $TimeStart->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -269,9 +253,13 @@ class TimeEntry
      * @param \DateTime $TimeEnd
      * @return \Spinen\ConnectWise\Library\Api\Generated\TimeEntry
      */
-    public function setTimeEnd(\DateTime $TimeEnd)
+    public function setTimeEnd(\DateTime $TimeEnd = null)
     {
-        $this->TimeEnd = $TimeEnd->format(\DateTime::ATOM);
+        if ($TimeEnd == null) {
+            $this->TimeEnd = null;
+        } else {
+            $this->TimeEnd = $TimeEnd->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

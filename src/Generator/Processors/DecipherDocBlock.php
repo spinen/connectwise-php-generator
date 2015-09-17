@@ -12,7 +12,6 @@ use Spinen\ConnectWise\Library\Contracts\Processor;
  */
 class DecipherDocBlock implements Processor
 {
-
     /**
      * Gets the short description
      *
@@ -66,7 +65,7 @@ class DecipherDocBlock implements Processor
             // The return tag only has 2 elements, so make sure that we always have 3 by padding
             list($tag, $type, $variable) = array_pad(explode(" ", $tag), 3, null);
 
-            $tags_array[$tag][$variable] =  $type;
+            $tags_array[$tag][$variable] = $type;
         }
 
         return $tags_array;
@@ -124,5 +123,4 @@ class DecipherDocBlock implements Processor
             return (preg_replace("/^\\s*\\*\\s+(.*)/u", "$1", $line));
         }, $lines);
     }
-
 }

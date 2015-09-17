@@ -11,7 +11,6 @@ use SoapClient as RealSoapClient;
  */
 class SoapClient extends RealSoapClient
 {
-
     /**
      * Our way of keeping the hostname out of the code
      *
@@ -22,5 +21,4 @@ class SoapClient extends RealSoapClient
     {
         parent::__construct($wsdl, $options);
     }
-
 }

@@ -18,7 +18,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class Generator extends Container implements ContainerInterface
 {
-
     /**
      * Cache of command classes
      *
@@ -437,5 +436,4 @@ class Generator extends Container implements ContainerInterface
             return "UNDEFINED";
         }
     }
-
 }

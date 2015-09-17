@@ -112,20 +112,10 @@ class AdditionsProduct
 
     /**
      * @param int $Id
-     * @param string $ItemIdentifier
-     * @param string $Description
-     * @param string $LongDescription
-     * @param string $ManufacturerPartNumber
-     * @param string $VendorSku
      */
-    public function __construct($Id = null, $ItemIdentifier = null, $Description = null, $LongDescription = null, $ManufacturerPartNumber = null, $VendorSku = null)
+    public function __construct($Id = null)
     {
-        $this->Id                     = $Id;
-        $this->ItemIdentifier         = $ItemIdentifier;
-        $this->Description            = $Description;
-        $this->LongDescription        = $LongDescription;
-        $this->ManufacturerPartNumber = $ManufacturerPartNumber;
-        $this->VendorSku              = $VendorSku;
+        $this->Id = $Id;
     }
 
     /**

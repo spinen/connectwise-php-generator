@@ -27,7 +27,7 @@ class ArrayOfConfigurationQuestion
      * @param ConfigurationQuestion[] $ConfigurationQuestion
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfConfigurationQuestion
      */
-    public function setConfigurationQuestion(array $ConfigurationQuestion)
+    public function setConfigurationQuestion(array $ConfigurationQuestion = null)
     {
         $this->ConfigurationQuestion = $ConfigurationQuestion;
         return $this;

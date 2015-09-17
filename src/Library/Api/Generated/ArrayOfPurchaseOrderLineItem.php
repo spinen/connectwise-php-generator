@@ -27,7 +27,7 @@ class ArrayOfPurchaseOrderLineItem
      * @param PurchaseOrderLineItem[] $PurchaseOrderLineItem
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfPurchaseOrderLineItem
      */
-    public function setPurchaseOrderLineItem(array $PurchaseOrderLineItem)
+    public function setPurchaseOrderLineItem(array $PurchaseOrderLineItem = null)
     {
         $this->PurchaseOrderLineItem = $PurchaseOrderLineItem;
         return $this;

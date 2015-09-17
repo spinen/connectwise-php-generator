@@ -6,8 +6,8 @@ use Illuminate\Filesystem\Filesystem;
 use InvalidArgumentException;
 use ReflectionClass;
 use ReflectionMethod;
-use Spinen\ConnectWise\Library\Support\ClassReflector;
 use Spinen\ConnectWise\Library\Contracts\Processor;
+use Spinen\ConnectWise\Library\Support\ClassReflector;
 
 /**
  * Class AddTypeHints
@@ -16,7 +16,6 @@ use Spinen\ConnectWise\Library\Contracts\Processor;
  */
 class AddTypeHints implements Processor
 {
-
     /**
      * @var GetClassName
      */
@@ -350,5 +349,4 @@ class AddTypeHints implements Processor
     {
         return $this->reflector->reflect($this->class_name_getter->process($contents));
     }
-
 }

@@ -23,13 +23,11 @@ class ContactPresence
     /**
      * @param int $Id
      * @param int $ContactId
-     * @param string $PresenceDescription
      */
-    public function __construct($Id = null, $ContactId = null, $PresenceDescription = null)
+    public function __construct($Id = null, $ContactId = null)
     {
-        $this->Id                  = $Id;
-        $this->ContactId           = $ContactId;
-        $this->PresenceDescription = $PresenceDescription;
+        $this->Id        = $Id;
+        $this->ContactId = $ContactId;
     }
 
     /**

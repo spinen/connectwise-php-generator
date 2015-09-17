@@ -27,7 +27,7 @@ class ArrayOfProductDemand
      * @param ProductDemand[] $ProductDemand
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProductDemand
      */
-    public function setProductDemand(array $ProductDemand)
+    public function setProductDemand(array $ProductDemand = null)
     {
         $this->ProductDemand = $ProductDemand;
         return $this;

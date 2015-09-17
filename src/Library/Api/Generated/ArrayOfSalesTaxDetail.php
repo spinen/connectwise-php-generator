@@ -27,7 +27,7 @@ class ArrayOfSalesTaxDetail
      * @param SalesTaxDetail[] $SalesTaxDetail
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfSalesTaxDetail
      */
-    public function setSalesTaxDetail(array $SalesTaxDetail)
+    public function setSalesTaxDetail(array $SalesTaxDetail = null)
     {
         $this->SalesTaxDetail = $SalesTaxDetail;
         return $this;

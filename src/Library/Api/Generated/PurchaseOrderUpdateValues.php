@@ -132,34 +132,10 @@ class PurchaseOrderUpdateValues
 
     /**
      * @param int $Id
-     * @param string $ShipToWarehouse
-     * @param string $PoNumber
-     * @param string $VendorOrderNumber
-     * @param string $VendorInvoiceNumber
-     * @param string $BillingTerms
-     * @param string $Location
-     * @param string $BusinessUnit
-     * @param string $EnteredBy
-     * @param string $ShipmentMethod
-     * @param string $TrackingNumber
-     * @param string $ShippingInstructions
-     * @param DropShipAddress $DropShipAddress
      */
-    public function __construct($Id = null, $ShipToWarehouse = null, $PoNumber = null, $VendorOrderNumber = null, $VendorInvoiceNumber = null, $BillingTerms = null, $Location = null, $BusinessUnit = null, $EnteredBy = null, $ShipmentMethod = null, $TrackingNumber = null, $ShippingInstructions = null, DropShipAddress $DropShipAddress = null)
+    public function __construct($Id = null)
     {
-        $this->Id                   = $Id;
-        $this->ShipToWarehouse      = $ShipToWarehouse;
-        $this->PoNumber             = $PoNumber;
-        $this->VendorOrderNumber    = $VendorOrderNumber;
-        $this->VendorInvoiceNumber  = $VendorInvoiceNumber;
-        $this->BillingTerms         = $BillingTerms;
-        $this->Location             = $Location;
-        $this->BusinessUnit         = $BusinessUnit;
-        $this->EnteredBy            = $EnteredBy;
-        $this->ShipmentMethod       = $ShipmentMethod;
-        $this->TrackingNumber       = $TrackingNumber;
-        $this->ShippingInstructions = $ShippingInstructions;
-        $this->DropShipAddress      = $DropShipAddress;
+        $this->Id = $Id;
     }
 
     /**
@@ -344,9 +320,13 @@ class PurchaseOrderUpdateValues
      * @param \DateTime $PurchaseDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderUpdateValues
      */
-    public function setPurchaseDate(\DateTime $PurchaseDate)
+    public function setPurchaseDate(\DateTime $PurchaseDate = null)
     {
-        $this->PurchaseDate = $PurchaseDate->format(\DateTime::ATOM);
+        if ($PurchaseDate == null) {
+            $this->PurchaseDate = null;
+        } else {
+            $this->PurchaseDate = $PurchaseDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -532,9 +512,13 @@ class PurchaseOrderUpdateValues
      * @param \DateTime $ShipDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderUpdateValues
      */
-    public function setShipDate(\DateTime $ShipDate)
+    public function setShipDate(\DateTime $ShipDate = null)
     {
-        $this->ShipDate = $ShipDate->format(\DateTime::ATOM);
+        if ($ShipDate == null) {
+            $this->ShipDate = null;
+        } else {
+            $this->ShipDate = $ShipDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -612,9 +596,13 @@ class PurchaseOrderUpdateValues
      * @param \DateTime $DateClosed
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderUpdateValues
      */
-    public function setDateClosed(\DateTime $DateClosed)
+    public function setDateClosed(\DateTime $DateClosed = null)
     {
-        $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
+        if ($DateClosed == null) {
+            $this->DateClosed = null;
+        } else {
+            $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

@@ -27,7 +27,7 @@ class ArrayOfInt1
      * @param int[] $Id
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfInt1
      */
-    public function setId(array $Id)
+    public function setId(array $Id = null)
     {
         $this->Id = $Id;
         return $this;

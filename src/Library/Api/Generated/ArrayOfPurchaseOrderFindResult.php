@@ -27,7 +27,7 @@ class ArrayOfPurchaseOrderFindResult
      * @param PurchaseOrderFindResult[] $PurchaseOrderFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfPurchaseOrderFindResult
      */
-    public function setPurchaseOrderFindResult(array $PurchaseOrderFindResult)
+    public function setPurchaseOrderFindResult(array $PurchaseOrderFindResult = null)
     {
         $this->PurchaseOrderFindResult = $PurchaseOrderFindResult;
         return $this;

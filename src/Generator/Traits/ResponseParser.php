@@ -6,7 +6,6 @@ use Spinen\ConnectWise\Generator\CommandLine\Response;
 
 trait ResponseParser
 {
-
     /**
      * Display the response as a comment or error
      *
@@ -18,5 +17,4 @@ trait ResponseParser
 
         $this->output->writeln("<" . $type . ">" . $response->getResponse() . "</" . $type . ">");
     }
-
 }

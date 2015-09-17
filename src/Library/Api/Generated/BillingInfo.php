@@ -56,19 +56,15 @@ class BillingInfo
     protected $Cost = null;
 
     /**
-     * @param string $SerialNumber
-     * @param string $BillingDescription
      * @param int $SiteId
      * @param float $Price
      * @param float $Cost
      */
-    public function __construct($SerialNumber = null, $BillingDescription = null, $SiteId = null, $Price = null, $Cost = null)
+    public function __construct($SiteId = null, $Price = null, $Cost = null)
     {
-        $this->SerialNumber       = $SerialNumber;
-        $this->BillingDescription = $BillingDescription;
-        $this->SiteId             = $SiteId;
-        $this->Price              = $Price;
-        $this->Cost               = $Cost;
+        $this->SiteId = $SiteId;
+        $this->Price  = $Price;
+        $this->Cost   = $Cost;
     }
 
     /**
@@ -163,9 +159,13 @@ class BillingInfo
      * @param \DateTime $BillingDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\BillingInfo
      */
-    public function setBillingDate(\DateTime $BillingDate)
+    public function setBillingDate(\DateTime $BillingDate = null)
     {
-        $this->BillingDate = $BillingDate->format(\DateTime::ATOM);
+        if ($BillingDate == null) {
+            $this->BillingDate = null;
+        } else {
+            $this->BillingDate = $BillingDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -189,9 +189,13 @@ class BillingInfo
      * @param \DateTime $CancelDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\BillingInfo
      */
-    public function setCancelDate(\DateTime $CancelDate)
+    public function setCancelDate(\DateTime $CancelDate = null)
     {
-        $this->CancelDate = $CancelDate->format(\DateTime::ATOM);
+        if ($CancelDate == null) {
+            $this->CancelDate = null;
+        } else {
+            $this->CancelDate = $CancelDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

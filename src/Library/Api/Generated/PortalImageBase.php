@@ -26,15 +26,11 @@ class PortalImageBase
     protected $PortalImageId = null;
 
     /**
-     * @param string $Id
-     * @param string $Url
      * @param boolean $UrlFlag
      * @param int $PortalImageId
      */
-    public function __construct($Id = null, $Url = null, $UrlFlag = null, $PortalImageId = null)
+    public function __construct($UrlFlag = null, $PortalImageId = null)
     {
-        $this->Id            = $Id;
-        $this->Url           = $Url;
         $this->UrlFlag       = $UrlFlag;
         $this->PortalImageId = $PortalImageId;
     }

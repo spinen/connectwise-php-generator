@@ -9,11 +9,10 @@ namespace Spinen\ConnectWise\Library\Contracts;
  */
 interface Signature
 {
-
     /**
      * Resolve the item from the IoC & execute the method on it
      *
-     * @param array  $arguments
+     * @param array $arguments
      *
      * @return mixed
      */
@@ -52,5 +51,4 @@ interface Signature
      * @return $this
      */
     public function setMethod($method);
-
 }

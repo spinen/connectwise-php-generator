@@ -206,69 +206,15 @@ class TicketBase
     protected $RecordType = null;
 
     /**
-     * @param string $CompanyName
-     * @param string $ContactName
-     * @param string $AddressLine1
-     * @param string $AddressLine2
-     * @param string $City
-     * @param string $StateIdentifier
-     * @param string $Zip
-     * @param string $Country
-     * @param string $Board
-     * @param string $TicketStatus
-     * @param string $StatusName
      * @param boolean $ClosedFlag
-     * @param string $Type
-     * @param string $ServiceType
-     * @param string $ServiceSubType
-     * @param string $ServiceItem
-     * @param string $Priority
-     * @param string $Location
-     * @param string $Source
-     * @param string $Summary
-     * @param string $DetailDescription
-     * @param string $InternalDescription
-     * @param string $ResolutionDescription
-     * @param string $SiteName
      * @param boolean $Approved
-     * @param string $ClosedBy
-     * @param string $UpdatedBy
      * @param boolean $EmergencyFlag
-     * @param string $EnteredBy
-     * @param string $RecordType
      */
-    public function __construct($CompanyName = null, $ContactName = null, $AddressLine1 = null, $AddressLine2 = null, $City = null, $StateIdentifier = null, $Zip = null, $Country = null, $Board = null, $TicketStatus = null, $StatusName = null, $ClosedFlag = null, $Type = null, $ServiceType = null, $ServiceSubType = null, $ServiceItem = null, $Priority = null, $Location = null, $Source = null, $Summary = null, $DetailDescription = null, $InternalDescription = null, $ResolutionDescription = null, $SiteName = null, $Approved = null, $ClosedBy = null, $UpdatedBy = null, $EmergencyFlag = null, $EnteredBy = null, $RecordType = null)
+    public function __construct($ClosedFlag = null, $Approved = null, $EmergencyFlag = null)
     {
-        $this->CompanyName           = $CompanyName;
-        $this->ContactName           = $ContactName;
-        $this->AddressLine1          = $AddressLine1;
-        $this->AddressLine2          = $AddressLine2;
-        $this->City                  = $City;
-        $this->StateIdentifier       = $StateIdentifier;
-        $this->Zip                   = $Zip;
-        $this->Country               = $Country;
-        $this->Board                 = $Board;
-        $this->TicketStatus          = $TicketStatus;
-        $this->StatusName            = $StatusName;
-        $this->ClosedFlag            = $ClosedFlag;
-        $this->Type                  = $Type;
-        $this->ServiceType           = $ServiceType;
-        $this->ServiceSubType        = $ServiceSubType;
-        $this->ServiceItem           = $ServiceItem;
-        $this->Priority              = $Priority;
-        $this->Location              = $Location;
-        $this->Source                = $Source;
-        $this->Summary               = $Summary;
-        $this->DetailDescription     = $DetailDescription;
-        $this->InternalDescription   = $InternalDescription;
-        $this->ResolutionDescription = $ResolutionDescription;
-        $this->SiteName              = $SiteName;
-        $this->Approved              = $Approved;
-        $this->ClosedBy              = $ClosedBy;
-        $this->UpdatedBy             = $UpdatedBy;
-        $this->EmergencyFlag         = $EmergencyFlag;
-        $this->EnteredBy             = $EnteredBy;
-        $this->RecordType            = $RecordType;
+        $this->ClosedFlag    = $ClosedFlag;
+        $this->Approved      = $Approved;
+        $this->EmergencyFlag = $EmergencyFlag;
     }
 
     /**
@@ -723,9 +669,13 @@ class TicketBase
      * @param \DateTime $EnteredDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketBase
      */
-    public function setEnteredDate(\DateTime $EnteredDate)
+    public function setEnteredDate(\DateTime $EnteredDate = null)
     {
-        $this->EnteredDate = $EnteredDate->format(\DateTime::ATOM);
+        if ($EnteredDate == null) {
+            $this->EnteredDate = null;
+        } else {
+            $this->EnteredDate = $EnteredDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -749,9 +699,13 @@ class TicketBase
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketBase
      */
-    public function setLastUpdated(\DateTime $LastUpdated)
+    public function setLastUpdated(\DateTime $LastUpdated = null)
     {
-        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        if ($LastUpdated == null) {
+            $this->LastUpdated = null;
+        } else {
+            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -775,9 +729,13 @@ class TicketBase
      * @param \DateTime $RequiredDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketBase
      */
-    public function setRequiredDate(\DateTime $RequiredDate)
+    public function setRequiredDate(\DateTime $RequiredDate = null)
     {
-        $this->RequiredDate = $RequiredDate->format(\DateTime::ATOM);
+        if ($RequiredDate == null) {
+            $this->RequiredDate = null;
+        } else {
+            $this->RequiredDate = $RequiredDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -801,9 +759,13 @@ class TicketBase
      * @param \DateTime $ClosedDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketBase
      */
-    public function setClosedDate(\DateTime $ClosedDate)
+    public function setClosedDate(\DateTime $ClosedDate = null)
     {
-        $this->ClosedDate = $ClosedDate->format(\DateTime::ATOM);
+        if ($ClosedDate == null) {
+            $this->ClosedDate = null;
+        } else {
+            $this->ClosedDate = $ClosedDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

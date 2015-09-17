@@ -28,14 +28,12 @@ class PossibleResponse
     /**
      * @param int $Id
      * @param int $ConfigurationTypeQuestionId
-     * @param string $Value
      * @param boolean $DefaultFlag
      */
-    public function __construct($Id = null, $ConfigurationTypeQuestionId = null, $Value = null, $DefaultFlag = null)
+    public function __construct($Id = null, $ConfigurationTypeQuestionId = null, $DefaultFlag = null)
     {
         $this->Id                          = $Id;
         $this->ConfigurationTypeQuestionId = $ConfigurationTypeQuestionId;
-        $this->Value                       = $Value;
         $this->DefaultFlag                 = $DefaultFlag;
     }
 

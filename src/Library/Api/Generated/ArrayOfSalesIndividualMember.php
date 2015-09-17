@@ -27,7 +27,7 @@ class ArrayOfSalesIndividualMember
      * @param SalesIndividualMember[] $SalesIndividualMember
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfSalesIndividualMember
      */
-    public function setSalesIndividualMember(array $SalesIndividualMember)
+    public function setSalesIndividualMember(array $SalesIndividualMember = null)
     {
         $this->SalesIndividualMember = $SalesIndividualMember;
         return $this;

@@ -10,12 +10,9 @@ class LongDescription
      */
     protected $LongDesc = null;
 
-    /**
-     * @param ArrayOfString $LongDesc
-     */
-    public function __construct($LongDesc = null)
+    public function __construct()
     {
-        $this->LongDesc = $LongDesc;
+
     }
 
     /**

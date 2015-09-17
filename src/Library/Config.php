@@ -11,14 +11,12 @@ use ArrayAccess;
  */
 class Config implements ArrayAccess
 {
-
     /**
      * Array to contain configuration items.
      *
      * @var array
      */
     private $configs = [];
-
 
     /**
      * Build a Config with passed in config items.
@@ -131,5 +129,4 @@ class Config implements ArrayAccess
     {
         unset($this->configs[$offset]);
     }
-
 }

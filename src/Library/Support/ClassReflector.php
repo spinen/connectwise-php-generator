@@ -12,7 +12,6 @@ use ReflectionClass;
  */
 class ClassReflector
 {
-
     /**
      * Build a Reflection of the class
      *
@@ -29,5 +28,4 @@ class ClassReflector
 
         return new ReflectionClass($class);
     }
-
 }

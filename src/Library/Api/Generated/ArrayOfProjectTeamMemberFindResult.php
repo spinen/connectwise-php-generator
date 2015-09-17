@@ -27,7 +27,7 @@ class ArrayOfProjectTeamMemberFindResult
      * @param ProjectTeamMemberFindResult[] $ProjectTeamMemberFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProjectTeamMemberFindResult
      */
-    public function setProjectTeamMemberFindResult(array $ProjectTeamMemberFindResult)
+    public function setProjectTeamMemberFindResult(array $ProjectTeamMemberFindResult = null)
     {
         $this->ProjectTeamMemberFindResult = $ProjectTeamMemberFindResult;
         return $this;

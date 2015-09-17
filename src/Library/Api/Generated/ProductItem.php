@@ -148,25 +148,11 @@ class ProductItem
     /**
      * @param int $Id
      * @param float $QuantityCancelled
-     * @param string $Description
-     * @param string $ShortDescription
-     * @param string $Warehouse
-     * @param string $Bin
-     * @param string $QuoteNumber
-     * @param string $QuoteName
-     * @param ArrayOfComponent $BundleComponents
      */
-    public function __construct($Id = null, $QuantityCancelled = null, $Description = null, $ShortDescription = null, $Warehouse = null, $Bin = null, $QuoteNumber = null, $QuoteName = null, $BundleComponents = null)
+    public function __construct($Id = null, $QuantityCancelled = null)
     {
         $this->Id                = $Id;
         $this->QuantityCancelled = $QuantityCancelled;
-        $this->Description       = $Description;
-        $this->ShortDescription  = $ShortDescription;
-        $this->Warehouse         = $Warehouse;
-        $this->Bin               = $Bin;
-        $this->QuoteNumber       = $QuoteNumber;
-        $this->QuoteName         = $QuoteName;
-        $this->BundleComponents  = $BundleComponents;
     }
 
     /**

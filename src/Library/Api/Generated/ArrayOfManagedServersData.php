@@ -27,7 +27,7 @@ class ArrayOfManagedServersData
      * @param ManagedServersData[] $ManagedServersData
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfManagedServersData
      */
-    public function setManagedServersData(array $ManagedServersData)
+    public function setManagedServersData(array $ManagedServersData = null)
     {
         $this->ManagedServersData = $ManagedServersData;
         return $this;

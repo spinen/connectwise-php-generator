@@ -32,18 +32,12 @@ class UserDefinedCustomField
 
     /**
      * @param int $Id
-     * @param string $CustomField
-     * @param string $FieldType
      * @param int $NumberOfDecimals
-     * @param string $CustomValue
      */
-    public function __construct($Id = null, $CustomField = null, $FieldType = null, $NumberOfDecimals = null, $CustomValue = null)
+    public function __construct($Id = null, $NumberOfDecimals = null)
     {
         $this->Id               = $Id;
-        $this->CustomField      = $CustomField;
-        $this->FieldType        = $FieldType;
         $this->NumberOfDecimals = $NumberOfDecimals;
-        $this->CustomValue      = $CustomValue;
     }
 
     /**

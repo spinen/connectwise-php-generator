@@ -12,7 +12,6 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class ListWsdls extends Base
 {
-
     /**
      * Setup the configuration values for the command
      */
@@ -34,5 +33,4 @@ class ListWsdls extends Base
             $output->writeln("<comment>$api lives at $uri</comment>");
         }
     }
-
 }

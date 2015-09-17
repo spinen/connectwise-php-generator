@@ -4,7 +4,6 @@ namespace Spinen\ConnectWise\Library\Results;
 
 class ServiceTicketCollection extends Collection
 {
-
     public function mttr()
     {
         $mttr = [];
@@ -19,5 +18,4 @@ class ServiceTicketCollection extends Collection
 
         return $mttr;
     }
-
 }

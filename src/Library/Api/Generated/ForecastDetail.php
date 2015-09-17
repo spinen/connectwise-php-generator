@@ -103,39 +103,25 @@ class ForecastDetail
     /**
      * @param int $Id
      * @param int $OpportunityId
-     * @param string $ForecastType
      * @param float $Cost
      * @param float $Revenue
      * @param boolean $Included
-     * @param string $Description
-     * @param string $CycleBasis
-     * @param string $BillCycle
      * @param float $RecurringCost
      * @param float $RecurringRevenue
      * @param boolean $Linked
-     * @param string $QuoteNumber
-     * @param string $QuoteName
-     * @param string $Status
      * @param float $TotalRecurringRevenue
      * @param float $TotalRecurringCost
      */
-    public function __construct($Id = null, $OpportunityId = null, $ForecastType = null, $Cost = null, $Revenue = null, $Included = null, $Description = null, $CycleBasis = null, $BillCycle = null, $RecurringCost = null, $RecurringRevenue = null, $Linked = null, $QuoteNumber = null, $QuoteName = null, $Status = null, $TotalRecurringRevenue = null, $TotalRecurringCost = null)
+    public function __construct($Id = null, $OpportunityId = null, $Cost = null, $Revenue = null, $Included = null, $RecurringCost = null, $RecurringRevenue = null, $Linked = null, $TotalRecurringRevenue = null, $TotalRecurringCost = null)
     {
         $this->Id                    = $Id;
         $this->OpportunityId         = $OpportunityId;
-        $this->ForecastType          = $ForecastType;
         $this->Cost                  = $Cost;
         $this->Revenue               = $Revenue;
         $this->Included              = $Included;
-        $this->Description           = $Description;
-        $this->CycleBasis            = $CycleBasis;
-        $this->BillCycle             = $BillCycle;
         $this->RecurringCost         = $RecurringCost;
         $this->RecurringRevenue      = $RecurringRevenue;
         $this->Linked                = $Linked;
-        $this->QuoteNumber           = $QuoteNumber;
-        $this->QuoteName             = $QuoteName;
-        $this->Status                = $Status;
         $this->TotalRecurringRevenue = $TotalRecurringRevenue;
         $this->TotalRecurringCost    = $TotalRecurringCost;
     }
@@ -322,9 +308,13 @@ class ForecastDetail
      * @param \DateTime $RecurringEndDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ForecastDetail
      */
-    public function setRecurringEndDate(\DateTime $RecurringEndDate)
+    public function setRecurringEndDate(\DateTime $RecurringEndDate = null)
     {
-        $this->RecurringEndDate = $RecurringEndDate->format(\DateTime::ATOM);
+        if ($RecurringEndDate == null) {
+            $this->RecurringEndDate = null;
+        } else {
+            $this->RecurringEndDate = $RecurringEndDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 
@@ -348,9 +338,13 @@ class ForecastDetail
      * @param \DateTime $RecurringStartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ForecastDetail
      */
-    public function setRecurringStartDate(\DateTime $RecurringStartDate)
+    public function setRecurringStartDate(\DateTime $RecurringStartDate = null)
     {
-        $this->RecurringStartDate = $RecurringStartDate->format(\DateTime::ATOM);
+        if ($RecurringStartDate == null) {
+            $this->RecurringStartDate = null;
+        } else {
+            $this->RecurringStartDate = $RecurringStartDate->format(\DateTime::ATOM);
+        }
         return $this;
     }
 

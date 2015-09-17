@@ -27,7 +27,7 @@ class ArrayOfSalesTeam
      * @param SalesTeam[] $SalesTeam
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfSalesTeam
      */
-    public function setSalesTeam(array $SalesTeam)
+    public function setSalesTeam(array $SalesTeam = null)
     {
         $this->SalesTeam = $SalesTeam;
         return $this;
