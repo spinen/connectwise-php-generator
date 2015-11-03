@@ -1,22 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library\Support;
+namespace Spinen\ConnectWise\Library\Support;
 
-use Spinen\ConnectWise\Library\Results\ValueObject;
-use Spinen\ConnectWise\Library\Support\Collection;
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class CollectionTest
  *
- * @package Tests\Spinen\ConnectWise\Library\Support
+ * @package Spinen\ConnectWise\Library\Support
  * @group   library
  * @group   support
  * @group   collections
  */
 class CollectionTest extends BaseTest
 {
-
     /**
      * @var Collection
      */
@@ -36,5 +33,4 @@ class CollectionTest extends BaseTest
     {
         $this->assertInstanceOf('Spinen\\ConnectWise\\Library\\Support\\Collection', $this->collection);
     }
-
 }

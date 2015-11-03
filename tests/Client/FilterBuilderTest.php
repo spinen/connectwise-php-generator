@@ -1,23 +1,21 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Client;
+namespace Spinen\ConnectWise\Client;
 
 use InvalidArgumentException;
 use Mockery;
-use Spinen\ConnectWise\Client\FilterBuilder;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class FilterBuilderTest
  *
- * @package Tests\Spinen\ConnectWise\Client
+ * @package Spinen\ConnectWise\Client
  * @group   client
  * @group   filter
  */
 class FilterBuilderTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -573,5 +571,4 @@ class FilterBuilderTest extends BaseTest
         $this->filter_builder->whereRaw("condition1 = 'value1'")
                              ->andWhereRaw();
     }
-
 }

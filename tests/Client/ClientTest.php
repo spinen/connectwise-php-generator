@@ -1,21 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Client;
+namespace Spinen\ConnectWise\Client;
 
 use InvalidArgumentException;
-use Spinen\ConnectWise\Client\Client;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class ClientTest
  *
- * @package Tests\Spinen\ConnectWise\Client
+ * @package Spinen\ConnectWise\Client
  * @group   client
  */
 class ClientTest extends BaseTest
 {
-
     private function buildConfig($options = [])
     {
         return array_replace_recursive([
@@ -138,7 +136,7 @@ class ClientTest extends BaseTest
      */
     public function it_returns_the_expected_results_with_multiple_result()
     {
-        $client = (new Client($this->buildConfig()))->setApiNamespace('Tests\\Spinen\\ConnectWise\\Client\\Stubs')
+        $client = (new Client($this->buildConfig()))->setApiNamespace('Spinen\\ConnectWise\\Client\\Stubs')
                                                     ->setApi('SomeApi')
                                                     ->setMethod('FunctionCall');
 
@@ -169,7 +167,7 @@ class ClientTest extends BaseTest
                        ->once();
 
         $client = (new Client($this->buildConfig(),
-            $converter_mock))->setApiNamespace('Tests\\Spinen\\ConnectWise\\Client\\Stubs')
+            $converter_mock))->setApiNamespace('Spinen\\ConnectWise\\Client\\Stubs')
                              ->setApi('SomeApi')
                              ->setMethod('FunctionCall');
 
@@ -301,5 +299,4 @@ class ClientTest extends BaseTest
 
         $this->assertEquals($expected, $client->getSoapOptions());
     }
-
 }

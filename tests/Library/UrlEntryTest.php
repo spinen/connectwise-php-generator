@@ -1,22 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library;
+namespace Spinen\ConnectWise\Library;
 
-use InvalidArgumentException;
 use Mockery;
-use Spinen\ConnectWise\Library\UrlEntry;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class UrlEntryTest
  *
- * @package Tests\Spinen\ConnectWise\Library
+ * @package Spinen\ConnectWise\Library
  * @group   library
  */
 class UrlEntryTest extends BaseTest
 {
-
     /**
      * @var UrlEntry
      */
@@ -53,7 +50,7 @@ class UrlEntryTest extends BaseTest
                           ->andReturn([
                               'connectwise' => [
                                   'company' => $company,
-                              ]
+                              ],
                           ])
                           ->once();
 
@@ -219,5 +216,4 @@ class UrlEntryTest extends BaseTest
 
         $this->assertEquals($expected, $this->url->serviceTicket(1));
     }
-
 }

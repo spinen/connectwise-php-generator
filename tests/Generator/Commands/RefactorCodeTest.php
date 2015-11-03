@@ -1,21 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Commands;
+namespace Spinen\ConnectWise\Generator\Commands;
 
 use Mockery;
-use Spinen\ConnectWise\Generator\Commands\RefactorCode;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class RefactorCodeTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Commands
+ * @package Spinen\ConnectWise\Generator\Commands
  * @group   generator
  * @group   commands
  */
 class RefactorCodeTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -159,5 +157,4 @@ class RefactorCodeTest extends BaseTest
 
         $this->command->execute($this->input_mock, $this->output_mock);
     }
-
 }

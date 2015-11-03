@@ -1,23 +1,21 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator;
+namespace Spinen\ConnectWise\Generator;
 
 use League\Container\Exception\ReflectionException;
 use Mockery;
 use RuntimeException;
-use Spinen\ConnectWise\Generator\Generator;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class GeneratorTest
  *
- * @package Tests\Spinen\ConnectWise\Generator
+ * @package Spinen\ConnectWise\Generator
  * @group   generator
  */
 class GeneratorTest extends BaseTest
 {
-
     /**
      * @var \Spinen\ConnectWise\Generator\Generator
      */
@@ -35,19 +33,18 @@ class GeneratorTest extends BaseTest
         $this->generator = new Generator($this->buildConfig(), $this->files_mock);
     }
 
-
     private function buildConfig()
     {
         return [
-            'connectwise'    => [
+            'connectwise'         => [
                 'host'     => 'https://some.host',
                 'company'  => 'Company',
                 'username' => 'Username',
                 'password' => 'Password',
             ],
-            'generated_name' => 'Generated',
-            'key'            => 'value',
-            'paths'          => [
+            'generated_name'      => 'Generated',
+            'key'                 => 'value',
+            'paths'               => [
                 'directory'      => [
                     'api'        => 'Stubs' . DIRECTORY_SEPARATOR . 'Api',
                     // NOTE: Real folder in the test directory to allow some of the realpath stuff be OK
@@ -71,7 +68,7 @@ class GeneratorTest extends BaseTest
                     'library'    => 'No real value, just here to let validation pass',
                     'processors' => 'No real value, just here to let validation pass',
                 ],
-                'namespace_root' => 'Tests\\Spinen\\ConnectWise\\Generator',
+                'namespace_root' => 'Spinen\\ConnectWise\\Generator',
                 // NOTE: Real path in the test directory to allow some of the realpath stuff be OK
                 'project_root'   => __DIR__,
             ],
@@ -126,14 +123,13 @@ class GeneratorTest extends BaseTest
      */
     public function it_builds_directory_path_from_project_root_with_a_passed_in_array()
     {
-        $expected =
-            __DIR__ .
-            DIRECTORY_SEPARATOR .
-            "Stubs" .
-            DIRECTORY_SEPARATOR .
-            "Commands" .
-            DIRECTORY_SEPARATOR .
-            "Stub.php";
+        $expected = __DIR__ .
+                    DIRECTORY_SEPARATOR .
+                    "Stubs" .
+                    DIRECTORY_SEPARATOR .
+                    "Commands" .
+                    DIRECTORY_SEPARATOR .
+                    "Stub.php";
 
         $this->assertEquals($expected, $this->generator->directoryPath(["Stubs", "Commands", "Stub.php"]));
     }
@@ -322,8 +318,8 @@ class GeneratorTest extends BaseTest
                          ->once();
 
         $expected = [
-            'one' => 'Tests\\Spinen\\ConnectWise\\Generator\\Stubs\\Commands\\One',
-            'two' => 'Tests\\Spinen\\ConnectWise\\Generator\\Stubs\\Commands\\Two',
+            'one' => 'Spinen\\ConnectWise\\Generator\\Stubs\\Commands\\One',
+            'two' => 'Spinen\\ConnectWise\\Generator\\Stubs\\Commands\\Two',
         ];
 
         $this->assertEquals($expected, $this->generator->getRegisterCommands());
@@ -354,7 +350,7 @@ class GeneratorTest extends BaseTest
      */
     public function it_builds_directory_path_from_namespace_root()
     {
-        $this->assertEquals('Tests\\Spinen\\ConnectWise\\Generator', $this->generator->namespacePath());
+        $this->assertEquals('Spinen\\ConnectWise\\Generator', $this->generator->namespacePath());
     }
 
     /**
@@ -362,7 +358,7 @@ class GeneratorTest extends BaseTest
      */
     public function it_builds_directory_path_from_namespace_root_with_a_passed_in_class()
     {
-        $this->assertEquals('Tests\\Spinen\\ConnectWise\\Generator\\Class', $this->generator->namespacePath("Class"));
+        $this->assertEquals('Spinen\\ConnectWise\\Generator\\Class', $this->generator->namespacePath("Class"));
     }
 
     /**
@@ -405,7 +401,7 @@ class GeneratorTest extends BaseTest
      */
     public function it_allows_for_magic_method_to_match_namespace_lockups()
     {
-        $this->assertEquals('Tests\\Spinen\\ConnectWise\\Generator\\Stubs\\Commands',
+        $this->assertEquals('Spinen\\ConnectWise\\Generator\\Stubs\\Commands',
             $this->generator->commandsNamespace());
     }
 
@@ -453,7 +449,7 @@ class GeneratorTest extends BaseTest
                          ->once();
 
         $this->assertEquals($application_mock, $this->generator->registerCommandsWithApplication($application_mock,
-            ['Tests\\Spinen\\ConnectWise\\Generator\\Stubs\\Commands\\Stub']));
+            ['Spinen\\ConnectWise\\Generator\\Stubs\\Commands\\Stub']));
     }
 
     /**
@@ -570,5 +566,4 @@ class GeneratorTest extends BaseTest
 
         $this->assertTrue(is_string($version));
     }
-
 }

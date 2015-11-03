@@ -1,22 +1,20 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library\Results;
+namespace Spinen\ConnectWise\Library\Results;
 
-use Spinen\ConnectWise\Library\Results\ValueObject;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\Library\Stubs\ValueObjectStub;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\Library\Stubs\ValueObjectStub;
 
 /**
  * Class ValueObjectTest
  *
- * @package Tests\Spinen\ConnectWise\Library\Results
+ * @package Spinen\ConnectWise\Library\Results
  * @group   library
  * @group   results
  * @group   value_objects
  */
 class ValueObjectTest extends BaseTest
 {
-
     /**
      * @var Collection
      */
@@ -62,7 +60,5 @@ class ValueObjectTest extends BaseTest
         $this->assertEquals('getter value', $value_object->key);
 
         $this->assertEquals('getter value', $value_object['key']);
-
     }
-
 }

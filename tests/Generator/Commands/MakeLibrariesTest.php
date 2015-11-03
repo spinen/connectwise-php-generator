@@ -1,21 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Commands;
+namespace Spinen\ConnectWise\Generator\Commands;
 
 use Mockery;
-use Spinen\ConnectWise\Generator\Commands\MakeLibraries;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class MakeLibrariesTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Commands
+ * @package Spinen\ConnectWise\Generator\Commands
  * @group   generator
  * @group   commands
  */
 class MakeLibrariesTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -422,5 +420,4 @@ class MakeLibrariesTest extends BaseTest
 
         $this->command->execute($this->input_mock, $this->output_mock);
     }
-
 }

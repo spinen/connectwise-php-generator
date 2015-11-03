@@ -1,20 +1,18 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Client\Laravel\Facades;
+namespace Spinen\ConnectWise\Client\Laravel\Facades;
 
-use Spinen\ConnectWise\Client\Laravel\Facades\ConnectWise;
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class ConnectWiseTest
  *
- * @package Tests\Spinen\ConnectWise\Client\Laravel\Facades
+ * @package Spinen\ConnectWise\Client\Laravel\Facades
  * @group   client
  * @group   laravel
  */
 class ConnectWiseTest extends BaseTest
 {
-
     /**
      * @test
      */
@@ -27,5 +25,4 @@ class ConnectWiseTest extends BaseTest
 
         $this->assertEquals('connectwise', ConnectWise::getFacadeAccessor());
     }
-
 }

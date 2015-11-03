@@ -1,22 +1,20 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Processors;
+namespace Spinen\ConnectWise\Generator\Processors;
 
-use Mockery;
 use InvalidArgumentException;
-use Spinen\ConnectWise\Generator\Processors\ExtractSignatures;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Mockery;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class ExtractSignaturesTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Processors
+ * @package Spinen\ConnectWise\Generator\Processors
  * @group   generator
  * @group   processors
  */
 class ExtractSignaturesTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -60,21 +58,21 @@ class ExtractSignaturesTest extends BaseTest
                               ->andReturn([
                                   TestFactory::makeClass([
                                       'class' => 'Some\Namespace\SomeClass',
-                                      'name'  => '__constructor'
+                                      'name'  => '__constructor',
                                   ], [
-                                      'getDocComment' => '/** Comment */'
+                                      'getDocComment' => '/** Comment */',
                                   ]),
                                   TestFactory::makeClass([
                                       'class' => 'Some\Namespace\SomeClass',
-                                      'name'  => 'MethodOne'
+                                      'name'  => 'MethodOne',
                                   ], [
-                                      'getDocComment' => '/** Comment */'
+                                      'getDocComment' => '/** Comment */',
                                   ]),
                                   TestFactory::makeClass([
                                       'class' => 'Some\Namespace\ParentClass',
-                                      'name'  => 'BaseMethod'
+                                      'name'  => 'BaseMethod',
                                   ], [
-                                      'getDocComment' => '/** Comment */'
+                                      'getDocComment' => '/** Comment */',
                                   ]),
                               ]);
         $this->reflection_mock->shouldReceive('getShortName')
@@ -152,5 +150,4 @@ class ExtractSignaturesTest extends BaseTest
 
         $this->assertEquals($this->buildResponse(), $this->processor->process($this->buildContents()));
     }
-
 }
