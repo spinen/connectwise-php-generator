@@ -1,22 +1,21 @@
 <?php
 
-namespace Tests\Spinen\Generator\CommandLine;
+namespace Spinen\Generator\CommandLine;
 
 use Mockery;
+use Spinen\ConnectWise\BaseTest;
 use Spinen\ConnectWise\Generator\CommandLine\Request;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class RequestTest
  *
- * @package Tests\Spinen\Generator\CommandLine
+ * @package Spinen\Generator\CommandLine
  * @group   generator
  * @group   command_line
  */
 class RequestTest extends BaseTest
 {
-
     /**
      * Mock of the Generator
      *
@@ -171,5 +170,4 @@ class RequestTest extends BaseTest
 
         $this->assertInstanceOf('Spinen\\ConnectWise\\Generator\\CommandLine\\Response', $this->request->run());
     }
-
 }

@@ -1,20 +1,19 @@
 <?php
 
-namespace Tests\Spinen\Generator\CommandLine;
+namespace Spinen\Generator\CommandLine;
 
+use Spinen\ConnectWise\BaseTest;
 use Spinen\ConnectWise\Generator\CommandLine\Response;
-use Tests\Spinen\ConnectWise\BaseTest;
 
 /**
  * Class ResponseTest
  *
- * @package Tests\Spinen\Generator\CommandLine
+ * @package Spinen\Generator\CommandLine
  * @group   generator
  * @group   command_line
  */
 class ResponseTest extends BaseTest
 {
-
     private function buildResponse($command = true, $exit_code = true, $response = true, $successful = true)
     {
         $return = [];
@@ -99,5 +98,4 @@ class ResponseTest extends BaseTest
 
         $this->assertEquals(true, $response->getSuccessful());
     }
-
 }

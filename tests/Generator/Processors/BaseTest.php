@@ -1,21 +1,20 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Processors;
+namespace Spinen\ConnectWise\Generator\Processors;
 
 use Mockery;
-use Tests\Spinen\ConnectWise\BaseTest as BaseBaseTest;
+use Spinen\ConnectWise\BaseTest as BaseBaseTest;
 
 /**
  * Class BaseTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Processors
+ * @package Spinen\ConnectWise\Generator\Processors
  * @group   base
  * @group   generator
  * @group   processors
  */
 class BaseTest extends BaseBaseTest
 {
-
     /**
      * The processor that we are testing
      *
@@ -32,5 +31,4 @@ class BaseTest extends BaseBaseTest
     {
         $this->assertTrue(true);
     }
-
 }

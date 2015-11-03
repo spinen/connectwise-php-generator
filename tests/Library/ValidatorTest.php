@@ -1,20 +1,18 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library;
+namespace Spinen\ConnectWise\Library;
 
 use InvalidArgumentException;
-use Spinen\ConnectWise\Library\Validator;
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class ValidatorTest
  *
- * @package Tests\Spinen\ConnectWise\Library
+ * @package Spinen\ConnectWise\Library
  * @group   library
  */
 class ValidatorTest extends BaseTest
 {
-
     /**
      * @var Validator
      */
@@ -165,5 +163,4 @@ class ValidatorTest extends BaseTest
     {
         $this->validator->validateUrlProperty("url", "this.is.not.an/url");
     }
-
 }

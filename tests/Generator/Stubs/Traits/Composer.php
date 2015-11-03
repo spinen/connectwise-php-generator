@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Stubs\Traits;
+namespace Spinen\ConnectWise\Generator\Stubs\Traits;
 
 use Spinen\ConnectWise\Generator\CommandLine\Request;
 use Spinen\ConnectWise\Generator\Traits\Composer;
@@ -10,7 +10,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ComposerStub
 {
-
     use Composer;
 
     use ResponseParser;
@@ -41,5 +40,4 @@ class ComposerStub
     {
         return $this->composerDumpauto();
     }
-
 }

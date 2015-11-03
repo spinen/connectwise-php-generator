@@ -1,20 +1,18 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library;
+namespace Spinen\ConnectWise\Library;
 
 use SoapFault;
-use Spinen\ConnectWise\Library\SoapClient;
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class SoapClientTest
  *
- * @package Tests\Spinen\ConnectWise\Library
- * @group library
+ * @package Spinen\ConnectWise\Library
+ * @group   library
  */
 class SoapClientTest extends BaseTest
 {
-
     /**
      * @test
      */
@@ -22,7 +20,7 @@ class SoapClientTest extends BaseTest
     {
         $options = [
             "location" => "/wsdl",
-            "uri" => "http://some.tld",
+            "uri"      => "http://some.tld",
         ];
 
         // non-WSDL mode to keep it from going after wsdl on construct
@@ -44,5 +42,4 @@ class SoapClientTest extends BaseTest
 
         $this->assertInstanceOf('Spinen\\ConnectWise\\Library\\SoapClient', $client);
     }
-
 }

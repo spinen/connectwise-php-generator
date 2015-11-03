@@ -1,22 +1,20 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Processors;
+namespace Spinen\ConnectWise\Generator\Processors;
 
 use InvalidArgumentException;
 use Mockery;
-use Spinen\ConnectWise\Generator\Processors\AddTypeHints;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class AddTypeHintsTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Processors
+ * @package Spinen\ConnectWise\Generator\Processors
  * @group   generator
  * @group   processors
  */
 class AddTypeHintsTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -251,7 +249,8 @@ EOD;
      */
     public function it_ignores_scalars()
     {
-        $this->runProcess('$bool, $boolean, $float, $int, $integer, $string, $class', '$bool, $boolean, $float, $int, $integer, $string, Class $class');
+        $this->runProcess('$bool, $boolean, $float, $int, $integer, $string, $class',
+            '$bool, $boolean, $float, $int, $integer, $string, Class $class');
     }
 
     /**
@@ -319,5 +318,4 @@ EOD;
     {
         $this->runProcess('$no_type_hints', '$no_type_$hints', null);
     }
-
 }

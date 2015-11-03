@@ -1,23 +1,21 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Client;
+namespace Spinen\ConnectWise\Client;
 
 use Carbon\Carbon;
 use InvalidArgumentException;
 use Mockery;
-use Spinen\ConnectWise\Client\Filter;
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class FilterTest
  *
- * @package Tests\Spinen\ConnectWise\Client
+ * @package Spinen\ConnectWise\Client
  * @group   client
  * @group   filter
  */
 class FilterTest extends BaseTest
 {
-
     /**
      * @var Filter
      */
@@ -438,5 +436,4 @@ class FilterTest extends BaseTest
     {
         $this->filter->whereRaw("condition = value'", 'xor');
     }
-
 }

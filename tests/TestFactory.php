@@ -1,17 +1,16 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise;
+namespace Spinen\ConnectWise;
 
 use Mockery;
 
 /**
  * Class TestFactory
  *
- * @package Tests\Spinen\ConnectWise
+ * @package Spinen\ConnectWise
  */
 class TestFactory
 {
-
     /**
      * @param array      $properties
      * @param array|null $methods
@@ -266,5 +265,4 @@ class TestFactory
     {
         return Mockery::mock('Wsdl2PhpGenerator\\Generator');
     }
-
 }

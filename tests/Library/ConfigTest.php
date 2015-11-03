@@ -1,19 +1,17 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library;
+namespace Spinen\ConnectWise\Library;
 
-use Spinen\ConnectWise\Library\Config;
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class ConfigTest
  *
- * @package Tests\Spinen\ConnectWise\Library
- * @group library
+ * @package Spinen\ConnectWise\Library
+ * @group   library
  */
 class ConfigTest extends BaseTest
 {
-
     /**
      * @var Config
      */
@@ -84,5 +82,4 @@ class ConfigTest extends BaseTest
 
         $this->assertFalse($this->config->has('invalid_key'));
     }
-
 }
