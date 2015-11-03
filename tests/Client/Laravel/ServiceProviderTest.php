@@ -1,22 +1,20 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Client\Laravel;
+namespace Spinen\ConnectWise\Client\Laravel;
 
 use Mockery;
-use Spinen\ConnectWise\Client\Laravel\ServiceProvider;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class ServiceProviderTest
  *
- * @package Tests\Spinen\ConnectWise\Client\Laravel
+ * @package Spinen\ConnectWise\Client\Laravel
  * @group   client
  * @group   laravel
  */
 class ServiceProviderTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -85,5 +83,4 @@ class ServiceProviderTest extends BaseTest
 
         $this->service_provider->register();
     }
-
 }

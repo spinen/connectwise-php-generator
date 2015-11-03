@@ -1,21 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Commands;
+namespace Spinen\ConnectWise\Generator\Commands;
 
 use Mockery;
-use Spinen\ConnectWise\Generator\Commands\FormatCode;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class FormatCodeTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Commands
+ * @package Spinen\ConnectWise\Generator\Commands
  * @group   generator
  * @group   commands
  */
 class FormatCodeTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -190,5 +188,4 @@ class FormatCodeTest extends BaseTest
                           ->with("<comment>Response</comment>")
                           ->once();
     }
-
 }

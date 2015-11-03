@@ -1,19 +1,17 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library;
+namespace Spinen\ConnectWise\Library;
 
-use Spinen\ConnectWise\Library\Container;
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class ContainerTest
  *
- * @package Tests\Spinen\ConnectWise\Library
+ * @package Spinen\ConnectWise\Library
  * @group   library
  */
 class ContainerTest extends BaseTest
 {
-
     /**
      * @var Container()
      */
@@ -85,5 +83,4 @@ class ContainerTest extends BaseTest
         $this->assertEquals("value", $this->container->config['key']);
         $this->assertEquals("value", $this->container->config->key);
     }
-
 }

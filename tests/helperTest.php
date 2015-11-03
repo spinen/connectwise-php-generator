@@ -1,6 +1,6 @@
 <?php
 
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class helperTest
@@ -9,7 +9,6 @@ use Tests\Spinen\ConnectWise\BaseTest;
  */
 class helperTest extends BaseTest
 {
-
     /**
      * @test
      */

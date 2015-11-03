@@ -1,21 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Processors;
+namespace Spinen\ConnectWise\Generator\Processors;
 
 use InvalidArgumentException;
 use RuntimeException;
-use Spinen\ConnectWise\Generator\Processors\GetClassName;
 
 /**
  * Class GetClassNameTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Processors
+ * @package Spinen\ConnectWise\Generator\Processors
  * @group   generator
  * @group   processors
  */
 class GetClassNameTest extends BaseTest
 {
-
     protected function setUp()
     {
         parent::setUp();
@@ -137,5 +135,4 @@ class GetClassNameTest extends BaseTest
 
         $this->processor->process($contents);
     }
-
 }

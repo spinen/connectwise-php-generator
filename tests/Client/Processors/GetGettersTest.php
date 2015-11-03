@@ -1,23 +1,21 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Client\Processors;
+namespace Spinen\ConnectWise\Client\Processors;
 
 use Mockery;
 use ReflectionMethod;
-use Spinen\ConnectWise\Client\Processors\GetGetters;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class GetGettersTest
  *
- * @package Tests\Spinen\ConnectWise\Client\Processors
+ * @package Spinen\ConnectWise\Client\Processors
  * @group   client
  * @group   processors
  */
 class GetGettersTest extends BaseTest
 {
-
     /**
      * @var ConvertResponse
      */
@@ -128,5 +126,4 @@ class GetGettersTest extends BaseTest
 
         $this->assertEquals($expected, $response);
     }
-
 }

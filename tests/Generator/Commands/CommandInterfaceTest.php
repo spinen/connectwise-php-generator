@@ -1,21 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Commands;
+namespace Spinen\ConnectWise\Generator\Commands;
 
-use Spinen\ConnectWise\Generator\Commands\CommandInterface;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class CommandStub
  *
- * @package Tests\Spinen\ConnectWise\Generator\Commands
+ * @package Spinen\ConnectWise\Generator\Commands
  * @group   generator
  * @group   commands
  */
 class CommandStub implements CommandInterface
 {
-
     public function configure()
     {
         return null;
@@ -25,12 +23,10 @@ class CommandStub implements CommandInterface
     {
         return null;
     }
-
 }
 
 class CommandInterfaceTest extends BaseTest
 {
-
     /**
      * @test
      */
@@ -38,7 +34,6 @@ class CommandInterfaceTest extends BaseTest
     {
         $processor = new CommandStub();
 
-        $this->assertInstanceOf('Tests\Spinen\ConnectWise\Generator\Commands\CommandStub', $processor);
+        $this->assertInstanceOf('Spinen\ConnectWise\Generator\Commands\CommandStub', $processor);
     }
-
 }

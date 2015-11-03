@@ -1,27 +1,25 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Client\Processors;
+namespace Spinen\ConnectWise\Client\Processors;
 
 use Carbon\Carbon;
 use DateTime;
 use DateTimeZone;
 use Mockery;
-use Spinen\ConnectWise\Client\Processors\ConvertResponse;
+use Spinen\ConnectWise\BaseTest;
 use Spinen\ConnectWise\Library\Results\Collection;
 use Spinen\ConnectWise\Library\Results\ValueObject;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class ConvertResponseTest
  *
- * @package Tests\Spinen\ConnectWise\Client\Processors
+ * @package Spinen\ConnectWise\Client\Processors
  * @group   client
  * @group   processors
  */
 class ConvertResponseTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -304,5 +302,4 @@ class ConvertResponseTest extends BaseTest
     {
         $this->assertEquals($this->converter, $this->converter->setTimeZone('America/Kentucky/Louisville'));
     }
-
 }

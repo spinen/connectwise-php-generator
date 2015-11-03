@@ -1,30 +1,26 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library\Contracts;
+namespace Spinen\ConnectWise\Library\Contracts;
 
-use Spinen\ConnectWise\Library\Contracts\Processor;
-use Tests\Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class ProcessorStub
  *
- * @package Tests\Spinen\ConnectWise\Library\Contracts
+ * @package Spinen\ConnectWise\Library\Contracts
  * @group   generator
  * @group   processors
  */
 class ProcessorStub implements Processor
 {
-
     public function process($item)
     {
         return $item;
     }
-
 }
 
 class ProcessorTest extends BaseTest
 {
-
     /**
      * @var ProcessorStub
      */
@@ -37,7 +33,6 @@ class ProcessorTest extends BaseTest
     {
         $processor = new ProcessorStub();
 
-        $this->assertInstanceOf('Tests\Spinen\ConnectWise\Library\Contracts\ProcessorStub', $processor);
+        $this->assertInstanceOf('Spinen\ConnectWise\Library\Contracts\ProcessorStub', $processor);
     }
-
 }

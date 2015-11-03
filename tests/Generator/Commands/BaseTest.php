@@ -1,23 +1,21 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Commands;
+namespace Spinen\ConnectWise\Generator\Commands;
 
 use Mockery;
-use Spinen\ConnectWise\Generator\Commands\Base;
-use Tests\Spinen\ConnectWise\BaseTest as BaseBaseTest;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest as BaseBaseTest;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class BaseTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Commands
+ * @package Spinen\ConnectWise\Generator\Commands
  * @group   base
  * @group   generator
  * @group   commands
  */
 class BaseTest extends BaseBaseTest
 {
-
     /**
      * The command that we are testing
      *
@@ -93,5 +91,4 @@ class BaseTest extends BaseBaseTest
 
         $this->assertInstanceOf('Spinen\ConnectWise\Generator\Commands\Base', $this->command);
     }
-
 }

@@ -27,22 +27,4 @@ class Collection extends IlluminateCollection
 
         throw new InvalidArgumentException(sprintf("Undefined property: %s", $name));
     }
-
-    /**
-     * Calculate the average for a value in the collection
-     *
-     * @param string $value
-     *
-     * @return float|void
-     */
-    public function average($value)
-    {
-        $count = $this->count();
-
-        if ($count) {
-            return $this->sum($this->valueRetriever($value)) / $count;
-        }
-
-        return;
-    }
 }

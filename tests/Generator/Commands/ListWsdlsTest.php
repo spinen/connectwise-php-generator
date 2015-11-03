@@ -1,19 +1,16 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Commands;
-
-use Spinen\ConnectWise\Generator\Commands\ListWsdls;
+namespace Spinen\ConnectWise\Generator\Commands;
 
 /**
  * Class ListWsdlsTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Commands
+ * @package Spinen\ConnectWise\Generator\Commands
  * @group   generator
  * @group   commands
  */
 class ListWsdlsTest extends BaseTest
 {
-
     protected function setUp()
     {
         parent::setUp();
@@ -43,7 +40,7 @@ class ListWsdlsTest extends BaseTest
                              ->andReturn([
                                  'wsdls' => [
                                      'Wsdl 1' => 'some/location.wsdl',
-                                 ]
+                                 ],
                              ])
                              ->once();
 
@@ -70,5 +67,4 @@ class ListWsdlsTest extends BaseTest
 
         $this->command->execute($this->input_mock, $this->output_mock);
     }
-
 }

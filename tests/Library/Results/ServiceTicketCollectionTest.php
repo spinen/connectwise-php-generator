@@ -1,14 +1,12 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library\Results;
+namespace Spinen\ConnectWise\Library\Results;
 
+use Spinen\ConnectWise\BaseTest;
 use Spinen\ConnectWise\Library\Results\ServiceTicketCollection as Collection;
-use Spinen\ConnectWise\Library\Results\ValueObject;
-use Tests\Spinen\ConnectWise\BaseTest;
 
 class ServiceTicketCollectionTest extends BaseTest
 {
-
     /**
      * @var Collection
      */
@@ -41,7 +39,7 @@ class ServiceTicketCollectionTest extends BaseTest
             "total_minutes" => 30,
             "total_tickets" => 2,
             "minutes"       => 15,
-            "hours"         => .25
+            "hours"         => .25,
         ];
 
         $this->assertEquals($expected, $this->collection->mttr());
@@ -59,5 +57,4 @@ class ServiceTicketCollectionTest extends BaseTest
 
         $this->assertEquals($expected, $this->collection->mttr());
     }
-
 }

@@ -1,20 +1,18 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Processors;
+namespace Spinen\ConnectWise\Generator\Processors;
 
 use InvalidArgumentException;
-use Spinen\ConnectWise\Generator\Processors\DecipherDocBlock;
 
 /**
  * Class DecipherDocBlockTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Processors
+ * @package Spinen\ConnectWise\Generator\Processors
  * @group   generator
  * @group   processors
  */
 class DecipherDocBlockTest extends BaseTest
 {
-
     /**
      * @var \Spinen\ConnectWise\Generator\Processors\DecipherDocBlock
      */
@@ -78,11 +76,11 @@ class DecipherDocBlockTest extends BaseTest
             $response['tags'] = [
                 '@param'   => [
                     '$parameters'        => 'Parameters',
-                    '$another_parameter' => 'AnotherParameter|null'
+                    '$another_parameter' => 'AnotherParameter|null',
                 ],
                 '@returns' => [
                     '' => 'Response',
-                ]
+                ],
             ];
         }
 
@@ -144,7 +142,8 @@ class DecipherDocBlockTest extends BaseTest
      */
     public function it_returns_null_for_tags_if_non_are_provided()
     {
-        $this->assertEquals($this->processor->process($this->buildDoc(true, true, false)), $this->buildResponse(true, true, false));
+        $this->assertEquals($this->processor->process($this->buildDoc(true, true, false)),
+            $this->buildResponse(true, true, false));
     }
 
     /**
@@ -164,5 +163,4 @@ class DecipherDocBlockTest extends BaseTest
         $this->assertEquals($this->processor->process($this->buildDoc(false, false, false)),
             $this->buildResponse(false, false, false));
     }
-
 }

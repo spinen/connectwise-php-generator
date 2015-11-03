@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Stubs\Traits;
+namespace Spinen\ConnectWise\Generator\Stubs\Traits;
 
 use Spinen\ConnectWise\Generator\CommandLine\Response;
 use Spinen\ConnectWise\Generator\Traits\ResponseParser;
@@ -8,7 +8,6 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ResponseParserStub
 {
-
     use ResponseParser;
 
     /**
@@ -25,5 +24,4 @@ class ResponseParserStub
     {
         return $this->outputResponse($response);
     }
-
 }

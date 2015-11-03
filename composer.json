@@ -45,7 +45,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Spinen\\ConnectWise\\": "tests"
+            "Spinen\\ConnectWise\\": "tests"
         }
     },
     "config": {

@@ -1,21 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Commands;
+namespace Spinen\ConnectWise\Generator\Commands;
 
 use Mockery;
-use Spinen\ConnectWise\Generator\Commands\BuildSignatures;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class BuildSignaturesTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Commands
+ * @package Spinen\ConnectWise\Generator\Commands
  * @group   generator
  * @group   commands
  */
 class BuildSignaturesTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -64,7 +62,6 @@ class BuildSignaturesTest extends BaseTest
                              ->andReturn('mocked/directory/SignatureFile.php')
                              ->once();
     }
-
 
     private function buildTraitHeader()
     {
@@ -206,7 +203,7 @@ EOD;
         $this->files_mock->shouldReceive('put')
                          ->withArgs([
                              '/path/to/api/folder/SignatureFile.php',
-                             $this->buildTraitHeader()
+                             $this->buildTraitHeader(),
                          ])
                          ->once();
 
@@ -220,7 +217,7 @@ EOD;
         $this->files_mock->shouldReceive('append')
                          ->withArgs([
                              '/path/to/api/folder/SignatureFile.php',
-                             $this->buildTraitMethod()
+                             $this->buildTraitMethod(),
                          ])
                          ->once();
 
@@ -232,7 +229,7 @@ EOD;
         $this->files_mock->shouldReceive('append')
                          ->withArgs([
                              '/path/to/api/folder/SignatureFile.php',
-                             $this->buildTraitRegister()
+                             $this->buildTraitRegister(),
                          ])
                          ->once();
 
@@ -240,7 +237,7 @@ EOD;
         $this->files_mock->shouldReceive('append')
                          ->withArgs([
                              '/path/to/api/folder/SignatureFile.php',
-                             '}'
+                             '}',
                          ])
                          ->once();
 
@@ -395,5 +392,4 @@ EOD;
 
         $this->command->execute($this->input_mock, $this->output_mock);
     }
-
 }

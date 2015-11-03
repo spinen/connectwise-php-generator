@@ -1,16 +1,16 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Traits;
+namespace Spinen\ConnectWise\Generator\Traits;
 
 use Mockery;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\Generator\Stubs\Traits\ComposerStub;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\Generator\Stubs\Traits\ComposerStub;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class ComposerTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Traits
+ * @package Spinen\ConnectWise\Generator\Traits
  * @group   generator
  * @group   traits
  * @uses    Spinen\ConnectWise\Generator\CommandLine\Request

@@ -1,22 +1,20 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library\Support;
+namespace Spinen\ConnectWise\Library\Support;
 
-use Spinen\ConnectWise\Library\Support\ClassReflector;
+use Spinen\ConnectWise\BaseTest;
 use stdClass;
-use Tests\Spinen\ConnectWise\BaseTest;
 
 /**
  * Class ClassReflectorTest
  *
- * @package Tests\Spinen\ConnectWise\Library\Support
+ * @package Spinen\ConnectWise\Library\Support
  * @group   library
  * @group   support
  * @group   reflectors
  */
 class ClassReflectorTest extends BaseTest
 {
-
     /**
      * @var ClassReflector
      */
@@ -66,5 +64,4 @@ class ClassReflectorTest extends BaseTest
 
         $this->assertInstanceOf('ReflectionClass', $this->reflector->reflect($class));
     }
-
 }

@@ -1,22 +1,19 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Library\Results;
+namespace Spinen\ConnectWise\Library\Results;
 
-use Spinen\ConnectWise\Library\Results\Collection;
-use Tests\Spinen\ConnectWise\BaseTest;
-
+use Spinen\ConnectWise\BaseTest;
 
 /**
  * Class CollectionTest
  *
- * @package Tests\Spinen\ConnectWise\Library\Support
+ * @package Spinen\ConnectWise\Library\Support
  * @group   library
  * @group   results
  * @group   collections
  */
 class CollectionTest extends BaseTest
 {
-
     /**
      * @var Collection
      */
@@ -55,5 +52,4 @@ class CollectionTest extends BaseTest
     {
         $this->collection->does_not_exists;
     }
-
 }

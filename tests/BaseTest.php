@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise;
+namespace Spinen\ConnectWise;
 
 use Mockery;
 use PHPUnit_Framework_TestCase;
@@ -8,12 +8,11 @@ use PHPUnit_Framework_TestCase;
 /**
  * Class BaseTest
  *
- * @package Tests\Spinen\ConnectWise
- * @group base
+ * @package Spinen\ConnectWise
+ * @group   base
  */
 class BaseTest extends PHPUnit_Framework_TestCase
 {
-
     protected function tearDown()
     {
         Mockery::close();
@@ -30,5 +29,4 @@ class BaseTest extends PHPUnit_Framework_TestCase
     {
         $this->assertTrue(true);
     }
-
 }

@@ -1,23 +1,22 @@
 <?php
 
-namespace Tests\Spinen\ConnectWise\Generator\Traits;
+namespace Spinen\ConnectWise\Generator\Traits;
 
 use Mockery;
-use Tests\Spinen\ConnectWise\BaseTest;
-use Tests\Spinen\ConnectWise\Generator\Stubs\Traits\ResponseParserStub;
-use Tests\Spinen\ConnectWise\TestFactory;
+use Spinen\ConnectWise\BaseTest;
+use Spinen\ConnectWise\Generator\Stubs\Traits\ResponseParserStub;
+use Spinen\ConnectWise\TestFactory;
 
 /**
  * Class ResponseParserTest
  *
- * @package Tests\Spinen\ConnectWise\Generator\Traits
+ * @package Spinen\ConnectWise\Generator\Traits
  * @group   generator
  * @group   traits
  * @uses    Spinen\ConnectWise\Generator\CommandLine\Response
  */
 class ResponseParserTest extends BaseTest
 {
-
     /**
      * @var Mockery\Mock
      */
@@ -88,5 +87,4 @@ class ResponseParserTest extends BaseTest
 
         $this->stub->exposeOutputResponse($this->response_mock);
     }
-
 }
