@@ -6,11 +6,11 @@
 [![Dependency Status](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1)
 [![License](https://poser.pugx.org/spinen/connectwise-php-library-generator/license)](https://packagist.org/packages/spinen/connectwise-php-library-generator)
 
-Generate a php soap client for the ConnectWise WSDL API's. This repository generates the library & has an example client that consumes the library. The documentation for the API is located at [http://developer.connectwise.com](http://developer.connectwise.com).  You can see all of the WSDL's at [https://developer.connectwise.com/SOAP_Endpoints](https://developer.connectwise.com/SOAP_Endpoints).
+Generate a php soap client for the ConnectWise WSDL API's. This repository generates the library & has an example client that consumes the library. The documentation for the API is located at [http://developer.connectwise.com](http://developer.connectwise.com).
 
 ## Client & Library
 
-Both the library & client are subslit off into read-only repositories:
+Both the library & client are subsplit off into read-only repositories:
 
 [SPINEN's ConnectWise Client - https://github.com/spinen/connectwise-php-client](https://github.com/spinen/connectwise-php-client)
 
@@ -24,6 +24,8 @@ Both the library & client are subslit off into read-only repositories:
 | Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-library-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-library-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-library-generator/badge.svg?branch=master&service=github)](https://coveralls.io/github/spinen/connectwise-php-library-generator?branch=master) |
 
 ## List of available Soap Endpoints (2.0)
+
+You can see all of the WSDL's at [https://developer.connectwise.com/SOAP_Endpoints](https://developer.connectwise.com/SOAP_Endpoints).
 
 | API Name | WSDL URI |
 |:-----|:----|
