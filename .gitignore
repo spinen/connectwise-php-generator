@@ -1,4 +1,5 @@
 /vendor
-.env
+phpunit.xml
 /build/logs
 /build/coverage
+.env
