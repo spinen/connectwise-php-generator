@@ -34,7 +34,6 @@ class SoapClientTest extends BaseTest
      *
      * @test
      * @expectedException SoapFault
-     * @expectedExceptionMessage SOAP-ERROR: Parsing WSDL: Couldn't load from 'http://some.tld/wsdl' : EntityRef: expecting ';'
      */
     public function it_can_be_constructed_with_no_options()
     {
