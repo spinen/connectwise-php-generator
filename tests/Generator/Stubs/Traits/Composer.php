@@ -3,16 +3,16 @@
 namespace Spinen\ConnectWise\Generator\Stubs\Traits;
 
 use Spinen\ConnectWise\Generator\CommandLine\Request;
-use Spinen\ConnectWise\Generator\Traits\Composer;
-use Spinen\ConnectWise\Generator\Traits\ResponseParser;
+use Spinen\ConnectWise\Generator\Traits\Composer as ComposerTrait;
+use Spinen\ConnectWise\Generator\Traits\ResponseParser as ResponseParserTrait;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ComposerStub
+class Composer
 {
-    use Composer;
+    use ComposerTrait;
 
-    use ResponseParser;
+    use ResponseParserTrait;
 
     /**
      * @var InputInterface
