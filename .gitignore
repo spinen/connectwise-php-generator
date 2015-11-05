@@ -2,6 +2,6 @@
 phpunit.xml
 /build/logs
 /build/coverage
-/build/.subsplit
 .env
+.subsplit
 composer.lock
