@@ -14,7 +14,19 @@ Both the library & client are subsplit off into read-only repositories:
 
 [SPINEN's ConnectWise Client - https://github.com/spinen/connectwise-php-client](https://github.com/spinen/connectwise-php-client)
 
+[![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/stable)](https://packagist.org/packages/spinen/connectwise-php-client)
+[![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-client/downloads)](https://packagist.org/packages/spinen/connectwise-php-client)
+[![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-client)
+[![Dependency Status](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1)
+[![License](https://poser.pugx.org/spinen/connectwise-php-client/license)](https://packagist.org/packages/spinen/connectwise-php-client)
+
 [SPINEN's ConnectWise Library - https://github.com/spinen/connectwise-php-library](https://github.com/spinen/connectwise-php-library)
+
+[![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-library/v/stable)](https://packagist.org/packages/spinen/connectwise-php-library)
+[![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-library/downloads)](https://packagist.org/packages/spinen/connectwise-php-library)
+[![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-library/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-library)
+[![Dependency Status](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1)
+[![License](https://poser.pugx.org/spinen/connectwise-php-library/license)](https://packagist.org/packages/spinen/connectwise-php-library)
 
 ## Build Status
 
