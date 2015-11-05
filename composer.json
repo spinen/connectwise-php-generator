@@ -28,7 +28,7 @@
     },
     "require-dev": {
         "mockery/mockery": "~0.9.1",
-        "phpunit/phpunit": "~4.0",
+        "phpunit/phpunit": "~4.4.0",
         "psy/psysh": "0.4.*"
     },
     "replace": {
