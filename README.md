@@ -1,8 +1,47 @@
-# ConnectWise API PHP Wrapper
+# SPINEN's ConnectWise API PHP Wrapper
 
-This is going to be the wrapper to interface with ConnectWise in php.  The documentation for the API is located at [http://developer.connectwise.com](http://developer.connectwise.com).  You can see all of the WSDL's at [https://developer.connectwise.com/SOAP_Endpoints](https://developer.connectwise.com/SOAP_Endpoints).
+[![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-generator/v/stable)](https://packagist.org/packages/spinen/connectwise-php-generator)
+[![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-generator/downloads)](https://packagist.org/packages/spinen/connectwise-php-generator)
+[![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-generator/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-generator)
+[![Dependency Status](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1)
+[![License](https://poser.pugx.org/spinen/connectwise-php-generator/license)](https://packagist.org/packages/spinen/connectwise-php-generator)
 
-### List of available Soap Endpoints (2.0)
+Generate a php soap client for the ConnectWise WSDL API's. This repository generates the library & has an example client that consumes the library. The documentation for the API is located at [http://developer.connectwise.com](http://developer.connectwise.com).
+
+## Client & Library
+
+Both the library & client are subsplit off into read-only repositories:
+
+### SPINEN's ConnectWise Client
+
+[https://github.com/spinen/connectwise-php-client](https://github.com/spinen/connectwise-php-client)
+
+[![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/stable)](https://packagist.org/packages/spinen/connectwise-php-client)
+[![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-client/downloads)](https://packagist.org/packages/spinen/connectwise-php-client)
+[![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-client/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-client)
+[![Dependency Status](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1)
+[![License](https://poser.pugx.org/spinen/connectwise-php-client/license)](https://packagist.org/packages/spinen/connectwise-php-client)
+
+### SPINEN's ConnectWise Library
+
+[https://github.com/spinen/connectwise-php-library](https://github.com/spinen/connectwise-php-library)
+
+[![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-library/v/stable)](https://packagist.org/packages/spinen/connectwise-php-library)
+[![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-library/downloads)](https://packagist.org/packages/spinen/connectwise-php-library)
+[![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-library/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-library)
+[![Dependency Status](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1)
+[![License](https://poser.pugx.org/spinen/connectwise-php-library/license)](https://packagist.org/packages/spinen/connectwise-php-library)
+
+## Build Status
+
+| Branch | Status | Coverage |
+| ------ | :----: | :------: |
+| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/?branch=develop) |
+| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/?branch=master) |
+
+## List of available Soap Endpoints (2.0)
+
+You can see all of the WSDL's at [https://developer.connectwise.com/SOAP_Endpoints](https://developer.connectwise.com/SOAP_Endpoints).
 
 | API Name | WSDL URI |
 |:-----|:----|
@@ -27,15 +66,15 @@ This is going to be the wrapper to interface with ConnectWise in php.  The docum
 | System API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/SystemApi.asmx?wsdl |
 | Time Entry API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/TimeEntryApi.asmx?wsdl |
 
-### Library used to automatically create wrapper
+## Library used to automatically create wrapper
 
 I am using wsdl2phpgenerator [https://github.com/wsdl2phpgenerator/wsdl2phpgenerator](https://github.com/wsdl2phpgenerator/wsdl2phpgenerator).
 
-### Generate the wrappers
+## Generate the wrappers
 
 You need to copy .env.example to .env & add the path to your cw install, then you can run generate.php
 
-#### TL;DR;
+## TL;DR;
 
 ```bash
 $ echo "CONNECTWISE_URL=https://youcw.fqdn.tld" > .env;php generate.php

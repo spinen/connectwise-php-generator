@@ -3,12 +3,12 @@
 namespace Spinen\ConnectWise\Generator\Stubs\Traits;
 
 use Spinen\ConnectWise\Generator\CommandLine\Response;
-use Spinen\ConnectWise\Generator\Traits\ResponseParser;
+use Spinen\ConnectWise\Generator\Traits\ResponseParser as ResponseParserTrait;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class ResponseParserStub
+class ResponseParser
 {
-    use ResponseParser;
+    use ResponseParserTrait;
 
     /**
      * @var OutputInterface

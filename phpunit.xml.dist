@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    This is the "dist(ribution)" phpunit.xml.dist file.  It sets the defaults that are then over written by any files in
+    phpunit.xml, which is then over wrote by flags passed in via the command line.  The plan is that this file is to be
+    used by ci to do the full suit of tests, and a developer can copy this file to phpunit.xml to trim down some of the
+    options.
+-->
+
 <phpunit addUncoveredFilesFromWhitelist="true"
          backupGlobals="false"
          backupStaticAttributes="false"
-         bootstrap="bootstrap/autoload.php"
+         bootstrap="vendor/autoload.php"
          colors="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
          processUncoveredFilesFromWhitelist="true"
-         stopOnError="false"
          stopOnFailure="false"
-         syntaxCheck="true"
-         verbose="true"
-        >
+         syntaxCheck="false"
+         verbose="true">
+
     <testsuites>
         <testsuite name="ConnectWise PHP Library Generator">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
-    <listeners>
-        <listener class="\Mockery\Adapter\Phpunit\TestListener"></listener>
-    </listeners>
+
+    <php>
+        <!-- <env name="VARIABLE" value="value"/> -->
+    </php>
+
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
@@ -33,16 +42,24 @@
             </exclude>
         </whitelist>
     </filter>
+
+
+    <listeners>
+        <listener class="\Mockery\Adapter\Phpunit\TestListener"></listener>
+    </listeners>
+
     <logging>
+        <log type="coverage-html"
+             target="./build/coverage"
+             title="ConnectWise PHP Library Generator"
+             charset="UTF-8"
+             yui="true"
+             highlight="true"
+             lowUpperBound="35"
+             highLowerBound="70"/>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
         <log type="json" target="./build/logs/logfile.json"/>
-        <log type="coverage-html" target="./build/coverage" title="ConnectWise PHP Library Generator"
-             charset="UTF-8" yui="true" highlight="true"
-             lowUpperBound="35" highLowerBound="70"/>
-        <log type="coverage-clover" target="./build/logs/clover.xml"/>
         <log type="junit" target="./build/logs/junit.xml"
-             logIncompleteSkipped="false"/>
+             logIncompleteSkipped="true"/>
     </logging>
-    <php>
-        <!--<env name="KEY" value="VALUE"/>-->
-    </php>
 </phpunit>
