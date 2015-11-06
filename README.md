@@ -1,10 +1,10 @@
 # SPINEN's ConnectWise API PHP Wrapper
 
-[![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-library-generator/v/stable)](https://packagist.org/packages/spinen/connectwise-php-library-generator)
-[![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-library-generator/downloads)](https://packagist.org/packages/spinen/connectwise-php-library-generator)
-[![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-library-generator/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-library-generator)
+[![Latest Stable Version](https://poser.pugx.org/spinen/connectwise-php-generator/v/stable)](https://packagist.org/packages/spinen/connectwise-php-generator)
+[![Total Downloads](https://poser.pugx.org/spinen/connectwise-php-generator/downloads)](https://packagist.org/packages/spinen/connectwise-php-generator)
+[![Latest Unstable Version](https://poser.pugx.org/spinen/connectwise-php-generator/v/unstable)](https://packagist.org/packages/spinen/connectwise-php-generator)
 [![Dependency Status](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1)
-[![License](https://poser.pugx.org/spinen/connectwise-php-library-generator/license)](https://packagist.org/packages/spinen/connectwise-php-library-generator)
+[![License](https://poser.pugx.org/spinen/connectwise-php-generator/license)](https://packagist.org/packages/spinen/connectwise-php-generator)
 
 Generate a php soap client for the ConnectWise WSDL API's. This repository generates the library & has an example client that consumes the library. The documentation for the API is located at [http://developer.connectwise.com](http://developer.connectwise.com).
 
@@ -36,8 +36,8 @@ Both the library & client are subsplit off into read-only repositories:
 
 | Branch | Status | Coverage |
 | ------ | :----: | :------: |
-| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-library-generator.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-library-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-library-generator/badge.svg?branch=develop&service=github)](https://coveralls.io/github/spinen/connectwise-php-library-generator?branch=develop) |
-| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-library-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-library-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-library-generator/badge.svg?branch=master&service=github)](https://coveralls.io/github/spinen/connectwise-php-library-generator?branch=master) |
+| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-generator/badge.svg?branch=develop&service=github)](https://coveralls.io/github/spinen/connectwise-php-generator?branch=develop) |
+| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-generator/badge.svg?branch=master&service=github)](https://coveralls.io/github/spinen/connectwise-php-generator?branch=master) |
 
 ## List of available Soap Endpoints (2.0)
 
