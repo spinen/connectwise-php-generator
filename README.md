@@ -12,7 +12,6 @@ Generate a php soap client for the ConnectWise WSDL API's. This repository gener
 
 Both the library & client are subsplit off into read-only repositories:
 
-
 ### SPINEN's ConnectWise Client
 
 [https://github.com/spinen/connectwise-php-client](https://github.com/spinen/connectwise-php-client)
