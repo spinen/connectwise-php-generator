@@ -4,7 +4,7 @@ namespace Spinen\ConnectWise\Generator\Traits;
 
 use Mockery;
 use Spinen\ConnectWise\BaseTest;
-use Spinen\ConnectWise\Generator\Stubs\Traits\ComposerStub;
+use Spinen\ConnectWise\Generator\Stubs\Traits\Composer;
 use Spinen\ConnectWise\TestFactory;
 
 /**
@@ -50,7 +50,7 @@ class ComposerTest extends BaseTest
 
         $this->setUpMocks();
 
-        $this->stub = new ComposerStub($this->input_mock, $this->output_mock, $this->request_mock);
+        $this->stub = new Composer($this->input_mock, $this->output_mock, $this->request_mock);
     }
 
     protected function setUpMocks()

@@ -4,7 +4,7 @@ namespace Spinen\ConnectWise\Generator\Traits;
 
 use Mockery;
 use Spinen\ConnectWise\BaseTest;
-use Spinen\ConnectWise\Generator\Stubs\Traits\ResponseParserStub;
+use Spinen\ConnectWise\Generator\Stubs\Traits\ResponseParser;
 use Spinen\ConnectWise\TestFactory;
 
 /**
@@ -38,7 +38,7 @@ class ResponseParserTest extends BaseTest
 
         $this->setUpMocks();
 
-        $this->stub = new ResponseParserStub($this->output_mock);
+        $this->stub = new ResponseParser($this->output_mock);
     }
 
     protected function setUpMocks()
