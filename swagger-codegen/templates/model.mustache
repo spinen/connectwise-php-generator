@@ -103,7 +103,7 @@ class {{classname}} implements ArrayAccess
     { {{#isEnum}}
         $allowed_values = array({{#allowableValues}}{{#values}}"{{{this}}}"{{^-last}}, {{/-last}}{{/values}}{{/allowableValues}});
         if (!in_array(${{{name}}}, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for '{{name}}', must be one of {{#allowableValues}}{{#values}}'{{{this}}}'{{^-last}}, {{/-last}}{{/values}}{{/allowableValues}}");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for '{{name}}', must be one of {{#allowableValues}}{{#values}}'{{{this}}}'{{^-last}}, {{/-last}}{{/values}}{{/allowableValues}}", ${{name}}));
         }{{/isEnum}}
         $this->{{name}} = ${{name}};
         return $this;
