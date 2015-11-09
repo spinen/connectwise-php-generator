@@ -54,8 +54,16 @@ $ tar -xzf master.zip --strip-components=1 -C  ./
 $ rm master.zip
 ```
 
-## TL;DR;
+There is a script in the swagger-codegen folder named pullcodegen that will grab the latest code & unzip it into that directory.  It removes all unexpected files/folders from the directory.
+
+It seems to be easiest to use Docker to run the generator as it keeps you from having to install Java 7 & maven on your computer.  
+
+Here are the steps to run it on docker-machine...
 
 ```bash
-$ cd swagger-codegen;./pullcodegen
+$ cd swagger-codegen
+$ docker-machine create -d virtualbox swagger
+$ eval "$(docker-machine env swagger)"
+$ ./run-in-docker.sh mvn package
+$ ./run-in-docker.sh generate -i service.json -l php -c config.json -t templates/
 ```
