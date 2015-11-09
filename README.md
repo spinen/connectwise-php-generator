@@ -43,7 +43,7 @@ Both the library & client are subsplit off into read-only repositories:
 
 We are using the Swagger Codegen package [https://github.com/swagger-api/swagger-codegen](https://github.com/swagger-api/swagger-codegen) to generate the php client.
 
-## Generate the wrappers
+## Generate the client
 
 Download the latest version of the swagger-codegen this folder, and unzip it's contents to the swagger-codegen folder.  You will need to remove the parent folder from the archive...
 
