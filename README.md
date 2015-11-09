@@ -6,7 +6,7 @@
 [![Dependency Status](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1/badge.svg)](https://www.versioneye.com/php/spinen:laravel-garbage-man/0.1.1)
 [![License](https://poser.pugx.org/spinen/connectwise-php-generator/license)](https://packagist.org/packages/spinen/connectwise-php-generator)
 
-Generate a php soap client for the ConnectWise WSDL API's. This repository generates the library & has an example client that consumes the library. The documentation for the API is located at [http://developer.connectwise.com](http://developer.connectwise.com).
+Generate a php client using the swagger spec. This repository generates the library & has an example client that consumes the library. The documentation for the API is located at [http://developer.connectwise.com](http://developer.connectwise.com).
 
 ## Client & Library
 
@@ -39,43 +39,23 @@ Both the library & client are subsplit off into read-only repositories:
 | Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-generator/badge.svg?branch=develop&service=github)](https://coveralls.io/github/spinen/connectwise-php-generator?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-generator/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-generator/?branch=develop) |
 | Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-generator/badge.svg?branch=master&service=github)](https://coveralls.io/github/spinen/connectwise-php-generator?branch=master) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-generator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-generator/?branch=master) |
 
-## List of available Soap Endpoints (2.0)
+## Library used to automatically create client
 
-You can see all of the WSDL's at [https://developer.connectwise.com/SOAP_Endpoints](https://developer.connectwise.com/SOAP_Endpoints).
-
-| API Name | WSDL URI |
-|:-----|:----|
-| Activity API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/ActivityApi.asmx?wsdl |
-| Agreement API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/AgreementApi.asmx?wsdl |
-| Company API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/CompanyApi.asmx?wsdl |
-| Configuration API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/ConfigurationAPI.asmx?wsdl | 
-| Contact API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/ContactApi.asmx?wsdl |
-| Document API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/DocumentApi.asmx?wsdl |
-| Invoice API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/InvoiceApi.asmx?wsdl |
-| Managed Device API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/ManagedDeviceApi.asmx?wsdl |
-| Marketing API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/MarketingApi.asmx?wsdl |
-| Member API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/MemberApi.asmx?wsdl |
-| Opportunity API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/OpportunityApi.asmx?wsdl |
-| Opportunity Conversion API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/OpportunityConversionApi.asmx?wsdl |
-| Product API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/ProductApi.asmx?wsdl |
-| Project API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/ProjectApi.asmx?wsdl |
-| Purchasing API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/PurchasingApi.asmx?wsdl |
-| Reporting API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/ReportingApi.asmx?wsdl |
-| Scheduling API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/SchedulingApi.asmx?wsdl |
-| Service Ticket API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/ServiceTicketApi.asmx?wsdl |
-| System API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/SystemApi.asmx?wsdl |
-| Time Entry API | https://&lt;ConnectWiseSite&gt;/v4_6_release/apis/2.0/TimeEntryApi.asmx?wsdl |
-
-## Library used to automatically create wrapper
-
-I am using wsdl2phpgenerator [https://github.com/wsdl2phpgenerator/wsdl2phpgenerator](https://github.com/wsdl2phpgenerator/wsdl2phpgenerator).
+We are using the Swagger Codegen package [https://github.com/swagger-api/swagger-codegen](https://github.com/swagger-api/swagger-codegen) to generate the php client.
 
 ## Generate the wrappers
 
-You need to copy .env.example to .env & add the path to your cw install, then you can run generate.php
+Download the latest version of the swagger-codegen this folder, and unzip it's contents to the swagger-codegen folder.  You will need to remove the parent folder from the archive...
+
+```bash
+$ cd swagger-codegen
+$ wget https://github.com/swagger-api/swagger-codegen/archive/master.zip
+$ tar -xzf master.zip --strip-components=1 -C  ./
+$ rm master.zip
+```
 
 ## TL;DR;
 
 ```bash
-$ echo "CONNECTWISE_URL=https://youcw.fqdn.tld" > .env;php generate.php
+$ cd swagger-codegen;./pullcodegen
 ```
