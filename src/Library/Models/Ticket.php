@@ -1018,7 +1018,7 @@ class Ticket implements ArrayAccess
     { 
         $allowed_values = array("ServiceTicket", "ProjectTicket", "ProjectIssue");
         if (!in_array($record_type, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'record_type', must be one of 'ServiceTicket', 'ProjectTicket', 'ProjectIssue'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'record_type', must be one of 'ServiceTicket', 'ProjectTicket', 'ProjectIssue'", $record_type));
         }
         $this->record_type = $record_type;
         return $this;
@@ -1712,7 +1712,7 @@ class Ticket implements ArrayAccess
     { 
         $allowed_values = array("Low", "Medium", "High");
         if (!in_array($severity, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'severity', must be one of 'Low', 'Medium', 'High'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'severity', must be one of 'Low', 'Medium', 'High'", $severity));
         }
         $this->severity = $severity;
         return $this;
@@ -1739,7 +1739,7 @@ class Ticket implements ArrayAccess
     { 
         $allowed_values = array("Low", "Medium", "High");
         if (!in_array($impact, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'impact', must be one of 'Low', 'Medium', 'High'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'impact', must be one of 'Low', 'Medium', 'High'", $impact));
         }
         $this->impact = $impact;
         return $this;
@@ -2295,7 +2295,7 @@ class Ticket implements ArrayAccess
     { 
         $allowed_values = array("ActualRates", "FixedFee", "NotToExceed", "OverrideRate");
         if (!in_array($sub_billing_method, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'sub_billing_method', must be one of 'ActualRates', 'FixedFee', 'NotToExceed', 'OverrideRate'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'sub_billing_method', must be one of 'ActualRates', 'FixedFee', 'NotToExceed', 'OverrideRate'", $sub_billing_method));
         }
         $this->sub_billing_method = $sub_billing_method;
         return $this;
@@ -2621,7 +2621,7 @@ class Ticket implements ArrayAccess
     { 
         $allowed_values = array("ServiceTicket", "ProjectTicket", "ProjectIssue", "KnowledgeBaseArticle", "Time", "Activity");
         if (!in_array($knowledge_base_link_type, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'knowledge_base_link_type', must be one of 'ServiceTicket', 'ProjectTicket', 'ProjectIssue', 'KnowledgeBaseArticle', 'Time', 'Activity'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'knowledge_base_link_type', must be one of 'ServiceTicket', 'ProjectTicket', 'ProjectIssue', 'KnowledgeBaseArticle', 'Time', 'Activity'", $knowledge_base_link_type));
         }
         $this->knowledge_base_link_type = $knowledge_base_link_type;
         return $this;

@@ -423,7 +423,7 @@ class Status implements ArrayAccess
     { 
         $allowed_values = array("NotResponded", "Responded", "ResolutionPlan", "Resolved", "NoEscalation");
         if (!in_array($escalation_status, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'escalation_status', must be one of 'NotResponded', 'Responded', 'ResolutionPlan', 'Resolved', 'NoEscalation'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'escalation_status', must be one of 'NotResponded', 'Responded', 'ResolutionPlan', 'Resolved', 'NoEscalation'", $escalation_status));
         }
         $this->escalation_status = $escalation_status;
         return $this;

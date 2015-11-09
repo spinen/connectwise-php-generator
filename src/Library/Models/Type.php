@@ -250,7 +250,7 @@ class Type implements ArrayAccess
     { 
         $allowed_values = array("Reactive", "Proactive");
         if (!in_array($category, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'category', must be one of 'Reactive', 'Proactive'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'category', must be one of 'Reactive', 'Proactive'", $category));
         }
         $this->category = $category;
         return $this;

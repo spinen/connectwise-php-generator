@@ -400,7 +400,7 @@ class Task implements ArrayAccess
     { 
         $allowed_values = array("Transfer", "Delete", "Done");
         if (!in_array($child_schedule_action, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'child_schedule_action', must be one of 'Transfer', 'Delete', 'Done'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'child_schedule_action', must be one of 'Transfer', 'Delete', 'Done'", $child_schedule_action));
         }
         $this->child_schedule_action = $child_schedule_action;
         return $this;

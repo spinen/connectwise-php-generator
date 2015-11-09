@@ -202,7 +202,7 @@ class CustomFieldValue implements ArrayAccess
     { 
         $allowed_values = array("Text", "Button", "Currency", "Date", "Hyperlink", "IPAddress", "Checkbox", "Number", "Percent", "TextArea", "Password");
         if (!in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'Text', 'Button', 'Currency', 'Date', 'Hyperlink', 'IPAddress', 'Checkbox', 'Number', 'Percent', 'TextArea', 'Password'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'type', must be one of 'Text', 'Button', 'Currency', 'Date', 'Hyperlink', 'IPAddress', 'Checkbox', 'Number', 'Percent', 'TextArea', 'Password'", $type));
         }
         $this->type = $type;
         return $this;
@@ -229,7 +229,7 @@ class CustomFieldValue implements ArrayAccess
     { 
         $allowed_values = array("EntryField", "List", "Option");
         if (!in_array($entry_method, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'entry_method', must be one of 'EntryField', 'List', 'Option'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'entry_method', must be one of 'EntryField', 'List', 'Option'", $entry_method));
         }
         $this->entry_method = $entry_method;
         return $this;

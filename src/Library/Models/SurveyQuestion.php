@@ -250,7 +250,7 @@ class SurveyQuestion implements ArrayAccess
     { 
         $allowed_values = array("OpenEnded", "Selection");
         if (!in_array($type, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'OpenEnded', 'Selection'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'type', must be one of 'OpenEnded', 'Selection'", $type));
         }
         $this->type = $type;
         return $this;

@@ -190,7 +190,7 @@ class Location implements ArrayAccess
     { 
         $allowed_values = array("OnSite", "Remote", "InHouse");
         if (!in_array($where, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'where', must be one of 'OnSite', 'Remote', 'InHouse'");
+            throw new \InvalidArgumentException(sprintf("Invalid value [%s] for 'where', must be one of 'OnSite', 'Remote', 'InHouse'", $where));
         }
         $this->where = $where;
         return $this;
