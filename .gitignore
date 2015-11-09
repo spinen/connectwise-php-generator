@@ -2,6 +2,11 @@
 phpunit.xml
 /build/logs
 /build/coverage
+!/swagger-codegen
+/swagger-codegen/*
+!/swagger-codegen/templates
+!/swagger-codegen/config.json
+!/swagger-codegen/service.json
 .env
 .subsplit
 composer.lock
