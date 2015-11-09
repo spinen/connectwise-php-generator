@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Delete everything in here that is part of the package
+ls -lA |grep -v ^total |grep -v templates |grep -v config\.json |grep -v pullcodegen |grep -v service\.json |awk '{print "rm -fr " $9}' | bash
+
+# Pull down the latest code-gen
+wget https://github.com/swagger-api/swagger-codegen/archive/master.zip
+
+# Unzip it here
+tar -xzf master.zip --strip-components=1 -C  ./
+
+# Don't keep the zip
+rm -f master.zip
