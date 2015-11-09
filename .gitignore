@@ -6,6 +6,7 @@ phpunit.xml
 /swagger-codegen/*
 !/swagger-codegen/templates
 !/swagger-codegen/config.json
+!/swagger-codegen/pullcodegen
 !/swagger-codegen/service.json
 .env
 .subsplit
