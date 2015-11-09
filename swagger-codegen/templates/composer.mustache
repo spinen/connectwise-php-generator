@@ -1,0 +1,40 @@
+{
+    "name": "{{composerVendorName}}/{{composerProjectName}}",{{#artifactVersion}}
+    "version": "{{artifactVersion}}",{{/artifactVersion}}
+    "description": "{{description}}",
+    "keywords": [
+        "api",
+        "connectwise",
+        "library",
+        "spinen"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jimmy Puckett",
+            "email": "jimmy.puckett@spinen.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "nesbot/carbon": "1.*",
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "satooshi/php-coveralls": "~0.6.1",
+        "squizlabs/php_codesniffer": "~2.0",
+        "psy/psysh": "~0.5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "{{escapedInvokerPackage}}\\" : "{{srcBasePath}}/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}

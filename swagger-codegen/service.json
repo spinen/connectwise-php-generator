@@ -1,0 +1,7632 @@
+{
+  "swagger": "2.0",
+  "invokerPackage": "Yay\\Pets",
+"modelPackage": "Yay\\Pets\\MyModelPackage",
+"apiPackage": "Yay\\Pets\\MyApiPackage",
+"packagePath": "GeneratedPetstore",
+"composerProjectName": "petstore-client",
+"composerVendorName": "yaypets",
+"artifactVersion": "1.2.3",
+  "info": {
+    "version": "1.0.0",
+    "title": "Service API",
+    "description": "ConnectWise Service API",
+    "contact": {
+      "name": "ConnectWise",
+      "email": "platform@connectwise.com"
+    }
+  },
+  "host": "api-na.myconnectwise.net",
+  "basePath": "/v4_6_release/apis/3.0",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/service/boards": {
+      "get": {
+        "tags": [
+          "Boards"
+        ],
+        "description": "Get Boards",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Board"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Boards"
+        ],
+        "description": "Create Board",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "board",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Board"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Board"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/count": {
+      "get": {
+        "tags": [
+          "Boards"
+        ],
+        "description": "Get Boards Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}": {
+      "get": {
+        "tags": [
+          "Boards"
+        ],
+        "description": "Get Board By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Board"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Boards"
+        ],
+        "description": "Replace Board",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "board",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Board"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Board"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Boards"
+        ],
+        "description": "Delete Board By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Boards"
+        ],
+        "description": "Update Board",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Board"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/codes": {
+      "get": {
+        "tags": [
+          "Codes"
+        ],
+        "description": "Get Codes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Code"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Codes"
+        ],
+        "description": "Create Codes",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Code"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Code"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/codes/count": {
+      "get": {
+        "tags": [
+          "Codes"
+        ],
+        "description": "Create Codes Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/codes/{id}": {
+      "get": {
+        "tags": [
+          "Codes"
+        ],
+        "description": "Get Code By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Code"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Codes"
+        ],
+        "description": "Replace Code",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "code",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Code"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Code"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Codes"
+        ],
+        "description": "Delete Code By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Codes"
+        ],
+        "description": "Update Code",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Code"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/excludedMembers": {
+      "get": {
+        "tags": [
+          "ExcludedMembers"
+        ],
+        "description": "Get Excluded Members",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExcludedMember"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "ExcludedMembers"
+        ],
+        "description": "Create Excluded Member",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "excludedMember",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ExcludedMember"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ExcludedMember"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/excludedMembers/count": {
+      "get": {
+        "tags": [
+          "ExcludedMembers"
+        ],
+        "description": "Get Excluded Members Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/excludedMembers/{excludedMemberId}": {
+      "get": {
+        "tags": [
+          "ExcludedMembers"
+        ],
+        "description": "Get Excluded Member By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "excludedMemberId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ExcludedMember"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "ExcludedMembers"
+        ],
+        "description": "Delete Excluded Member By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "excludedMemberId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/items": {
+      "get": {
+        "tags": [
+          "Items"
+        ],
+        "description": "Get Items",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Item"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Items"
+        ],
+        "description": "Create Item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Item"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Item"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/items/count": {
+      "get": {
+        "tags": [
+          "Items"
+        ],
+        "description": "Get Items Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/items/{itemId}": {
+      "get": {
+        "tags": [
+          "Items"
+        ],
+        "description": "Get Item By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "itemId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Item"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Items"
+        ],
+        "description": "Replace Item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "itemId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "item",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Item"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Item"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Items"
+        ],
+        "description": "Delete Item By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "itemId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Items"
+        ],
+        "description": "Update Item",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "itemId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Item"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/knowledgeBaseArticles": {
+      "get": {
+        "tags": [
+          "KnowledgeBaseArticles"
+        ],
+        "description": "Get Knowledge Base Articles",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/KnowledgeBaseArticle"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "KnowledgeBaseArticles"
+        ],
+        "description": "Create Knowledge Base Article",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "knowledgeBaseArticle",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/KnowledgeBaseArticle"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/KnowledgeBaseArticle"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/knowledgeBaseArticles/count": {
+      "get": {
+        "tags": [
+          "KnowledgeBaseArticles"
+        ],
+        "description": "Get Knowledge Base Articles Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/knowledgeBaseArticles/{id}": {
+      "get": {
+        "tags": [
+          "KnowledgeBaseArticles"
+        ],
+        "description": "Get Knowledge Base Article By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/KnowledgeBaseArticle"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "KnowledgeBaseArticles"
+        ],
+        "description": "Replace Knowledge Base Article",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "knowledgeBaseArticle",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/KnowledgeBaseArticle"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/KnowledgeBaseArticle"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "KnowledgeBaseArticles"
+        ],
+        "description": "Delete Knowledge Base Article By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "KnowledgeBaseArticles"
+        ],
+        "description": "Update Knowledge Base Article",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/KnowledgeBaseArticle"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/locations": {
+      "get": {
+        "tags": [
+          "Locations"
+        ],
+        "description": "Get Locations",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Location"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Locations"
+        ],
+        "description": "Create Location",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "location",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Location"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Location"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/locations/count": {
+      "get": {
+        "tags": [
+          "Locations"
+        ],
+        "description": "Create Locations Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/locations/{id}": {
+      "get": {
+        "tags": [
+          "Locations"
+        ],
+        "description": "Get Location By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Location"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Locations"
+        ],
+        "description": "Replace Location",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "location",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Location"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Location"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Locations"
+        ],
+        "description": "Delete Location By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Locations"
+        ],
+        "description": "Update Location",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Location"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/priorities": {
+      "get": {
+        "tags": [
+          "Priorities"
+        ],
+        "description": "Get Priorities",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Priority"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Priorities"
+        ],
+        "description": "Create Priority",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "priority",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Priority"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Priority"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/priorities/count": {
+      "get": {
+        "tags": [
+          "Priorities"
+        ],
+        "description": "Create Priorities Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/priorities/{id}": {
+      "get": {
+        "tags": [
+          "Priorities"
+        ],
+        "description": "Get Priority By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Priority"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Priorities"
+        ],
+        "description": "Replace Priority",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "priority",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Priority"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Priority"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Priorities"
+        ],
+        "description": "Delete Priority By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Priorities"
+        ],
+        "description": "Update Priority",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Priority"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/priorities/{id}/image": {
+      "get": {
+        "tags": [
+          "Priorities"
+        ],
+        "description": "Get Priority Image",
+        "produces": [
+          "application/octet-stream"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/useDefaultFlag"
+          },
+          {
+            "$ref": "#/parameters/lm"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/notes": {
+      "get": {
+        "tags": [
+          "ServiceNotes"
+        ],
+        "description": "Get Service Notes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ServiceNote"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "ServiceNotes"
+        ],
+        "description": "Create Service Note",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "serviceNote",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ServiceNote"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ServiceNote"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/notes/count": {
+      "get": {
+        "tags": [
+          "ServiceNotes"
+        ],
+        "description": "Get Service Notes Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/notes/{noteId}": {
+      "get": {
+        "tags": [
+          "ServiceNotes"
+        ],
+        "description": "Get Service Note By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "noteId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceNote"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "ServiceNotes"
+        ],
+        "description": "Replace Service Note",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "noteId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "serviceNote",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ServiceNote"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceNote"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "ServiceNotes"
+        ],
+        "description": "Delete Service Note By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "noteId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "ServiceNotes"
+        ],
+        "description": "Update Service Note",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "noteId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceNote"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/sources": {
+      "get": {
+        "tags": [
+          "Sources"
+        ],
+        "description": "Get Sources",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Source"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Sources"
+        ],
+        "description": "Create Source",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "source",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Source"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Source"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/sources/count": {
+      "get": {
+        "tags": [
+          "Sources"
+        ],
+        "description": "Create Sources Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/sources/{id}": {
+      "get": {
+        "tags": [
+          "Sources"
+        ],
+        "description": "Get Source By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Source"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Sources"
+        ],
+        "description": "Replace Source",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "source",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Source"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Source"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Sources"
+        ],
+        "description": "Delete Source By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Sources"
+        ],
+        "description": "Update Source",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Source"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/statuses": {
+      "get": {
+        "tags": [
+          "Statusess"
+        ],
+        "description": "Get Statuses",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Status"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Statusess"
+        ],
+        "description": "Create Statuses",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "status",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/statuses/count": {
+      "get": {
+        "tags": [
+          "Statusess"
+        ],
+        "description": "Get Statuses Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/statuses/{statusId}": {
+      "get": {
+        "tags": [
+          "Statusess"
+        ],
+        "description": "Get Status By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "statusId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Statusess"
+        ],
+        "description": "Replace Statuses",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "statusId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "status",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Statusess"
+        ],
+        "description": "Delete Status By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "statusId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Statusess"
+        ],
+        "description": "Update Status",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "statusId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Status"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/subtypes": {
+      "get": {
+        "tags": [
+          "SubTypes"
+        ],
+        "description": "Get Subtypes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SubType"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "SubTypes"
+        ],
+        "description": "Create Subtype",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "subtype",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SubType"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/SubType"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/subtypes/count": {
+      "get": {
+        "tags": [
+          "SubTypes"
+        ],
+        "description": "Get Subtypes Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/subtypes/{subtypeId}": {
+      "get": {
+        "tags": [
+          "SubTypes"
+        ],
+        "description": "Get Subtype By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "subtypeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SubType"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "SubTypes"
+        ],
+        "description": "Replace Subtype",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "subtypeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "subtype",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SubType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SubType"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "SubTypes"
+        ],
+        "description": "Delete Subtype By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "subtypeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "SubTypes"
+        ],
+        "description": "Update Subtype",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "subtypeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SubType"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys/{id}/questions": {
+      "get": {
+        "tags": [
+          "SurveyQuestions"
+        ],
+        "description": "Get Survey Questions",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SurveyQuestion"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "SurveyQuestions"
+        ],
+        "description": "Create Survey Question",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "surveyQuestion",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SurveyQuestion"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/SurveyQuestion"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys/{id}/questions/count": {
+      "get": {
+        "tags": [
+          "SurveyQuestions"
+        ],
+        "description": "Get Survey Questions Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys/{id}/questions/{questionId}": {
+      "get": {
+        "tags": [
+          "SurveyQuestions"
+        ],
+        "description": "Get Survey Question By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "questionId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SurveyQuestion"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "SurveyQuestions"
+        ],
+        "description": "Replace Survey Question",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "questionId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "surveyQuestion",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SurveyQuestion"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SurveyQuestion"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "SurveyQuestions"
+        ],
+        "description": "Delete Survey Question By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "questionId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "SurveyQuestions"
+        ],
+        "description": "Update Survey Question",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "questionId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SurveyQuestion"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys/{id}/results": {
+      "get": {
+        "tags": [
+          "SurveyResults"
+        ],
+        "description": "Get Survey Results",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/SurveyResult"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "SurveyResults"
+        ],
+        "description": "Create Survey Result",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "surveyResult",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SurveyResult"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/SurveyResult"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys/{id}/results/count": {
+      "get": {
+        "tags": [
+          "SurveyResults"
+        ],
+        "description": "Get Survey Results Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys/{id}/results/{resultId}": {
+      "get": {
+        "tags": [
+          "SurveyResults"
+        ],
+        "description": "Get Survey Result By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "resultId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SurveyResult"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "SurveyResults"
+        ],
+        "description": "Replace Survey Result",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "resultId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "surveyResult",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SurveyResult"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SurveyResult"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "SurveyResults"
+        ],
+        "description": "Delete Survey Result By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "resultId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "SurveyResults"
+        ],
+        "description": "Update Survey Result",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "resultId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/SurveyResult"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys": {
+      "get": {
+        "tags": [
+          "Surveys"
+        ],
+        "description": "Get Surveys",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Survey"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Surveys"
+        ],
+        "description": "Create Survey",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "survey",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Survey"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Survey"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys/count": {
+      "get": {
+        "tags": [
+          "Surveys"
+        ],
+        "description": "Get Surveys Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/surveys/{id}": {
+      "get": {
+        "tags": [
+          "Surveys"
+        ],
+        "description": "Get Survey By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Survey"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Surveys"
+        ],
+        "description": "Replace Survey",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "survey",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Survey"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Survey"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Surveys"
+        ],
+        "description": "Delete Survey By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Surveys"
+        ],
+        "description": "Update Survey",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Survey"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/tasks": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Get Tasks",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Task"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Create Task",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "task",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/tasks/count": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Get Tasks Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/tasks/{taskId}": {
+      "get": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Get Task By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "taskId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Replace Task",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "taskId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "task",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Delete Task By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "taskId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Tasks"
+        ],
+        "description": "Update Task",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "taskId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Task"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/teams": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Get Teams",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Team"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Create Team",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "team",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Team"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Team"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/teams/count": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Get Teams Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/teams/{teamId}": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Get Team By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "teamId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Team"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Replace Team",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "teamId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "team",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Team"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Team"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Delete Team By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "teamId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Teams"
+        ],
+        "description": "Update Team",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "teamId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Team"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Tickets",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Ticket"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Create Ticket",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ticket",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/count": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Tickets Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Replace Ticket",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "ticket",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Delete Ticket By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Update Ticket",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Ticket"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/activities": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Activities",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ActivityReference"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/activities/count": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Activities Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/timeentries": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Time Entries",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TimeEntryReference"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/timeentries/count": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Time Entries Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/scheduleentries": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Schedule Entries",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ScheduleEntryReference"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/scheduleentries/count": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Schedule Entries Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/documents": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Documents",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DocumentReference"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/documents/count": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Documents Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/products": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Products",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ProductReference"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/products/count": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Products Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/configurations": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Configurations",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ConfigurationReference"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Create Configuration Association",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "configuration",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ConfigurationReference"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/ConfigurationReference"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/configurations/count": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Ticket Configurations Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/tickets/{id}/configurations/{configId}": {
+      "get": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Get Configuration Association",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "configId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ConfigurationReference"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Tickets"
+        ],
+        "description": "Delete Configuration Association",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "configId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/types": {
+      "get": {
+        "tags": [
+          "Types"
+        ],
+        "description": "Get Types",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          },
+          {
+            "$ref": "#/parameters/orderBy"
+          },
+          {
+            "$ref": "#/parameters/page"
+          },
+          {
+            "$ref": "#/parameters/pageSize"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Type"
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Types"
+        ],
+        "description": "Create Type",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "type",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Type"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/Type"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/types/count": {
+      "get": {
+        "tags": [
+          "Types"
+        ],
+        "description": "Get Types Count",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "$ref": "#/parameters/conditions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Count"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/types/{typeId}": {
+      "get": {
+        "tags": [
+          "Types"
+        ],
+        "description": "Get Type By Id",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "typeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Type"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Types"
+        ],
+        "description": "Replace Types",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "typeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "type",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Type"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Type"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Types"
+        ],
+        "description": "Delete Type By Id",
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "typeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "NoContent"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "Types"
+        ],
+        "description": "Update Types",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "typeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "operations",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/PatchOperation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Type"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    },
+    "/service/boards/{id}/types/{typeId}/subTypeAssociation": {
+      "get": {
+        "tags": [
+          "Types"
+        ],
+        "description": "Get Sub Type Association",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          },
+          {
+            "name": "typeId",
+            "type": "integer",
+            "format": "int32",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          }
+        },
+        "security": [
+          {
+            "BasicAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Metadata": {
+      "type": "object",
+      "properties": {}
+    },
+    "Board": {
+      "required": [
+        "name",
+        "locationId",
+        "businessUnitId"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "locationId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "businessUnitId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "inactive": {
+          "type": "boolean"
+        },
+        "signOffTemplateId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sendToContact": {
+          "type": "boolean"
+        },
+        "contactTemplateId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sendToResource": {
+          "type": "boolean"
+        },
+        "resourceTemplateId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "Count": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "format": "int32",
+          "type": "integer"
+        }
+      }
+    },
+    "PatchOperation": {
+      "type": "object",
+      "properties": {
+        "op": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "ValidationError": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "readOnly": true
+        },
+        "message": {
+          "type": "string",
+          "readOnly": true
+        },
+        "resource": {
+          "type": "string",
+          "readOnly": true
+        },
+        "field": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "readOnly": true
+        },
+        "message": {
+          "type": "string",
+          "readOnly": true
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ValidationError"
+          },
+          "readOnly": true
+        }
+      }
+    },
+    "Code": {
+      "required": [
+        "name",
+        "description"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "boardId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "locationId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "businessUnitId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ExcludedMember": {
+      "required": [
+        "memberId"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "memberId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "boardId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "TypeAssociations": {
+      "type": "object",
+      "properties": {
+        "typeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "subTypeAssociationIds": {
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "Item": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "inactive": {
+          "type": "boolean"
+        },
+        "typeAssociations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TypeAssociations"
+          },
+          "readOnly": true
+        },
+        "addAllSubTypes": {
+          "type": "boolean"
+        },
+        "removeAllSubTypes": {
+          "type": "boolean"
+        },
+        "typeId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "boardId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "KnowledgeBaseArticle": {
+      "required": [
+        "title",
+        "issue",
+        "resolution"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "issue": {
+          "type": "string"
+        },
+        "resolution": {
+          "type": "string"
+        },
+        "locationId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "businessUnitId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "boardId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "categoryId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "subCategoryId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "dateCreated": {
+          "type": "string",
+          "readOnly": true
+        },
+        "createdBy": {
+          "type": "string",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "Location": {
+      "required": [
+        "name",
+        "where"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 30,
+          "type": "string"
+        },
+        "where": {
+          "enum": [
+            "OnSite",
+            "Remote",
+            "InHouse"
+          ],
+          "type": "string"
+        },
+        "defaultFlag": {
+          "type": "boolean"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "Priority": {
+      "required": [
+        "name",
+        "color"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "color": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "sortOrder": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "defaultFlag": {
+          "type": "boolean"
+        },
+        "imageLink": {
+          "type": "string",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "MemberReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ContactReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceNote": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ticketId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "text": {
+          "type": "string"
+        },
+        "detailDescriptionFlag": {
+          "type": "boolean"
+        },
+        "internalAnalysisFlag": {
+          "type": "boolean"
+        },
+        "resolutionFlag": {
+          "type": "boolean"
+        },
+        "member": {
+          "$ref": "#/definitions/MemberReference"
+        },
+        "contact": {
+          "$ref": "#/definitions/ContactReference"
+        },
+        "customerUpdatedFlag": {
+          "type": "boolean"
+        },
+        "processNotifications": {
+          "type": "boolean"
+        },
+        "dateCreated": {
+          "type": "string",
+          "readOnly": true
+        },
+        "createdBy": {
+          "type": "string",
+          "readOnly": true
+        },
+        "internalFlag": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "externalFlag": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "Source": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "defaultFlag": {
+          "type": "boolean"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "Status": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "boardId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "sortOrder": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "displayOnBoard": {
+          "type": "boolean"
+        },
+        "inactive": {
+          "type": "boolean"
+        },
+        "closedStatus": {
+          "type": "boolean"
+        },
+        "timeEntryNotAllowed": {
+          "type": "boolean"
+        },
+        "defaultFlag": {
+          "type": "boolean"
+        },
+        "escalationStatus": {
+          "enum": [
+            "NotResponded",
+            "Responded",
+            "ResolutionPlan",
+            "Resolved",
+            "NoEscalation"
+          ],
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "SubType": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "inactive": {
+          "type": "boolean"
+        },
+        "typeAssociationIds": {
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "addAllTypes": {
+          "type": "boolean"
+        },
+        "removeAllTypes": {
+          "type": "boolean"
+        },
+        "boardId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "SurveyQuestionOption": {
+      "required": [
+        "caption"
+      ],
+      "type": "object",
+      "properties": {
+        "includeFlag": {
+          "type": "boolean"
+        },
+        "caption": {
+          "maxLength": 100,
+          "type": "string"
+        },
+        "points": {
+          "format": "int16",
+          "type": "integer"
+        }
+      }
+    },
+    "SurveyQuestion": {
+      "required": [
+        "type",
+        "question"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sequenceNumber": {
+          "format": "int16",
+          "type": "integer"
+        },
+        "type": {
+          "enum": [
+            "OpenEnded",
+            "Selection"
+          ],
+          "type": "string"
+        },
+        "question": {
+          "maxLength": 1000,
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SurveyQuestionOption"
+          }
+        },
+        "includeFlag": {
+          "type": "boolean"
+        },
+        "requiredFlag": {
+          "type": "boolean"
+        },
+        "noAnswerPoints": {
+          "format": "int16",
+          "type": "integer"
+        },
+        "surveyId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "SurveyResultDetail": {
+      "required": [
+        "questionId"
+      ],
+      "type": "object",
+      "properties": {
+        "questionId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "answer": {
+          "description": "If question type is Selection, this should be the option array index",
+          "type": "string"
+        }
+      }
+    },
+    "CompanyReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "identifier": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "SurveyResult": {
+      "required": [
+        "ticketId"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ticketId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "emailAddress": {
+          "type": "string"
+        },
+        "footerResponse": {
+          "type": "string"
+        },
+        "contactMeFlag": {
+          "type": "boolean"
+        },
+        "contact": {
+          "$ref": "#/definitions/ContactReference"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SurveyResultDetail"
+          }
+        },
+        "totalPoints": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "company": {
+          "$ref": "#/definitions/CompanyReference",
+          "readOnly": true
+        },
+        "surveyId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "GenericIdIdentifierReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "identifier": {
+          "type": "string"
+        }
+      }
+    },
+    "Survey": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "inactiveFlag": {
+          "type": "boolean"
+        },
+        "headerIncludeLogoFlag": {
+          "type": "boolean"
+        },
+        "headerText": {
+          "maxLength": 4000,
+          "type": "string"
+        },
+        "headerTextVisibleFlag": {
+          "type": "boolean"
+        },
+        "footerText": {
+          "maxLength": 500,
+          "type": "string"
+        },
+        "footerTextVisibleFlag": {
+          "type": "boolean"
+        },
+        "thankYouText": {
+          "maxLength": 4000,
+          "type": "string"
+        },
+        "notifyWho": {
+          "$ref": "#/definitions/GenericIdIdentifierReference"
+        },
+        "notifyWhoVisibleFlag": {
+          "type": "boolean"
+        },
+        "notifyMember": {
+          "$ref": "#/definitions/MemberReference"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ScheduleEntryReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceCodeReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "Task": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "ticketId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "closedFlag": {
+          "type": "boolean"
+        },
+        "priority": {
+          "format": "int32",
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "schedule": {
+          "$ref": "#/definitions/ScheduleEntryReference"
+        },
+        "code": {
+          "$ref": "#/definitions/ServiceCodeReference"
+        },
+        "resolution": {
+          "type": "string"
+        },
+        "childScheduleAction": {
+          "enum": [
+            "Transfer",
+            "Delete",
+            "Done"
+          ],
+          "type": "string"
+        },
+        "childTicketId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "Team": {
+      "required": [
+        "name",
+        "teamLeader"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "teamLeader": {
+          "$ref": "#/definitions/MemberReference"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        "defaultFlag": {
+          "type": "boolean"
+        },
+        "notifyOnTicketDelete": {
+          "type": "boolean"
+        },
+        "boardId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "locationId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "businessUnitId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "BoardReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceStatusReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ProjectReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ProjectPhaseReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "SiteReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "CountryReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceTypeReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceSubTypeReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceItemReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceTeamReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "PriorityReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceLocationReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ServiceSourceReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "OpportunityReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "AgreementReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "CustomFieldValue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "caption": {
+          "type": "string",
+          "readOnly": true
+        },
+        "type": {
+          "enum": [
+            "Text",
+            "Button",
+            "Currency",
+            "Date",
+            "Hyperlink",
+            "IPAddress",
+            "Checkbox",
+            "Number",
+            "Percent",
+            "TextArea",
+            "Password"
+          ],
+          "type": "string"
+        },
+        "entryMethod": {
+          "enum": [
+            "EntryField",
+            "List",
+            "Option"
+          ],
+          "type": "string"
+        },
+        "numberOfDecimals": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "Ticket": {
+      "required": [
+        "summary",
+        "company"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "summary": {
+          "maxLength": 100,
+          "type": "string"
+        },
+        "recordType": {
+          "enum": [
+            "ServiceTicket",
+            "ProjectTicket",
+            "ProjectIssue"
+          ],
+          "type": "string"
+        },
+        "board": {
+          "$ref": "#/definitions/BoardReference"
+        },
+        "status": {
+          "$ref": "#/definitions/ServiceStatusReference"
+        },
+        "project": {
+          "$ref": "#/definitions/ProjectReference"
+        },
+        "phase": {
+          "$ref": "#/definitions/ProjectPhaseReference"
+        },
+        "wbsCode": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "company": {
+          "$ref": "#/definitions/CompanyReference"
+        },
+        "site": {
+          "$ref": "#/definitions/SiteReference"
+        },
+        "siteName": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "addressLine1": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "addressLine2": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "city": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "stateIdentifier": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "zip": {
+          "maxLength": 12,
+          "type": "string"
+        },
+        "country": {
+          "$ref": "#/definitions/CountryReference"
+        },
+        "contact": {
+          "$ref": "#/definitions/ContactReference"
+        },
+        "contactPhoneNumber": {
+          "maxLength": 20,
+          "type": "string"
+        },
+        "contactPhoneExtension": {
+          "maxLength": 15,
+          "type": "string"
+        },
+        "contactEmailAddress": {
+          "maxLength": 250,
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/ServiceTypeReference"
+        },
+        "subType": {
+          "$ref": "#/definitions/ServiceSubTypeReference"
+        },
+        "item": {
+          "$ref": "#/definitions/ServiceItemReference"
+        },
+        "team": {
+          "$ref": "#/definitions/ServiceTeamReference"
+        },
+        "priority": {
+          "$ref": "#/definitions/PriorityReference"
+        },
+        "serviceLocation": {
+          "$ref": "#/definitions/ServiceLocationReference"
+        },
+        "source": {
+          "$ref": "#/definitions/ServiceSourceReference"
+        },
+        "requiredDate": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "budgetHours": {
+          "format": "double",
+          "type": "number"
+        },
+        "opportunity": {
+          "$ref": "#/definitions/OpportunityReference"
+        },
+        "agreement": {
+          "$ref": "#/definitions/AgreementReference"
+        },
+        "severity": {
+          "enum": [
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "type": "string"
+        },
+        "impact": {
+          "enum": [
+            "Low",
+            "Medium",
+            "High"
+          ],
+          "type": "string"
+        },
+        "externalXRef": {
+          "maxLength": 100,
+          "type": "string"
+        },
+        "poNumber": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "knowledgeBaseCategoryId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "knowledgeBaseSubCategoryId": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "allowAllClientsPortalView": {
+          "type": "boolean"
+        },
+        "customerUpdatedFlag": {
+          "type": "boolean"
+        },
+        "automaticEmailContactFlag": {
+          "type": "boolean"
+        },
+        "automaticEmailResourceFlag": {
+          "type": "boolean"
+        },
+        "automaticEmailCcFlag": {
+          "type": "boolean"
+        },
+        "automaticEmailCc": {
+          "maxLength": 1000,
+          "type": "string"
+        },
+        "initialDescription": {
+          "type": "string"
+        },
+        "initialInternalAnalysis": {
+          "type": "string"
+        },
+        "initialResolution": {
+          "type": "string"
+        },
+        "contactEmailLookup": {
+          "type": "string"
+        },
+        "processNotifications": {
+          "type": "boolean"
+        },
+        "skipCallback": {
+          "type": "boolean"
+        },
+        "closedDate": {
+          "type": "string",
+          "readOnly": true
+        },
+        "closedBy": {
+          "type": "string",
+          "readOnly": true
+        },
+        "closedFlag": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "dateEntered": {
+          "type": "string",
+          "readOnly": true
+        },
+        "enteredBy": {
+          "type": "string",
+          "readOnly": true
+        },
+        "actualHours": {
+          "format": "double",
+          "type": "number",
+          "readOnly": true
+        },
+        "approved": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "subBillingMethod": {
+          "enum": [
+            "ActualRates",
+            "FixedFee",
+            "NotToExceed",
+            "OverrideRate"
+          ],
+          "type": "string",
+          "readOnly": true
+        },
+        "subBillingAmount": {
+          "format": "double",
+          "type": "number",
+          "readOnly": true
+        },
+        "subDateAccepted": {
+          "type": "string",
+          "readOnly": true
+        },
+        "dateResolved": {
+          "type": "string",
+          "readOnly": true
+        },
+        "dateResplan": {
+          "type": "string",
+          "readOnly": true
+        },
+        "dateResponded": {
+          "type": "string",
+          "readOnly": true
+        },
+        "resolveMinutes": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "resPlanMinutes": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "respondMinutes": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "isInSla": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "knowledgeBaseLinkId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "resources": {
+          "type": "string",
+          "readOnly": true
+        },
+        "parentTicketId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "hasChildTicket": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "knowledgeBaseLinkType": {
+          "enum": [
+            "ServiceTicket",
+            "ProjectTicket",
+            "ProjectIssue",
+            "KnowledgeBaseArticle",
+            "Time",
+            "Activity"
+          ],
+          "type": "string",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        },
+        "customFields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CustomFieldValue"
+          }
+        }
+      }
+    },
+    "ActivityReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "TimeEntryReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "DocumentReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ProductReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "ConfigurationReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "deviceIdentifier": {
+          "type": "string"
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    },
+    "Type": {
+      "required": [
+        "name"
+      ],
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "maxLength": 50,
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "Reactive",
+            "Proactive"
+          ],
+          "type": "string"
+        },
+        "defaultFlag": {
+          "type": "boolean"
+        },
+        "inactive": {
+          "type": "boolean"
+        },
+        "requestForChange": {
+          "type": "boolean"
+        },
+        "boardId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "locationId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "businessUnitId": {
+          "format": "int32",
+          "type": "integer",
+          "readOnly": true
+        },
+        "_info": {
+          "$ref": "#/definitions/Metadata",
+          "readOnly": true
+        }
+      }
+    }
+  },
+  "parameters": {
+    "conditions": {
+      "name": "conditions",
+      "type": "string",
+      "in": "query",
+      "required": false
+    },
+    "orderBy": {
+      "name": "orderBy",
+      "type": "string",
+      "in": "query",
+      "required": false
+    },
+    "page": {
+      "name": "page",
+      "type": "integer",
+      "format": "int32",
+      "in": "query",
+      "required": false
+    },
+    "pageSize": {
+      "name": "pageSize",
+      "type": "integer",
+      "format": "int32",
+      "in": "query",
+      "required": false
+    },
+    "useDefaultFlag": {
+      "name": "useDefaultFlag",
+      "type": "boolean",
+      "in": "query",
+      "required": false
+    },
+    "lm": {
+      "name": "lm",
+      "type": "string",
+      "in": "query",
+      "required": false
+    }
+  },
+  "responses": {
+    "401": {
+      "description": "Unauthorized",
+      "schema": {
+        "$ref": "#/definitions/Error"
+      }
+    }
+  },
+  "securityDefinitions": {
+    "BasicAuth": {
+      "type": "basic",
+      "description": "Basic authentication. Must be formatted as [companyName]+[publickKey]:[privateKey]"
+    }
+  }
+}

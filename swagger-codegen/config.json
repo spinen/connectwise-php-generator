@@ -1,0 +1,13 @@
+{
+    "modelPackage": "Spinen\\ConnectWise\\Library\\Models",
+    "apiPackage": "Spinen\\ConnectWise\\Library\\Api",
+    "sortParamsByRequiredFlag": true,
+    "variableNamingConvention": "snake_case",
+    "invokerPackage": "Spinen\\ConnectWise\\Library",
+    "packagePath": "src",
+    "srcBasePath": "Library",
+    "composerVendorName": "spinen",
+    "composerProjectName": "connectwise-php-library",
+    "description": "SPINEN's PHP library for ConnectWise's API",
+    "artifactVersion": "3.0.0"
+}
