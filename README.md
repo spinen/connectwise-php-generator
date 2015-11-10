@@ -72,10 +72,16 @@ I am using wsdl2phpgenerator [https://github.com/wsdl2phpgenerator/wsdl2phpgener
 
 ## Generate the wrappers
 
-You need to copy .env.example to .env & add the path to your cw install, then you can run generate.php
+You need to copy .env.example to .env & add fill in the correct values for your installation.
 
 ## TL;DR;
 
 ```bash
-$ echo "CONNECTWISE_URL=https://youcw.fqdn.tld" > .env;php generate.php
+$ ./generator makeLibraries;
+$ # Getting a namespace error on fresh generate, so manually run these steps below
+$ composer dumpauto -o
+$ ./generator refactorCode;
+$ ./generator formatCode;
+$ ./generator addTypeHints;
+$ ./generator buildSignatures;
 ```
