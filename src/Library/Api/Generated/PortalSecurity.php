@@ -16,11 +16,13 @@ class PortalSecurity
     protected $SecurityEnabled = null;
 
     /**
+     * @param string $SecurityIdentifier
      * @param boolean $SecurityEnabled
      */
-    public function __construct($SecurityEnabled = null)
+    public function __construct($SecurityIdentifier = null, $SecurityEnabled = null)
     {
-        $this->SecurityEnabled = $SecurityEnabled;
+        $this->SecurityIdentifier = $SecurityIdentifier;
+        $this->SecurityEnabled    = $SecurityEnabled;
     }
 
     /**

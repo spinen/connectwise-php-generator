@@ -27,7 +27,7 @@ class ArrayOfForecastDetail
      * @param ForecastDetail[] $ForecastDetail
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfForecastDetail
      */
-    public function setForecastDetail(array $ForecastDetail = null)
+    public function setForecastDetail(array $ForecastDetail)
     {
         $this->ForecastDetail = $ForecastDetail;
         return $this;

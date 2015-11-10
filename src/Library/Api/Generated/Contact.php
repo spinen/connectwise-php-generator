@@ -197,12 +197,58 @@ class Contact
 
     /**
      * @param int $Id
+     * @param string $FirstName
+     * @param string $LastName
+     * @param string $Email
+     * @param string $CompanyIdentifier
+     * @param string $SID
+     * @param string $Relationship
+     * @param string $Type
+     * @param string $Phone
+     * @param string $PhoneExt
+     * @param string $Fax
+     * @param string $FaxExt
+     * @param string $Title
+     * @param string $School
+     * @param string $NickName
+     * @param string $SignificantOther
+     * @param string $PortalPassword
+     * @param string $UpdatedBy
      * @param ApiGender $Gender
+     * @param Address $PersonalAddress
+     * @param CompanyAddressInfo $CompanyAddressInfo
+     * @param ArrayOfContactCommunicationItem $Phones
+     * @param ArrayOfContactCommunicationItem $Emails
+     * @param ArrayOfContactCommunicationItem $Faxes
+     * @param string $SiteName
      */
-    public function __construct($Id = null, ApiGender $Gender = null)
+    public function __construct($Id = null, $FirstName = null, $LastName = null, $Email = null, $CompanyIdentifier = null, $SID = null, $Relationship = null, $Type = null, $Phone = null, $PhoneExt = null, $Fax = null, $FaxExt = null, $Title = null, $School = null, $NickName = null, $SignificantOther = null, $PortalPassword = null, $UpdatedBy = null, ApiGender $Gender = null, Address $PersonalAddress = null, CompanyAddressInfo $CompanyAddressInfo = null, $Phones = null, $Emails = null, $Faxes = null, $SiteName = null)
     {
-        $this->Id     = $Id;
-        $this->Gender = $Gender;
+        $this->Id                 = $Id;
+        $this->FirstName          = $FirstName;
+        $this->LastName           = $LastName;
+        $this->Email              = $Email;
+        $this->CompanyIdentifier  = $CompanyIdentifier;
+        $this->SID                = $SID;
+        $this->Relationship       = $Relationship;
+        $this->Type               = $Type;
+        $this->Phone              = $Phone;
+        $this->PhoneExt           = $PhoneExt;
+        $this->Fax                = $Fax;
+        $this->FaxExt             = $FaxExt;
+        $this->Title              = $Title;
+        $this->School             = $School;
+        $this->NickName           = $NickName;
+        $this->SignificantOther   = $SignificantOther;
+        $this->PortalPassword     = $PortalPassword;
+        $this->UpdatedBy          = $UpdatedBy;
+        $this->Gender             = $Gender;
+        $this->PersonalAddress    = $PersonalAddress;
+        $this->CompanyAddressInfo = $CompanyAddressInfo;
+        $this->Phones             = $Phones;
+        $this->Emails             = $Emails;
+        $this->Faxes              = $Faxes;
+        $this->SiteName           = $SiteName;
     }
 
     /**
@@ -711,13 +757,9 @@ class Contact
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\Contact
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -849,13 +891,9 @@ class Contact
      * @param \DateTime $BirthDay
      * @return \Spinen\ConnectWise\Library\Api\Generated\Contact
      */
-    public function setBirthDay(\DateTime $BirthDay = null)
+    public function setBirthDay(\DateTime $BirthDay)
     {
-        if ($BirthDay == null) {
-            $this->BirthDay = null;
-        } else {
-            $this->BirthDay = $BirthDay->format(\DateTime::ATOM);
-        }
+        $this->BirthDay = $BirthDay->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -879,13 +917,9 @@ class Contact
      * @param \DateTime $Anniversary
      * @return \Spinen\ConnectWise\Library\Api\Generated\Contact
      */
-    public function setAnniversary(\DateTime $Anniversary = null)
+    public function setAnniversary(\DateTime $Anniversary)
     {
-        if ($Anniversary == null) {
-            $this->Anniversary = null;
-        } else {
-            $this->Anniversary = $Anniversary->format(\DateTime::ATOM);
-        }
+        $this->Anniversary = $Anniversary->format(\DateTime::ATOM);
         return $this;
     }
 

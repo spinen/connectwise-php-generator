@@ -27,7 +27,7 @@ class ArrayOfAgreementDetail
      * @param AgreementDetail[] $AgreementDetail
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfAgreementDetail
      */
-    public function setAgreementDetail(array $AgreementDetail = null)
+    public function setAgreementDetail(array $AgreementDetail)
     {
         $this->AgreementDetail = $AgreementDetail;
         return $this;

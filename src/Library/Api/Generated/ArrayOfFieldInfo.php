@@ -27,7 +27,7 @@ class ArrayOfFieldInfo
      * @param FieldInfo[] $FieldInfo
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfFieldInfo
      */
-    public function setFieldInfo(array $FieldInfo = null)
+    public function setFieldInfo(array $FieldInfo)
     {
         $this->FieldInfo = $FieldInfo;
         return $this;

@@ -27,7 +27,7 @@ class ArrayOfPortalSecurity
      * @param PortalSecurity[] $PortalSecurity
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfPortalSecurity
      */
-    public function setPortalSecurity(array $PortalSecurity = null)
+    public function setPortalSecurity(array $PortalSecurity)
     {
         $this->PortalSecurity = $PortalSecurity;
         return $this;

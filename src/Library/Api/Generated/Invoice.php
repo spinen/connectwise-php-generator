@@ -345,6 +345,7 @@ class Invoice
      * @param boolean $GlPosted
      * @param \DateTime $DueDate
      * @param \DateTime $InvoiceDate
+     * @param string $InvoiceType
      * @param float $DownpaymentAmount
      * @param float $InvoiceAmount
      * @param float $ProjectBillingAmount
@@ -354,41 +355,122 @@ class Invoice
      * @param float $TaxRate
      * @param float $TicketBillingAmount
      * @param int $DueDays
+     * @param string $AgreementName
+     * @param string $AgreementType
+     * @param string $BillingDelivery
+     * @param string $BillingMethod
+     * @param string $BillingTerms
+     * @param string $BillingTermsXref
+     * @param string $BusinessUnit
+     * @param string $CurrencyName
+     * @param string $CurrencySymbol
+     * @param string $GlBatchId
+     * @param string $TopComment
+     * @param string $BottomComment
+     * @param string $InvoiceNumber
+     * @param string $Location
+     * @param string $PoNumber
+     * @param string $ProjectName
      * @param int $ProjectNumber
+     * @param string $PhaseName
+     * @param string $RoutedMemberIdentifier
+     * @param string $RoutedMemberName
+     * @param string $RemitName
+     * @param string $RemitPhone
+     * @param string $SalesRepIdentifier
+     * @param string $Status
+     * @param string $TaxCodeDescription
+     * @param string $TaxCode
+     * @param string $Territory
      * @param int $TicketNumber
+     * @param string $TicketResolution
+     * @param string $TicketSummary
+     * @param Company $Company
+     * @param Company $BillToCompany
+     * @param Contact $Contact
+     * @param Address $BillingAddress
+     * @param Address $RemitAddress
+     * @param ArrayOfExpenseDetail $ExpenseDetails
+     * @param ArrayOfProductDetail $ProductDetails
+     * @param ArrayOfTimeDetail $TimeDetails
+     * @param ArrayOfSalesTaxDetail $SalesTaxDetails
+     * @param ArrayOfAgreementDetail $AgreementDetails
      * @param \DateTime $PaidDate
      * @param float $PaidAmount
      * @param \DateTime $LastUpdated
+     * @param string $UpdatedBy
      * @param boolean $ProcessingFlag
      * @param \DateTime $ProcessingDate
+     * @param string $SalesRepFullName
      */
-    public function __construct($Id = null, $IsClientLocation = null, $Taxable = null, $Email = null, $Closed = null, $Sent = null, $GlPosted = null, \DateTime $DueDate = null, \DateTime $InvoiceDate = null, $DownpaymentAmount = null, $InvoiceAmount = null, $ProjectBillingAmount = null, $ProjectBillingRate = null, $SalesTaxAmount = null, $TaxableAmount = null, $TaxRate = null, $TicketBillingAmount = null, $DueDays = null, $ProjectNumber = null, $TicketNumber = null, \DateTime $PaidDate = null, $PaidAmount = null, \DateTime $LastUpdated = null, $ProcessingFlag = null, \DateTime $ProcessingDate = null)
+    public function __construct($Id = null, $IsClientLocation = null, $Taxable = null, $Email = null, $Closed = null, $Sent = null, $GlPosted = null, \DateTime $DueDate = null, \DateTime $InvoiceDate = null, $InvoiceType = null, $DownpaymentAmount = null, $InvoiceAmount = null, $ProjectBillingAmount = null, $ProjectBillingRate = null, $SalesTaxAmount = null, $TaxableAmount = null, $TaxRate = null, $TicketBillingAmount = null, $DueDays = null, $AgreementName = null, $AgreementType = null, $BillingDelivery = null, $BillingMethod = null, $BillingTerms = null, $BillingTermsXref = null, $BusinessUnit = null, $CurrencyName = null, $CurrencySymbol = null, $GlBatchId = null, $TopComment = null, $BottomComment = null, $InvoiceNumber = null, $Location = null, $PoNumber = null, $ProjectName = null, $ProjectNumber = null, $PhaseName = null, $RoutedMemberIdentifier = null, $RoutedMemberName = null, $RemitName = null, $RemitPhone = null, $SalesRepIdentifier = null, $Status = null, $TaxCodeDescription = null, $TaxCode = null, $Territory = null, $TicketNumber = null, $TicketResolution = null, $TicketSummary = null, Company $Company = null, Company $BillToCompany = null, Contact $Contact = null, Address $BillingAddress = null, Address $RemitAddress = null, $ExpenseDetails = null, $ProductDetails = null, $TimeDetails = null, $SalesTaxDetails = null, $AgreementDetails = null, \DateTime $PaidDate = null, $PaidAmount = null, \DateTime $LastUpdated = null, $UpdatedBy = null, $ProcessingFlag = null, \DateTime $ProcessingDate = null, $SalesRepFullName = null)
     {
-        $this->Id                   = $Id;
-        $this->IsClientLocation     = $IsClientLocation;
-        $this->Taxable              = $Taxable;
-        $this->Email                = $Email;
-        $this->Closed               = $Closed;
-        $this->Sent                 = $Sent;
-        $this->GlPosted             = $GlPosted;
-        $this->DueDate              = $DueDate ? $DueDate->format(\DateTime::ATOM) : null;
-        $this->InvoiceDate          = $InvoiceDate ? $InvoiceDate->format(\DateTime::ATOM) : null;
-        $this->DownpaymentAmount    = $DownpaymentAmount;
-        $this->InvoiceAmount        = $InvoiceAmount;
-        $this->ProjectBillingAmount = $ProjectBillingAmount;
-        $this->ProjectBillingRate   = $ProjectBillingRate;
-        $this->SalesTaxAmount       = $SalesTaxAmount;
-        $this->TaxableAmount        = $TaxableAmount;
-        $this->TaxRate              = $TaxRate;
-        $this->TicketBillingAmount  = $TicketBillingAmount;
-        $this->DueDays              = $DueDays;
-        $this->ProjectNumber        = $ProjectNumber;
-        $this->TicketNumber         = $TicketNumber;
-        $this->PaidDate             = $PaidDate ? $PaidDate->format(\DateTime::ATOM) : null;
-        $this->PaidAmount           = $PaidAmount;
-        $this->LastUpdated          = $LastUpdated ? $LastUpdated->format(\DateTime::ATOM) : null;
-        $this->ProcessingFlag       = $ProcessingFlag;
-        $this->ProcessingDate       = $ProcessingDate ? $ProcessingDate->format(\DateTime::ATOM) : null;
+        $this->Id                     = $Id;
+        $this->IsClientLocation       = $IsClientLocation;
+        $this->Taxable                = $Taxable;
+        $this->Email                  = $Email;
+        $this->Closed                 = $Closed;
+        $this->Sent                   = $Sent;
+        $this->GlPosted               = $GlPosted;
+        $this->DueDate                = $DueDate ? $DueDate->format(\DateTime::ATOM) : null;
+        $this->InvoiceDate            = $InvoiceDate ? $InvoiceDate->format(\DateTime::ATOM) : null;
+        $this->InvoiceType            = $InvoiceType;
+        $this->DownpaymentAmount      = $DownpaymentAmount;
+        $this->InvoiceAmount          = $InvoiceAmount;
+        $this->ProjectBillingAmount   = $ProjectBillingAmount;
+        $this->ProjectBillingRate     = $ProjectBillingRate;
+        $this->SalesTaxAmount         = $SalesTaxAmount;
+        $this->TaxableAmount          = $TaxableAmount;
+        $this->TaxRate                = $TaxRate;
+        $this->TicketBillingAmount    = $TicketBillingAmount;
+        $this->DueDays                = $DueDays;
+        $this->AgreementName          = $AgreementName;
+        $this->AgreementType          = $AgreementType;
+        $this->BillingDelivery        = $BillingDelivery;
+        $this->BillingMethod          = $BillingMethod;
+        $this->BillingTerms           = $BillingTerms;
+        $this->BillingTermsXref       = $BillingTermsXref;
+        $this->BusinessUnit           = $BusinessUnit;
+        $this->CurrencyName           = $CurrencyName;
+        $this->CurrencySymbol         = $CurrencySymbol;
+        $this->GlBatchId              = $GlBatchId;
+        $this->TopComment             = $TopComment;
+        $this->BottomComment          = $BottomComment;
+        $this->InvoiceNumber          = $InvoiceNumber;
+        $this->Location               = $Location;
+        $this->PoNumber               = $PoNumber;
+        $this->ProjectName            = $ProjectName;
+        $this->ProjectNumber          = $ProjectNumber;
+        $this->PhaseName              = $PhaseName;
+        $this->RoutedMemberIdentifier = $RoutedMemberIdentifier;
+        $this->RoutedMemberName       = $RoutedMemberName;
+        $this->RemitName              = $RemitName;
+        $this->RemitPhone             = $RemitPhone;
+        $this->SalesRepIdentifier     = $SalesRepIdentifier;
+        $this->Status                 = $Status;
+        $this->TaxCodeDescription     = $TaxCodeDescription;
+        $this->TaxCode                = $TaxCode;
+        $this->Territory              = $Territory;
+        $this->TicketNumber           = $TicketNumber;
+        $this->TicketResolution       = $TicketResolution;
+        $this->TicketSummary          = $TicketSummary;
+        $this->Company                = $Company;
+        $this->BillToCompany          = $BillToCompany;
+        $this->Contact                = $Contact;
+        $this->BillingAddress         = $BillingAddress;
+        $this->RemitAddress           = $RemitAddress;
+        $this->ExpenseDetails         = $ExpenseDetails;
+        $this->ProductDetails         = $ProductDetails;
+        $this->TimeDetails            = $TimeDetails;
+        $this->SalesTaxDetails        = $SalesTaxDetails;
+        $this->AgreementDetails       = $AgreementDetails;
+        $this->PaidDate               = $PaidDate ? $PaidDate->format(\DateTime::ATOM) : null;
+        $this->PaidAmount             = $PaidAmount;
+        $this->LastUpdated            = $LastUpdated ? $LastUpdated->format(\DateTime::ATOM) : null;
+        $this->UpdatedBy              = $UpdatedBy;
+        $this->ProcessingFlag         = $ProcessingFlag;
+        $this->ProcessingDate         = $ProcessingDate ? $ProcessingDate->format(\DateTime::ATOM) : null;
+        $this->SalesRepFullName       = $SalesRepFullName;
     }
 
     /**

@@ -27,7 +27,7 @@ class ArrayOfContactFindResult
      * @param ContactFindResult[] $ContactFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfContactFindResult
      */
-    public function setContactFindResult(array $ContactFindResult = null)
+    public function setContactFindResult(array $ContactFindResult)
     {
         $this->ContactFindResult = $ContactFindResult;
         return $this;

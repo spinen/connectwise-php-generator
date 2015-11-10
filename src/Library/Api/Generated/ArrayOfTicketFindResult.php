@@ -27,7 +27,7 @@ class ArrayOfTicketFindResult
      * @param TicketFindResult[] $TicketFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfTicketFindResult
      */
-    public function setTicketFindResult(array $TicketFindResult = null)
+    public function setTicketFindResult(array $TicketFindResult)
     {
         $this->TicketFindResult = $TicketFindResult;
         return $this;

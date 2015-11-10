@@ -37,14 +37,20 @@ class ManagementSolution
 
     /**
      * @param int $Id
+     * @param string $Name
      * @param int $DefaultAgreementId
+     * @param string $DeviceTypes
      * @param int $CompanyId
+     * @param string $ManagedIdentifier
      */
-    public function __construct($Id = null, $DefaultAgreementId = null, $CompanyId = null)
+    public function __construct($Id = null, $Name = null, $DefaultAgreementId = null, $DeviceTypes = null, $CompanyId = null, $ManagedIdentifier = null)
     {
         $this->Id                 = $Id;
+        $this->Name               = $Name;
         $this->DefaultAgreementId = $DefaultAgreementId;
+        $this->DeviceTypes        = $DeviceTypes;
         $this->CompanyId          = $CompanyId;
+        $this->ManagedIdentifier  = $ManagedIdentifier;
     }
 
     /**

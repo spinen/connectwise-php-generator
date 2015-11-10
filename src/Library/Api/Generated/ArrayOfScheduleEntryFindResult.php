@@ -27,7 +27,7 @@ class ArrayOfScheduleEntryFindResult
      * @param ScheduleEntryFindResult[] $ScheduleEntryFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfScheduleEntryFindResult
      */
-    public function setScheduleEntryFindResult(array $ScheduleEntryFindResult = null)
+    public function setScheduleEntryFindResult(array $ScheduleEntryFindResult)
     {
         $this->ScheduleEntryFindResult = $ScheduleEntryFindResult;
         return $this;

@@ -27,7 +27,7 @@ class ArrayOfPricingDetail
      * @param PricingDetail[] $PricingDetail
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfPricingDetail
      */
-    public function setPricingDetail(array $PricingDetail = null)
+    public function setPricingDetail(array $PricingDetail)
     {
         $this->PricingDetail = $PricingDetail;
         return $this;

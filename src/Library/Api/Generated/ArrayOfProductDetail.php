@@ -27,7 +27,7 @@ class ArrayOfProductDetail
      * @param ProductDetail[] $ProductDetail
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProductDetail
      */
-    public function setProductDetail(array $ProductDetail = null)
+    public function setProductDetail(array $ProductDetail)
     {
         $this->ProductDetail = $ProductDetail;
         return $this;

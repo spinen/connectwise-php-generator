@@ -112,10 +112,22 @@ class ProjectTicketFindResult
 
     /**
      * @param int $Id
+     * @param string $Summary
+     * @param string $SiteNameIdentifier
+     * @param string $Status
+     * @param string $AssignedResources
+     * @param string $RecType
+     * @param string $WbsCode
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $Summary = null, $SiteNameIdentifier = null, $Status = null, $AssignedResources = null, $RecType = null, $WbsCode = null)
     {
-        $this->Id = $Id;
+        $this->Id                 = $Id;
+        $this->Summary            = $Summary;
+        $this->SiteNameIdentifier = $SiteNameIdentifier;
+        $this->Status             = $Status;
+        $this->AssignedResources  = $AssignedResources;
+        $this->RecType            = $RecType;
+        $this->WbsCode            = $WbsCode;
     }
 
     /**
@@ -426,13 +438,9 @@ class ProjectTicketFindResult
      * @param \DateTime $RequiredDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectTicketFindResult
      */
-    public function setRequiredDate(\DateTime $RequiredDate = null)
+    public function setRequiredDate(\DateTime $RequiredDate)
     {
-        if ($RequiredDate == null) {
-            $this->RequiredDate = null;
-        } else {
-            $this->RequiredDate = $RequiredDate->format(\DateTime::ATOM);
-        }
+        $this->RequiredDate = $RequiredDate->format(\DateTime::ATOM);
         return $this;
     }
 

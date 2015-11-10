@@ -27,7 +27,7 @@ class ArrayOfAgreementWorkRoleFindResult
      * @param AgreementWorkRoleFindResult[] $AgreementWorkRoleFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfAgreementWorkRoleFindResult
      */
-    public function setAgreementWorkRoleFindResult(array $AgreementWorkRoleFindResult = null)
+    public function setAgreementWorkRoleFindResult(array $AgreementWorkRoleFindResult)
     {
         $this->AgreementWorkRoleFindResult = $AgreementWorkRoleFindResult;
         return $this;

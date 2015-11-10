@@ -16,10 +16,12 @@ class MouseOverData
     protected $IsTicketStatusLoaded = null;
 
     /**
+     * @param LongDescription $TicketStatus
      * @param boolean $IsTicketStatusLoaded
      */
-    public function __construct($IsTicketStatusLoaded = null)
+    public function __construct(LongDescription $TicketStatus = null, $IsTicketStatusLoaded = null)
     {
+        $this->TicketStatus         = $TicketStatus;
         $this->IsTicketStatusLoaded = $IsTicketStatusLoaded;
     }
 

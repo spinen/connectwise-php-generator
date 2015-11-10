@@ -112,22 +112,50 @@ class Product
 
     /**
      * @param int $Id
+     * @param string $ItemIdentifier
+     * @param string $Description
+     * @param string $Type
+     * @param string $Category
+     * @param string $Subcategory
+     * @param string $Uom
      * @param float $Cost
      * @param float $Price
      * @param boolean $Taxable
+     * @param string $LongDescription
      * @param boolean $Inactive
      * @param boolean $Serialized
+     * @param string $Manufacturer
+     * @param string $Vendor
+     * @param string $VendorSku
+     * @param string $Class
      * @param boolean $IsPhaseProduct
+     * @param string $ManufacturerPartNumber
+     * @param string $PriceAttribute
+     * @param ArrayOfComponent $BundleComponents
      */
-    public function __construct($Id = null, $Cost = null, $Price = null, $Taxable = null, $Inactive = null, $Serialized = null, $IsPhaseProduct = null)
+    public function __construct($Id = null, $ItemIdentifier = null, $Description = null, $Type = null, $Category = null, $Subcategory = null, $Uom = null, $Cost = null, $Price = null, $Taxable = null, $LongDescription = null, $Inactive = null, $Serialized = null, $Manufacturer = null, $Vendor = null, $VendorSku = null, $Class = null, $IsPhaseProduct = null, $ManufacturerPartNumber = null, $PriceAttribute = null, $BundleComponents = null)
     {
-        $this->Id             = $Id;
-        $this->Cost           = $Cost;
-        $this->Price          = $Price;
-        $this->Taxable        = $Taxable;
-        $this->Inactive       = $Inactive;
-        $this->Serialized     = $Serialized;
-        $this->IsPhaseProduct = $IsPhaseProduct;
+        $this->Id                     = $Id;
+        $this->ItemIdentifier         = $ItemIdentifier;
+        $this->Description            = $Description;
+        $this->Type                   = $Type;
+        $this->Category               = $Category;
+        $this->Subcategory            = $Subcategory;
+        $this->Uom                    = $Uom;
+        $this->Cost                   = $Cost;
+        $this->Price                  = $Price;
+        $this->Taxable                = $Taxable;
+        $this->LongDescription        = $LongDescription;
+        $this->Inactive               = $Inactive;
+        $this->Serialized             = $Serialized;
+        $this->Manufacturer           = $Manufacturer;
+        $this->Vendor                 = $Vendor;
+        $this->VendorSku              = $VendorSku;
+        $this->Class                  = $Class;
+        $this->IsPhaseProduct         = $IsPhaseProduct;
+        $this->ManufacturerPartNumber = $ManufacturerPartNumber;
+        $this->PriceAttribute         = $PriceAttribute;
+        $this->BundleComponents       = $BundleComponents;
     }
 
     /**

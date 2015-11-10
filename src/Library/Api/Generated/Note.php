@@ -42,12 +42,20 @@ class Note
 
     /**
      * @param int $Id
+     * @param string $NoteType
+     * @param string $NoteText
      * @param boolean $IsFlagged
+     * @param string $EnteredBy
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $IsFlagged = null)
+    public function __construct($Id = null, $NoteType = null, $NoteText = null, $IsFlagged = null, $EnteredBy = null, $UpdatedBy = null)
     {
         $this->Id        = $Id;
+        $this->NoteType  = $NoteType;
+        $this->NoteText  = $NoteText;
         $this->IsFlagged = $IsFlagged;
+        $this->EnteredBy = $EnteredBy;
+        $this->UpdatedBy = $UpdatedBy;
     }
 
     /**
@@ -178,13 +186,9 @@ class Note
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\Note
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

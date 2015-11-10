@@ -37,10 +37,14 @@ class PricingSchedule
 
     /**
      * @param int $Id
+     * @param string $Name
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $Name = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id        = $Id;
+        $this->Name      = $Name;
+        $this->UpdatedBy = $UpdatedBy;
     }
 
     /**
@@ -135,13 +139,9 @@ class PricingSchedule
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\PricingSchedule
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

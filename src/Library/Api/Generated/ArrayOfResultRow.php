@@ -27,7 +27,7 @@ class ArrayOfResultRow
      * @param ResultRow[] $ResultRow
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfResultRow
      */
-    public function setResultRow(array $ResultRow = null)
+    public function setResultRow(array $ResultRow)
     {
         $this->ResultRow = $ResultRow;
         return $this;

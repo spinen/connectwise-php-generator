@@ -41,6 +41,7 @@ class Report
     protected $OpenNewWindowFlag = null;
 
     /**
+     * @param FieldInfo[] $Field
      * @param string $Name
      * @param int $Id
      * @param string $Url
@@ -48,8 +49,9 @@ class Report
      * @param boolean $VisibleFlag
      * @param boolean $OpenNewWindowFlag
      */
-    public function __construct($Name = null, $Id = null, $Url = null, $IsCustom = null, $VisibleFlag = null, $OpenNewWindowFlag = null)
+    public function __construct(array $Field = null, $Name = null, $Id = null, $Url = null, $IsCustom = null, $VisibleFlag = null, $OpenNewWindowFlag = null)
     {
+        $this->Field             = $Field;
         $this->Name              = $Name;
         $this->Id                = $Id;
         $this->Url               = $Url;
@@ -70,7 +72,7 @@ class Report
      * @param FieldInfo[] $Field
      * @return \Spinen\ConnectWise\Library\Api\Generated\Report
      */
-    public function setField(array $Field = null)
+    public function setField(array $Field)
     {
         $this->Field = $Field;
         return $this;

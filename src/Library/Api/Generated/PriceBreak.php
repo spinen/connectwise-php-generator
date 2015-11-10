@@ -47,10 +47,12 @@ class PriceBreak
 
     /**
      * @param int $Id
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id        = $Id;
+        $this->UpdatedBy = $UpdatedBy;
     }
 
     /**
@@ -181,13 +183,9 @@ class PriceBreak
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\PriceBreak
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

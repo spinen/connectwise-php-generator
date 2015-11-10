@@ -62,10 +62,30 @@ class PurchasingCompanyAddress
 
     /**
      * @param int $Id
+     * @param string $ContactName
+     * @param string $POPhone
+     * @param string $PhoneExt
+     * @param string $SiteName
+     * @param string $StreetLine1
+     * @param string $StreetLine2
+     * @param string $City
+     * @param string $Country
+     * @param string $State
+     * @param string $Zip
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $ContactName = null, $POPhone = null, $PhoneExt = null, $SiteName = null, $StreetLine1 = null, $StreetLine2 = null, $City = null, $Country = null, $State = null, $Zip = null)
     {
-        $this->Id = $Id;
+        $this->Id          = $Id;
+        $this->ContactName = $ContactName;
+        $this->POPhone     = $POPhone;
+        $this->PhoneExt    = $PhoneExt;
+        $this->SiteName    = $SiteName;
+        $this->StreetLine1 = $StreetLine1;
+        $this->StreetLine2 = $StreetLine2;
+        $this->City        = $City;
+        $this->Country     = $Country;
+        $this->State       = $State;
+        $this->Zip         = $Zip;
     }
 
     /**

@@ -27,7 +27,7 @@ class ArrayOfNote
      * @param Note[] $Note
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfNote
      */
-    public function setNote(array $Note = null)
+    public function setNote(array $Note)
     {
         $this->Note = $Note;
         return $this;

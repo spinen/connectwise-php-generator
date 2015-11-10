@@ -238,11 +238,39 @@ class SpecialInvoice
     /**
      * @param int $Id
      * @param int $CompanyId
+     * @param ApplyTo $ApplyTo
+     * @param string $Attention
+     * @param string $Reference
+     * @param string $CustomerPO
+     * @param string $InvoiceNumber
+     * @param string $InvoiceTypeIdentifier
+     * @param string $InvoiceType
+     * @param string $BillingStatus
+     * @param string $TopComment
+     * @param string $BottomComment
+     * @param string $InternalNotes
+     * @param ArrayOfSpecialInvoiceProduct $SpecialInvoiceProducts
+     * @param string $AdjustmentReason
+     * @param string $By
      */
-    public function __construct($Id = null, $CompanyId = null)
+    public function __construct($Id = null, $CompanyId = null, ApplyTo $ApplyTo = null, $Attention = null, $Reference = null, $CustomerPO = null, $InvoiceNumber = null, $InvoiceTypeIdentifier = null, $InvoiceType = null, $BillingStatus = null, $TopComment = null, $BottomComment = null, $InternalNotes = null, $SpecialInvoiceProducts = null, $AdjustmentReason = null, $By = null)
     {
-        $this->Id        = $Id;
-        $this->CompanyId = $CompanyId;
+        $this->Id                     = $Id;
+        $this->CompanyId              = $CompanyId;
+        $this->ApplyTo                = $ApplyTo;
+        $this->Attention              = $Attention;
+        $this->Reference              = $Reference;
+        $this->CustomerPO             = $CustomerPO;
+        $this->InvoiceNumber          = $InvoiceNumber;
+        $this->InvoiceTypeIdentifier  = $InvoiceTypeIdentifier;
+        $this->InvoiceType            = $InvoiceType;
+        $this->BillingStatus          = $BillingStatus;
+        $this->TopComment             = $TopComment;
+        $this->BottomComment          = $BottomComment;
+        $this->InternalNotes          = $InternalNotes;
+        $this->SpecialInvoiceProducts = $SpecialInvoiceProducts;
+        $this->AdjustmentReason       = $AdjustmentReason;
+        $this->By                     = $By;
     }
 
     /**
@@ -499,13 +527,9 @@ class SpecialInvoice
      * @param \DateTime $InvoiceDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\SpecialInvoice
      */
-    public function setInvoiceDate(\DateTime $InvoiceDate = null)
+    public function setInvoiceDate(\DateTime $InvoiceDate)
     {
-        if ($InvoiceDate == null) {
-            $this->InvoiceDate = null;
-        } else {
-            $this->InvoiceDate = $InvoiceDate->format(\DateTime::ATOM);
-        }
+        $this->InvoiceDate = $InvoiceDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -817,13 +841,9 @@ class SpecialInvoice
      * @param \DateTime $DueDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\SpecialInvoice
      */
-    public function setDueDate(\DateTime $DueDate = null)
+    public function setDueDate(\DateTime $DueDate)
     {
-        if ($DueDate == null) {
-            $this->DueDate = null;
-        } else {
-            $this->DueDate = $DueDate->format(\DateTime::ATOM);
-        }
+        $this->DueDate = $DueDate->format(\DateTime::ATOM);
         return $this;
     }
 

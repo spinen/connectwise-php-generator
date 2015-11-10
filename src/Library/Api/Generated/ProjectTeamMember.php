@@ -187,13 +187,9 @@ class ProjectTeamMember
      * @param \DateTime $StartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectTeamMember
      */
-    public function setStartDate(\DateTime $StartDate = null)
+    public function setStartDate(\DateTime $StartDate)
     {
-        if ($StartDate == null) {
-            $this->StartDate = null;
-        } else {
-            $this->StartDate = $StartDate->format(\DateTime::ATOM);
-        }
+        $this->StartDate = $StartDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -217,13 +213,9 @@ class ProjectTeamMember
      * @param \DateTime $EndDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectTeamMember
      */
-    public function setEndDate(\DateTime $EndDate = null)
+    public function setEndDate(\DateTime $EndDate)
     {
-        if ($EndDate == null) {
-            $this->EndDate = null;
-        } else {
-            $this->EndDate = $EndDate->format(\DateTime::ATOM);
-        }
+        $this->EndDate = $EndDate->format(\DateTime::ATOM);
         return $this;
     }
 

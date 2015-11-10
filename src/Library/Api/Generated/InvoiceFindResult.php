@@ -177,10 +177,46 @@ class InvoiceFindResult
 
     /**
      * @param int $Id
+     * @param string $BillingTypeIdentifier
+     * @param string $AgreementName
+     * @param string $AgreementType
+     * @param string $BusinessUnit
+     * @param string $Location
+     * @param string $CompanyName
+     * @param string $TicketSummary
+     * @param string $Status
+     * @param string $InvoiceType
+     * @param string $ProjectName
+     * @param string $PhaseName
+     * @param string $Territory
+     * @param string $InvoiceNumber
+     * @param string $GlBatchIdentifier
+     * @param string $BillingDelivery
+     * @param string $RoutedMemberIdentifier
+     * @param string $RoutedMemberName
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $BillingTypeIdentifier = null, $AgreementName = null, $AgreementType = null, $BusinessUnit = null, $Location = null, $CompanyName = null, $TicketSummary = null, $Status = null, $InvoiceType = null, $ProjectName = null, $PhaseName = null, $Territory = null, $InvoiceNumber = null, $GlBatchIdentifier = null, $BillingDelivery = null, $RoutedMemberIdentifier = null, $RoutedMemberName = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id                     = $Id;
+        $this->BillingTypeIdentifier  = $BillingTypeIdentifier;
+        $this->AgreementName          = $AgreementName;
+        $this->AgreementType          = $AgreementType;
+        $this->BusinessUnit           = $BusinessUnit;
+        $this->Location               = $Location;
+        $this->CompanyName            = $CompanyName;
+        $this->TicketSummary          = $TicketSummary;
+        $this->Status                 = $Status;
+        $this->InvoiceType            = $InvoiceType;
+        $this->ProjectName            = $ProjectName;
+        $this->PhaseName              = $PhaseName;
+        $this->Territory              = $Territory;
+        $this->InvoiceNumber          = $InvoiceNumber;
+        $this->GlBatchIdentifier      = $GlBatchIdentifier;
+        $this->BillingDelivery        = $BillingDelivery;
+        $this->RoutedMemberIdentifier = $RoutedMemberIdentifier;
+        $this->RoutedMemberName       = $RoutedMemberName;
+        $this->UpdatedBy              = $UpdatedBy;
     }
 
     /**
@@ -365,13 +401,9 @@ class InvoiceFindResult
      * @param \DateTime $InvoiceDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\InvoiceFindResult
      */
-    public function setInvoiceDate(\DateTime $InvoiceDate = null)
+    public function setInvoiceDate(\DateTime $InvoiceDate)
     {
-        if ($InvoiceDate == null) {
-            $this->InvoiceDate = null;
-        } else {
-            $this->InvoiceDate = $InvoiceDate->format(\DateTime::ATOM);
-        }
+        $this->InvoiceDate = $InvoiceDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -395,13 +427,9 @@ class InvoiceFindResult
      * @param \DateTime $DueDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\InvoiceFindResult
      */
-    public function setDueDate(\DateTime $DueDate = null)
+    public function setDueDate(\DateTime $DueDate)
     {
-        if ($DueDate == null) {
-            $this->DueDate = null;
-        } else {
-            $this->DueDate = $DueDate->format(\DateTime::ATOM);
-        }
+        $this->DueDate = $DueDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -749,13 +777,9 @@ class InvoiceFindResult
      * @param \DateTime $PaidDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\InvoiceFindResult
      */
-    public function setPaidDate(\DateTime $PaidDate = null)
+    public function setPaidDate(\DateTime $PaidDate)
     {
-        if ($PaidDate == null) {
-            $this->PaidDate = null;
-        } else {
-            $this->PaidDate = $PaidDate->format(\DateTime::ATOM);
-        }
+        $this->PaidDate = $PaidDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -833,13 +857,9 @@ class InvoiceFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\InvoiceFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

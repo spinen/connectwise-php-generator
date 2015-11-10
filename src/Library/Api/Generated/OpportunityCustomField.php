@@ -7,11 +7,14 @@ class OpportunityCustomField extends UserDefinedCustomField
 
     /**
      * @param int $Id
+     * @param string $CustomField
+     * @param string $FieldType
      * @param int $NumberOfDecimals
+     * @param string $CustomValue
      */
-    public function __construct($Id = null, $NumberOfDecimals = null)
+    public function __construct($Id = null, $CustomField = null, $FieldType = null, $NumberOfDecimals = null, $CustomValue = null)
     {
-        parent::__construct($Id, $NumberOfDecimals);
+        parent::__construct($Id, $CustomField, $FieldType, $NumberOfDecimals, $CustomValue);
     }
 
 }

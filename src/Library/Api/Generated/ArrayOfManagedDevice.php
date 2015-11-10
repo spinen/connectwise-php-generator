@@ -27,7 +27,7 @@ class ArrayOfManagedDevice
      * @param ManagedDevice[] $ManagedDevice
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfManagedDevice
      */
-    public function setManagedDevice(array $ManagedDevice = null)
+    public function setManagedDevice(array $ManagedDevice)
     {
         $this->ManagedDevice = $ManagedDevice;
         return $this;

@@ -27,7 +27,7 @@ class ArrayOfAgreementBoardDefaultFindResult
      * @param AgreementBoardDefaultFindResult[] $AgreementBoardDefaultFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfAgreementBoardDefaultFindResult
      */
-    public function setAgreementBoardDefaultFindResult(array $AgreementBoardDefaultFindResult = null)
+    public function setAgreementBoardDefaultFindResult(array $AgreementBoardDefaultFindResult)
     {
         $this->AgreementBoardDefaultFindResult = $AgreementBoardDefaultFindResult;
         return $this;

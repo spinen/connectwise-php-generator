@@ -27,7 +27,7 @@ class ArrayOfProductDemandReference
      * @param ProductDemandReference[] $ProductDemandReference
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProductDemandReference
      */
-    public function setProductDemandReference(array $ProductDemandReference = null)
+    public function setProductDemandReference(array $ProductDemandReference)
     {
         $this->ProductDemandReference = $ProductDemandReference;
         return $this;

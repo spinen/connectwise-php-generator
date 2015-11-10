@@ -117,10 +117,40 @@ class ActivityFindResult
 
     /**
      * @param int $Id
+     * @param string $CompanyName
+     * @param string $ContactFirstName
+     * @param string $ContactLastName
+     * @param string $PhoneNumber
+     * @param string $EmailAddress
+     * @param string $ActivityStatusDescription
+     * @param string $ActivityTypeDescription
+     * @param string $Subject
+     * @param string $Notes
+     * @param string $Resources
+     * @param string $AssignToResource
+     * @param string $OpportunityName
+     * @param string $Agreement
+     * @param string $Campaign
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $CompanyName = null, $ContactFirstName = null, $ContactLastName = null, $PhoneNumber = null, $EmailAddress = null, $ActivityStatusDescription = null, $ActivityTypeDescription = null, $Subject = null, $Notes = null, $Resources = null, $AssignToResource = null, $OpportunityName = null, $Agreement = null, $Campaign = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id                        = $Id;
+        $this->CompanyName               = $CompanyName;
+        $this->ContactFirstName          = $ContactFirstName;
+        $this->ContactLastName           = $ContactLastName;
+        $this->PhoneNumber               = $PhoneNumber;
+        $this->EmailAddress              = $EmailAddress;
+        $this->ActivityStatusDescription = $ActivityStatusDescription;
+        $this->ActivityTypeDescription   = $ActivityTypeDescription;
+        $this->Subject                   = $Subject;
+        $this->Notes                     = $Notes;
+        $this->Resources                 = $Resources;
+        $this->AssignToResource          = $AssignToResource;
+        $this->OpportunityName           = $OpportunityName;
+        $this->Agreement                 = $Agreement;
+        $this->Campaign                  = $Campaign;
+        $this->UpdatedBy                 = $UpdatedBy;
     }
 
     /**
@@ -359,13 +389,9 @@ class ActivityFindResult
      * @param \DateTime $DueDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ActivityFindResult
      */
-    public function setDueDate(\DateTime $DueDate = null)
+    public function setDueDate(\DateTime $DueDate)
     {
-        if ($DueDate == null) {
-            $this->DueDate = null;
-        } else {
-            $this->DueDate = $DueDate->format(\DateTime::ATOM);
-        }
+        $this->DueDate = $DueDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -389,13 +415,9 @@ class ActivityFindResult
      * @param \DateTime $StartTime
      * @return \Spinen\ConnectWise\Library\Api\Generated\ActivityFindResult
      */
-    public function setStartTime(\DateTime $StartTime = null)
+    public function setStartTime(\DateTime $StartTime)
     {
-        if ($StartTime == null) {
-            $this->StartTime = null;
-        } else {
-            $this->StartTime = $StartTime->format(\DateTime::ATOM);
-        }
+        $this->StartTime = $StartTime->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -419,13 +441,9 @@ class ActivityFindResult
      * @param \DateTime $EndTime
      * @return \Spinen\ConnectWise\Library\Api\Generated\ActivityFindResult
      */
-    public function setEndTime(\DateTime $EndTime = null)
+    public function setEndTime(\DateTime $EndTime)
     {
-        if ($EndTime == null) {
-            $this->EndTime = null;
-        } else {
-            $this->EndTime = $EndTime->format(\DateTime::ATOM);
-        }
+        $this->EndTime = $EndTime->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -557,13 +575,9 @@ class ActivityFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\ActivityFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

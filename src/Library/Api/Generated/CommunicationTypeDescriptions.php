@@ -17,10 +17,12 @@ class CommunicationTypeDescriptions
 
     /**
      * @param CommunicationType $Type
+     * @param ArrayOfString $Descriptions
      */
-    public function __construct(CommunicationType $Type = null)
+    public function __construct(CommunicationType $Type = null, $Descriptions = null)
     {
-        $this->Type = $Type;
+        $this->Type         = $Type;
+        $this->Descriptions = $Descriptions;
     }
 
     /**

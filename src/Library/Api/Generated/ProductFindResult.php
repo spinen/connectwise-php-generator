@@ -112,10 +112,36 @@ class ProductFindResult
 
     /**
      * @param int $Id
+     * @param string $ItemIdentifier
+     * @param string $Description
+     * @param string $Type
+     * @param string $Category
+     * @param string $SubCategory
+     * @param string $UOM
+     * @param string $Class
+     * @param string $LongDescription
+     * @param string $Manufacturer
+     * @param string $Vendor
+     * @param string $VendorSKU
+     * @param string $ManufacturerPartNumber
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $ItemIdentifier = null, $Description = null, $Type = null, $Category = null, $SubCategory = null, $UOM = null, $Class = null, $LongDescription = null, $Manufacturer = null, $Vendor = null, $VendorSKU = null, $ManufacturerPartNumber = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id                     = $Id;
+        $this->ItemIdentifier         = $ItemIdentifier;
+        $this->Description            = $Description;
+        $this->Type                   = $Type;
+        $this->Category               = $Category;
+        $this->SubCategory            = $SubCategory;
+        $this->UOM                    = $UOM;
+        $this->Class                  = $Class;
+        $this->LongDescription        = $LongDescription;
+        $this->Manufacturer           = $Manufacturer;
+        $this->Vendor                 = $Vendor;
+        $this->VendorSKU              = $VendorSKU;
+        $this->ManufacturerPartNumber = $ManufacturerPartNumber;
+        $this->UpdatedBy              = $UpdatedBy;
     }
 
     /**
@@ -498,13 +524,9 @@ class ProductFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProductFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

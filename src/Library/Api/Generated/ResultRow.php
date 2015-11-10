@@ -16,10 +16,12 @@ class ResultRow
     protected $Number = null;
 
     /**
+     * @param FieldValue[] $Value
      * @param int $Number
      */
-    public function __construct($Number = null)
+    public function __construct(array $Value = null, $Number = null)
     {
+        $this->Value  = $Value;
         $this->Number = $Number;
     }
 
@@ -35,7 +37,7 @@ class ResultRow
      * @param FieldValue[] $Value
      * @return \Spinen\ConnectWise\Library\Api\Generated\ResultRow
      */
-    public function setValue(array $Value = null)
+    public function setValue(array $Value)
     {
         $this->Value = $Value;
         return $this;

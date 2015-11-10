@@ -27,7 +27,7 @@ class ArrayOfProjectTicketFindResult
      * @param ProjectTicketFindResult[] $ProjectTicketFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProjectTicketFindResult
      */
-    public function setProjectTicketFindResult(array $ProjectTicketFindResult = null)
+    public function setProjectTicketFindResult(array $ProjectTicketFindResult)
     {
         $this->ProjectTicketFindResult = $ProjectTicketFindResult;
         return $this;

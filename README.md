@@ -34,10 +34,10 @@ Both the library & client are subsplit off into read-only repositories:
 
 ## Build Status
 
-| Branch | Status | Coverage |
-| ------ | :----: | :------: |
-| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/?branch=develop) |
-| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-library-generator/?branch=master) |
+| Branch | Status | Coverage | Code Quality |
+| ------ | :----: | :------: | :----------: |
+| Develop | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=develop)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-generator/badge.svg?branch=develop&service=github)](https://coveralls.io/github/spinen/connectwise-php-generator?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-generator/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/connectwise-php-generator/?branch=develop) |
+| Master | [![Build Status](https://travis-ci.org/spinen/connectwise-php-generator.svg?branch=master)](https://travis-ci.org/spinen/connectwise-php-generator) | [![Coverage Status](https://coveralls.io/repos/spinen/connectwise-php-generator/badge.svg?branch=master&service=github)](https://coveralls.io/github/spinen/connectwise-php-generator?branch=master) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/connectwise-php-generator/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/connectwise-php-generator/?branch=master) |
 
 ## List of available Soap Endpoints (2.0)
 
@@ -72,10 +72,16 @@ I am using wsdl2phpgenerator [https://github.com/wsdl2phpgenerator/wsdl2phpgener
 
 ## Generate the wrappers
 
-You need to copy .env.example to .env & add the path to your cw install, then you can run generate.php
+You need to copy .env.example to .env & add fill in the correct values for your installation.
 
 ## TL;DR;
 
 ```bash
-$ echo "CONNECTWISE_URL=https://youcw.fqdn.tld" > .env;php generate.php
+$ ./generator makeLibraries;
+$ # Getting a namespace error on fresh generate, so manually run these steps below
+$ composer dumpauto -o
+$ ./generator refactorCode;
+$ ./generator formatCode;
+$ ./generator addTypeHints;
+$ ./generator buildSignatures;
 ```

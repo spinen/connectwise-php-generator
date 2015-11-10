@@ -68,11 +68,13 @@ class AgreementWorkTypeFindResult
     /**
      * @param int $Id
      * @param \DateTime $LastUpdate
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, \DateTime $LastUpdate = null)
+    public function __construct($Id = null, \DateTime $LastUpdate = null, $UpdatedBy = null)
     {
         $this->Id         = $Id;
         $this->LastUpdate = $LastUpdate ? $LastUpdate->format(\DateTime::ATOM) : null;
+        $this->UpdatedBy  = $UpdatedBy;
     }
 
     /**
@@ -185,13 +187,9 @@ class AgreementWorkTypeFindResult
      * @param \DateTime $EffectiveDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementWorkTypeFindResult
      */
-    public function setEffectiveDate(\DateTime $EffectiveDate = null)
+    public function setEffectiveDate(\DateTime $EffectiveDate)
     {
-        if ($EffectiveDate == null) {
-            $this->EffectiveDate = null;
-        } else {
-            $this->EffectiveDate = $EffectiveDate->format(\DateTime::ATOM);
-        }
+        $this->EffectiveDate = $EffectiveDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -215,13 +213,9 @@ class AgreementWorkTypeFindResult
      * @param \DateTime $EndingDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementWorkTypeFindResult
      */
-    public function setEndingDate(\DateTime $EndingDate = null)
+    public function setEndingDate(\DateTime $EndingDate)
     {
-        if ($EndingDate == null) {
-            $this->EndingDate = null;
-        } else {
-            $this->EndingDate = $EndingDate->format(\DateTime::ATOM);
-        }
+        $this->EndingDate = $EndingDate->format(\DateTime::ATOM);
         return $this;
     }
 

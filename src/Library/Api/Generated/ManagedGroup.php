@@ -17,10 +17,12 @@ class ManagedGroup
 
     /**
      * @param DeviceTypes $DeviceType
+     * @param string $GroupIdentifier
      */
-    public function __construct(DeviceTypes $DeviceType = null)
+    public function __construct(DeviceTypes $DeviceType = null, $GroupIdentifier = null)
     {
-        $this->DeviceType = $DeviceType;
+        $this->DeviceType      = $DeviceType;
+        $this->GroupIdentifier = $GroupIdentifier;
     }
 
     /**

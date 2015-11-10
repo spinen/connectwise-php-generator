@@ -27,7 +27,7 @@ class ArrayOfString
      * @param string[] $string
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfString
      */
-    public function setString(array $string = null)
+    public function setString(array $string)
     {
         $this->string = $string;
         return $this;

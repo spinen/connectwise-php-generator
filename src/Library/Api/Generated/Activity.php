@@ -91,13 +91,31 @@ class Activity
     protected $Automated = null;
 
     /**
+     * @param string $CompanyIdentifier
      * @param int $Id
+     * @param string $Subject
+     * @param string $Status
+     * @param string $Type
+     * @param ActivityDuration $TimeRange
+     * @param string $Campaign
+     * @param string $Notes
+     * @param string $AssignTo
+     * @param ContactInformation $Contact
      * @param boolean $Automated
      */
-    public function __construct($Id = null, $Automated = null)
+    public function __construct($CompanyIdentifier = null, $Id = null, $Subject = null, $Status = null, $Type = null, ActivityDuration $TimeRange = null, $Campaign = null, $Notes = null, $AssignTo = null, ContactInformation $Contact = null, $Automated = null)
     {
-        $this->Id        = $Id;
-        $this->Automated = $Automated;
+        $this->CompanyIdentifier = $CompanyIdentifier;
+        $this->Id                = $Id;
+        $this->Subject           = $Subject;
+        $this->Status            = $Status;
+        $this->Type              = $Type;
+        $this->TimeRange         = $TimeRange;
+        $this->Campaign          = $Campaign;
+        $this->Notes             = $Notes;
+        $this->AssignTo          = $AssignTo;
+        $this->Contact           = $Contact;
+        $this->Automated         = $Automated;
     }
 
     /**
@@ -210,13 +228,9 @@ class Activity
      * @param \DateTime $DueDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\Activity
      */
-    public function setDueDate(\DateTime $DueDate = null)
+    public function setDueDate(\DateTime $DueDate)
     {
-        if ($DueDate == null) {
-            $this->DueDate = null;
-        } else {
-            $this->DueDate = $DueDate->format(\DateTime::ATOM);
-        }
+        $this->DueDate = $DueDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -384,13 +398,9 @@ class Activity
      * @param \DateTime $DateClosed
      * @return \Spinen\ConnectWise\Library\Api\Generated\Activity
      */
-    public function setDateClosed(\DateTime $DateClosed = null)
+    public function setDateClosed(\DateTime $DateClosed)
     {
-        if ($DateClosed == null) {
-            $this->DateClosed = null;
-        } else {
-            $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
-        }
+        $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
         return $this;
     }
 

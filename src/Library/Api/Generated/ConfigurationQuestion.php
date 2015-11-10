@@ -43,15 +43,21 @@ class ConfigurationQuestion
     /**
      * @param int $Id
      * @param int $QuestionId
+     * @param string $Question
      * @param float $SequenceNumber
+     * @param string $FieldType
      * @param int $NumberOfDecimals
+     * @param string $Answer
      */
-    public function __construct($Id = null, $QuestionId = null, $SequenceNumber = null, $NumberOfDecimals = null)
+    public function __construct($Id = null, $QuestionId = null, $Question = null, $SequenceNumber = null, $FieldType = null, $NumberOfDecimals = null, $Answer = null)
     {
         $this->Id               = $Id;
         $this->QuestionId       = $QuestionId;
+        $this->Question         = $Question;
         $this->SequenceNumber   = $SequenceNumber;
+        $this->FieldType        = $FieldType;
         $this->NumberOfDecimals = $NumberOfDecimals;
+        $this->Answer           = $Answer;
     }
 
     /**

@@ -27,7 +27,7 @@ class ArrayOfPricingSchedule
      * @param PricingSchedule[] $PricingSchedule
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfPricingSchedule
      */
-    public function setPricingSchedule(array $PricingSchedule = null)
+    public function setPricingSchedule(array $PricingSchedule)
     {
         $this->PricingSchedule = $PricingSchedule;
         return $this;

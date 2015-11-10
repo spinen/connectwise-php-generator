@@ -32,10 +32,12 @@ class ProjectNoteFindResult
 
     /**
      * @param int $Id
+     * @param string $Notes
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $Notes = null)
     {
-        $this->Id = $Id;
+        $this->Id    = $Id;
+        $this->Notes = $Notes;
     }
 
     /**

@@ -92,10 +92,30 @@ class ProjectFindResult
 
     /**
      * @param int $Id
+     * @param string $ProjectName
+     * @param string $BillingMethod
+     * @param string $ProjectType
+     * @param string $Description
+     * @param string $Status
+     * @param string $ProjectManager
+     * @param string $Contact
+     * @param string $CompanyIdentifier
+     * @param string $UpdatedBy
+     * @param string $TimeZoneName
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $ProjectName = null, $BillingMethod = null, $ProjectType = null, $Description = null, $Status = null, $ProjectManager = null, $Contact = null, $CompanyIdentifier = null, $UpdatedBy = null, $TimeZoneName = null)
     {
-        $this->Id = $Id;
+        $this->Id                = $Id;
+        $this->ProjectName       = $ProjectName;
+        $this->BillingMethod     = $BillingMethod;
+        $this->ProjectType       = $ProjectType;
+        $this->Description       = $Description;
+        $this->Status            = $Status;
+        $this->ProjectManager    = $ProjectManager;
+        $this->Contact           = $Contact;
+        $this->CompanyIdentifier = $CompanyIdentifier;
+        $this->UpdatedBy         = $UpdatedBy;
+        $this->TimeZoneName      = $TimeZoneName;
     }
 
     /**
@@ -298,13 +318,9 @@ class ProjectFindResult
      * @param \DateTime $EstimatedStartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectFindResult
      */
-    public function setEstimatedStartDate(\DateTime $EstimatedStartDate = null)
+    public function setEstimatedStartDate(\DateTime $EstimatedStartDate)
     {
-        if ($EstimatedStartDate == null) {
-            $this->EstimatedStartDate = null;
-        } else {
-            $this->EstimatedStartDate = $EstimatedStartDate->format(\DateTime::ATOM);
-        }
+        $this->EstimatedStartDate = $EstimatedStartDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -328,13 +344,9 @@ class ProjectFindResult
      * @param \DateTime $EstimatedEndDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectFindResult
      */
-    public function setEstimatedEndDate(\DateTime $EstimatedEndDate = null)
+    public function setEstimatedEndDate(\DateTime $EstimatedEndDate)
     {
-        if ($EstimatedEndDate == null) {
-            $this->EstimatedEndDate = null;
-        } else {
-            $this->EstimatedEndDate = $EstimatedEndDate->format(\DateTime::ATOM);
-        }
+        $this->EstimatedEndDate = $EstimatedEndDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -358,13 +370,9 @@ class ProjectFindResult
      * @param \DateTime $ClosedDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectFindResult
      */
-    public function setClosedDate(\DateTime $ClosedDate = null)
+    public function setClosedDate(\DateTime $ClosedDate)
     {
-        if ($ClosedDate == null) {
-            $this->ClosedDate = null;
-        } else {
-            $this->ClosedDate = $ClosedDate->format(\DateTime::ATOM);
-        }
+        $this->ClosedDate = $ClosedDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -424,13 +432,9 @@ class ProjectFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

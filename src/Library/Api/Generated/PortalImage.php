@@ -60,9 +60,32 @@ class PortalImage
      */
     protected $ReportLogo = null;
 
-    public function __construct()
+    /**
+     * @param PortalImageBase $IconServiceEntry
+     * @param PortalImageBase $IconCompanyEntries
+     * @param PortalImageBase $IconSelfHelp
+     * @param PortalImageBase $IconKnowledgebase
+     * @param PortalImageBase $IconMembers
+     * @param PortalImageBase $IconInvoiceSearch
+     * @param PortalImageBase $IconReports
+     * @param PortalImageBase $LoginLogo
+     * @param PortalImageBase $PortalLogo
+     * @param PortalImageBase $LoginMasthead
+     * @param PortalImageBase $ReportLogo
+     */
+    public function __construct(PortalImageBase $IconServiceEntry = null, PortalImageBase $IconCompanyEntries = null, PortalImageBase $IconSelfHelp = null, PortalImageBase $IconKnowledgebase = null, PortalImageBase $IconMembers = null, PortalImageBase $IconInvoiceSearch = null, PortalImageBase $IconReports = null, PortalImageBase $LoginLogo = null, PortalImageBase $PortalLogo = null, PortalImageBase $LoginMasthead = null, PortalImageBase $ReportLogo = null)
     {
-
+        $this->IconServiceEntry   = $IconServiceEntry;
+        $this->IconCompanyEntries = $IconCompanyEntries;
+        $this->IconSelfHelp       = $IconSelfHelp;
+        $this->IconKnowledgebase  = $IconKnowledgebase;
+        $this->IconMembers        = $IconMembers;
+        $this->IconInvoiceSearch  = $IconInvoiceSearch;
+        $this->IconReports        = $IconReports;
+        $this->LoginLogo          = $LoginLogo;
+        $this->PortalLogo         = $PortalLogo;
+        $this->LoginMasthead      = $LoginMasthead;
+        $this->ReportLogo         = $ReportLogo;
     }
 
     /**

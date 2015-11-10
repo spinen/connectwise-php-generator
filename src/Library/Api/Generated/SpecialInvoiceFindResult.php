@@ -117,10 +117,26 @@ class SpecialInvoiceFindResult
 
     /**
      * @param int $Id
+     * @param string $InvoiceNumber
+     * @param string $ApplyToType
+     * @param string $CustomerPO
+     * @param string $InvoiceTypeIdentifier
+     * @param string $InvoiceType
+     * @param string $BillingStatus
+     * @param string $BillingTerms
+     * @param string $Attention
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $InvoiceNumber = null, $ApplyToType = null, $CustomerPO = null, $InvoiceTypeIdentifier = null, $InvoiceType = null, $BillingStatus = null, $BillingTerms = null, $Attention = null)
     {
-        $this->Id = $Id;
+        $this->Id                    = $Id;
+        $this->InvoiceNumber         = $InvoiceNumber;
+        $this->ApplyToType           = $ApplyToType;
+        $this->CustomerPO            = $CustomerPO;
+        $this->InvoiceTypeIdentifier = $InvoiceTypeIdentifier;
+        $this->InvoiceType           = $InvoiceType;
+        $this->BillingStatus         = $BillingStatus;
+        $this->BillingTerms          = $BillingTerms;
+        $this->Attention             = $Attention;
     }
 
     /**
@@ -179,13 +195,9 @@ class SpecialInvoiceFindResult
      * @param \DateTime $InvoiceDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\SpecialInvoiceFindResult
      */
-    public function setInvoiceDate(\DateTime $InvoiceDate = null)
+    public function setInvoiceDate(\DateTime $InvoiceDate)
     {
-        if ($InvoiceDate == null) {
-            $this->InvoiceDate = null;
-        } else {
-            $this->InvoiceDate = $InvoiceDate->format(\DateTime::ATOM);
-        }
+        $this->InvoiceDate = $InvoiceDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -353,13 +365,9 @@ class SpecialInvoiceFindResult
      * @param \DateTime $DueDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\SpecialInvoiceFindResult
      */
-    public function setDueDate(\DateTime $DueDate = null)
+    public function setDueDate(\DateTime $DueDate)
     {
-        if ($DueDate == null) {
-            $this->DueDate = null;
-        } else {
-            $this->DueDate = $DueDate->format(\DateTime::ATOM);
-        }
+        $this->DueDate = $DueDate->format(\DateTime::ATOM);
         return $this;
     }
 

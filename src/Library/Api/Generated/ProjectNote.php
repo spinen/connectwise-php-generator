@@ -33,13 +33,15 @@ class ProjectNote
     /**
      * @param int $Id
      * @param int $ProjectId
+     * @param string $Notes
      * @param int $NoteTypeId
      * @param boolean $Flag
      */
-    public function __construct($Id = null, $ProjectId = null, $NoteTypeId = null, $Flag = null)
+    public function __construct($Id = null, $ProjectId = null, $Notes = null, $NoteTypeId = null, $Flag = null)
     {
         $this->Id         = $Id;
         $this->ProjectId  = $ProjectId;
+        $this->Notes      = $Notes;
         $this->NoteTypeId = $NoteTypeId;
         $this->Flag       = $Flag;
     }

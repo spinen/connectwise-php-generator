@@ -27,7 +27,7 @@ class ArrayOfMemberFindResult
      * @param MemberFindResult[] $MemberFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfMemberFindResult
      */
-    public function setMemberFindResult(array $MemberFindResult = null)
+    public function setMemberFindResult(array $MemberFindResult)
     {
         $this->MemberFindResult = $MemberFindResult;
         return $this;

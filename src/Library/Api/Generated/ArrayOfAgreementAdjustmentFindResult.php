@@ -27,7 +27,7 @@ class ArrayOfAgreementAdjustmentFindResult
      * @param AgreementAdjustmentFindResult[] $AgreementAdjustmentFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfAgreementAdjustmentFindResult
      */
-    public function setAgreementAdjustmentFindResult(array $AgreementAdjustmentFindResult = null)
+    public function setAgreementAdjustmentFindResult(array $AgreementAdjustmentFindResult)
     {
         $this->AgreementAdjustmentFindResult = $AgreementAdjustmentFindResult;
         return $this;

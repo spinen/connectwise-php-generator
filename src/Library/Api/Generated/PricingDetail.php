@@ -57,10 +57,12 @@ class PricingDetail
 
     /**
      * @param int $Id
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id        = $Id;
+        $this->UpdatedBy = $UpdatedBy;
     }
 
     /**
@@ -173,13 +175,9 @@ class PricingDetail
      * @param \DateTime $StartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PricingDetail
      */
-    public function setStartDate(\DateTime $StartDate = null)
+    public function setStartDate(\DateTime $StartDate)
     {
-        if ($StartDate == null) {
-            $this->StartDate = null;
-        } else {
-            $this->StartDate = $StartDate->format(\DateTime::ATOM);
-        }
+        $this->StartDate = $StartDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -203,13 +201,9 @@ class PricingDetail
      * @param \DateTime $EndDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PricingDetail
      */
-    public function setEndDate(\DateTime $EndDate = null)
+    public function setEndDate(\DateTime $EndDate)
     {
-        if ($EndDate == null) {
-            $this->EndDate = null;
-        } else {
-            $this->EndDate = $EndDate->format(\DateTime::ATOM);
-        }
+        $this->EndDate = $EndDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -251,13 +245,9 @@ class PricingDetail
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\PricingDetail
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

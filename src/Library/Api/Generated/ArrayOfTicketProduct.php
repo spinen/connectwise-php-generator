@@ -27,7 +27,7 @@ class ArrayOfTicketProduct
      * @param TicketProduct[] $TicketProduct
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfTicketProduct
      */
-    public function setTicketProduct(array $TicketProduct = null)
+    public function setTicketProduct(array $TicketProduct)
     {
         $this->TicketProduct = $TicketProduct;
         return $this;

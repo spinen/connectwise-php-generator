@@ -186,9 +186,37 @@ class ServiceTicket extends TicketBase
     protected $IsInSla = null;
 
     /**
+     * @param string $CompanyName
+     * @param string $ContactName
+     * @param string $AddressLine1
+     * @param string $AddressLine2
+     * @param string $City
+     * @param string $StateIdentifier
+     * @param string $Zip
+     * @param string $Country
+     * @param string $Board
+     * @param string $TicketStatus
+     * @param string $StatusName
      * @param boolean $ClosedFlag
+     * @param string $Type
+     * @param string $ServiceType
+     * @param string $ServiceSubType
+     * @param string $ServiceItem
+     * @param string $Priority
+     * @param string $Location
+     * @param string $Source
+     * @param string $Summary
+     * @param string $DetailDescription
+     * @param string $InternalDescription
+     * @param string $ResolutionDescription
+     * @param string $SiteName
      * @param boolean $Approved
+     * @param string $ClosedBy
+     * @param string $UpdatedBy
      * @param boolean $EmergencyFlag
+     * @param string $EnteredBy
+     * @param string $RecordType
+     * @param string $CompanyIdentifier
      * @param int $Id
      * @param \DateTime $DateReq
      * @param \DateTime $DateReqUtc
@@ -196,25 +224,54 @@ class ServiceTicket extends TicketBase
      * @param \DateTime $SubDateAccepted
      * @param \DateTime $SubDateAcceptedUtc
      * @param boolean $CustomerUpdatedFlag
+     * @param string $ContactPhoneNumber
+     * @param string $ContactPhoneExtension
+     * @param string $ContactEmailAddress
+     * @param string $Severity
+     * @param string $Impact
+     * @param string $NewTicketContactEmailLookup
+     * @param string $ExternalXRef
      * @param SrBillingMethod $SubBillingMethod
      * @param boolean $ProcessNotifications
+     * @param ArrayOfTicketConfiguration $Configurations
+     * @param ArrayOfTicketNote $DetailNotes
+     * @param ArrayOfTicketNote $InternalAnalysisNotes
+     * @param ArrayOfTicketNote $ResolutionNotes
+     * @param ArrayOfTicketTask $TaskItems
+     * @param ArrayOfDocumentInfo $Documents
      * @param boolean $SkipCallback
      * @param int $PortalTypeId
+     * @param string $PoNumber
      */
-    public function __construct($ClosedFlag = null, $Approved = null, $EmergencyFlag = null, $Id = null, \DateTime $DateReq = null, \DateTime $DateReqUtc = null, $SubBillingAmount = null, \DateTime $SubDateAccepted = null, \DateTime $SubDateAcceptedUtc = null, $CustomerUpdatedFlag = null, SrBillingMethod $SubBillingMethod = null, $ProcessNotifications = null, $SkipCallback = null, $PortalTypeId = null)
+    public function __construct($CompanyName = null, $ContactName = null, $AddressLine1 = null, $AddressLine2 = null, $City = null, $StateIdentifier = null, $Zip = null, $Country = null, $Board = null, $TicketStatus = null, $StatusName = null, $ClosedFlag = null, $Type = null, $ServiceType = null, $ServiceSubType = null, $ServiceItem = null, $Priority = null, $Location = null, $Source = null, $Summary = null, $DetailDescription = null, $InternalDescription = null, $ResolutionDescription = null, $SiteName = null, $Approved = null, $ClosedBy = null, $UpdatedBy = null, $EmergencyFlag = null, $EnteredBy = null, $RecordType = null, $CompanyIdentifier = null, $Id = null, \DateTime $DateReq = null, \DateTime $DateReqUtc = null, $SubBillingAmount = null, \DateTime $SubDateAccepted = null, \DateTime $SubDateAcceptedUtc = null, $CustomerUpdatedFlag = null, $ContactPhoneNumber = null, $ContactPhoneExtension = null, $ContactEmailAddress = null, $Severity = null, $Impact = null, $NewTicketContactEmailLookup = null, $ExternalXRef = null, SrBillingMethod $SubBillingMethod = null, $ProcessNotifications = null, $Configurations = null, $DetailNotes = null, $InternalAnalysisNotes = null, $ResolutionNotes = null, $TaskItems = null, $Documents = null, $SkipCallback = null, $PortalTypeId = null, $PoNumber = null)
     {
-        parent::__construct($ClosedFlag, $Approved, $EmergencyFlag);
-        $this->Id                   = $Id;
-        $this->DateReq              = $DateReq ? $DateReq->format(\DateTime::ATOM) : null;
-        $this->DateReqUtc           = $DateReqUtc ? $DateReqUtc->format(\DateTime::ATOM) : null;
-        $this->SubBillingAmount     = $SubBillingAmount;
-        $this->SubDateAccepted      = $SubDateAccepted ? $SubDateAccepted->format(\DateTime::ATOM) : null;
-        $this->SubDateAcceptedUtc   = $SubDateAcceptedUtc ? $SubDateAcceptedUtc->format(\DateTime::ATOM) : null;
-        $this->CustomerUpdatedFlag  = $CustomerUpdatedFlag;
-        $this->SubBillingMethod     = $SubBillingMethod;
-        $this->ProcessNotifications = $ProcessNotifications;
-        $this->SkipCallback         = $SkipCallback;
-        $this->PortalTypeId         = $PortalTypeId;
+        parent::__construct($CompanyName, $ContactName, $AddressLine1, $AddressLine2, $City, $StateIdentifier, $Zip, $Country, $Board, $TicketStatus, $StatusName, $ClosedFlag, $Type, $ServiceType, $ServiceSubType, $ServiceItem, $Priority, $Location, $Source, $Summary, $DetailDescription, $InternalDescription, $ResolutionDescription, $SiteName, $Approved, $ClosedBy, $UpdatedBy, $EmergencyFlag, $EnteredBy, $RecordType);
+        $this->CompanyIdentifier           = $CompanyIdentifier;
+        $this->Id                          = $Id;
+        $this->DateReq                     = $DateReq ? $DateReq->format(\DateTime::ATOM) : null;
+        $this->DateReqUtc                  = $DateReqUtc ? $DateReqUtc->format(\DateTime::ATOM) : null;
+        $this->SubBillingAmount            = $SubBillingAmount;
+        $this->SubDateAccepted             = $SubDateAccepted ? $SubDateAccepted->format(\DateTime::ATOM) : null;
+        $this->SubDateAcceptedUtc          = $SubDateAcceptedUtc ? $SubDateAcceptedUtc->format(\DateTime::ATOM) : null;
+        $this->CustomerUpdatedFlag         = $CustomerUpdatedFlag;
+        $this->ContactPhoneNumber          = $ContactPhoneNumber;
+        $this->ContactPhoneExtension       = $ContactPhoneExtension;
+        $this->ContactEmailAddress         = $ContactEmailAddress;
+        $this->Severity                    = $Severity;
+        $this->Impact                      = $Impact;
+        $this->NewTicketContactEmailLookup = $NewTicketContactEmailLookup;
+        $this->ExternalXRef                = $ExternalXRef;
+        $this->SubBillingMethod            = $SubBillingMethod;
+        $this->ProcessNotifications        = $ProcessNotifications;
+        $this->Configurations              = $Configurations;
+        $this->DetailNotes                 = $DetailNotes;
+        $this->InternalAnalysisNotes       = $InternalAnalysisNotes;
+        $this->ResolutionNotes             = $ResolutionNotes;
+        $this->TaskItems                   = $TaskItems;
+        $this->Documents                   = $Documents;
+        $this->SkipCallback                = $SkipCallback;
+        $this->PortalTypeId                = $PortalTypeId;
+        $this->PoNumber                    = $PoNumber;
     }
 
     /**
@@ -557,13 +614,9 @@ class ServiceTicket extends TicketBase
      * @param \DateTime $DateResolvedUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\ServiceTicket
      */
-    public function setDateResolvedUTC(\DateTime $DateResolvedUTC = null)
+    public function setDateResolvedUTC(\DateTime $DateResolvedUTC)
     {
-        if ($DateResolvedUTC == null) {
-            $this->DateResolvedUTC = null;
-        } else {
-            $this->DateResolvedUTC = $DateResolvedUTC->format(\DateTime::ATOM);
-        }
+        $this->DateResolvedUTC = $DateResolvedUTC->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -587,13 +640,9 @@ class ServiceTicket extends TicketBase
      * @param \DateTime $DateResplanUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\ServiceTicket
      */
-    public function setDateResplanUTC(\DateTime $DateResplanUTC = null)
+    public function setDateResplanUTC(\DateTime $DateResplanUTC)
     {
-        if ($DateResplanUTC == null) {
-            $this->DateResplanUTC = null;
-        } else {
-            $this->DateResplanUTC = $DateResplanUTC->format(\DateTime::ATOM);
-        }
+        $this->DateResplanUTC = $DateResplanUTC->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -617,13 +666,9 @@ class ServiceTicket extends TicketBase
      * @param \DateTime $DateRespondedUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\ServiceTicket
      */
-    public function setDateRespondedUTC(\DateTime $DateRespondedUTC = null)
+    public function setDateRespondedUTC(\DateTime $DateRespondedUTC)
     {
-        if ($DateRespondedUTC == null) {
-            $this->DateRespondedUTC = null;
-        } else {
-            $this->DateRespondedUTC = $DateRespondedUTC->format(\DateTime::ATOM);
-        }
+        $this->DateRespondedUTC = $DateRespondedUTC->format(\DateTime::ATOM);
         return $this;
     }
 

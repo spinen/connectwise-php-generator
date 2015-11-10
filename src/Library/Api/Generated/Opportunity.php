@@ -227,36 +227,92 @@ class Opportunity
 
     /**
      * @param int $Id
+     * @param string $OpportunityName
      * @param int $CompanyId
+     * @param string $CompanyIdentifier
      * @param int $ContactId
+     * @param string $Stage
      * @param \DateTime $PipelineChangeDate
+     * @param string $Rating
      * @param int $CloseProbability
+     * @param string $Source
      * @param \DateTime $DateBecameLead
      * @param \DateTime $ExpectedCloseDate
+     * @param string $BusinessUnit
      * @param \DateTime $DateClosed
+     * @param string $ClosedBy
+     * @param string $EnteredBy
+     * @param string $Description
+     * @param CompanyAddress $CompanyAddress
+     * @param CompanyAddress $RemitAddress
+     * @param string $Status
+     * @param string $OpportunityType
+     * @param string $ProjectName
+     * @param string $Location
+     * @param string $MarketingCampaign
+     * @param string $AgreementType
      * @param int $TicketId
+     * @param string $Urgency
+     * @param string $PrimarySalesRep
+     * @param string $SecondarySalesRep
+     * @param string $PrimarySalesRepFullName
+     * @param string $SecondarySalesRepFullName
      * @param \DateTime $LastUpdated
+     * @param string $CustomerPO
      * @param int $ApprovedById
      * @param \DateTime $ApprovedDate
      * @param int $RejectedById
      * @param \DateTime $RejectedDate
+     * @param ArrayOfNote $Notes
+     * @param ArrayOfOpportunityItem $OpportunityItems
+     * @param ArrayOfForecastDetail $ForecastDetails
+     * @param ArrayOfOpportunityCustomField $OpportunityCustomFields
+     * @param OpportunityTeam $OpportunityTeam
      */
-    public function __construct($Id = null, $CompanyId = null, $ContactId = null, \DateTime $PipelineChangeDate = null, $CloseProbability = null, \DateTime $DateBecameLead = null, \DateTime $ExpectedCloseDate = null, \DateTime $DateClosed = null, $TicketId = null, \DateTime $LastUpdated = null, $ApprovedById = null, \DateTime $ApprovedDate = null, $RejectedById = null, \DateTime $RejectedDate = null)
+    public function __construct($Id = null, $OpportunityName = null, $CompanyId = null, $CompanyIdentifier = null, $ContactId = null, $Stage = null, \DateTime $PipelineChangeDate = null, $Rating = null, $CloseProbability = null, $Source = null, \DateTime $DateBecameLead = null, \DateTime $ExpectedCloseDate = null, $BusinessUnit = null, \DateTime $DateClosed = null, $ClosedBy = null, $EnteredBy = null, $Description = null, CompanyAddress $CompanyAddress = null, CompanyAddress $RemitAddress = null, $Status = null, $OpportunityType = null, $ProjectName = null, $Location = null, $MarketingCampaign = null, $AgreementType = null, $TicketId = null, $Urgency = null, $PrimarySalesRep = null, $SecondarySalesRep = null, $PrimarySalesRepFullName = null, $SecondarySalesRepFullName = null, \DateTime $LastUpdated = null, $CustomerPO = null, $ApprovedById = null, \DateTime $ApprovedDate = null, $RejectedById = null, \DateTime $RejectedDate = null, $Notes = null, $OpportunityItems = null, $ForecastDetails = null, $OpportunityCustomFields = null, OpportunityTeam $OpportunityTeam = null)
     {
-        $this->Id                 = $Id;
-        $this->CompanyId          = $CompanyId;
-        $this->ContactId          = $ContactId;
-        $this->PipelineChangeDate = $PipelineChangeDate ? $PipelineChangeDate->format(\DateTime::ATOM) : null;
-        $this->CloseProbability   = $CloseProbability;
-        $this->DateBecameLead     = $DateBecameLead ? $DateBecameLead->format(\DateTime::ATOM) : null;
-        $this->ExpectedCloseDate  = $ExpectedCloseDate ? $ExpectedCloseDate->format(\DateTime::ATOM) : null;
-        $this->DateClosed         = $DateClosed ? $DateClosed->format(\DateTime::ATOM) : null;
-        $this->TicketId           = $TicketId;
-        $this->LastUpdated        = $LastUpdated ? $LastUpdated->format(\DateTime::ATOM) : null;
-        $this->ApprovedById       = $ApprovedById;
-        $this->ApprovedDate       = $ApprovedDate ? $ApprovedDate->format(\DateTime::ATOM) : null;
-        $this->RejectedById       = $RejectedById;
-        $this->RejectedDate       = $RejectedDate ? $RejectedDate->format(\DateTime::ATOM) : null;
+        $this->Id                        = $Id;
+        $this->OpportunityName           = $OpportunityName;
+        $this->CompanyId                 = $CompanyId;
+        $this->CompanyIdentifier         = $CompanyIdentifier;
+        $this->ContactId                 = $ContactId;
+        $this->Stage                     = $Stage;
+        $this->PipelineChangeDate        = $PipelineChangeDate ? $PipelineChangeDate->format(\DateTime::ATOM) : null;
+        $this->Rating                    = $Rating;
+        $this->CloseProbability          = $CloseProbability;
+        $this->Source                    = $Source;
+        $this->DateBecameLead            = $DateBecameLead ? $DateBecameLead->format(\DateTime::ATOM) : null;
+        $this->ExpectedCloseDate         = $ExpectedCloseDate ? $ExpectedCloseDate->format(\DateTime::ATOM) : null;
+        $this->BusinessUnit              = $BusinessUnit;
+        $this->DateClosed                = $DateClosed ? $DateClosed->format(\DateTime::ATOM) : null;
+        $this->ClosedBy                  = $ClosedBy;
+        $this->EnteredBy                 = $EnteredBy;
+        $this->Description               = $Description;
+        $this->CompanyAddress            = $CompanyAddress;
+        $this->RemitAddress              = $RemitAddress;
+        $this->Status                    = $Status;
+        $this->OpportunityType           = $OpportunityType;
+        $this->ProjectName               = $ProjectName;
+        $this->Location                  = $Location;
+        $this->MarketingCampaign         = $MarketingCampaign;
+        $this->AgreementType             = $AgreementType;
+        $this->TicketId                  = $TicketId;
+        $this->Urgency                   = $Urgency;
+        $this->PrimarySalesRep           = $PrimarySalesRep;
+        $this->SecondarySalesRep         = $SecondarySalesRep;
+        $this->PrimarySalesRepFullName   = $PrimarySalesRepFullName;
+        $this->SecondarySalesRepFullName = $SecondarySalesRepFullName;
+        $this->LastUpdated               = $LastUpdated ? $LastUpdated->format(\DateTime::ATOM) : null;
+        $this->CustomerPO                = $CustomerPO;
+        $this->ApprovedById              = $ApprovedById;
+        $this->ApprovedDate              = $ApprovedDate ? $ApprovedDate->format(\DateTime::ATOM) : null;
+        $this->RejectedById              = $RejectedById;
+        $this->RejectedDate              = $RejectedDate ? $RejectedDate->format(\DateTime::ATOM) : null;
+        $this->Notes                     = $Notes;
+        $this->OpportunityItems          = $OpportunityItems;
+        $this->ForecastDetails           = $ForecastDetails;
+        $this->OpportunityCustomFields   = $OpportunityCustomFields;
+        $this->OpportunityTeam           = $OpportunityTeam;
     }
 
     /**
@@ -493,13 +549,9 @@ class Opportunity
      * @param \DateTime $DateBecameLeadUtc
      * @return \Spinen\ConnectWise\Library\Api\Generated\Opportunity
      */
-    public function setDateBecameLeadUtc(\DateTime $DateBecameLeadUtc = null)
+    public function setDateBecameLeadUtc(\DateTime $DateBecameLeadUtc)
     {
-        if ($DateBecameLeadUtc == null) {
-            $this->DateBecameLeadUtc = null;
-        } else {
-            $this->DateBecameLeadUtc = $DateBecameLeadUtc->format(\DateTime::ATOM);
-        }
+        $this->DateBecameLeadUtc = $DateBecameLeadUtc->format(\DateTime::ATOM);
         return $this;
     }
 

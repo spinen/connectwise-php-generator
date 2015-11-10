@@ -47,10 +47,20 @@ class MemberFindResult
 
     /**
      * @param int $Id
+     * @param string $MemberIdentifier
+     * @param string $EmailAddress
+     * @param string $FirstName
+     * @param string $LastName
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $MemberIdentifier = null, $EmailAddress = null, $FirstName = null, $LastName = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id               = $Id;
+        $this->MemberIdentifier = $MemberIdentifier;
+        $this->EmailAddress     = $EmailAddress;
+        $this->FirstName        = $FirstName;
+        $this->LastName         = $LastName;
+        $this->UpdatedBy        = $UpdatedBy;
     }
 
     /**
@@ -181,13 +191,9 @@ class MemberFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\MemberFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

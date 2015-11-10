@@ -27,7 +27,7 @@ class ArrayOfExpenseDetail
      * @param ExpenseDetail[] $ExpenseDetail
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfExpenseDetail
      */
-    public function setExpenseDetail(array $ExpenseDetail = null)
+    public function setExpenseDetail(array $ExpenseDetail)
     {
         $this->ExpenseDetail = $ExpenseDetail;
         return $this;

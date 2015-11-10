@@ -27,7 +27,7 @@ class ArrayOfConfigurationFindResult
      * @param ConfigurationFindResult[] $ConfigurationFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfConfigurationFindResult
      */
-    public function setConfigurationFindResult(array $ConfigurationFindResult = null)
+    public function setConfigurationFindResult(array $ConfigurationFindResult)
     {
         $this->ConfigurationFindResult = $ConfigurationFindResult;
         return $this;

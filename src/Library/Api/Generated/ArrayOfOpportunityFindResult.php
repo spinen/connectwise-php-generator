@@ -27,7 +27,7 @@ class ArrayOfOpportunityFindResult
      * @param OpportunityFindResult[] $OpportunityFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfOpportunityFindResult
      */
-    public function setOpportunityFindResult(array $OpportunityFindResult = null)
+    public function setOpportunityFindResult(array $OpportunityFindResult)
     {
         $this->OpportunityFindResult = $OpportunityFindResult;
         return $this;

@@ -27,7 +27,7 @@ class ArrayOfAgreementWorkTypeExclusion
      * @param AgreementWorkTypeExclusion[] $AgreementWorkTypeExclusion
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfAgreementWorkTypeExclusion
      */
-    public function setAgreementWorkTypeExclusion(array $AgreementWorkTypeExclusion = null)
+    public function setAgreementWorkTypeExclusion(array $AgreementWorkTypeExclusion)
     {
         $this->AgreementWorkTypeExclusion = $AgreementWorkTypeExclusion;
         return $this;

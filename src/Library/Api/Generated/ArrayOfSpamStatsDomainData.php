@@ -27,7 +27,7 @@ class ArrayOfSpamStatsDomainData
      * @param SpamStatsDomainData[] $SpamStatsDomainData
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfSpamStatsDomainData
      */
-    public function setSpamStatsDomainData(array $SpamStatsDomainData = null)
+    public function setSpamStatsDomainData(array $SpamStatsDomainData)
     {
         $this->SpamStatsDomainData = $SpamStatsDomainData;
         return $this;

@@ -51,6 +51,7 @@ class SpamStatsDomainData
     protected $TotalMessagesYTD = null;
 
     /**
+     * @param string $DomainName
      * @param int $SpamRemovedLast30Days
      * @param int $SpamRemovedYTD
      * @param int $EmailVirusesRemovedLast30Days
@@ -60,8 +61,9 @@ class SpamStatsDomainData
      * @param int $TotalMessagesLast30Days
      * @param int $TotalMessagesYTD
      */
-    public function __construct($SpamRemovedLast30Days = null, $SpamRemovedYTD = null, $EmailVirusesRemovedLast30Days = null, $EmailVirusesRemovedYTD = null, $AccountMessagesLast30Days = null, $AccountMessagesYTD = null, $TotalMessagesLast30Days = null, $TotalMessagesYTD = null)
+    public function __construct($DomainName = null, $SpamRemovedLast30Days = null, $SpamRemovedYTD = null, $EmailVirusesRemovedLast30Days = null, $EmailVirusesRemovedYTD = null, $AccountMessagesLast30Days = null, $AccountMessagesYTD = null, $TotalMessagesLast30Days = null, $TotalMessagesYTD = null)
     {
+        $this->DomainName                    = $DomainName;
         $this->SpamRemovedLast30Days         = $SpamRemovedLast30Days;
         $this->SpamRemovedYTD                = $SpamRemovedYTD;
         $this->EmailVirusesRemovedLast30Days = $EmailVirusesRemovedLast30Days;

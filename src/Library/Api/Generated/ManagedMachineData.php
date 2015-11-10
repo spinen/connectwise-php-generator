@@ -111,11 +111,47 @@ class ManagedMachineData
     protected $BillThisMachine = null;
 
     /**
+     * @param string $GroupIdentifier
+     * @param string $DeviceIdentifier
+     * @param string $ComputerName
+     * @param string $SerialNumber
+     * @param string $DateInstalled
+     * @param string $ModelNumber
+     * @param string $IPAddress
+     * @param string $DefaultGatewayIPAddress
+     * @param string $OSType
+     * @param string $OSInfo
+     * @param string $ProcessorDescription
+     * @param string $RamSize
+     * @param ArrayOfHardDrive $HardDrives
+     * @param string $LastUsernameLogin
+     * @param string $ManagementLink
+     * @param string $RemoteLink
      * @param boolean $IsActive
+     * @param string $MacAddress
+     * @param string $CustomField
      */
-    public function __construct($IsActive = null)
+    public function __construct($GroupIdentifier = null, $DeviceIdentifier = null, $ComputerName = null, $SerialNumber = null, $DateInstalled = null, $ModelNumber = null, $IPAddress = null, $DefaultGatewayIPAddress = null, $OSType = null, $OSInfo = null, $ProcessorDescription = null, $RamSize = null, $HardDrives = null, $LastUsernameLogin = null, $ManagementLink = null, $RemoteLink = null, $IsActive = null, $MacAddress = null, $CustomField = null)
     {
-        $this->IsActive = $IsActive;
+        $this->GroupIdentifier         = $GroupIdentifier;
+        $this->DeviceIdentifier        = $DeviceIdentifier;
+        $this->ComputerName            = $ComputerName;
+        $this->SerialNumber            = $SerialNumber;
+        $this->DateInstalled           = $DateInstalled;
+        $this->ModelNumber             = $ModelNumber;
+        $this->IPAddress               = $IPAddress;
+        $this->DefaultGatewayIPAddress = $DefaultGatewayIPAddress;
+        $this->OSType                  = $OSType;
+        $this->OSInfo                  = $OSInfo;
+        $this->ProcessorDescription    = $ProcessorDescription;
+        $this->RamSize                 = $RamSize;
+        $this->HardDrives              = $HardDrives;
+        $this->LastUsernameLogin       = $LastUsernameLogin;
+        $this->ManagementLink          = $ManagementLink;
+        $this->RemoteLink              = $RemoteLink;
+        $this->IsActive                = $IsActive;
+        $this->MacAddress              = $MacAddress;
+        $this->CustomField             = $CustomField;
     }
 
     /**
@@ -444,13 +480,9 @@ class ManagedMachineData
      * @param \DateTime $WarrantyExpirationDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ManagedMachineData
      */
-    public function setWarrantyExpirationDate(\DateTime $WarrantyExpirationDate = null)
+    public function setWarrantyExpirationDate(\DateTime $WarrantyExpirationDate)
     {
-        if ($WarrantyExpirationDate == null) {
-            $this->WarrantyExpirationDate = null;
-        } else {
-            $this->WarrantyExpirationDate = $WarrantyExpirationDate->format(\DateTime::ATOM);
-        }
+        $this->WarrantyExpirationDate = $WarrantyExpirationDate->format(\DateTime::ATOM);
         return $this;
     }
 

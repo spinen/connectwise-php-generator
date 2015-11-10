@@ -41,16 +41,23 @@ class CompanyAddress extends Address
     protected $DefaultShipFlag = null;
 
     /**
+     * @param ArrayOfString $StreetLines
+     * @param string $City
+     * @param string $State
+     * @param string $Zip
+     * @param string $Country
      * @param int $Id
      * @param boolean $DefaultFlag
      * @param int $CompanyId
+     * @param string $SiteName
      */
-    public function __construct($Id = null, $DefaultFlag = null, $CompanyId = null)
+    public function __construct($StreetLines = null, $City = null, $State = null, $Zip = null, $Country = null, $Id = null, $DefaultFlag = null, $CompanyId = null, $SiteName = null)
     {
-        parent::__construct();
+        parent::__construct($StreetLines, $City, $State, $Zip, $Country);
         $this->Id          = $Id;
         $this->DefaultFlag = $DefaultFlag;
         $this->CompanyId   = $CompanyId;
+        $this->SiteName    = $SiteName;
     }
 
     /**

@@ -6,30 +6,33 @@ class ArrayOfInt
 {
 
     /**
-     * @var int[] $int
+     * @var int[] $Id
      */
-    protected $int = null;
+    protected $Id = null;
 
-    public function __construct()
+    /**
+     * @param int[] $Id
+     */
+    public function __construct(array $Id = null)
     {
-
+        $this->Id = $Id;
     }
 
     /**
      * @return int[]
      */
-    public function getInt()
+    public function getId()
     {
-        return $this->int;
+        return $this->Id;
     }
 
     /**
-     * @param int[] $int
+     * @param int[] $Id
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfInt
      */
-    public function setInt(array $int = null)
+    public function setId(array $Id)
     {
-        $this->int = $int;
+        $this->Id = $Id;
         return $this;
     }
 

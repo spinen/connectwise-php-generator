@@ -27,7 +27,7 @@ class ArrayOfTicketConfiguration
      * @param TicketConfiguration[] $TicketConfiguration
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfTicketConfiguration
      */
-    public function setTicketConfiguration(array $TicketConfiguration = null)
+    public function setTicketConfiguration(array $TicketConfiguration)
     {
         $this->TicketConfiguration = $TicketConfiguration;
         return $this;

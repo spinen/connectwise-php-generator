@@ -28,11 +28,15 @@ class ForecastRevenueInfo
     /**
      * @param int $Id
      * @param int $OpportunityId
+     * @param ForecastItem $ForecastItem
+     * @param RecurringRevenueItem $RecurringRevenueItem
      */
-    public function __construct($Id = null, $OpportunityId = null)
+    public function __construct($Id = null, $OpportunityId = null, ForecastItem $ForecastItem = null, RecurringRevenueItem $RecurringRevenueItem = null)
     {
-        $this->Id            = $Id;
-        $this->OpportunityId = $OpportunityId;
+        $this->Id                   = $Id;
+        $this->OpportunityId        = $OpportunityId;
+        $this->ForecastItem         = $ForecastItem;
+        $this->RecurringRevenueItem = $RecurringRevenueItem;
     }
 
     /**

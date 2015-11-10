@@ -92,10 +92,16 @@ class MiscScheduleEntry
 
     /**
      * @param int $Id
+     * @param string $ScheduleDescription
+     * @param string $MemberIdentifier
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $ScheduleDescription = null, $MemberIdentifier = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id                  = $Id;
+        $this->ScheduleDescription = $ScheduleDescription;
+        $this->MemberIdentifier    = $MemberIdentifier;
+        $this->UpdatedBy           = $UpdatedBy;
     }
 
     /**
@@ -208,13 +214,9 @@ class MiscScheduleEntry
      * @param \DateTime $DateStart
      * @return \Spinen\ConnectWise\Library\Api\Generated\MiscScheduleEntry
      */
-    public function setDateStart(\DateTime $DateStart = null)
+    public function setDateStart(\DateTime $DateStart)
     {
-        if ($DateStart == null) {
-            $this->DateStart = null;
-        } else {
-            $this->DateStart = $DateStart->format(\DateTime::ATOM);
-        }
+        $this->DateStart = $DateStart->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -238,13 +240,9 @@ class MiscScheduleEntry
      * @param \DateTime $DateEnd
      * @return \Spinen\ConnectWise\Library\Api\Generated\MiscScheduleEntry
      */
-    public function setDateEnd(\DateTime $DateEnd = null)
+    public function setDateEnd(\DateTime $DateEnd)
     {
-        if ($DateEnd == null) {
-            $this->DateEnd = null;
-        } else {
-            $this->DateEnd = $DateEnd->format(\DateTime::ATOM);
-        }
+        $this->DateEnd = $DateEnd->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -394,13 +392,9 @@ class MiscScheduleEntry
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\MiscScheduleEntry
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -424,13 +418,9 @@ class MiscScheduleEntry
      * @param \DateTime $ClosedDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\MiscScheduleEntry
      */
-    public function setClosedDate(\DateTime $ClosedDate = null)
+    public function setClosedDate(\DateTime $ClosedDate)
     {
-        if ($ClosedDate == null) {
-            $this->ClosedDate = null;
-        } else {
-            $this->ClosedDate = $ClosedDate->format(\DateTime::ATOM);
-        }
+        $this->ClosedDate = $ClosedDate->format(\DateTime::ATOM);
         return $this;
     }
 

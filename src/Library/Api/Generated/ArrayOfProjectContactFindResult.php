@@ -27,7 +27,7 @@ class ArrayOfProjectContactFindResult
      * @param ProjectContactFindResult[] $ProjectContactFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProjectContactFindResult
      */
-    public function setProjectContactFindResult(array $ProjectContactFindResult = null)
+    public function setProjectContactFindResult(array $ProjectContactFindResult)
     {
         $this->ProjectContactFindResult = $ProjectContactFindResult;
         return $this;

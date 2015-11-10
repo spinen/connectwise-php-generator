@@ -27,7 +27,7 @@ class ArrayOfProjectNoteFindResult
      * @param ProjectNoteFindResult[] $ProjectNoteFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfProjectNoteFindResult
      */
-    public function setProjectNoteFindResult(array $ProjectNoteFindResult = null)
+    public function setProjectNoteFindResult(array $ProjectNoteFindResult)
     {
         $this->ProjectNoteFindResult = $ProjectNoteFindResult;
         return $this;

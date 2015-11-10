@@ -38,11 +38,15 @@ class RecurringRevenueItem
     /**
      * @param float $RecurringRevenue
      * @param float $RecurringCost
+     * @param string $CycleBasis
+     * @param string $BillCycle
      */
-    public function __construct($RecurringRevenue = null, $RecurringCost = null)
+    public function __construct($RecurringRevenue = null, $RecurringCost = null, $CycleBasis = null, $BillCycle = null)
     {
         $this->RecurringRevenue = $RecurringRevenue;
         $this->RecurringCost    = $RecurringCost;
+        $this->CycleBasis       = $CycleBasis;
+        $this->BillCycle        = $BillCycle;
     }
 
     /**
@@ -137,13 +141,9 @@ class RecurringRevenueItem
      * @param \DateTime $RecurringEndDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\RecurringRevenueItem
      */
-    public function setRecurringEndDate(\DateTime $RecurringEndDate = null)
+    public function setRecurringEndDate(\DateTime $RecurringEndDate)
     {
-        if ($RecurringEndDate == null) {
-            $this->RecurringEndDate = null;
-        } else {
-            $this->RecurringEndDate = $RecurringEndDate->format(\DateTime::ATOM);
-        }
+        $this->RecurringEndDate = $RecurringEndDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -167,13 +167,9 @@ class RecurringRevenueItem
      * @param \DateTime $RecurringStartDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\RecurringRevenueItem
      */
-    public function setRecurringStartDate(\DateTime $RecurringStartDate = null)
+    public function setRecurringStartDate(\DateTime $RecurringStartDate)
     {
-        if ($RecurringStartDate == null) {
-            $this->RecurringStartDate = null;
-        } else {
-            $this->RecurringStartDate = $RecurringStartDate->format(\DateTime::ATOM);
-        }
+        $this->RecurringStartDate = $RecurringStartDate->format(\DateTime::ATOM);
         return $this;
     }
 

@@ -21,11 +21,15 @@ class OppDocumentInfo
     protected $Content = null;
 
     /**
+     * @param string $FileName
      * @param boolean $isLink
+     * @param base64Binary $Content
      */
-    public function __construct($isLink = null)
+    public function __construct($FileName = null, $isLink = null, base64Binary $Content = null)
     {
-        $this->isLink = $isLink;
+        $this->FileName = $FileName;
+        $this->isLink   = $isLink;
+        $this->Content  = $Content;
     }
 
     /**

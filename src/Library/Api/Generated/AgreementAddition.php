@@ -122,10 +122,22 @@ class AgreementAddition
 
     /**
      * @param int $Id
+     * @param AdditionsProduct $AdditionsProduct
+     * @param string $SerialNumber
+     * @param string $InvoiceDescription
+     * @param string $Description
+     * @param string $UOM
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, AdditionsProduct $AdditionsProduct = null, $SerialNumber = null, $InvoiceDescription = null, $Description = null, $UOM = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id                 = $Id;
+        $this->AdditionsProduct   = $AdditionsProduct;
+        $this->SerialNumber       = $SerialNumber;
+        $this->InvoiceDescription = $InvoiceDescription;
+        $this->Description        = $Description;
+        $this->UOM                = $UOM;
+        $this->UpdatedBy          = $UpdatedBy;
     }
 
     /**
@@ -274,13 +286,9 @@ class AgreementAddition
      * @param \DateTime $EffectiveDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementAddition
      */
-    public function setEffectiveDate(\DateTime $EffectiveDate = null)
+    public function setEffectiveDate(\DateTime $EffectiveDate)
     {
-        if ($EffectiveDate == null) {
-            $this->EffectiveDate = null;
-        } else {
-            $this->EffectiveDate = $EffectiveDate->format(\DateTime::ATOM);
-        }
+        $this->EffectiveDate = $EffectiveDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -304,13 +312,9 @@ class AgreementAddition
      * @param \DateTime $CancelledDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementAddition
      */
-    public function setCancelledDate(\DateTime $CancelledDate = null)
+    public function setCancelledDate(\DateTime $CancelledDate)
     {
-        if ($CancelledDate == null) {
-            $this->CancelledDate = null;
-        } else {
-            $this->CancelledDate = $CancelledDate->format(\DateTime::ATOM);
-        }
+        $this->CancelledDate = $CancelledDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -568,13 +572,9 @@ class AgreementAddition
      * @param \DateTime $LastUpdate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementAddition
      */
-    public function setLastUpdate(\DateTime $LastUpdate = null)
+    public function setLastUpdate(\DateTime $LastUpdate)
     {
-        if ($LastUpdate == null) {
-            $this->LastUpdate = null;
-        } else {
-            $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
-        }
+        $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
         return $this;
     }
 

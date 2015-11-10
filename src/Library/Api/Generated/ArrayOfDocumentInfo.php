@@ -27,7 +27,7 @@ class ArrayOfDocumentInfo
      * @param DocumentInfo[] $DocumentInfo
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfDocumentInfo
      */
-    public function setDocumentInfo(array $DocumentInfo = null)
+    public function setDocumentInfo(array $DocumentInfo)
     {
         $this->DocumentInfo = $DocumentInfo;
         return $this;

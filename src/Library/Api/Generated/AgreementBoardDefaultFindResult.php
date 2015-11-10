@@ -43,11 +43,13 @@ class AgreementBoardDefaultFindResult
     /**
      * @param int $Id
      * @param int $BoardId
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null, $BoardId = null)
+    public function __construct($Id = null, $BoardId = null, $UpdatedBy = null)
     {
-        $this->Id      = $Id;
-        $this->BoardId = $BoardId;
+        $this->Id        = $Id;
+        $this->BoardId   = $BoardId;
+        $this->UpdatedBy = $UpdatedBy;
     }
 
     /**
@@ -178,13 +180,9 @@ class AgreementBoardDefaultFindResult
      * @param \DateTime $LastUpdate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementBoardDefaultFindResult
      */
-    public function setLastUpdate(\DateTime $LastUpdate = null)
+    public function setLastUpdate(\DateTime $LastUpdate)
     {
-        if ($LastUpdate == null) {
-            $this->LastUpdate = null;
-        } else {
-            $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
-        }
+        $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
         return $this;
     }
 

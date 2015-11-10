@@ -252,10 +252,64 @@ class TicketFindResult
 
     /**
      * @param int $Id
+     * @param string $CompanyName
+     * @param string $ContactName
+     * @param string $AddressLine1
+     * @param string $AddressLine2
+     * @param string $City
+     * @param string $StateIdentifier
+     * @param string $Zip
+     * @param string $Country
+     * @param string $BoardName
+     * @param string $TicketStatus
+     * @param string $StatusName
+     * @param string $Type
+     * @param string $SubType
+     * @param string $SubTypeItem
+     * @param string $Priority
+     * @param string $Location
+     * @param string $Source
+     * @param string $Summary
+     * @param string $Resources
+     * @param string $SiteName
+     * @param string $ClosedBy
+     * @param string $UpdatedBy
+     * @param string $RecordType
+     * @param string $Severity
+     * @param string $Impact
+     * @param string $ContactEmailAddress
+     * @param string $ContactPhoneNumber
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $CompanyName = null, $ContactName = null, $AddressLine1 = null, $AddressLine2 = null, $City = null, $StateIdentifier = null, $Zip = null, $Country = null, $BoardName = null, $TicketStatus = null, $StatusName = null, $Type = null, $SubType = null, $SubTypeItem = null, $Priority = null, $Location = null, $Source = null, $Summary = null, $Resources = null, $SiteName = null, $ClosedBy = null, $UpdatedBy = null, $RecordType = null, $Severity = null, $Impact = null, $ContactEmailAddress = null, $ContactPhoneNumber = null)
     {
-        $this->Id = $Id;
+        $this->Id                  = $Id;
+        $this->CompanyName         = $CompanyName;
+        $this->ContactName         = $ContactName;
+        $this->AddressLine1        = $AddressLine1;
+        $this->AddressLine2        = $AddressLine2;
+        $this->City                = $City;
+        $this->StateIdentifier     = $StateIdentifier;
+        $this->Zip                 = $Zip;
+        $this->Country             = $Country;
+        $this->BoardName           = $BoardName;
+        $this->TicketStatus        = $TicketStatus;
+        $this->StatusName          = $StatusName;
+        $this->Type                = $Type;
+        $this->SubType             = $SubType;
+        $this->SubTypeItem         = $SubTypeItem;
+        $this->Priority            = $Priority;
+        $this->Location            = $Location;
+        $this->Source              = $Source;
+        $this->Summary             = $Summary;
+        $this->Resources           = $Resources;
+        $this->SiteName            = $SiteName;
+        $this->ClosedBy            = $ClosedBy;
+        $this->UpdatedBy           = $UpdatedBy;
+        $this->RecordType          = $RecordType;
+        $this->Severity            = $Severity;
+        $this->Impact              = $Impact;
+        $this->ContactEmailAddress = $ContactEmailAddress;
+        $this->ContactPhoneNumber  = $ContactPhoneNumber;
     }
 
     /**
@@ -692,13 +746,9 @@ class TicketFindResult
      * @param \DateTime $EnteredDateUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketFindResult
      */
-    public function setEnteredDateUTC(\DateTime $EnteredDateUTC = null)
+    public function setEnteredDateUTC(\DateTime $EnteredDateUTC)
     {
-        if ($EnteredDateUTC == null) {
-            $this->EnteredDateUTC = null;
-        } else {
-            $this->EnteredDateUTC = $EnteredDateUTC->format(\DateTime::ATOM);
-        }
+        $this->EnteredDateUTC = $EnteredDateUTC->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -722,13 +772,9 @@ class TicketFindResult
      * @param \DateTime $LastUpdatedUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketFindResult
      */
-    public function setLastUpdatedUTC(\DateTime $LastUpdatedUTC = null)
+    public function setLastUpdatedUTC(\DateTime $LastUpdatedUTC)
     {
-        if ($LastUpdatedUTC == null) {
-            $this->LastUpdatedUTC = null;
-        } else {
-            $this->LastUpdatedUTC = $LastUpdatedUTC->format(\DateTime::ATOM);
-        }
+        $this->LastUpdatedUTC = $LastUpdatedUTC->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -770,13 +816,9 @@ class TicketFindResult
      * @param \DateTime $RequiredDateUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketFindResult
      */
-    public function setRequiredDateUTC(\DateTime $RequiredDateUTC = null)
+    public function setRequiredDateUTC(\DateTime $RequiredDateUTC)
     {
-        if ($RequiredDateUTC == null) {
-            $this->RequiredDateUTC = null;
-        } else {
-            $this->RequiredDateUTC = $RequiredDateUTC->format(\DateTime::ATOM);
-        }
+        $this->RequiredDateUTC = $RequiredDateUTC->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -800,13 +842,9 @@ class TicketFindResult
      * @param \DateTime $ClosedDateUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketFindResult
      */
-    public function setClosedDateUTC(\DateTime $ClosedDateUTC = null)
+    public function setClosedDateUTC(\DateTime $ClosedDateUTC)
     {
-        if ($ClosedDateUTC == null) {
-            $this->ClosedDateUTC = null;
-        } else {
-            $this->ClosedDateUTC = $ClosedDateUTC->format(\DateTime::ATOM);
-        }
+        $this->ClosedDateUTC = $ClosedDateUTC->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -1082,13 +1120,9 @@ class TicketFindResult
      * @param \DateTime $DateResolvedUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketFindResult
      */
-    public function setDateResolvedUTC(\DateTime $DateResolvedUTC = null)
+    public function setDateResolvedUTC(\DateTime $DateResolvedUTC)
     {
-        if ($DateResolvedUTC == null) {
-            $this->DateResolvedUTC = null;
-        } else {
-            $this->DateResolvedUTC = $DateResolvedUTC->format(\DateTime::ATOM);
-        }
+        $this->DateResolvedUTC = $DateResolvedUTC->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -1112,13 +1146,9 @@ class TicketFindResult
      * @param \DateTime $DateResplanUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketFindResult
      */
-    public function setDateResplanUTC(\DateTime $DateResplanUTC = null)
+    public function setDateResplanUTC(\DateTime $DateResplanUTC)
     {
-        if ($DateResplanUTC == null) {
-            $this->DateResplanUTC = null;
-        } else {
-            $this->DateResplanUTC = $DateResplanUTC->format(\DateTime::ATOM);
-        }
+        $this->DateResplanUTC = $DateResplanUTC->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -1142,13 +1172,9 @@ class TicketFindResult
      * @param \DateTime $DateRespondedUTC
      * @return \Spinen\ConnectWise\Library\Api\Generated\TicketFindResult
      */
-    public function setDateRespondedUTC(\DateTime $DateRespondedUTC = null)
+    public function setDateRespondedUTC(\DateTime $DateRespondedUTC)
     {
-        if ($DateRespondedUTC == null) {
-            $this->DateRespondedUTC = null;
-        } else {
-            $this->DateRespondedUTC = $DateRespondedUTC->format(\DateTime::ATOM);
-        }
+        $this->DateRespondedUTC = $DateRespondedUTC->format(\DateTime::ATOM);
         return $this;
     }
 

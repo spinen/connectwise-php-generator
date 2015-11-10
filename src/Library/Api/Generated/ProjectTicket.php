@@ -147,10 +147,30 @@ class ProjectTicket
 
     /**
      * @param int $Id
+     * @param string $Summary
+     * @param string $DetailDescription
+     * @param string $SiteNameIdentifier
+     * @param string $Status
+     * @param string $Billable
+     * @param string $AssignedResources
+     * @param string $RecType
+     * @param string $BillingMethod
+     * @param string $WbsCode
+     * @param ProjectTicketSummaryInfo $ProjectTicketSummaryInfo
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $Summary = null, $DetailDescription = null, $SiteNameIdentifier = null, $Status = null, $Billable = null, $AssignedResources = null, $RecType = null, $BillingMethod = null, $WbsCode = null, ProjectTicketSummaryInfo $ProjectTicketSummaryInfo = null)
     {
-        $this->Id = $Id;
+        $this->Id                       = $Id;
+        $this->Summary                  = $Summary;
+        $this->DetailDescription        = $DetailDescription;
+        $this->SiteNameIdentifier       = $SiteNameIdentifier;
+        $this->Status                   = $Status;
+        $this->Billable                 = $Billable;
+        $this->AssignedResources        = $AssignedResources;
+        $this->RecType                  = $RecType;
+        $this->BillingMethod            = $BillingMethod;
+        $this->WbsCode                  = $WbsCode;
+        $this->ProjectTicketSummaryInfo = $ProjectTicketSummaryInfo;
     }
 
     /**
@@ -515,13 +535,9 @@ class ProjectTicket
      * @param \DateTime $RequiredDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectTicket
      */
-    public function setRequiredDate(\DateTime $RequiredDate = null)
+    public function setRequiredDate(\DateTime $RequiredDate)
     {
-        if ($RequiredDate == null) {
-            $this->RequiredDate = null;
-        } else {
-            $this->RequiredDate = $RequiredDate->format(\DateTime::ATOM);
-        }
+        $this->RequiredDate = $RequiredDate->format(\DateTime::ATOM);
         return $this;
     }
 

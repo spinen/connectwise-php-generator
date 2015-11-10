@@ -61,18 +61,22 @@ class ConfigurationTypeQuestion
      * @param EntryTypes $EntryType
      * @param int $ConfigurationTypeId
      * @param float $SequenceNumber
+     * @param string $Question
      * @param boolean $RequiredFlag
      * @param boolean $InactiveFlag
+     * @param ArrayOfPossibleResponse $PossibleResponses
      */
-    public function __construct($Id = null, FieldTypes $FieldType = null, EntryTypes $EntryType = null, $ConfigurationTypeId = null, $SequenceNumber = null, $RequiredFlag = null, $InactiveFlag = null)
+    public function __construct($Id = null, FieldTypes $FieldType = null, EntryTypes $EntryType = null, $ConfigurationTypeId = null, $SequenceNumber = null, $Question = null, $RequiredFlag = null, $InactiveFlag = null, $PossibleResponses = null)
     {
         $this->Id                  = $Id;
         $this->FieldType           = $FieldType;
         $this->EntryType           = $EntryType;
         $this->ConfigurationTypeId = $ConfigurationTypeId;
         $this->SequenceNumber      = $SequenceNumber;
+        $this->Question            = $Question;
         $this->RequiredFlag        = $RequiredFlag;
         $this->InactiveFlag        = $InactiveFlag;
+        $this->PossibleResponses   = $PossibleResponses;
     }
 
     /**

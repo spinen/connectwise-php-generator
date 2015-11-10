@@ -20,9 +20,16 @@ class ApiCredentials
      */
     protected $IntegratorPassword = null;
 
-    public function __construct()
+    /**
+     * @param string $CompanyId
+     * @param string $IntegratorLoginId
+     * @param string $IntegratorPassword
+     */
+    public function __construct($CompanyId = null, $IntegratorLoginId = null, $IntegratorPassword = null)
     {
-
+        $this->CompanyId          = $CompanyId;
+        $this->IntegratorLoginId  = $IntegratorLoginId;
+        $this->IntegratorPassword = $IntegratorPassword;
     }
 
     /**

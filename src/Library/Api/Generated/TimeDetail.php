@@ -155,13 +155,41 @@ class TimeDetail
      * @param \DateTime $Date
      * @param \DateTime $EndTime
      * @param \DateTime $StartTime
+     * @param string $AgreementName
+     * @param string $AgreementType
+     * @param string $BusinessUnit
+     * @param string $ChargeTo
+     * @param string $InternalNotes
+     * @param string $Location
+     * @param string $MemberIdentifier
+     * @param string $MemberName
+     * @param string $Notes
+     * @param string $WorkRole
+     * @param string $WorkType
+     * @param string $ProjectName
+     * @param string $PhaseName
+     * @param string $TicketSummary
      */
-    public function __construct($Billable = null, \DateTime $Date = null, \DateTime $EndTime = null, \DateTime $StartTime = null)
+    public function __construct($Billable = null, \DateTime $Date = null, \DateTime $EndTime = null, \DateTime $StartTime = null, $AgreementName = null, $AgreementType = null, $BusinessUnit = null, $ChargeTo = null, $InternalNotes = null, $Location = null, $MemberIdentifier = null, $MemberName = null, $Notes = null, $WorkRole = null, $WorkType = null, $ProjectName = null, $PhaseName = null, $TicketSummary = null)
     {
-        $this->Billable  = $Billable;
-        $this->Date      = $Date ? $Date->format(\DateTime::ATOM) : null;
-        $this->EndTime   = $EndTime ? $EndTime->format(\DateTime::ATOM) : null;
-        $this->StartTime = $StartTime ? $StartTime->format(\DateTime::ATOM) : null;
+        $this->Billable         = $Billable;
+        $this->Date             = $Date ? $Date->format(\DateTime::ATOM) : null;
+        $this->EndTime          = $EndTime ? $EndTime->format(\DateTime::ATOM) : null;
+        $this->StartTime        = $StartTime ? $StartTime->format(\DateTime::ATOM) : null;
+        $this->AgreementName    = $AgreementName;
+        $this->AgreementType    = $AgreementType;
+        $this->BusinessUnit     = $BusinessUnit;
+        $this->ChargeTo         = $ChargeTo;
+        $this->InternalNotes    = $InternalNotes;
+        $this->Location         = $Location;
+        $this->MemberIdentifier = $MemberIdentifier;
+        $this->MemberName       = $MemberName;
+        $this->Notes            = $Notes;
+        $this->WorkRole         = $WorkRole;
+        $this->WorkType         = $WorkType;
+        $this->ProjectName      = $ProjectName;
+        $this->PhaseName        = $PhaseName;
+        $this->TicketSummary    = $TicketSummary;
     }
 
     /**

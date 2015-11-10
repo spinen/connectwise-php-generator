@@ -27,7 +27,7 @@ class ArrayOfCompanyFindResult
      * @param CompanyFindResult[] $CompanyFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfCompanyFindResult
      */
-    public function setCompanyFindResult(array $CompanyFindResult = null)
+    public function setCompanyFindResult(array $CompanyFindResult)
     {
         $this->CompanyFindResult = $CompanyFindResult;
         return $this;

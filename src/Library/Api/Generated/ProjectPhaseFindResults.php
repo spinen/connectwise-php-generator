@@ -77,10 +77,20 @@ class ProjectPhaseFindResults
 
     /**
      * @param int $Id
+     * @param string $Description
+     * @param string $Notes
+     * @param string $UpdatedBy
+     * @param string $BillingMethod
+     * @param string $TimeZoneName
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $Description = null, $Notes = null, $UpdatedBy = null, $BillingMethod = null, $TimeZoneName = null)
     {
-        $this->Id = $Id;
+        $this->Id            = $Id;
+        $this->Description   = $Description;
+        $this->Notes         = $Notes;
+        $this->UpdatedBy     = $UpdatedBy;
+        $this->BillingMethod = $BillingMethod;
+        $this->TimeZoneName  = $TimeZoneName;
     }
 
     /**
@@ -283,13 +293,9 @@ class ProjectPhaseFindResults
      * @param \DateTime $DateEntered
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectPhaseFindResults
      */
-    public function setDateEntered(\DateTime $DateEntered = null)
+    public function setDateEntered(\DateTime $DateEntered)
     {
-        if ($DateEntered == null) {
-            $this->DateEntered = null;
-        } else {
-            $this->DateEntered = $DateEntered->format(\DateTime::ATOM);
-        }
+        $this->DateEntered = $DateEntered->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -313,13 +319,9 @@ class ProjectPhaseFindResults
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectPhaseFindResults
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -343,13 +345,9 @@ class ProjectPhaseFindResults
      * @param \DateTime $DateDeadline
      * @return \Spinen\ConnectWise\Library\Api\Generated\ProjectPhaseFindResults
      */
-    public function setDateDeadline(\DateTime $DateDeadline = null)
+    public function setDateDeadline(\DateTime $DateDeadline)
     {
-        if ($DateDeadline == null) {
-            $this->DateDeadline = null;
-        } else {
-            $this->DateDeadline = $DateDeadline->format(\DateTime::ATOM);
-        }
+        $this->DateDeadline = $DateDeadline->format(\DateTime::ATOM);
         return $this;
     }
 

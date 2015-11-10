@@ -376,6 +376,14 @@ class PortalConfigSettings
     protected $DefaultFlag = null;
 
     /**
+     * @param string $PortalName
+     * @param string $BackgroundColor
+     * @param string $MenuColor
+     * @param string $ButtonColor
+     * @param string $HeaderColor
+     * @param string $WelcomeText
+     * @param string $ImageUrl
+     * @param string $PortalLanguage
      * @param boolean $SrTypeFlag
      * @param boolean $SrSubTypeFlag
      * @param boolean $SrSubTypeItemFlag
@@ -394,11 +402,22 @@ class PortalConfigSettings
      * @param boolean $SrOpenTasksFlag
      * @param boolean $SrClosedTasksFlag
      * @param boolean $StatementReportLocationIdSetByUser
+     * @param PortalImage $PortalImage
+     * @param CountryCaption $CountryCaption
+     * @param MouseOverData $MouseOverData
      * @param int $Id
      * @param boolean $DefaultFlag
      */
-    public function __construct($SrTypeFlag = null, $SrSubTypeFlag = null, $SrSubTypeItemFlag = null, $SrContactFlag = null, $SrEnteredFlag = null, $SrStatusFlag = null, $SrSiteFlag = null, $SrUpdateFlag = null, $SrResourcesFlag = null, $SrRequiredFlag = null, $ShowSlaInfoFlag = null, $SrBoardFlag = null, $SrBudgetFlag = null, $SrActualFlag = null, $SrApprovedFlag = null, $SrOpenTasksFlag = null, $SrClosedTasksFlag = null, $StatementReportLocationIdSetByUser = null, $Id = null, $DefaultFlag = null)
+    public function __construct($PortalName = null, $BackgroundColor = null, $MenuColor = null, $ButtonColor = null, $HeaderColor = null, $WelcomeText = null, $ImageUrl = null, $PortalLanguage = null, $SrTypeFlag = null, $SrSubTypeFlag = null, $SrSubTypeItemFlag = null, $SrContactFlag = null, $SrEnteredFlag = null, $SrStatusFlag = null, $SrSiteFlag = null, $SrUpdateFlag = null, $SrResourcesFlag = null, $SrRequiredFlag = null, $ShowSlaInfoFlag = null, $SrBoardFlag = null, $SrBudgetFlag = null, $SrActualFlag = null, $SrApprovedFlag = null, $SrOpenTasksFlag = null, $SrClosedTasksFlag = null, $StatementReportLocationIdSetByUser = null, PortalImage $PortalImage = null, CountryCaption $CountryCaption = null, MouseOverData $MouseOverData = null, $Id = null, $DefaultFlag = null)
     {
+        $this->PortalName                         = $PortalName;
+        $this->BackgroundColor                    = $BackgroundColor;
+        $this->MenuColor                          = $MenuColor;
+        $this->ButtonColor                        = $ButtonColor;
+        $this->HeaderColor                        = $HeaderColor;
+        $this->WelcomeText                        = $WelcomeText;
+        $this->ImageUrl                           = $ImageUrl;
+        $this->PortalLanguage                     = $PortalLanguage;
         $this->SrTypeFlag                         = $SrTypeFlag;
         $this->SrSubTypeFlag                      = $SrSubTypeFlag;
         $this->SrSubTypeItemFlag                  = $SrSubTypeItemFlag;
@@ -417,6 +436,9 @@ class PortalConfigSettings
         $this->SrOpenTasksFlag                    = $SrOpenTasksFlag;
         $this->SrClosedTasksFlag                  = $SrClosedTasksFlag;
         $this->StatementReportLocationIdSetByUser = $StatementReportLocationIdSetByUser;
+        $this->PortalImage                        = $PortalImage;
+        $this->CountryCaption                     = $CountryCaption;
+        $this->MouseOverData                      = $MouseOverData;
         $this->Id                                 = $Id;
         $this->DefaultFlag                        = $DefaultFlag;
     }

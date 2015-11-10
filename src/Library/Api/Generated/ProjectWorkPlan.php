@@ -10,9 +10,12 @@ class ProjectWorkPlan
      */
     protected $Phases = null;
 
-    public function __construct()
+    /**
+     * @param ArrayOfProjectPhase $Phases
+     */
+    public function __construct($Phases = null)
     {
-
+        $this->Phases = $Phases;
     }
 
     /**

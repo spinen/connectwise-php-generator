@@ -37,14 +37,20 @@ class ConfigurationType
 
     /**
      * @param int $Id
+     * @param string $Name
      * @param boolean $InactiveFlag
+     * @param string $UpdatedBy
      * @param boolean $SystemFlag
+     * @param ArrayOfConfigurationTypeQuestion $ConfigurationTypeQuestions
      */
-    public function __construct($Id = null, $InactiveFlag = null, $SystemFlag = null)
+    public function __construct($Id = null, $Name = null, $InactiveFlag = null, $UpdatedBy = null, $SystemFlag = null, $ConfigurationTypeQuestions = null)
     {
-        $this->Id           = $Id;
-        $this->InactiveFlag = $InactiveFlag;
-        $this->SystemFlag   = $SystemFlag;
+        $this->Id                         = $Id;
+        $this->Name                       = $Name;
+        $this->InactiveFlag               = $InactiveFlag;
+        $this->UpdatedBy                  = $UpdatedBy;
+        $this->SystemFlag                 = $SystemFlag;
+        $this->ConfigurationTypeQuestions = $ConfigurationTypeQuestions;
     }
 
     /**

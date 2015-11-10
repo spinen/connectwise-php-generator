@@ -127,10 +127,30 @@ class PurchaseOrderFindResult
 
     /**
      * @param int $Id
+     * @param string $VendorCompanyName
+     * @param string $VendorContactName
+     * @param string $VendorOrderNumber
+     * @param string $VendorInvoiceNumber
+     * @param string $ShipToWarehouse
+     * @param string $ShipToCompanyName
+     * @param string $TrackingNumber
+     * @param string $ShipmentMethod
+     * @param string $ShippingInstructions
+     * @param string $UpdateBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $VendorCompanyName = null, $VendorContactName = null, $VendorOrderNumber = null, $VendorInvoiceNumber = null, $ShipToWarehouse = null, $ShipToCompanyName = null, $TrackingNumber = null, $ShipmentMethod = null, $ShippingInstructions = null, $UpdateBy = null)
     {
-        $this->Id = $Id;
+        $this->Id                   = $Id;
+        $this->VendorCompanyName    = $VendorCompanyName;
+        $this->VendorContactName    = $VendorContactName;
+        $this->VendorOrderNumber    = $VendorOrderNumber;
+        $this->VendorInvoiceNumber  = $VendorInvoiceNumber;
+        $this->ShipToWarehouse      = $ShipToWarehouse;
+        $this->ShipToCompanyName    = $ShipToCompanyName;
+        $this->TrackingNumber       = $TrackingNumber;
+        $this->ShipmentMethod       = $ShipmentMethod;
+        $this->ShippingInstructions = $ShippingInstructions;
+        $this->UpdateBy             = $UpdateBy;
     }
 
     /**
@@ -387,13 +407,9 @@ class PurchaseOrderFindResult
      * @param \DateTime $PurchaseDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderFindResult
      */
-    public function setPurchaseDate(\DateTime $PurchaseDate = null)
+    public function setPurchaseDate(\DateTime $PurchaseDate)
     {
-        if ($PurchaseDate == null) {
-            $this->PurchaseDate = null;
-        } else {
-            $this->PurchaseDate = $PurchaseDate->format(\DateTime::ATOM);
-        }
+        $this->PurchaseDate = $PurchaseDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -453,13 +469,9 @@ class PurchaseOrderFindResult
      * @param \DateTime $ShipDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderFindResult
      */
-    public function setShipDate(\DateTime $ShipDate = null)
+    public function setShipDate(\DateTime $ShipDate)
     {
-        if ($ShipDate == null) {
-            $this->ShipDate = null;
-        } else {
-            $this->ShipDate = $ShipDate->format(\DateTime::ATOM);
-        }
+        $this->ShipDate = $ShipDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -555,13 +567,9 @@ class PurchaseOrderFindResult
      * @param \DateTime $DateClosed
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderFindResult
      */
-    public function setDateClosed(\DateTime $DateClosed = null)
+    public function setDateClosed(\DateTime $DateClosed)
     {
-        if ($DateClosed == null) {
-            $this->DateClosed = null;
-        } else {
-            $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
-        }
+        $this->DateClosed = $DateClosed->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -603,13 +611,9 @@ class PurchaseOrderFindResult
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderFindResult
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

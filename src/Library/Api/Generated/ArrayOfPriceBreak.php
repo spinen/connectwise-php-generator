@@ -27,7 +27,7 @@ class ArrayOfPriceBreak
      * @param PriceBreak[] $PriceBreak
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfPriceBreak
      */
-    public function setPriceBreak(array $PriceBreak = null)
+    public function setPriceBreak(array $PriceBreak)
     {
         $this->PriceBreak = $PriceBreak;
         return $this;

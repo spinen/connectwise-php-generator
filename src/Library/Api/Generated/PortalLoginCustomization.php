@@ -15,9 +15,14 @@ class PortalLoginCustomization
      */
     protected $Locale = null;
 
-    public function __construct()
+    /**
+     * @param string $LoginColor
+     * @param string $Locale
+     */
+    public function __construct($LoginColor = null, $Locale = null)
     {
-
+        $this->LoginColor = $LoginColor;
+        $this->Locale     = $Locale;
     }
 
     /**

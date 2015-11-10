@@ -122,10 +122,34 @@ class PurchaseOrderLineItem
 
     /**
      * @param int $Id
+     * @param string $ItemIdentifier
+     * @param string $Description
+     * @param string $UnitOfMeasure
+     * @param string $ShipmentMethod
+     * @param string $TrackingNumber
+     * @param string $VendorOrderNumber
+     * @param string $GenericSerialNumber
+     * @param ArrayOfString $SerialNumbers
+     * @param string $ShipToWarehouse
+     * @param string $ShipToWarehouseBin
+     * @param string $PackingSlip
+     * @param string $CancelReason
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $ItemIdentifier = null, $Description = null, $UnitOfMeasure = null, $ShipmentMethod = null, $TrackingNumber = null, $VendorOrderNumber = null, $GenericSerialNumber = null, $SerialNumbers = null, $ShipToWarehouse = null, $ShipToWarehouseBin = null, $PackingSlip = null, $CancelReason = null)
     {
-        $this->Id = $Id;
+        $this->Id                  = $Id;
+        $this->ItemIdentifier      = $ItemIdentifier;
+        $this->Description         = $Description;
+        $this->UnitOfMeasure       = $UnitOfMeasure;
+        $this->ShipmentMethod      = $ShipmentMethod;
+        $this->TrackingNumber      = $TrackingNumber;
+        $this->VendorOrderNumber   = $VendorOrderNumber;
+        $this->GenericSerialNumber = $GenericSerialNumber;
+        $this->SerialNumbers       = $SerialNumbers;
+        $this->ShipToWarehouse     = $ShipToWarehouse;
+        $this->ShipToWarehouseBin  = $ShipToWarehouseBin;
+        $this->PackingSlip         = $PackingSlip;
+        $this->CancelReason        = $CancelReason;
     }
 
     /**
@@ -310,13 +334,9 @@ class PurchaseOrderLineItem
      * @param \DateTime $ShipDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderLineItem
      */
-    public function setShipDate(\DateTime $ShipDate = null)
+    public function setShipDate(\DateTime $ShipDate)
     {
-        if ($ShipDate == null) {
-            $this->ShipDate = null;
-        } else {
-            $this->ShipDate = $ShipDate->format(\DateTime::ATOM);
-        }
+        $this->ShipDate = $ShipDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -376,13 +396,9 @@ class PurchaseOrderLineItem
      * @param \DateTime $ExpectedShipDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderLineItem
      */
-    public function setExpectedShipDate(\DateTime $ExpectedShipDate = null)
+    public function setExpectedShipDate(\DateTime $ExpectedShipDate)
     {
-        if ($ExpectedShipDate == null) {
-            $this->ExpectedShipDate = null;
-        } else {
-            $this->ExpectedShipDate = $ExpectedShipDate->format(\DateTime::ATOM);
-        }
+        $this->ExpectedShipDate = $ExpectedShipDate->format(\DateTime::ATOM);
         return $this;
     }
 
@@ -568,13 +584,9 @@ class PurchaseOrderLineItem
      * @param \DateTime $ReceivedDate
      * @return \Spinen\ConnectWise\Library\Api\Generated\PurchaseOrderLineItem
      */
-    public function setReceivedDate(\DateTime $ReceivedDate = null)
+    public function setReceivedDate(\DateTime $ReceivedDate)
     {
-        if ($ReceivedDate == null) {
-            $this->ReceivedDate = null;
-        } else {
-            $this->ReceivedDate = $ReceivedDate->format(\DateTime::ATOM);
-        }
+        $this->ReceivedDate = $ReceivedDate->format(\DateTime::ATOM);
         return $this;
     }
 

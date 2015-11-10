@@ -27,7 +27,7 @@ class ArrayOfManagedMachineData
      * @param ManagedMachineData[] $ManagedMachineData
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfManagedMachineData
      */
-    public function setManagedMachineData(array $ManagedMachineData = null)
+    public function setManagedMachineData(array $ManagedMachineData)
     {
         $this->ManagedMachineData = $ManagedMachineData;
         return $this;

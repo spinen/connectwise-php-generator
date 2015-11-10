@@ -87,10 +87,34 @@ class Company
 
     /**
      * @param int $Id
+     * @param string $CompanyName
+     * @param string $CompanyIdentifier
+     * @param CompanyAddress $DefaultAddress
+     * @param ArrayOfCompanyAddress $Addresses
+     * @param string $PhoneNumber
+     * @param string $FaxNumber
+     * @param string $WebSite
+     * @param string $Territory
+     * @param string $Market
+     * @param string $Type
+     * @param string $Status
+     * @param string $AccountNumber
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $CompanyName = null, $CompanyIdentifier = null, CompanyAddress $DefaultAddress = null, $Addresses = null, $PhoneNumber = null, $FaxNumber = null, $WebSite = null, $Territory = null, $Market = null, $Type = null, $Status = null, $AccountNumber = null)
     {
-        $this->Id = $Id;
+        $this->Id                = $Id;
+        $this->CompanyName       = $CompanyName;
+        $this->CompanyIdentifier = $CompanyIdentifier;
+        $this->DefaultAddress    = $DefaultAddress;
+        $this->Addresses         = $Addresses;
+        $this->PhoneNumber       = $PhoneNumber;
+        $this->FaxNumber         = $FaxNumber;
+        $this->WebSite           = $WebSite;
+        $this->Territory         = $Territory;
+        $this->Market            = $Market;
+        $this->Type              = $Type;
+        $this->Status            = $Status;
+        $this->AccountNumber     = $AccountNumber;
     }
 
     /**
@@ -383,13 +407,9 @@ class Company
      * @param \DateTime $LastUpdated
      * @return \Spinen\ConnectWise\Library\Api\Generated\Company
      */
-    public function setLastUpdated(\DateTime $LastUpdated = null)
+    public function setLastUpdated(\DateTime $LastUpdated)
     {
-        if ($LastUpdated == null) {
-            $this->LastUpdated = null;
-        } else {
-            $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
-        }
+        $this->LastUpdated = $LastUpdated->format(\DateTime::ATOM);
         return $this;
     }
 

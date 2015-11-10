@@ -146,13 +146,32 @@ class ProductItem
     protected $BundleComponents = null;
 
     /**
+     * @var int $VendorId
+     */
+    protected $VendorId = null;
+
+    /**
      * @param int $Id
      * @param float $QuantityCancelled
+     * @param string $Description
+     * @param string $ShortDescription
+     * @param string $Warehouse
+     * @param string $Bin
+     * @param string $QuoteNumber
+     * @param string $QuoteName
+     * @param ArrayOfComponent $BundleComponents
      */
-    public function __construct($Id = null, $QuantityCancelled = null)
+    public function __construct($Id = null, $QuantityCancelled = null, $Description = null, $ShortDescription = null, $Warehouse = null, $Bin = null, $QuoteNumber = null, $QuoteName = null, $BundleComponents = null)
     {
         $this->Id                = $Id;
         $this->QuantityCancelled = $QuantityCancelled;
+        $this->Description       = $Description;
+        $this->ShortDescription  = $ShortDescription;
+        $this->Warehouse         = $Warehouse;
+        $this->Bin               = $Bin;
+        $this->QuoteNumber       = $QuoteNumber;
+        $this->QuoteName         = $QuoteName;
+        $this->BundleComponents  = $BundleComponents;
     }
 
     /**
@@ -656,6 +675,24 @@ class ProductItem
     public function setBundleComponents($BundleComponents)
     {
         $this->BundleComponents = $BundleComponents;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getVendorId()
+    {
+        return $this->VendorId;
+    }
+
+    /**
+     * @param int $VendorId
+     * @return \Spinen\ConnectWise\Library\Api\Generated\ProductItem
+     */
+    public function setVendorId($VendorId)
+    {
+        $this->VendorId = $VendorId;
         return $this;
     }
 

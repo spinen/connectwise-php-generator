@@ -20,9 +20,14 @@ class CompanyReference
      */
     protected $Name = null;
 
-    public function __construct()
+    /**
+     * @param string $CompanyIdentifier
+     * @param string $Name
+     */
+    public function __construct($CompanyIdentifier = null, $Name = null)
     {
-
+        $this->CompanyIdentifier = $CompanyIdentifier;
+        $this->Name              = $Name;
     }
 
     /**

@@ -27,7 +27,7 @@ class ArrayOfTimeDetail
      * @param TimeDetail[] $TimeDetail
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfTimeDetail
      */
-    public function setTimeDetail(array $TimeDetail = null)
+    public function setTimeDetail(array $TimeDetail)
     {
         $this->TimeDetail = $TimeDetail;
         return $this;

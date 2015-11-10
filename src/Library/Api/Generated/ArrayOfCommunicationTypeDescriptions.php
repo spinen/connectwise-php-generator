@@ -27,7 +27,7 @@ class ArrayOfCommunicationTypeDescriptions
      * @param CommunicationTypeDescriptions[] $CommunicationTypeDescriptions
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfCommunicationTypeDescriptions
      */
-    public function setCommunicationTypeDescriptions(array $CommunicationTypeDescriptions = null)
+    public function setCommunicationTypeDescriptions(array $CommunicationTypeDescriptions)
     {
         $this->CommunicationTypeDescriptions = $CommunicationTypeDescriptions;
         return $this;

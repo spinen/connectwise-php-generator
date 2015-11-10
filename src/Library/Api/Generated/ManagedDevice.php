@@ -40,9 +40,22 @@ class ManagedDevice
      */
     protected $Billing = null;
 
-    public function __construct()
+    /**
+     * @param string $Type
+     * @param string $Level
+     * @param string $ManagedIdentifier
+     * @param string $CompanyIdentifier
+     * @param DeviceInfo $Device
+     * @param BillingInfo $Billing
+     */
+    public function __construct($Type = null, $Level = null, $ManagedIdentifier = null, $CompanyIdentifier = null, DeviceInfo $Device = null, BillingInfo $Billing = null)
     {
-
+        $this->Type              = $Type;
+        $this->Level             = $Level;
+        $this->ManagedIdentifier = $ManagedIdentifier;
+        $this->CompanyIdentifier = $CompanyIdentifier;
+        $this->Device            = $Device;
+        $this->Billing           = $Billing;
     }
 
     /**

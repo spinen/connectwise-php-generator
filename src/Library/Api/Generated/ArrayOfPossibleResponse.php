@@ -27,7 +27,7 @@ class ArrayOfPossibleResponse
      * @param PossibleResponse[] $PossibleResponse
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfPossibleResponse
      */
-    public function setPossibleResponse(array $PossibleResponse = null)
+    public function setPossibleResponse(array $PossibleResponse)
     {
         $this->PossibleResponse = $PossibleResponse;
         return $this;

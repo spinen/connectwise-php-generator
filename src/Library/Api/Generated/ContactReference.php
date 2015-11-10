@@ -22,10 +22,14 @@ class ContactReference
 
     /**
      * @param int $Id
+     * @param string $FirstName
+     * @param string $LastName
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $FirstName = null, $LastName = null)
     {
-        $this->Id = $Id;
+        $this->Id        = $Id;
+        $this->FirstName = $FirstName;
+        $this->LastName  = $LastName;
     }
 
     /**

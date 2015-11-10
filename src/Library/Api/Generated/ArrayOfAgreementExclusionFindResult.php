@@ -27,7 +27,7 @@ class ArrayOfAgreementExclusionFindResult
      * @param AgreementExclusionFindResult[] $AgreementExclusionFindResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfAgreementExclusionFindResult
      */
-    public function setAgreementExclusionFindResult(array $AgreementExclusionFindResult = null)
+    public function setAgreementExclusionFindResult(array $AgreementExclusionFindResult)
     {
         $this->AgreementExclusionFindResult = $AgreementExclusionFindResult;
         return $this;

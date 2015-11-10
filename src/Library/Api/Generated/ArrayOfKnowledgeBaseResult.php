@@ -27,7 +27,7 @@ class ArrayOfKnowledgeBaseResult
      * @param KnowledgeBaseResult[] $KnowledgeBaseResult
      * @return \Spinen\ConnectWise\Library\Api\Generated\ArrayOfKnowledgeBaseResult
      */
-    public function setKnowledgeBaseResult(array $KnowledgeBaseResult = null)
+    public function setKnowledgeBaseResult(array $KnowledgeBaseResult)
     {
         $this->KnowledgeBaseResult = $KnowledgeBaseResult;
         return $this;

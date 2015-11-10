@@ -129,12 +129,40 @@ class ExpenseDetail
      * @param boolean $Billable
      * @param boolean $Reimbursable
      * @param \DateTime $Date
+     * @param string $AgreementName
+     * @param string $AgreementType
+     * @param string $BusinessUnit
+     * @param string $ChargeTo
+     * @param string $ExpenseClass
+     * @param string $ExpenseType
+     * @param string $Location
+     * @param string $MemberIdentifier
+     * @param string $MemberName
+     * @param string $Notes
+     * @param string $PaymentMethod
+     * @param string $ProjectName
+     * @param string $PhaseName
+     * @param string $TicketSummary
      */
-    public function __construct($Billable = null, $Reimbursable = null, \DateTime $Date = null)
+    public function __construct($Billable = null, $Reimbursable = null, \DateTime $Date = null, $AgreementName = null, $AgreementType = null, $BusinessUnit = null, $ChargeTo = null, $ExpenseClass = null, $ExpenseType = null, $Location = null, $MemberIdentifier = null, $MemberName = null, $Notes = null, $PaymentMethod = null, $ProjectName = null, $PhaseName = null, $TicketSummary = null)
     {
-        $this->Billable     = $Billable;
-        $this->Reimbursable = $Reimbursable;
-        $this->Date         = $Date ? $Date->format(\DateTime::ATOM) : null;
+        $this->Billable         = $Billable;
+        $this->Reimbursable     = $Reimbursable;
+        $this->Date             = $Date ? $Date->format(\DateTime::ATOM) : null;
+        $this->AgreementName    = $AgreementName;
+        $this->AgreementType    = $AgreementType;
+        $this->BusinessUnit     = $BusinessUnit;
+        $this->ChargeTo         = $ChargeTo;
+        $this->ExpenseClass     = $ExpenseClass;
+        $this->ExpenseType      = $ExpenseType;
+        $this->Location         = $Location;
+        $this->MemberIdentifier = $MemberIdentifier;
+        $this->MemberName       = $MemberName;
+        $this->Notes            = $Notes;
+        $this->PaymentMethod    = $PaymentMethod;
+        $this->ProjectName      = $ProjectName;
+        $this->PhaseName        = $PhaseName;
+        $this->TicketSummary    = $TicketSummary;
     }
 
     /**

@@ -42,10 +42,12 @@ class AgreementWorkRoleExclusion
 
     /**
      * @param int $Id
+     * @param string $UpdatedBy
      */
-    public function __construct($Id = null)
+    public function __construct($Id = null, $UpdatedBy = null)
     {
-        $this->Id = $Id;
+        $this->Id        = $Id;
+        $this->UpdatedBy = $UpdatedBy;
     }
 
     /**
@@ -176,13 +178,9 @@ class AgreementWorkRoleExclusion
      * @param \DateTime $LastUpdate
      * @return \Spinen\ConnectWise\Library\Api\Generated\AgreementWorkRoleExclusion
      */
-    public function setLastUpdate(\DateTime $LastUpdate = null)
+    public function setLastUpdate(\DateTime $LastUpdate)
     {
-        if ($LastUpdate == null) {
-            $this->LastUpdate = null;
-        } else {
-            $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
-        }
+        $this->LastUpdate = $LastUpdate->format(\DateTime::ATOM);
         return $this;
     }
 
