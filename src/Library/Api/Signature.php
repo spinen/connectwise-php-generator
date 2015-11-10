@@ -659,6 +659,54 @@ trait Signature
                     ->makeFilterBuilder($arguments);
     }
     /**
+     * Adds or Updates company custom fields
+     *
+     * @param array|null $arguments
+     * @return AddOrUpdateCompanyCustomFieldResponse
+     */
+    public function companyApiAddOrUpdateCompanyCustomField(array $arguments = [])
+    {
+        return $this->setApi('CompanyApi')
+                    ->setMethod('AddOrUpdateCompanyCustomField')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Obtains a specific Company Team record against a given company.
+     *
+     * @param array|null $arguments
+     * @return GetCompanyTeamResponse
+     */
+    public function companyApiGetCompanyTeam(array $arguments = [])
+    {
+        return $this->setApi('CompanyApi')
+                    ->setMethod('GetCompanyTeam')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Adds or Updates a specific Company Team record against a given company.
+     *
+     * @param array|null $arguments
+     * @return AddOrUpdateCompanyTeamResponse
+     */
+    public function companyApiAddOrUpdateCompanyTeam(array $arguments = [])
+    {
+        return $this->setApi('CompanyApi')
+                    ->setMethod('AddOrUpdateCompanyTeam')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Deletes a specific Company Team record against a given company.
+     *
+     * @param array|null $arguments
+     * @return DeleteCompanyTeamResponse
+     */
+    public function companyApiDeleteCompanyTeam(array $arguments = [])
+    {
+        return $this->setApi('CompanyApi')
+                    ->setMethod('DeleteCompanyTeam')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
      * Gets a configuration by database record id. If no configuration exists with the given id, null is returned.
      *
      * @param array|null $arguments
@@ -3296,6 +3344,18 @@ trait Signature
     {
         return $this->setApi('SystemApi')
                     ->setMethod('GetConnectWiseVersionInfo')
+                    ->makeFilterBuilder($arguments);
+    }
+    /**
+     * Gets information for integrator login record
+     *
+     * @param array|null $arguments
+     * @return GetIntegratorLoginInfoResponse
+     */
+    public function systemApiGetIntegratorLoginInfo(array $arguments = [])
+    {
+        return $this->setApi('SystemApi')
+                    ->setMethod('GetIntegratorLoginInfo')
                     ->makeFilterBuilder($arguments);
     }
     /**
