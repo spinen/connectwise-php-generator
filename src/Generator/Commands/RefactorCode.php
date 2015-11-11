@@ -54,7 +54,7 @@ class RefactorCode extends Base implements CommandInterface
     {
         $this->output->writeln("<info>Adding host parameter to constructor...</info>");
 
-        $command = 'sed -i "" "s|__construct(array \$options|__construct(\$host, array \$options|g" ' .
+        $command = 'sed -i -e "s|__construct(array \$options|__construct(\$host, array \$options|g" ' .
                    $this->generator->generatedDirectory('*Api.php', false);
 
         $response = $this->request->setCommand($command)
@@ -70,7 +70,7 @@ class RefactorCode extends Base implements CommandInterface
     {
         $this->output->writeln("<info>Adding host parameter to parent constructor...</info>");
 
-        $command = 'sed -i "" "s|__construct(\$wsdl, \$options)|__construct(\$host \. \$wsdl, \$options)|g" ' .
+        $command = 'sed -i -e "s|__construct(\$wsdl, \$options)|__construct(\$host \. \$wsdl, \$options)|g" ' .
                    $this->generator->generatedDirectory('*Api.php', false);
 
         $response = $this->request->setCommand($command)
@@ -120,7 +120,7 @@ class RefactorCode extends Base implements CommandInterface
     {
         $this->output->writeln("<info>Removing hardcoded hostname...</info>");
 
-        $command = 'sed -i "" "s|' .
+        $command = 'sed -i -e "s|' .
                    preg_quote($this->generator->hostPath()) .
                    '||g" ' .
                    $this->generator->generatedDirectory('*.php', false);
