@@ -111,7 +111,7 @@ class RefactorCodeTest extends BaseTest
                              ->once();
 
         $this->request_mock->shouldReceive('setCommand')
-                           ->with('sed -i -e "s|https\\://cw\\.tld||g" /path/to/api/folder/Generated/*.php')
+                           ->with('sed -i"" -e "s|https\\://cw\\.tld||g" /path/to/api/folder/Generated/*.php')
                            ->andReturn($this->request_mock)
                            ->once();
 
@@ -131,7 +131,7 @@ class RefactorCodeTest extends BaseTest
                              ->twice();
 
         $this->request_mock->shouldReceive('setCommand')
-                           ->with('sed -i -e "s|__construct(array \\$options|__construct(\\$host, array \\$options|g" /path/to/api/folder/Generated/*Api.php')
+                           ->with('sed -i"" -e "s|__construct(array \\$options|__construct(\\$host, array \\$options|g" /path/to/api/folder/Generated/*Api.php')
                            ->andReturn($this->request_mock)
                            ->once();
 
@@ -146,7 +146,7 @@ class RefactorCodeTest extends BaseTest
                           ->once();
 
         $this->request_mock->shouldReceive('setCommand')
-                           ->with('sed -i -e "s|__construct(\\$wsdl, \\$options)|__construct(\\$host \\. \\$wsdl, \\$options)|g" /path/to/api/folder/Generated/*Api.php')
+                           ->with('sed -i"" -e "s|__construct(\\$wsdl, \\$options)|__construct(\\$host \\. \\$wsdl, \\$options)|g" /path/to/api/folder/Generated/*Api.php')
                            ->andReturn($this->request_mock)
                            ->once();
 
