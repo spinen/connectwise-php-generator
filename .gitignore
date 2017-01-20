@@ -1,7 +1,6 @@
 /vendor
 phpunit.xml
-/build/logs
-/build/coverage
-.env
-.subsplit
+/build
 composer.lock
+/swagger
+/Clients
