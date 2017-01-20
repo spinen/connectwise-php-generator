@@ -1,14 +1,13 @@
 {
-    "name": "spinen/connectwise-php-generator",
-    "description": "Generates the php library for ConnectWise from their WSDL's and contains a client to consume the library.",
+    "name": "spinen/connectwise-php-cgenerator",
+    "description": "SPINEN's ConnectWise Client Generator",
     "keywords": [
-        "api",
         "connectwise",
-        "library",
+        "client",
         "spinen"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Jimmy Puckett",
@@ -16,40 +15,51 @@
         }
     ],
     "require": {
-        "dericofilho/fmt": "~7.0",
-        "illuminate/filesystem": "~5.0",
-        "league/container": "~1.3.2",
-        "nesbot/carbon": "1.*",
-        "php": ">=5.4.0",
-        "symfony/console": "~2.6",
-        "symfony/process": "~2.6",
-        "vlucas/phpdotenv": "~1.1",
-        "wsdl2phpgenerator/wsdl2phpgenerator": "~3.1"
+        "php": ">=7"
     },
     "require-dev": {
-        "mockery/mockery": "~0.9.1",
-        "phpunit/phpunit": "~4.4.0",
-        "psy/psysh": "~0.5.1",
-        "satooshi/php-coveralls": "~0.6.1"
-    },
-    "replace": {
-        "spinen/connectwise-php-client": "self.version",
-        "spinen/connectwise-php-library": "self.version"
+        "mockery/mockery": "~0.9.4",
+        "phpunit/phpunit": "~5.4",
+        "psy/psysh": "0.7.*|0.8.*",
+        "satooshi/php-coveralls": "^1.0"
     },
     "autoload": {
-        "files": [
-            "src/helper.php"
-        ],
         "psr-4": {
-            "Spinen\\ConnectWise\\": "src"
+            "Spinen\\ConnectWise\\Generator\\": "src/",
+            "Spinen\\ConnectWise\\Clients\\Company\\": "Clients/connectwise-company-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Expense\\": "Clients/connectwise-expense-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Finance\\": "Clients/connectwise-finance-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Marketing\\": "Clients/connectwise-marketing-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Mobile\\": "Clients/connectwise-mobile-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Procurement\\": "Clients/connectwise-procurement-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Project\\": "Clients/connectwise-project-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Sales\\": "Clients/connectwise-sales-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Schedule\\": "Clients/connectwise-schedule-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Service\\": "Clients/connectwise-service-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\System\\": "Clients/connectwise-system-php-client/lib/",
+            "Spinen\\ConnectWise\\Clients\\Time\\": "Clients/connectwise-time-php-client/lib/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spinen\\ConnectWise\\": "tests"
+            "Spinen\\ConnectWise\\Generator\\": "tests/",
+            "Spinen\\ConnectWise\\Clients\\Company\\": "Clients/connectwise-company-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Expense\\": "Clients/connectwise-expense-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Finance\\": "Clients/connectwise-finance-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Marketing\\": "Clients/connectwise-marketing-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Mobile\\": "Clients/connectwise-mobile-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Procurement\\": "Clients/connectwise-procurement-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Project\\": "Clients/connectwise-project-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Sales\\": "Clients/connectwise-sales-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Schedule\\": "Clients/connectwise-schedule-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Service\\": "Clients/connectwise-service-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\System\\": "Clients/connectwise-system-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Time\\": "Clients/connectwise-time-php-client/test/",
         }
     },
     "config": {
-        "preferred-install": "dist"
-    }
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
