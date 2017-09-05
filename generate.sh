@@ -66,7 +66,7 @@ ls -A "${SPECS_DIR}" | while read -r spec_file; do
         --invoker-package "${NAME_SPACE}" \
         --input-spec "${SPECS_DIR}${NAME}.json" \
         --lang php \
-        --model-package "${NAME_SPACE}\Model" \
+        --model-package "Model" \
         --output "${GEN_DIR}" \
         --template-dir templates/php/ \
         >> "${LOGFILE}" 2>&1;
@@ -81,7 +81,7 @@ ls -A "./" | grep "connectwise-" | while read -r client; do
     cd "${client}/";
     rm -f git_push.sh;
     {
-        git add . >> "${LOGFILE}";
+        git add .;
         git commit -m "${TS} automated build changes.";
         git push -u origin master;
     }  >> "../../${LOGFILE}" 2>&1;
