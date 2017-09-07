@@ -1,5 +1,5 @@
 {
-    "name": "spinen/connectwise-php-cgenerator",
+    "name": "spinen/connectwise-php-generator",
     "description": "SPINEN's ConnectWise Client Generator",
     "keywords": [
         "connectwise",
@@ -54,7 +54,7 @@
             "Spinen\\ConnectWise\\Clients\\Schedule\\": "Clients/connectwise-schedule-php-client/test/",
             "Spinen\\ConnectWise\\Clients\\Service\\": "Clients/connectwise-service-php-client/test/",
             "Spinen\\ConnectWise\\Clients\\System\\": "Clients/connectwise-system-php-client/test/",
-            "Spinen\\ConnectWise\\Clients\\Time\\": "Clients/connectwise-time-php-client/test/",
+            "Spinen\\ConnectWise\\Clients\\Time\\": "Clients/connectwise-time-php-client/test/"
         }
     },
     "config": {
